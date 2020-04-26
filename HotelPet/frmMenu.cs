@@ -84,5 +84,12 @@ namespace HotelPet
             cliente.MdiParent = this;
             cliente.Show();
         }
+
+        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPermissoes permissao = new frmPermissoes();
+            permissao.MdiParent = this;
+            permissao.Show();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.MODEL
 {
-    class Permicoes
+    class Permissoes
     {
         public int id { get; set; }
         public string tipo { get; set; }

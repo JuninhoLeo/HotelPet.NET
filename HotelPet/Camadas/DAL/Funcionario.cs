@@ -27,7 +27,6 @@ namespace HotelPet.Camadas.DAL
                 {
                     MODEL.Funcionario funcionario = new MODEL.Funcionario();
                     funcionario.id = Convert.ToInt32(dados["id"].ToString());
-                    funcionario.id_permicao = Convert.ToInt32(dados["id_permicao"].ToString());
                     funcionario.nome = dados["nome"].ToString();
                     funcionario.rg = dados["rg"].ToString();
                     funcionario.cpf = dados["cpf"].ToString();
@@ -51,10 +50,9 @@ namespace HotelPet.Camadas.DAL
         public void Insert(Camadas.MODEL.Funcionario funcionario)
         {
             MySqlConnection conexao = new MySqlConnection(strCon);
-            string sql = "INSERT INTO FUNCIONARIOS(ID_PERMICAO, NOME, RG, CPF, ENDERECO, UF)" +
-                         "VALUES (@id_permicao, @nome, @rg, @cpf, @endereco, @uf)";
+            string sql = "INSERT INTO FUNCIONARIOS(NOME, RG, CPF, ENDERECO, UF)" +
+                         "VALUES (@nome, @rg, @cpf, @endereco, @uf)";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_permicao",funcionario.id_permicao);
             cmd.Parameters.AddWithValue("@nome", funcionario.nome);
             cmd.Parameters.AddWithValue("@rg", funcionario.rg);
             cmd.Parameters.AddWithValue("@cpf", funcionario.cpf);
@@ -80,11 +78,10 @@ namespace HotelPet.Camadas.DAL
         {
             MySqlConnection conexao = new MySqlConnection(strCon);
             string sql = "UPDATE FUNCIONARIOS " +
-                         "SET ID_PERMICAO =@id_permicao, NOME =@nome, RG =@rg, CPF =@cpf, ENDERECO= @endereco, UF=@uf " +
+                         "SET NOME =@nome, RG =@rg, CPF =@cpf, ENDERECO= @endereco, UF=@uf " +
                          "WHERE id=@id";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", funcionario.id);
-            cmd.Parameters.AddWithValue("@id_permicao", funcionario.id_permicao);
             cmd.Parameters.AddWithValue("@nome", funcionario.nome);
             cmd.Parameters.AddWithValue("@rg", funcionario.rg);
             cmd.Parameters.AddWithValue("@cpf", funcionario.cpf);

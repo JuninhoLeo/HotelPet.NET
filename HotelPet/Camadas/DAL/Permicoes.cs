@@ -13,9 +13,9 @@ namespace HotelPet.Camadas.DAL
     {
         private string strcon = Conexao.getConexao();
 
-        public List<MODEL.Permicoes> Select()
+        public List<MODEL.Permissoes> Select()
         {
-            List<MODEL.Permicoes> listPermicoes = new List<MODEL.Permicoes>();
+            List<MODEL.Permissoes> listPermicoes = new List<MODEL.Permissoes>();
             MySqlConnection conexao = new MySqlConnection(strcon);
             string sql = "SELECT * FROM PERMICOES";
 
@@ -27,7 +27,7 @@ namespace HotelPet.Camadas.DAL
                 MySqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dados.Read())
                 {
-                    MODEL.Permicoes permicoes = new MODEL.Permicoes();
+                    MODEL.Permissoes permicoes = new MODEL.Permissoes();
                     permicoes.id = Convert.ToInt32(dados["id"].ToString());
                     permicoes.tipo = dados["tipo"].ToString();
                     permicoes.frmvendas = Convert.ToBoolean(dados["frmvenda"].ToString());
@@ -50,7 +50,7 @@ namespace HotelPet.Camadas.DAL
             return listPermicoes;
         }//FIM DO SELECT
 
-        public void Insert(MODEL.Permicoes permicoes)
+        public void Insert(MODEL.Permissoes permicoes)
         {
             MySqlConnection conexao = new MySqlConnection(strcon);
             string sql = "INSERT INTO PERMICOES (TIPO, FRMVENDA, FRMCLIENTE, FRMPRODUTOS, FRMSERVICOS, FRMFUNCIONARIOS) " +
@@ -78,7 +78,7 @@ namespace HotelPet.Camadas.DAL
             }
         }// FIM DO INSERT
 
-        public void Update(MODEL.Permicoes permicoes)
+        public void Update(MODEL.Permissoes permicoes)
         {
             MySqlConnection conexao = new MySqlConnection(strcon);
             string sql = "UPDATE PERMICOES SET TIPO =@tipo, FRMVENDA =@frmvenda, FRMCLIENTE =@frmcliente, FRMPRODUTOS =@frmprodutos, FRMSERVICOS =@frmservicos, FRMFUNCIONARIOS =@frmfuncionarios " +
