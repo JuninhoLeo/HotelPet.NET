@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,8 @@ namespace HotelPet
 {
     public partial class frmPermissoes : Form
     {
+        public delegate void InvokeDelegate();
+
         public frmPermissoes()
         {
             InitializeComponent();
@@ -46,5 +49,25 @@ namespace HotelPet
         {
             this.Close();
         }
+
+        private void frmPermissoes_Load(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            ;
+            if (login.DialogResult == DialogResult.Cancel)
+            {
+                BeginInvoke(new InvokeDelegate(confirm));
+            }
+            
+        }
+
+        private void confirm()
+        {
+            MdiParent.MainMenuStrip.Enabled = true;
+            this.Visible = false;
+            this.Close();
+        }
+
     }
 }
