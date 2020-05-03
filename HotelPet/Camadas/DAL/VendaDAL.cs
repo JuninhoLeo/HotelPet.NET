@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.DAL
 {
-    public class Venda
+    public class VendaDAL
     {
-        private string strCon = Conexao.getConexao();
+        private string strCon = ConexaoDAL.getConexao();
 
         public List<MODEL.Venda> Select()
         {

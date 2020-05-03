@@ -217,7 +217,7 @@ namespace HotelPet
                                
                 if (Conf == 0)
                 {
-                    Camadas.DAL.Animal dalAnimal = new Camadas.DAL.Animal();
+                    Camadas.DAL.AnimalDAL dalAnimal = new Camadas.DAL.AnimalDAL();
                     dalAnimal.Insert(animal);
                     this.Close();
                 }

@@ -10,31 +10,31 @@ namespace HotelPet.Camadas.BLL
     {
         public List<MODEL.Itemvenda> Select()
         {
-            DAL.ItemVenda itemvenda = new DAL.ItemVenda();
+            DAL.ItemVendaDAL itemvenda = new DAL.ItemVendaDAL();
             return itemvenda.Select();
         }
 
         public double SelectTotal(int cod)
         {
-            DAL.ItemVenda total = new DAL.ItemVenda();
+            DAL.ItemVendaDAL total = new DAL.ItemVendaDAL();
             return total.SelectTot(cod);
         }
 
         public int SelectCount(int cod)
         {
-            DAL.ItemVenda itens = new DAL.ItemVenda();
+            DAL.ItemVendaDAL itens = new DAL.ItemVendaDAL();
             return itens.SelectCount(cod);
         }
 
         public int SelectId()
         {
-            DAL.ItemVenda lista = new DAL.ItemVenda();
+            DAL.ItemVendaDAL lista = new DAL.ItemVendaDAL();
             return lista.SelectId();
         }
 
         public void Finaliza(int id)
         {
-            DAL.ItemVenda lista = new DAL.ItemVenda();
+            DAL.ItemVendaDAL lista = new DAL.ItemVendaDAL();
             lista.Delete(id);
         }
 

@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace HotelPet.Camadas.DAL
 {
-    class Administrador
+    class AdministradorDAL
     {
-        private string strcon = Conexao.getConexao();
+        private string strcon = ConexaoDAL.getConexao();
 
         public List<MODEL.Administrador> Select()
         {

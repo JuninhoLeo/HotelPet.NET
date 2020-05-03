@@ -21,12 +21,12 @@ namespace HotelPet
         {
             lblSeparador.Text = "-";
 
-            Camadas.DAL.Cliente cliente = new Camadas.DAL.Cliente();
+            Camadas.DAL.ClienteDAL cliente = new Camadas.DAL.ClienteDAL();
             cmbCli.DisplayMember = "nome";
             cmbCli.ValueMember = "id";
             cmbCli.DataSource = cliente.Select();
 
-            Camadas.DAL.Funcionario funcionario = new Camadas.DAL.Funcionario();
+            Camadas.DAL.FuncionarioDAL funcionario = new Camadas.DAL.FuncionarioDAL();
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
             cmbFunc.DataSource = funcionario.Select();
@@ -103,10 +103,10 @@ namespace HotelPet
         private void Button5_Click(object sender, EventArgs e)
         {
             Camadas.MODEL.Venda venda = new Camadas.MODEL.Venda();
-            Camadas.DAL.Venda dalVenda = new Camadas.DAL.Venda();
+            Camadas.DAL.VendaDAL dalVenda = new Camadas.DAL.VendaDAL();
 
             Camadas.MODEL.Itemvenda listCompra = new Camadas.MODEL.Itemvenda();
-            Camadas.DAL.ItemVenda movimentacao = new Camadas.DAL.ItemVenda();
+            Camadas.DAL.ItemVendaDAL movimentacao = new Camadas.DAL.ItemVendaDAL();
 
             venda.id_funcionario = 1;
             venda.id_cliente = cmbCli.SelectedIndex;

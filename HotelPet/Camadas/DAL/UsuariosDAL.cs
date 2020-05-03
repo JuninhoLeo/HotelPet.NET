@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HotelPet.Camadas.MODEL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.DAL
 {
-    public class Usuarios
+    public class UsuariosDAL
     {
-        private string strCon = Conexao.getConexao();
+        private string strCon = ConexaoDAL.getConexao();
 
         public List<MODEL.Usuario> Select()
         {
@@ -43,6 +44,38 @@ namespace HotelPet.Camadas.DAL
             }
 
             return listUsers;
+        }//fim do select
+
+        public Usuario Select(int userId)
+        {
+            MySqlConnection conexao = new MySqlConnection(strCon);
+            string sql = "SELECT * FROM USUARIOS " +
+                         "WHERE ID = @user";
+            MySqlCommand cmd = new MySqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@user", userId);
+            MODEL.Usuario usuario = new MODEL.Usuario();
+
+            try
+            {
+                conexao.Open();
+                MySqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    usuario.id = Convert.ToInt32(dados["id"].ToString());
+                    usuario.usuario = dados["usuario"].ToString();
+                    usuario.senha = dados["senha"].ToString();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("ERRO NO SELECT DO USUARIO");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return usuario;
         }//fim do select
 
         public string SelectUsr(string usr)

@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace HotelPet.Camadas.DAL
 {
-    public class Conexao
+    public class ConexaoDAL
     {
         public static string getConexao()
         {

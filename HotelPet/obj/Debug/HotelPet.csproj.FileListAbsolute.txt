@@ -39,3 +39,4 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.cspro
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.exe
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.pdb
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmPermissoes.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.csproj.CoreCompileInputs.cache

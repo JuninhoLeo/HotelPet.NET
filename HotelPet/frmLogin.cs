@@ -83,5 +83,10 @@ namespace HotelPet
                 return Convert.ToBase64String(hash);
             }
         }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

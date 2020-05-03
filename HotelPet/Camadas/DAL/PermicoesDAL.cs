@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.DAL
 {
-    class Permicoes
+    class PermicoesDAL
     {
-        private string strcon = Conexao.getConexao();
+        private string strcon = ConexaoDAL.getConexao();
 
-        public List<MODEL.Permissoes> Select()
+        public List<MODEL.Permicoes> Select()
         {
-            List<MODEL.Permissoes> listPermicoes = new List<MODEL.Permissoes>();
+            List<MODEL.Permicoes> listPermicoes = new List<MODEL.Permicoes>();
             MySqlConnection conexao = new MySqlConnection(strcon);
             string sql = "SELECT * FROM PERMICOES";
 
@@ -27,7 +27,7 @@ namespace HotelPet.Camadas.DAL
                 MySqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dados.Read())
                 {
-                    MODEL.Permissoes permicoes = new MODEL.Permissoes();
+                    MODEL.Permicoes permicoes = new MODEL.Permicoes();
                     permicoes.id = Convert.ToInt32(dados["id"].ToString());
                     permicoes.tipo = dados["tipo"].ToString();
                     permicoes.frmvendas = Convert.ToBoolean(dados["frmvenda"].ToString());
@@ -35,6 +35,7 @@ namespace HotelPet.Camadas.DAL
                     permicoes.frmprodutos = Convert.ToBoolean(dados["frmprodutos"].ToString());
                     permicoes.frmservicos = Convert.ToBoolean(dados["frmservicos"].ToString());
                     permicoes.frmfuncionarios = Convert.ToBoolean(dados["frmfuncionarios"].ToString());
+                    permicoes.frmConfig = Convert.ToBoolean(dados["frmConfiguracoes"].ToString());
                     listPermicoes.Add(permicoes);
                 }
             }
@@ -50,11 +51,11 @@ namespace HotelPet.Camadas.DAL
             return listPermicoes;
         }//FIM DO SELECT
 
-        public void Insert(MODEL.Permissoes permicoes)
+        public void Insert(MODEL.Permicoes permicoes)
         {
             MySqlConnection conexao = new MySqlConnection(strcon);
-            string sql = "INSERT INTO PERMICOES (TIPO, FRMVENDA, FRMCLIENTE, FRMPRODUTOS, FRMSERVICOS, FRMFUNCIONARIOS) " +
-                         "VALUES(@tipo, @frmvenda, @frmcliente, @frmprodutos, @frmservicos, @funcionarios)";
+            string sql = "INSERT INTO PERMICOES (TIPO, FRMVENDA, FRMCLIENTE, FRMPRODUTOS, FRMSERVICOS, FRMFUNCIONARIOS, FRMCONFIGURACOES) " +
+                         "VALUES(@tipo, @frmvenda, @frmcliente, @frmprodutos, @frmservicos, @funcionarios, @frmconfig)";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@tipo", permicoes.tipo);
             cmd.Parameters.AddWithValue("@frmvenda", permicoes.frmvendas);
@@ -62,6 +63,7 @@ namespace HotelPet.Camadas.DAL
             cmd.Parameters.AddWithValue("@frmprodutos", permicoes.frmprodutos);
             cmd.Parameters.AddWithValue("@frmservicos", permicoes.frmservicos);
             cmd.Parameters.AddWithValue("@frmfuncionarios", permicoes.frmfuncionarios);
+            cmd.Parameters.AddWithValue("@frmconfig", permicoes.frmConfig);
 
             try
             {
@@ -78,10 +80,10 @@ namespace HotelPet.Camadas.DAL
             }
         }// FIM DO INSERT
 
-        public void Update(MODEL.Permissoes permicoes)
+        public void Update(MODEL.Permicoes permicoes)
         {
             MySqlConnection conexao = new MySqlConnection(strcon);
-            string sql = "UPDATE PERMICOES SET TIPO =@tipo, FRMVENDA =@frmvenda, FRMCLIENTE =@frmcliente, FRMPRODUTOS =@frmprodutos, FRMSERVICOS =@frmservicos, FRMFUNCIONARIOS =@frmfuncionarios " +
+            string sql = "UPDATE PERMICOES SET TIPO =@tipo, FRMVENDA =@frmvenda, FRMCLIENTE =@frmcliente, FRMPRODUTOS =@frmprodutos, FRMSERVICOS =@frmservicos, FRMFUNCIONARIOS =@frmfuncionarios FRMCONFIGURACOES =@frmconfig " +
                          "WHERE ID =@id";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", permicoes.id);
@@ -91,6 +93,7 @@ namespace HotelPet.Camadas.DAL
             cmd.Parameters.AddWithValue("@frmprodutos", permicoes.frmprodutos);
             cmd.Parameters.AddWithValue("@frmservicos", permicoes.frmservicos);
             cmd.Parameters.AddWithValue("@frmfuncionarios", permicoes.frmfuncionarios);
+            cmd.Parameters.AddWithValue("@frmconfig", permicoes.frmConfig);
 
             try
             {

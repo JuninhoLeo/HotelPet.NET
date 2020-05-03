@@ -25,7 +25,7 @@ namespace HotelPet
 
             if (confirm.ToString().ToUpper() == "YES")
             {
-                Camadas.DAL.Cliente lista = new Camadas.DAL.Cliente();
+                Camadas.DAL.ClienteDAL lista = new Camadas.DAL.ClienteDAL();
                 Camadas.MODEL.Cliente cliente = new Camadas.MODEL.Cliente();
                 cliente.nome = txtNome.Text;
                 cliente.cpf = txtCPF.Text;

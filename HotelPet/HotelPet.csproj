@@ -67,26 +67,26 @@
   <ItemGroup>
     <Compile Include="Camadas\BLL\Movimentacao.cs" />
     <Compile Include="Camadas\BLL\Usuario.cs" />
-    <Compile Include="Camadas\DAL\Administrador.cs" />
-    <Compile Include="Camadas\DAL\Animal.cs" />
-    <Compile Include="Camadas\DAL\Cliente.cs" />
-    <Compile Include="Camadas\DAL\Conexao.cs" />
-    <Compile Include="Camadas\DAL\Consumo.cs" />
-    <Compile Include="Camadas\DAL\Funcionario.cs" />
-    <Compile Include="Camadas\DAL\ItemVenda.cs" />
-    <Compile Include="Camadas\DAL\Permicoes.cs" />
-    <Compile Include="Camadas\DAL\ProdutoServicos.cs" />
-    <Compile Include="Camadas\DAL\Quarto.cs" />
-    <Compile Include="Camadas\DAL\Reserva.cs" />
-    <Compile Include="Camadas\DAL\Usuarios.cs" />
-    <Compile Include="Camadas\DAL\Venda.cs" />
+    <Compile Include="Camadas\DAL\AdministradorDAL.cs" />
+    <Compile Include="Camadas\DAL\AnimalDAL.cs" />
+    <Compile Include="Camadas\DAL\ClienteDAL.cs" />
+    <Compile Include="Camadas\DAL\ConexaoDAL.cs" />
+    <Compile Include="Camadas\DAL\ConsumoDAL.cs" />
+    <Compile Include="Camadas\DAL\FuncionarioDAL.cs" />
+    <Compile Include="Camadas\DAL\ItemVendaDAL.cs" />
+    <Compile Include="Camadas\DAL\PermicoesDAL.cs" />
+    <Compile Include="Camadas\DAL\ProdutoServicosDAL.cs" />
+    <Compile Include="Camadas\DAL\QuartoDAL.cs" />
+    <Compile Include="Camadas\DAL\ReservaDAL.cs" />
+    <Compile Include="Camadas\DAL\UsuariosDAL.cs" />
+    <Compile Include="Camadas\DAL\VendaDAL.cs" />
     <Compile Include="Camadas\MODEL\Administrador.cs" />
     <Compile Include="Camadas\MODEL\Cliente.cs" />
     <Compile Include="Camadas\MODEL\Consumo.cs" />
     <Compile Include="Camadas\MODEL\Funcionario.cs" />
     <Compile Include="Camadas\MODEL\Itemvenda.cs" />
     <Compile Include="Camadas\MODEL\Animal.cs" />
-    <Compile Include="Camadas\MODEL\Permissoes.cs" />
+    <Compile Include="Camadas\MODEL\Permicoes.cs" />
     <Compile Include="Camadas\MODEL\Produtos_Servicos.cs" />
     <Compile Include="Camadas\MODEL\Quarto.cs" />
     <Compile Include="Camadas\MODEL\Reserva.cs" />
@@ -246,6 +246,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\delete_delete_exit_1577.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\next_user_16730.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

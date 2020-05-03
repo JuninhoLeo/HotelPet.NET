@@ -14,6 +14,6 @@ namespace HotelPet.Camadas.MODEL
         public string cpf { get; set; }
         public string endereco { get; set; }
         public string uf { get; set; }
-
+        public int userID { get; set; }
     }
 }

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.DAL
 {
-    public class Funcionario
+    public class FuncionarioDAL
     {
-        private string strCon = Conexao.getConexao();
+        private string strCon = ConexaoDAL.getConexao();
         public List<MODEL.Funcionario> Select()
         {
             List<MODEL.Funcionario> listFunc = new List<MODEL.Funcionario>();
@@ -32,6 +32,7 @@ namespace HotelPet.Camadas.DAL
                     funcionario.cpf = dados["cpf"].ToString();
                     funcionario.endereco = dados["endereco"].ToString();
                     funcionario.uf = dados["uf"].ToString();
+                    funcionario.userID = Convert.ToInt32(dados["id_user"].ToString());
                     listFunc.Add(funcionario);
                 }
             }

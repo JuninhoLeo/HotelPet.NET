@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace HotelPet.Camadas.DAL
 {
-    public class ItemVenda
+    public class ItemVendaDAL
     {
-        private string strCon = Conexao.getConexao();
+        private string strCon = ConexaoDAL.getConexao();
 
         public List<MODEL.Itemvenda> Select()
         {

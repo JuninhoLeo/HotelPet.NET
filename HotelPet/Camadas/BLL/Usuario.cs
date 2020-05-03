@@ -10,7 +10,7 @@ namespace HotelPet.Camadas.BLL
     {
         public string SelectUsr(string user)
         {
-            DAL.Usuarios usuario = new DAL.Usuarios();
+            DAL.UsuariosDAL usuario = new DAL.UsuariosDAL();
             string retorno;
             retorno = usuario.SelectUsr(user);
 
@@ -26,7 +26,7 @@ namespace HotelPet.Camadas.BLL
 
         public string SelectPwd(string user)
         {
-            DAL.Usuarios usuario = new DAL.Usuarios();
+            DAL.UsuariosDAL usuario = new DAL.UsuariosDAL();
             string retorno;
             retorno = usuario.SelectPwd(user);
 
