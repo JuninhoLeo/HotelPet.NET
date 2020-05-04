@@ -16,5 +16,7 @@ namespace HotelPet.Camadas.MODEL
         public bool frmservicos { get; set; }
         public bool frmfuncionarios { get; set; }
         public bool frmConfig { get; set; }
+        public bool frmhotel { get; set; }
+        public bool frmclinica { get; set; }
     }
 }

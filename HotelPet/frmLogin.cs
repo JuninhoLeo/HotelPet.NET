@@ -34,7 +34,7 @@ namespace HotelPet
         private void Button2_Click(object sender, EventArgs e)
         {
             byte[] passtohash = Encoding.UTF8.GetBytes(txtSenha.Text.ToString());
-            Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+            Camadas.BLL.UsuarioBLL bllUser = new Camadas.BLL.UsuarioBLL();
 
             string user = txtUsuario.Text;
             string pwd = Hash(passtohash);

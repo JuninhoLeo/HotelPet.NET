@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.BLL
 {
-    class Movimentacao
+    class MovimentacaoBLL
     {
         public List<MODEL.Itemvenda> Select()
         {

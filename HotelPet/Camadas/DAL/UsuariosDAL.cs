@@ -46,6 +46,43 @@ namespace HotelPet.Camadas.DAL
             return listUsers;
         }//fim do select
 
+        public Usuario Select(Usuario user)
+        {
+            Usuario listUsers = new Usuario();
+            MySqlConnection conexao = new MySqlConnection(strCon);
+            string sql = "SELECT * FROM USUARIOS " +
+                         "WHERE usuario=@user";
+            MySqlCommand cmd = new MySqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@user", user.usuario);
+
+            try
+            {
+                conexao.Open();
+                MySqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    Usuario usuario = new Usuario
+                    {
+                        id = Convert.ToInt32(dados["id"].ToString()),
+                        usuario = dados["usuario"].ToString(),
+                        senha = dados["senha"].ToString()
+                    };
+                    listUsers = usuario;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("ERRO NO SELECT DO USUARIO");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listUsers;
+        }//fim do select
+
+
         public Usuario Select(int userId)
         {
             MySqlConnection conexao = new MySqlConnection(strCon);
@@ -170,16 +207,16 @@ namespace HotelPet.Camadas.DAL
             cmd.Parameters.AddWithValue("@usuario", usuario.usuario);
             cmd.Parameters.AddWithValue("@senha", usuario.senha);
 
-            try
+           // try
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch
+           // catch
             {
-                Console.WriteLine("ERRO NO UPDATE DO USUARIO");
+           //     Console.WriteLine("ERRO NO UPDATE DO USUARIO");
             }
-            finally
+           // finally
             {
                 conexao.Close();
             }

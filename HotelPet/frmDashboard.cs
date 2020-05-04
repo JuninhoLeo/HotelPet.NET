@@ -166,7 +166,7 @@ namespace HotelPet
 
         public void AtualizaView()
         {
-            Camadas.BLL.Movimentacao lista = new Camadas.BLL.Movimentacao();
+            Camadas.BLL.MovimentacaoBLL lista = new Camadas.BLL.MovimentacaoBLL();
             dgvCompra.DataSource = "";
             dgvCompra.DataSource = lista.Select();
             dgvCompra.Columns["id"].Visible = false;
@@ -215,7 +215,7 @@ namespace HotelPet
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
-            Camadas.BLL.Movimentacao movimentacao = new Camadas.BLL.Movimentacao();
+            Camadas.BLL.MovimentacaoBLL movimentacao = new Camadas.BLL.MovimentacaoBLL();
             int id = movimentacao.SelectId();
             movimentacao.Finaliza(id);
             AtualizaView();

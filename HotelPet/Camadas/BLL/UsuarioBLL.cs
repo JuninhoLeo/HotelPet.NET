@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.BLL
 {
-    class Usuario
+    class UsuarioBLL
     {
         public string SelectUsr(string user)
         {
@@ -38,6 +38,32 @@ namespace HotelPet.Camadas.BLL
             {
                 return null;
             }
+        }
+
+        public MODEL.Usuario Select(MODEL.Usuario usuario)
+        {
+            DAL.UsuariosDAL dalUsr = new DAL.UsuariosDAL();
+            MODEL.Usuario user = dalUsr.Select(usuario);
+
+            if (user.id == 0)
+            {
+                dalUsr.Insert(usuario);
+                user = dalUsr.Select(usuario);
+                return user;
+            }
+            else
+            {
+                if (usuario.senha != "") 
+                { 
+                    user.senha = usuario.senha; 
+                }
+                user.usuario = usuario.usuario;
+
+                dalUsr.Update(user);
+                user = dalUsr.Select(usuario);
+                return user;
+            }
+            
         }
 
     }

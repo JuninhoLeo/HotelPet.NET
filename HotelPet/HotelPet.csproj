@@ -65,8 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camadas\BLL\Movimentacao.cs" />
-    <Compile Include="Camadas\BLL\Usuario.cs" />
+    <Compile Include="Camadas\BLL\FuncionarioBLL.cs" />
+    <Compile Include="Camadas\BLL\MovimentacaoBLL.cs" />
+    <Compile Include="Camadas\BLL\PermicoesBLL.cs" />
+    <Compile Include="Camadas\BLL\UsuarioBLL.cs" />
     <Compile Include="Camadas\DAL\AdministradorDAL.cs" />
     <Compile Include="Camadas\DAL\AnimalDAL.cs" />
     <Compile Include="Camadas\DAL\ClienteDAL.cs" />

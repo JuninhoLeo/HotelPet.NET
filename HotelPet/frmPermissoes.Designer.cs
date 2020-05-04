@@ -81,12 +81,12 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.gpbConfig = new System.Windows.Forms.GroupBox();
             this.rdbConfigSim = new System.Windows.Forms.RadioButton();
             this.rdbConfigNao = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermicoes)).BeginInit();
             this.gpbVendas.SuspendLayout();
             this.gpbClientes.SuspendLayout();
@@ -624,6 +624,7 @@
             this.btnConfirm.Text = "&Enviar";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // label10
             // 
@@ -674,20 +675,6 @@
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.LightGray;
-            this.btnEditar.Image = global::HotelPet.Properties.Resources.search_find_user_16727;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(1033, 239);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(104, 74);
-            this.btnEditar.TabIndex = 26;
-            this.btnEditar.Text = "&Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnNovo
             // 
@@ -750,6 +737,15 @@
             this.label12.TabIndex = 38;
             this.label12.Text = "Configurações";
             // 
+            // lblAviso
+            // 
+            this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAviso.ForeColor = System.Drawing.Color.Red;
+            this.lblAviso.Location = new System.Drawing.Point(27, 407);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(193, 67);
+            this.lblAviso.TabIndex = 59;
+            // 
             // frmPermissoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -757,6 +753,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1149, 565);
             this.ControlBox = false;
+            this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.gpbConfig);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.checkPwd);
@@ -789,7 +786,6 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvPermicoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -824,7 +820,6 @@
 
         private System.Windows.Forms.DataGridView dgvPermicoes;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtUser;
@@ -881,5 +876,6 @@
         private System.Windows.Forms.RadioButton rdbConfigSim;
         private System.Windows.Forms.RadioButton rdbConfigNao;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblAviso;
     }
 }
