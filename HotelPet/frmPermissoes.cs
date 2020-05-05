@@ -27,8 +27,23 @@ namespace HotelPet
         private void button1_Click(object sender, EventArgs e)
         {
             HabilitaCampos(true);
+            Atualizabtn(false);
+            btnExcluir.Enabled = false;
+            btnConfirm.Enabled = false;
+            LimpaCampos();
         }
 
+        private void Atualizabtn(bool action)
+        {
+            dgvPermicoes.Visible = action;
+            txtBusca.Enabled = action;
+            btnExcluir.Enabled = action;
+            btnConfirm.Enabled = !action;
+            btnNovo.Enabled = action;
+            btnBusca.Enabled = !action;
+            btnConfirm.Enabled = !action;
+            btnExcluir.Enabled = !action;
+        }
         
         private void button3_Click(object sender, EventArgs e)
         {
@@ -57,6 +72,9 @@ namespace HotelPet
 
             AtualizaView();
 
+            Atualizabtn(true);
+            HabilitaCampos(false);
+
         }
 
         private void confirm()
@@ -70,7 +88,7 @@ namespace HotelPet
         {
             if (!checkPwd.Checked)
             {
-                txtSenha.PasswordChar = '*';
+                txtSenha.PasswordChar = 'x';
             }
             else
             {
@@ -101,6 +119,12 @@ namespace HotelPet
 
         private void dgvPermicoes_DoubleClick(object sender, EventArgs e)
         {
+            HabilitaCampos(true);
+            btnConfirm.Enabled = true;
+            btnBusca.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnNovo.Enabled = true;
+
             int idUsr = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["userID"].Value.ToString());
             int id = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString());
 
@@ -128,9 +152,7 @@ namespace HotelPet
             txtCPF.Text = dgvPermicoes.SelectedRows[0].Cells["cpf"].Value.ToString();
             txtEndereco.Text = dgvPermicoes.SelectedRows[0].Cells["endereco"].Value.ToString();
             txtUF.Text = dgvPermicoes.SelectedRows[0].Cells["uf"].Value.ToString();
-            checkPwd.Enabled = true;
             AtualizaRdb(tipo);
-            btnNovo.Enabled = false;
 
         }
 
@@ -192,8 +214,35 @@ namespace HotelPet
             dgvPermicoes.DataSource = dal.Select();
 
             HabilitaCampos(true);
-            checkPwd.Checked = true;
+            checkPwd.Checked = false;
         }
 
+        private void btnBusca_Click(object sender, EventArgs e)
+        {
+            Atualizabtn(true);
+            HabilitaCampos(false);
+            LimpaCampos();
+        }
+
+        private void LimpaCampos()
+        {
+            txtUser.Text = "";
+            txtSenha.Text = "";
+            txtNome.Text = "";
+            txtRG.Text = "";
+            txtCPF.Text = "";
+            txtEndereco.Text = "";
+            txtUF.Text = "";
+            checkPwd.Text = "";
+
+            rdbVendSim.Checked = true;
+            rdbCliSim.Checked = true;
+            rdbProdSim.Checked = true;
+            rdbServSim.Checked = true;
+            rdbFuncSim.Checked = true;
+            rdbHotelSim.Checked = true;
+            rdbClinSim.Checked = true;
+            rdbConfigSim.Checked = true;
+        }
     }
 }

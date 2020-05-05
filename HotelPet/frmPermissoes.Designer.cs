@@ -138,6 +138,7 @@
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(87, 359);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = 'x';
             this.txtSenha.Size = new System.Drawing.Size(143, 22);
             this.txtSenha.TabIndex = 4;
             // 
@@ -643,6 +644,7 @@
             this.btnBusca.Size = new System.Drawing.Size(58, 54);
             this.btnBusca.TabIndex = 2;
             this.btnBusca.UseVisualStyleBackColor = false;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // btnSair
             // 
