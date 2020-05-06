@@ -53,7 +53,7 @@ namespace HotelPet.Camadas.BLL
             }
             else
             {
-                if (usuario.senha != "") 
+                if (usuario.senha != "2jmj7l5rSw0yVb/vlWAYkK/YBwk=") 
                 { 
                     user.senha = usuario.senha; 
                 }

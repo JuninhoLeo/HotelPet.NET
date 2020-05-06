@@ -75,6 +75,13 @@
             this.rdbClinNao = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.checkPwd = new System.Windows.Forms.CheckBox();
+            this.gpbConfig = new System.Windows.Forms.GroupBox();
+            this.rdbConfigSim = new System.Windows.Forms.RadioButton();
+            this.rdbConfigNao = new System.Windows.Forms.RadioButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.lblWarning = new System.Windows.Forms.Label();
+            this.btnGravar = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btnBusca = new System.Windows.Forms.Button();
@@ -82,11 +89,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.gpbConfig = new System.Windows.Forms.GroupBox();
-            this.rdbConfigSim = new System.Windows.Forms.RadioButton();
-            this.rdbConfigNao = new System.Windows.Forms.RadioButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermicoes)).BeginInit();
             this.gpbVendas.SuspendLayout();
             this.gpbClientes.SuspendLayout();
@@ -132,11 +134,13 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(143, 22);
             this.txtUser.TabIndex = 3;
+            this.txtUser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyUp);
+            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(87, 359);
+            this.txtSenha.Location = new System.Drawing.Point(87, 374);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'x';
             this.txtSenha.Size = new System.Drawing.Size(143, 22);
@@ -146,7 +150,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(35, 362);
+            this.lblSenha.Location = new System.Drawing.Point(35, 377);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(50, 16);
             this.lblSenha.TabIndex = 6;
@@ -493,7 +497,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label9.Location = new System.Drawing.Point(667, 263);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 20);
@@ -502,10 +506,15 @@
             // 
             // txtBusca
             // 
-            this.txtBusca.Location = new System.Drawing.Point(717, 46);
+            this.txtBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusca.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtBusca.Location = new System.Drawing.Point(688, 220);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(273, 20);
+            this.txtBusca.Size = new System.Drawing.Size(296, 24);
             this.txtBusca.TabIndex = 1;
+            this.txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            this.txtBusca.Click += new System.EventHandler(this.txtBusca_Click);
+            this.txtBusca.Leave += new System.EventHandler(this.txtBusca_Leave);
             // 
             // gpbHotel
             // 
@@ -604,7 +613,7 @@
             // checkPwd
             // 
             this.checkPwd.AutoSize = true;
-            this.checkPwd.Location = new System.Drawing.Point(87, 387);
+            this.checkPwd.Location = new System.Drawing.Point(87, 402);
             this.checkPwd.Name = "checkPwd";
             this.checkPwd.Size = new System.Drawing.Size(93, 17);
             this.checkPwd.TabIndex = 5;
@@ -612,85 +621,6 @@
             this.checkPwd.Text = "Mostrar senha";
             this.checkPwd.UseVisualStyleBackColor = true;
             this.checkPwd.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.LightGray;
-            this.btnConfirm.Image = global::HotelPet.Properties.Resources.next_user_16730;
-            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConfirm.Location = new System.Drawing.Point(1033, 400);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(104, 74);
-            this.btnConfirm.TabIndex = 58;
-            this.btnConfirm.Text = "&Enviar";
-            this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // label10
-            // 
-            this.label10.Image = global::HotelPet.Properties.Resources.delete_delete_exit_1577;
-            this.label10.Location = new System.Drawing.Point(894, 255);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 36);
-            this.label10.TabIndex = 52;
-            // 
-            // btnBusca
-            // 
-            this.btnBusca.BackColor = System.Drawing.Color.LightGray;
-            this.btnBusca.Image = global::HotelPet.Properties.Resources.search_102938;
-            this.btnBusca.Location = new System.Drawing.Point(932, 72);
-            this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(58, 54);
-            this.btnBusca.TabIndex = 2;
-            this.btnBusca.UseVisualStyleBackColor = false;
-            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Image = global::HotelPet.Properties.Resources.X;
-            this.btnSair.Location = new System.Drawing.Point(1079, 12);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(58, 54);
-            this.btnSair.TabIndex = 28;
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // label3
-            // 
-            this.label3.Image = global::HotelPet.Properties.Resources.check_ok_accept_apply_1582;
-            this.label3.Location = new System.Drawing.Point(838, 255);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 36);
-            this.label3.TabIndex = 24;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.LightGray;
-            this.btnExcluir.Image = global::HotelPet.Properties.Resources.delete_remove_user_16732;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExcluir.Location = new System.Drawing.Point(1033, 479);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(104, 74);
-            this.btnExcluir.TabIndex = 27;
-            this.btnExcluir.Text = "&Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.Color.LightGray;
-            this.btnNovo.Image = global::HotelPet.Properties.Resources.new_add_user_167341;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNovo.Location = new System.Drawing.Point(1033, 319);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(104, 74);
-            this.btnNovo.TabIndex = 25;
-            this.btnNovo.Text = "&Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.button1_Click);
             // 
             // gpbConfig
             // 
@@ -742,11 +672,114 @@
             // lblAviso
             // 
             this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAviso.ForeColor = System.Drawing.Color.Red;
-            this.lblAviso.Location = new System.Drawing.Point(27, 407);
+            this.lblAviso.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblAviso.Location = new System.Drawing.Point(27, 422);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(193, 67);
             this.lblAviso.TabIndex = 59;
+            // 
+            // lblWarning
+            // 
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(27, 346);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(224, 16);
+            this.lblWarning.TabIndex = 60;
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.BackColor = System.Drawing.Color.LightGray;
+            this.btnGravar.Image = global::HotelPet.Properties.Resources.next_user_16730;
+            this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGravar.Location = new System.Drawing.Point(1033, 320);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(104, 74);
+            this.btnGravar.TabIndex = 61;
+            this.btnGravar.Text = "&Gravar";
+            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGravar.UseVisualStyleBackColor = false;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.LightGray;
+            this.btnConfirm.Image = global::HotelPet.Properties.Resources.download_update_user_16728;
+            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnConfirm.Location = new System.Drawing.Point(1033, 400);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(104, 74);
+            this.btnConfirm.TabIndex = 58;
+            this.btnConfirm.Text = "&Atualizar";
+            this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // label10
+            // 
+            this.label10.Image = global::HotelPet.Properties.Resources.delete_delete_exit_1577;
+            this.label10.Location = new System.Drawing.Point(894, 255);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 36);
+            this.label10.TabIndex = 52;
+            // 
+            // btnBusca
+            // 
+            this.btnBusca.BackColor = System.Drawing.Color.LightGray;
+            this.btnBusca.Image = global::HotelPet.Properties.Resources.search_find_user_16727;
+            this.btnBusca.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBusca.Location = new System.Drawing.Point(1033, 160);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(104, 74);
+            this.btnBusca.TabIndex = 2;
+            this.btnBusca.Text = "&Pesquisa";
+            this.btnBusca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBusca.UseVisualStyleBackColor = false;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Image = global::HotelPet.Properties.Resources.X;
+            this.btnSair.Location = new System.Drawing.Point(1079, 12);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(58, 54);
+            this.btnSair.TabIndex = 28;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // label3
+            // 
+            this.label3.Image = global::HotelPet.Properties.Resources.check_ok_accept_apply_1582;
+            this.label3.Location = new System.Drawing.Point(838, 255);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 36);
+            this.label3.TabIndex = 24;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.LightGray;
+            this.btnExcluir.Image = global::HotelPet.Properties.Resources.delete_remove_user_16732;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(1033, 479);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(104, 74);
+            this.btnExcluir.TabIndex = 27;
+            this.btnExcluir.Text = "&Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.LightGray;
+            this.btnNovo.Image = global::HotelPet.Properties.Resources.new_add_user_167341;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNovo.Location = new System.Drawing.Point(1033, 240);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(104, 74);
+            this.btnNovo.TabIndex = 25;
+            this.btnNovo.Text = "&Cadastrar Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPermissoes
             // 
@@ -755,6 +788,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1149, 565);
             this.ControlBox = false;
+            this.Controls.Add(this.btnGravar);
+            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.gpbConfig);
             this.Controls.Add(this.btnConfirm);
@@ -879,5 +914,7 @@
         private System.Windows.Forms.RadioButton rdbConfigNao;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.Label lblWarning;
+        private System.Windows.Forms.Button btnGravar;
     }
 }

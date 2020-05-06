@@ -133,6 +133,16 @@ namespace HotelPet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_update_user_16728 {
+            get {
+                object obj = ResourceManager.GetObject("download_update_user_16728", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ext1 {
             get {
                 object obj = ResourceManager.GetObject("ext1", resourceCulture);

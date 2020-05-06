@@ -43,6 +43,7 @@ namespace HotelPet
             btnBusca.Enabled = !action;
             btnConfirm.Enabled = !action;
             btnExcluir.Enabled = !action;
+            btnGravar.Enabled = !action;
         }
         
         private void button3_Click(object sender, EventArgs e)
@@ -96,7 +97,7 @@ namespace HotelPet
             }
         }
 
-        public void HabilitaCampos(bool campo)
+        private void HabilitaCampos(bool campo)
         {
             txtUser.Enabled = campo;
             txtSenha.Enabled = campo;
@@ -170,6 +171,9 @@ namespace HotelPet
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            string pass = txtSenha.Text.Trim();
+            byte[] passtohash = Encoding.UTF8.GetBytes(pass);
+
             Usuario usuario = new Usuario();
             Funcionario funcionario = new Funcionario();
             Permicoes permicao = new Permicoes();
@@ -179,7 +183,9 @@ namespace HotelPet
             PermicoesBLL bllPerm = new PermicoesBLL();
 
             usuario.usuario = txtUser.Text;
-            usuario.senha = txtSenha.Text;
+            string pwd = Hash(passtohash);
+
+            usuario.senha = pwd;
 
             funcionario.nome = txtNome.Text;
             funcionario.rg = txtRG.Text;
@@ -222,6 +228,7 @@ namespace HotelPet
             Atualizabtn(true);
             HabilitaCampos(false);
             LimpaCampos();
+           
         }
 
         private void LimpaCampos()
@@ -233,7 +240,10 @@ namespace HotelPet
             txtCPF.Text = "";
             txtEndereco.Text = "";
             txtUF.Text = "";
-            checkPwd.Text = "";
+
+            txtSenha.PasswordChar = 'x';
+            txtBusca.ForeColor = Color.DarkGray;
+            txtBusca.Text = "Digite aqui o Nome do funcionario:";
 
             rdbVendSim.Checked = true;
             rdbCliSim.Checked = true;
@@ -243,6 +253,73 @@ namespace HotelPet
             rdbHotelSim.Checked = true;
             rdbClinSim.Checked = true;
             rdbConfigSim.Checked = true;
+            checkPwd.Checked = false;
+        }
+
+        private String Hash(byte[] val)
+        {
+            using (SHA1Managed sha1 = new SHA1Managed())
+            {
+                var hash = sha1.ComputeHash(val);
+                return Convert.ToBase64String(hash);
+            }
+        }
+
+        private void txtUser_KeyUp(object sender, KeyEventArgs e)
+        {
+            string s = txtUser.Text;
+
+            if (s != "")
+            {                       
+                for(int i = txtUser.Text.Length; i > 0; i--)
+                {
+                    s = txtUser.Text.Substring(txtUser.Text.Length -i, 1);
+                    if (s == " ")
+                    {
+                        break;
+                    }
+                }
+            }
+
+            if (s == " ")
+            {
+                lblWarning.Text = "Nome de usuário Não pode conter espaços!";
+            }
+            else
+            {
+                lblWarning.Text = "";
+            }
+        }
+
+        private void ValidarCampos()
+        {
+            if (txtUser.Text == "")
+            {
+                MessageBox.Show("Nome de usuário não pode ser vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtUser_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusca_Click(object sender, EventArgs e)
+        {
+            if (txtBusca.Text == "Digite aqui o Nome do funcionario:")
+            {              
+                txtBusca.ForeColor = Color.Black;
+                txtBusca.Text = "";
+            }
+        }
+
+        private void txtBusca_Leave(object sender, EventArgs e)
+        {
+            if (txtBusca.Text == "")
+            {
+                txtBusca.ForeColor = Color.DarkGray;
+                txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            }
         }
     }
 }

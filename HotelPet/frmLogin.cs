@@ -61,14 +61,14 @@ namespace HotelPet
                     {
                         txtUsuario.Text = "";
                         txtSenha.Text = "";
-                        lblErrUser.Text = "Usuario Nao Encontrado!";
+                        lblErrUser.Text = "Usuário ou senha estão incorretos";
                         DialogResult = DialogResult.None;
                     }
                     else
                     {
                         txtUsuario.Text = "";
                         txtSenha.Text = "";
-                        lblErrUser.Text = "Usuario Nao Encontrado!";
+                        lblErrUser.Text = "Usuário ou senha estão incorretos";
                         DialogResult = DialogResult.None;
                     }
                 }
