@@ -99,25 +99,27 @@ namespace HotelPet.Camadas.DAL
         public void Insert(Camadas.MODEL.Funcionario funcionario)
         {
             MySqlConnection conexao = new MySqlConnection(strCon);
-            string sql = "INSERT INTO FUNCIONARIOS(NOME, RG, CPF, ENDERECO, UF)" +
-                         "VALUES (@nome, @rg, @cpf, @endereco, @uf)";
+            string sql = "INSERT INTO FUNCIONARIOS(NOME, RG, CPF, ENDERECO, UF, ID_PERMICAO, ID_USER)" +
+                         "VALUES (@nome, @rg, @cpf, @endereco, @uf, @id_permicao, @id_user)";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@nome", funcionario.nome);
             cmd.Parameters.AddWithValue("@rg", funcionario.rg);
             cmd.Parameters.AddWithValue("@cpf", funcionario.cpf);
             cmd.Parameters.AddWithValue("@endereco", funcionario.endereco);
             cmd.Parameters.AddWithValue("@uf", funcionario.uf);
+            cmd.Parameters.AddWithValue("@id_permicao", funcionario.permicaoID);
+            cmd.Parameters.AddWithValue("@id_user", funcionario.userID);
 
-            try
+            //try
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch
+            //catch
             {
-                Console.WriteLine("ERRO NO INSERT DO FUNCIONARIO");
+           //     Console.WriteLine("ERRO NO INSERT DO FUNCIONARIO");
             }
-            finally
+           // finally
             {
                 conexao.Close();
             }

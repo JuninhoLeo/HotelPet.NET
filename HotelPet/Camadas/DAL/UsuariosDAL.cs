@@ -182,16 +182,16 @@ namespace HotelPet.Camadas.DAL
             cmd.Parameters.AddWithValue("@usuario", usuario.usuario);
             cmd.Parameters.AddWithValue("@senha", usuario.senha);
 
-            try
+            //try
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch
+            //catch
             {
-                Console.WriteLine("ERRO NO INSERT DO USUARIO");
+             //   Console.WriteLine("ERRO NO INSERT DO USUARIO");
             }
-            finally
+            //finally
             {
                 conexao.Close();
             }

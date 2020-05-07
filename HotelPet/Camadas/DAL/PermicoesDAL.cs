@@ -102,6 +102,50 @@ namespace HotelPet.Camadas.DAL
             return listPermicoes;
         }//FIM DO SELECT
 
+        public Permicoes Select(Permicoes permi)
+        {
+            Permicoes listPermicoes = new Permicoes();
+            MySqlConnection conexao = new MySqlConnection(strcon);
+            string sql = "SELECT * FROM PERMICOES " +
+                         "WHERE tipo =@tipo";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@tipo", permi.tipo);
+
+            try
+            {
+                conexao.Open();
+                MySqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    Permicoes permicoes = new Permicoes
+                    {
+                        id = Convert.ToInt32(dados["id"].ToString()),
+                        tipo = dados["tipo"].ToString(),
+                        frmvendas = Convert.ToBoolean(dados["frmvenda"].ToString()),
+                        frmclientes = Convert.ToBoolean(dados["frmcliente"].ToString()),
+                        frmprodutos = Convert.ToBoolean(dados["frmprodutos"].ToString()),
+                        frmservicos = Convert.ToBoolean(dados["frmservicos"].ToString()),
+                        frmfuncionarios = Convert.ToBoolean(dados["frmfuncionarios"].ToString()),
+                        frmConfig = Convert.ToBoolean(dados["frmConfiguracoes"].ToString()),
+                        frmhotel = Convert.ToBoolean(dados["frmhotel"].ToString()),
+                        frmclinica = Convert.ToBoolean(dados["frmclinica"].ToString())
+
+                    };
+                    listPermicoes = permicoes;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("ERRO NO SELECT DA PERMICAO");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listPermicoes;
+        }//FIM DO SELECT
 
         public Permicoes Select(Funcionario func)
         {
@@ -111,7 +155,7 @@ namespace HotelPet.Camadas.DAL
                          "Where id= @id or tipo=@nome";
 
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id", func.id);
+            cmd.Parameters.AddWithValue("@id", func.permicaoID);
             cmd.Parameters.AddWithValue("@nome", func.nome);
 
             try
@@ -166,16 +210,16 @@ namespace HotelPet.Camadas.DAL
             cmd.Parameters.AddWithValue("@frmhotel", permicoes.frmhotel);
             cmd.Parameters.AddWithValue("@frmclinica", permicoes.frmclinica);
 
-            try
+            //try
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch
+           // catch
             {
-                Console.WriteLine("ERRO NO INSERT DA PERMICAO");
+              //  Console.WriteLine("ERRO NO INSERT DA PERMICAO");
             }
-            finally
+            //finally
             {
                 conexao.Close();
             }

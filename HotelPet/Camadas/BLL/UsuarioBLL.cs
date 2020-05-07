@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelPet.Camadas.DAL;
+using HotelPet.Camadas.MODEL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,24 @@ namespace HotelPet.Camadas.BLL
 {
     class UsuarioBLL
     {
+        public int Insert(Usuario usuario)
+        {
+            UsuariosDAL dal = new UsuariosDAL();
+
+            dal.Insert(usuario);
+            usuario = dal.Select(usuario);
+
+            return usuario.id;
+        }
+
+        public List<Usuario> Select()
+        {
+            UsuariosDAL dal = new UsuariosDAL();
+            List<Usuario> lst = dal.Select();
+
+            return lst;
+        }
+
         public string SelectUsr(string user)
         {
             DAL.UsuariosDAL usuario = new DAL.UsuariosDAL();
@@ -40,10 +60,10 @@ namespace HotelPet.Camadas.BLL
             }
         }
 
-        public MODEL.Usuario Select(MODEL.Usuario usuario)
+        public Usuario SelectUpd(Usuario usuario)
         {
-            DAL.UsuariosDAL dalUsr = new DAL.UsuariosDAL();
-            MODEL.Usuario user = dalUsr.Select(usuario);
+            UsuariosDAL dalUsr = new UsuariosDAL();
+            Usuario user = dalUsr.Select(usuario);
 
             if (user.id == 0)
             {

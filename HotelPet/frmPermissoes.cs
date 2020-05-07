@@ -31,6 +31,7 @@ namespace HotelPet
             btnExcluir.Enabled = false;
             btnConfirm.Enabled = false;
             LimpaCampos();
+            ckAltSenha.Visible = false;
         }
 
         private void Atualizabtn(bool action)
@@ -76,6 +77,9 @@ namespace HotelPet
             Atualizabtn(true);
             HabilitaCampos(false);
 
+            ckAltSenha.Visible = false;
+            ckAltSenha.Checked = false;
+
         }
 
         private void confirm()
@@ -120,6 +124,9 @@ namespace HotelPet
 
         private void dgvPermicoes_DoubleClick(object sender, EventArgs e)
         {
+            ckAltSenha.Visible = true;
+            ckAltSenha.Checked = false;
+            
             HabilitaCampos(true);
             btnConfirm.Enabled = true;
             btnBusca.Enabled = true;
@@ -154,7 +161,8 @@ namespace HotelPet
             txtEndereco.Text = dgvPermicoes.SelectedRows[0].Cells["endereco"].Value.ToString();
             txtUF.Text = dgvPermicoes.SelectedRows[0].Cells["uf"].Value.ToString();
             AtualizaRdb(tipo);
-
+            txtSenha.Enabled = false;
+            checkPwd.Enabled = false;
         }
 
         private void AtualizaRdb(Permicoes permicao)
@@ -193,24 +201,26 @@ namespace HotelPet
             funcionario.endereco = txtEndereco.Text;
             funcionario.uf = txtUF.Text;
 
-            _ = rdbCliSim.Checked == true ? permicao.frmclientes = true : permicao.frmclientes = false;
-            _ = rdbConfigSim.Checked == true ? permicao.frmConfig = true : permicao.frmConfig = false;
-            _ = rdbFuncSim.Checked == true ? permicao.frmfuncionarios = true : permicao.frmfuncionarios = false;
-            _ = rdbProdSim.Checked == true ? permicao.frmprodutos = true : permicao.frmprodutos = false;
-            _ = rdbServSim.Checked == true ? permicao.frmservicos = true : permicao.frmservicos = false;
-            _ = rdbVendSim.Checked == true ? permicao.frmvendas = true : permicao.frmvendas = false;
-            _ = rdbClinSim.Checked == true ? permicao.frmclinica = true : permicao.frmclinica = false;
-            _ = rdbHotelSim.Checked == true ? permicao.frmhotel = true : permicao.frmhotel = false;
-                       
-            Usuario user = bllUser.Select(usuario);
+            permicao.frmclientes = (rdbCliSim.Checked) ? true : false;
+            permicao.frmConfig = (rdbConfigSim.Checked) ? true : false;
+            permicao.frmfuncionarios = (rdbFuncSim.Checked) ? true : false;
+            permicao.frmprodutos = (rdbProdSim.Checked) ? true : false;
+            permicao.frmservicos = (rdbServSim.Checked) ? true : false;
+            permicao.frmvendas = (rdbVendSim.Checked) ? true : false;
+            permicao.frmclinica = (rdbClinSim.Checked) ? true : false;
+            permicao.frmhotel = (rdbHotelSim.Checked) ? true : false;
+
+            Usuario user = bllUser.SelectUpd(usuario);
             funcionario.userID = user.id;
 
             Permicoes Perm = bllPerm.Select(funcionario, permicao);
             funcionario.permicaoID = Perm.id;
             
-            bllFunc.Select(funcionario);
+            bllFunc.SelectUpd(funcionario);
 
             AtualizaView();
+            ckAltSenha.Checked = false;
+            ckAltSenha.Visible = false;
         }
 
         private void AtualizaView()
@@ -228,7 +238,10 @@ namespace HotelPet
             Atualizabtn(true);
             HabilitaCampos(false);
             LimpaCampos();
-           
+
+            ckAltSenha.Checked = false;
+            ckAltSenha.Visible = false;
+
         }
 
         private void LimpaCampos()
@@ -271,9 +284,9 @@ namespace HotelPet
 
             if (s != "")
             {                       
-                for(int i = txtUser.Text.Length; i > 0; i--)
+                for(int cont = txtUser.Text.Length; cont > 0; cont--)
                 {
-                    s = txtUser.Text.Substring(txtUser.Text.Length -i, 1);
+                    s = txtUser.Text.Substring(txtUser.Text.Length -cont, 1);
                     if (s == " ")
                     {
                         break;
@@ -289,14 +302,27 @@ namespace HotelPet
             {
                 lblWarning.Text = "";
             }
+
+            Usuario usuario = new Usuario();
+            UsuariosDAL dal = new UsuariosDAL();
+            List<Usuario> lst = dal.Select();
+            int i = 0;
+
+            foreach (var User in lst)
+            {
+                i += (User.usuario.ToUpper() == txtUser.Text.ToUpper()) ? 1 : 0;
+            }
+
+            if (i > 0)
+            {
+                lblWarning.Text = "Esse nome de usuário já está em uso!";
+            }
+
         }
 
-        private void ValidarCampos()
-        {
-            if (txtUser.Text == "")
-            {
-                MessageBox.Show("Nome de usuário não pode ser vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void ValidarCampos(string campo)
+        {        
+            MessageBox.Show("O campo: " + campo + " está vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
@@ -319,6 +345,133 @@ namespace HotelPet
             {
                 txtBusca.ForeColor = Color.DarkGray;
                 txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            }
+        }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            string pass = txtSenha.Text.Trim();
+            byte[] passtohash = Encoding.UTF8.GetBytes(pass);
+
+            Usuario usuario = new Usuario();
+            Funcionario funcionario = new Funcionario();
+            Permicoes permicao = new Permicoes();
+
+            UsuarioBLL bllUser = new UsuarioBLL();
+            FuncionarioBLL bllFunc = new FuncionarioBLL();
+            PermicoesBLL bllPerm = new PermicoesBLL();
+
+            string pwd = Hash(passtohash);
+
+            usuario.usuario = txtUser.Text;
+            usuario.senha = pwd;
+
+            funcionario.nome = txtNome.Text;
+            funcionario.rg = txtRG.Text;
+            funcionario.cpf = txtCPF.Text;
+            funcionario.endereco = txtEndereco.Text;
+            funcionario.uf = txtUF.Text;
+
+            permicao.frmclientes = (rdbCliSim.Checked) ?  true : false;
+            permicao.frmConfig = (rdbConfigSim.Checked) ? true : false;
+            permicao.frmfuncionarios= (rdbFuncSim.Checked) ? true : false;
+            permicao.frmprodutos= (rdbProdSim.Checked) ? true : false;
+            permicao.frmservicos= (rdbServSim.Checked) ? true : false;
+            permicao.frmvendas= (rdbVendSim.Checked) ? true : false;
+            permicao.frmclinica= (rdbClinSim.Checked) ? true : false;
+            permicao.frmhotel= (rdbHotelSim.Checked) ? true : false;
+
+            List<Usuario> lstuser = new List<Usuario>();
+            lstuser = bllUser.Select();
+            int cont = 0;
+            string estiver ="OK";
+
+            if (txtNome.Text.Trim() == "")
+            {
+                ValidarCampos("Nome");
+                estiver = "Nao";
+            }
+            else
+            {
+                if (txtRG.Text.Trim() == "")
+                {
+                    ValidarCampos("RG");
+                    estiver = "Nao";
+                }
+                else
+                {
+                    if (txtCPF.Text.Trim() == "")
+                    {
+                        ValidarCampos("CPF");
+                        estiver = "Nao";
+                    }
+                    else
+                    {
+                        if (txtEndereco.Text.Trim() == "")
+                        {
+                            ValidarCampos("Endereço");
+                            estiver = "Nao";
+                        }
+                        else
+                        {
+                            if (txtUF.Text.Trim() == "")
+                            {
+                                ValidarCampos("UF");
+                                estiver = "Nao";
+                            }
+                            else
+                            {
+                                if (txtUser.Text.Trim() == "")
+                                {
+                                    ValidarCampos("User");
+                                    estiver = "Nao";
+                                }
+                                else
+                                {
+                                    if (txtSenha.Text.Trim() == "")
+                                    {
+                                        ValidarCampos("Senha");
+                                        estiver = "Nao";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (estiver == "OK")
+            {
+                foreach (var USER in lstuser)
+                {
+                    cont += (USER.usuario == txtUser.Text) ? 1 : 0;
+                }
+
+                if (cont == 0)
+                {
+                    bllFunc.Insert(funcionario, usuario, permicao);
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel inserir os dados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+            AtualizaView();
+        }
+
+        private void ckAltSenha_Click(object sender, EventArgs e)
+        {
+            if (ckAltSenha.Checked)
+            {
+                txtSenha.Enabled = true;
+                checkPwd.Enabled = true;
+            }
+            else
+            {
+                txtSenha.Enabled = false;
+                checkPwd.Enabled = false;
             }
         }
     }

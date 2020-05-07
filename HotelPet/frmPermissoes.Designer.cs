@@ -89,6 +89,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ckAltSenha = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermicoes)).BeginInit();
             this.gpbVendas.SuspendLayout();
             this.gpbClientes.SuspendLayout();
@@ -121,7 +123,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(27, 325);
+            this.lblUsuario.Location = new System.Drawing.Point(419, 320);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(58, 16);
             this.lblUsuario.TabIndex = 4;
@@ -130,7 +132,7 @@
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(87, 322);
+            this.txtUser.Location = new System.Drawing.Point(479, 317);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(143, 22);
             this.txtUser.TabIndex = 3;
@@ -140,17 +142,17 @@
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(87, 374);
+            this.txtSenha.Location = new System.Drawing.Point(479, 369);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'x';
-            this.txtSenha.Size = new System.Drawing.Size(143, 22);
+            this.txtSenha.Size = new System.Drawing.Size(130, 22);
             this.txtSenha.TabIndex = 4;
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(35, 377);
+            this.lblSenha.Location = new System.Drawing.Point(427, 372);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(50, 16);
             this.lblSenha.TabIndex = 6;
@@ -159,7 +161,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(310, 325);
+            this.txtNome.Location = new System.Drawing.Point(81, 320);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(306, 22);
             this.txtNome.TabIndex = 6;
@@ -168,7 +170,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(260, 328);
+            this.lblNome.Location = new System.Drawing.Point(31, 323);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(48, 16);
             this.lblNome.TabIndex = 8;
@@ -177,7 +179,7 @@
             // txtRG
             // 
             this.txtRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRG.Location = new System.Drawing.Point(310, 359);
+            this.txtRG.Location = new System.Drawing.Point(81, 354);
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(219, 22);
             this.txtRG.TabIndex = 7;
@@ -186,7 +188,7 @@
             // 
             this.lblRG.AutoSize = true;
             this.lblRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRG.Location = new System.Drawing.Point(277, 362);
+            this.lblRG.Location = new System.Drawing.Point(48, 357);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(31, 16);
             this.lblRG.TabIndex = 10;
@@ -195,7 +197,7 @@
             // txtCPF
             // 
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(310, 393);
+            this.txtCPF.Location = new System.Drawing.Point(81, 388);
             this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(219, 22);
@@ -205,7 +207,7 @@
             // 
             this.lblCPF.AutoSize = true;
             this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPF.Location = new System.Drawing.Point(271, 396);
+            this.lblCPF.Location = new System.Drawing.Point(42, 391);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(37, 16);
             this.lblCPF.TabIndex = 12;
@@ -214,7 +216,7 @@
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(310, 427);
+            this.txtEndereco.Location = new System.Drawing.Point(81, 422);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(306, 22);
             this.txtEndereco.TabIndex = 9;
@@ -223,7 +225,7 @@
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(238, 430);
+            this.lblEndereco.Location = new System.Drawing.Point(9, 425);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(70, 16);
             this.lblEndereco.TabIndex = 14;
@@ -232,7 +234,7 @@
             // txtUF
             // 
             this.txtUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUF.Location = new System.Drawing.Point(310, 461);
+            this.txtUF.Location = new System.Drawing.Point(81, 456);
             this.txtUF.MaxLength = 7;
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(66, 22);
@@ -242,7 +244,7 @@
             // 
             this.lblUF.AutoSize = true;
             this.lblUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUF.Location = new System.Drawing.Point(279, 464);
+            this.lblUF.Location = new System.Drawing.Point(50, 459);
             this.lblUF.Name = "lblUF";
             this.lblUF.Size = new System.Drawing.Size(29, 16);
             this.lblUF.TabIndex = 16;
@@ -256,7 +258,7 @@
             this.gpbVendas.Controls.Add(this.label1);
             this.gpbVendas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gpbVendas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbVendas.Location = new System.Drawing.Point(679, 291);
+            this.gpbVendas.Location = new System.Drawing.Point(728, 291);
             this.gpbVendas.Name = "gpbVendas";
             this.gpbVendas.Size = new System.Drawing.Size(268, 33);
             this.gpbVendas.TabIndex = 42;
@@ -277,12 +279,12 @@
             // rdbVendSim
             // 
             this.rdbVendSim.AutoSize = true;
+            this.rdbVendSim.BackColor = System.Drawing.Color.White;
             this.rdbVendSim.Location = new System.Drawing.Point(168, 12);
             this.rdbVendSim.Name = "rdbVendSim";
             this.rdbVendSim.Size = new System.Drawing.Size(14, 13);
             this.rdbVendSim.TabIndex = 11;
-            this.rdbVendSim.TabStop = true;
-            this.rdbVendSim.UseVisualStyleBackColor = true;
+            this.rdbVendSim.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -303,7 +305,7 @@
             this.gpbClientes.Controls.Add(this.rdbCliNao);
             this.gpbClientes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbClientes.Location = new System.Drawing.Point(679, 324);
+            this.gpbClientes.Location = new System.Drawing.Point(728, 324);
             this.gpbClientes.Name = "gpbClientes";
             this.gpbClientes.Size = new System.Drawing.Size(268, 33);
             this.gpbClientes.TabIndex = 43;
@@ -349,7 +351,7 @@
             this.gpbProdutos.Controls.Add(this.label5);
             this.gpbProdutos.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbProdutos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbProdutos.Location = new System.Drawing.Point(679, 357);
+            this.gpbProdutos.Location = new System.Drawing.Point(728, 357);
             this.gpbProdutos.Name = "gpbProdutos";
             this.gpbProdutos.Size = new System.Drawing.Size(268, 33);
             this.gpbProdutos.TabIndex = 44;
@@ -396,7 +398,7 @@
             this.gpbFuncionarios.Controls.Add(this.label7);
             this.gpbFuncionarios.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbFuncionarios.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbFuncionarios.Location = new System.Drawing.Point(679, 423);
+            this.gpbFuncionarios.Location = new System.Drawing.Point(728, 423);
             this.gpbFuncionarios.Name = "gpbFuncionarios";
             this.gpbFuncionarios.Size = new System.Drawing.Size(268, 33);
             this.gpbFuncionarios.TabIndex = 46;
@@ -443,7 +445,7 @@
             this.gpbServicos.Controls.Add(this.label6);
             this.gpbServicos.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbServicos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbServicos.Location = new System.Drawing.Point(679, 390);
+            this.gpbServicos.Location = new System.Drawing.Point(728, 390);
             this.gpbServicos.Name = "gpbServicos";
             this.gpbServicos.Size = new System.Drawing.Size(268, 33);
             this.gpbServicos.TabIndex = 45;
@@ -487,7 +489,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label8.Location = new System.Drawing.Point(19, 279);
+            this.label8.Location = new System.Drawing.Point(19, 280);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(190, 20);
             this.label8.TabIndex = 47;
@@ -498,7 +500,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label9.Location = new System.Drawing.Point(667, 263);
+            this.label9.Location = new System.Drawing.Point(716, 263);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 48;
@@ -524,7 +526,7 @@
             this.gpbHotel.Controls.Add(this.label4);
             this.gpbHotel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbHotel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbHotel.Location = new System.Drawing.Point(679, 456);
+            this.gpbHotel.Location = new System.Drawing.Point(728, 456);
             this.gpbHotel.Name = "gpbHotel";
             this.gpbHotel.Size = new System.Drawing.Size(268, 33);
             this.gpbHotel.TabIndex = 56;
@@ -571,7 +573,7 @@
             this.gpbClinica.Controls.Add(this.label11);
             this.gpbClinica.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbClinica.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbClinica.Location = new System.Drawing.Point(679, 489);
+            this.gpbClinica.Location = new System.Drawing.Point(728, 489);
             this.gpbClinica.Name = "gpbClinica";
             this.gpbClinica.Size = new System.Drawing.Size(268, 33);
             this.gpbClinica.TabIndex = 57;
@@ -613,7 +615,7 @@
             // checkPwd
             // 
             this.checkPwd.AutoSize = true;
-            this.checkPwd.Location = new System.Drawing.Point(87, 402);
+            this.checkPwd.Location = new System.Drawing.Point(481, 397);
             this.checkPwd.Name = "checkPwd";
             this.checkPwd.Size = new System.Drawing.Size(93, 17);
             this.checkPwd.TabIndex = 5;
@@ -630,7 +632,7 @@
             this.gpbConfig.Controls.Add(this.label12);
             this.gpbConfig.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbConfig.Location = new System.Drawing.Point(679, 522);
+            this.gpbConfig.Location = new System.Drawing.Point(728, 522);
             this.gpbConfig.Name = "gpbConfig";
             this.gpbConfig.Size = new System.Drawing.Size(268, 33);
             this.gpbConfig.TabIndex = 58;
@@ -673,7 +675,7 @@
             // 
             this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAviso.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblAviso.Location = new System.Drawing.Point(27, 422);
+            this.lblAviso.Location = new System.Drawing.Point(422, 417);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(193, 67);
             this.lblAviso.TabIndex = 59;
@@ -681,7 +683,7 @@
             // lblWarning
             // 
             this.lblWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning.Location = new System.Drawing.Point(27, 346);
+            this.lblWarning.Location = new System.Drawing.Point(422, 341);
             this.lblWarning.Name = "lblWarning";
             this.lblWarning.Size = new System.Drawing.Size(224, 16);
             this.lblWarning.TabIndex = 60;
@@ -691,20 +693,21 @@
             this.btnGravar.BackColor = System.Drawing.Color.LightGray;
             this.btnGravar.Image = global::HotelPet.Properties.Resources.next_user_16730;
             this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGravar.Location = new System.Drawing.Point(1033, 320);
+            this.btnGravar.Location = new System.Drawing.Point(1081, 320);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(104, 74);
             this.btnGravar.TabIndex = 61;
             this.btnGravar.Text = "&Gravar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGravar.UseVisualStyleBackColor = false;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.LightGray;
             this.btnConfirm.Image = global::HotelPet.Properties.Resources.download_update_user_16728;
             this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConfirm.Location = new System.Drawing.Point(1033, 400);
+            this.btnConfirm.Location = new System.Drawing.Point(1081, 400);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(104, 74);
             this.btnConfirm.TabIndex = 58;
@@ -716,7 +719,7 @@
             // label10
             // 
             this.label10.Image = global::HotelPet.Properties.Resources.delete_delete_exit_1577;
-            this.label10.Location = new System.Drawing.Point(894, 255);
+            this.label10.Location = new System.Drawing.Point(943, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 36);
             this.label10.TabIndex = 52;
@@ -726,7 +729,7 @@
             this.btnBusca.BackColor = System.Drawing.Color.LightGray;
             this.btnBusca.Image = global::HotelPet.Properties.Resources.search_find_user_16727;
             this.btnBusca.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBusca.Location = new System.Drawing.Point(1033, 160);
+            this.btnBusca.Location = new System.Drawing.Point(1081, 160);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(104, 74);
             this.btnBusca.TabIndex = 2;
@@ -738,7 +741,7 @@
             // btnSair
             // 
             this.btnSair.Image = global::HotelPet.Properties.Resources.X;
-            this.btnSair.Location = new System.Drawing.Point(1079, 12);
+            this.btnSair.Location = new System.Drawing.Point(1127, 12);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(58, 54);
             this.btnSair.TabIndex = 28;
@@ -748,7 +751,7 @@
             // label3
             // 
             this.label3.Image = global::HotelPet.Properties.Resources.check_ok_accept_apply_1582;
-            this.label3.Location = new System.Drawing.Point(838, 255);
+            this.label3.Location = new System.Drawing.Point(886, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 36);
             this.label3.TabIndex = 24;
@@ -758,7 +761,7 @@
             this.btnExcluir.BackColor = System.Drawing.Color.LightGray;
             this.btnExcluir.Image = global::HotelPet.Properties.Resources.delete_remove_user_16732;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExcluir.Location = new System.Drawing.Point(1033, 479);
+            this.btnExcluir.Location = new System.Drawing.Point(1081, 479);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(104, 74);
             this.btnExcluir.TabIndex = 27;
@@ -772,7 +775,7 @@
             this.btnNovo.BackColor = System.Drawing.Color.LightGray;
             this.btnNovo.Image = global::HotelPet.Properties.Resources.new_add_user_167341;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNovo.Location = new System.Drawing.Point(1033, 240);
+            this.btnNovo.Location = new System.Drawing.Point(1081, 240);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(104, 74);
             this.btnNovo.TabIndex = 25;
@@ -781,13 +784,37 @@
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label13.Location = new System.Drawing.Point(412, 280);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(153, 20);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "Dados do Usuário";
+            // 
+            // ckAltSenha
+            // 
+            this.ckAltSenha.AutoSize = true;
+            this.ckAltSenha.Location = new System.Drawing.Point(615, 372);
+            this.ckAltSenha.Name = "ckAltSenha";
+            this.ckAltSenha.Size = new System.Drawing.Size(88, 17);
+            this.ckAltSenha.TabIndex = 63;
+            this.ckAltSenha.TabStop = false;
+            this.ckAltSenha.Text = "Alterar senha";
+            this.ckAltSenha.UseVisualStyleBackColor = true;
+            this.ckAltSenha.Click += new System.EventHandler(this.ckAltSenha_Click);
+            // 
             // frmPermissoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1149, 565);
+            this.ClientSize = new System.Drawing.Size(1199, 565);
             this.ControlBox = false;
+            this.Controls.Add(this.ckAltSenha);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.lblAviso);
@@ -825,6 +852,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvPermicoes);
+            this.Controls.Add(this.label13);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -916,5 +944,7 @@
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Label lblWarning;
         private System.Windows.Forms.Button btnGravar;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox ckAltSenha;
     }
 }

@@ -10,6 +10,23 @@ namespace HotelPet.Camadas.BLL
 {
     class PermicoesBLL
     {
+        public List<Permicoes> Select()
+        {
+            PermicoesDAL dal = new PermicoesDAL();
+            List<Permicoes> lst = dal.Select();
+
+            return lst;
+        }
+
+        public int Insert(Permicoes permicoes)
+        {
+            PermicoesDAL dal = new PermicoesDAL();
+            dal.Insert(permicoes);
+            permicoes = dal.Select(permicoes);
+
+            return permicoes.id;
+        }
+
         public Permicoes Select(Funcionario func, Permicoes lst)
         {
             PermicoesDAL permicoes = new PermicoesDAL();
