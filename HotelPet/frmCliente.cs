@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelPet.Camadas.DAL;
+using HotelPet.Camadas.MODEL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +43,43 @@ namespace HotelPet
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            if (txtBusca.Text == "Digite aqui o Nome do funcionario:")
+            {
+                txtBusca.ForeColor = Color.Black;
+                txtBusca.Text = "";
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (txtBusca.Text == "")
+            {
+                txtBusca.ForeColor = Color.DarkGray;
+                txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            }
+        }
+
+        private void txtBusca_KeyUp(object sender, KeyEventArgs e)
+        {
+            ClienteDAL dal = new ClienteDAL();
+            Cliente cliente = new Cliente();
+
+            cliente.nome = txtBusca.Text;
+
+            dgvCliente.DataSource = "";
+            dgvCliente.DataSource = dal.SelectConf(cliente);
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+            ClienteDAL dal = new ClienteDAL();
+
+            dgvCliente.DataSource = "";
+            dgvCliente.DataSource = dal.Select();
         }
     }
 }

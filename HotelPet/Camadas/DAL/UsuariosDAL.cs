@@ -225,21 +225,21 @@ namespace HotelPet.Camadas.DAL
         public void Delete(int id)
         {
             MySqlConnection conexao = new MySqlConnection(strCon);
-            string sql = "DELETE FROM USUARIOS" +
-                         "WHERE id=@id ";
+            string sql = "DELETE FROM USUARIOS " +
+                         "WHERE ID=@id";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id",id);
 
-            try
+           // try
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch
+           // catch
             {
-                Console.WriteLine("ERRO NO DELETE DO USUARIO");
+           //     Console.WriteLine("ERRO NO DELETE DO USUARIO");
             }
-            finally
+           // finally
             {
                 conexao.Close();
             }

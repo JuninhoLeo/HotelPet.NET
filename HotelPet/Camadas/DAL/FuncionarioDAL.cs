@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HotelPet.Camadas.MODEL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,7 +17,8 @@ namespace HotelPet.Camadas.DAL
         {
             List<MODEL.Funcionario> listFunc = new List<MODEL.Funcionario>();
             MySqlConnection conexao = new MySqlConnection(strCon);
-            string sql = "SELECT * FROM FUNCIONARIOS";
+            string sql = "SELECT * FROM FUNCIONARIOS " +
+                         "WHERE NOME ";
             MySqlCommand cmd = new MySqlCommand(sql, conexao);
 
             try
@@ -44,6 +46,46 @@ namespace HotelPet.Camadas.DAL
                 Console.WriteLine("ERRO NO SELECT DO FUNCIONARIO");
             }
             finally
+            {
+                conexao.Close();
+            }
+
+            return listFunc;
+        }// fim do select
+
+        public List<Funcionario> SelectConf(Funcionario func)
+        {
+            List<Funcionario> listFunc = new List<Funcionario>();
+            MySqlConnection conexao = new MySqlConnection(strCon);
+            string sql = "SELECT * FROM FUNCIONARIOS " +
+                         "Where NOME Like '%"+func.nome+"%'";
+            MySqlCommand cmd = new MySqlCommand(sql, conexao);
+
+           // try
+            {
+                conexao.Open();
+                MySqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Funcionario funcionario = new MODEL.Funcionario
+                    {
+                        id = Convert.ToInt32(dados["id"].ToString()),
+                        nome = dados["nome"].ToString(),
+                        rg = dados["rg"].ToString(),
+                        cpf = dados["cpf"].ToString(),
+                        endereco = dados["endereco"].ToString(),
+                        uf = dados["uf"].ToString(),
+                        permicaoID = Convert.ToInt32(dados["id_permicao"].ToString()),
+                        userID = Convert.ToInt32(dados["id_user"].ToString())
+                    };
+                    listFunc.Add(funcionario);
+                }
+            }
+           // catch
+            {
+           //     Console.WriteLine("ERRO NO SELECT DO FUNCIONARIO");
+            }
+           // finally
             {
                 conexao.Close();
             }

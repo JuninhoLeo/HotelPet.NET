@@ -49,7 +49,22 @@ namespace HotelPet
         
         private void button3_Click(object sender, EventArgs e)
         {
+            FuncionarioBLL bll = new FuncionarioBLL();
+            Funcionario funcionario = new Funcionario();
+            
+            funcionario.id = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString());
+            funcionario.permicaoID = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["permicaoID"].Value.ToString());
+            funcionario.userID = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["userID"].Value.ToString());
+            funcionario.nome = txtNome.Text;
+            funcionario.rg = txtRG.Text;
+            funcionario.cpf = txtCPF.Text;
+            funcionario.endereco = txtEndereco.Text;
+            funcionario.uf = txtUF.Text;
 
+            bll.Delete(funcionario);
+
+            LimpaCampos();
+            AtualizaView();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -225,7 +240,12 @@ namespace HotelPet
 
         private void AtualizaView()
         {
+            dgvPermicoes.Visible = true;
+
             FuncionarioDAL dal = new FuncionarioDAL();
+            //Funcionario funcionario = new Funcionario();
+
+            //funcionario.nome = "";
             dgvPermicoes.DataSource = "";
             dgvPermicoes.DataSource = dal.Select();
 
@@ -267,6 +287,8 @@ namespace HotelPet
             rdbClinSim.Checked = true;
             rdbConfigSim.Checked = true;
             checkPwd.Checked = false;
+            ckAltSenha.Checked = false;
+            ckAltSenha.Visible = false;
         }
 
         private String Hash(byte[] val)
@@ -456,9 +478,11 @@ namespace HotelPet
                     MessageBox.Show("Não foi possivel inserir os dados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                LimpaCampos();
             }
 
             AtualizaView();
+
         }
 
         private void ckAltSenha_Click(object sender, EventArgs e)
@@ -473,6 +497,33 @@ namespace HotelPet
                 txtSenha.Enabled = false;
                 checkPwd.Enabled = false;
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusca_KeyUp(object sender, KeyEventArgs e)
+        {
+            FuncionarioDAL dal = new FuncionarioDAL();
+            Funcionario funcionario = new Funcionario();
+
+            funcionario.nome = txtBusca.Text;
+
+            dgvPermicoes.DataSource = "";
+            dgvPermicoes.DataSource = dal.SelectConf(funcionario);
+
+        }
+
+        private void txtCPF_KeyUp(object sender, KeyEventArgs e)
+        {
+            //000.000.000-00                        
         }
     }
 }

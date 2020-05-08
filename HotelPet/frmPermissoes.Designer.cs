@@ -35,9 +35,7 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            this.txtRG = new System.Windows.Forms.TextBox();
             this.lblRG = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.lblCPF = new System.Windows.Forms.Label();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.lblEndereco = new System.Windows.Forms.Label();
@@ -91,6 +89,9 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.ckAltSenha = new System.Windows.Forms.CheckBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtRG = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermicoes)).BeginInit();
             this.gpbVendas.SuspendLayout();
             this.gpbClientes.SuspendLayout();
@@ -115,7 +116,7 @@
             this.dgvPermicoes.Location = new System.Drawing.Point(12, 12);
             this.dgvPermicoes.Name = "dgvPermicoes";
             this.dgvPermicoes.Size = new System.Drawing.Size(672, 234);
-            this.dgvPermicoes.TabIndex = 0;
+            this.dgvPermicoes.TabIndex = 1;
             this.dgvPermicoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvPermicoes.DoubleClick += new System.EventHandler(this.dgvPermicoes_DoubleClick);
             // 
@@ -126,7 +127,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(419, 320);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(58, 16);
-            this.lblUsuario.TabIndex = 4;
+            this.lblUsuario.TabIndex = 53;
             this.lblUsuario.Text = "Usuário:";
             // 
             // txtUser
@@ -135,7 +136,7 @@
             this.txtUser.Location = new System.Drawing.Point(479, 317);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(143, 22);
-            this.txtUser.TabIndex = 3;
+            this.txtUser.TabIndex = 7;
             this.txtUser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyUp);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
@@ -146,7 +147,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'x';
             this.txtSenha.Size = new System.Drawing.Size(130, 22);
-            this.txtSenha.TabIndex = 4;
+            this.txtSenha.TabIndex = 8;
             // 
             // lblSenha
             // 
@@ -155,7 +156,7 @@
             this.lblSenha.Location = new System.Drawing.Point(427, 372);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(50, 16);
-            this.lblSenha.TabIndex = 6;
+            this.lblSenha.TabIndex = 54;
             this.lblSenha.Text = "Senha:";
             // 
             // txtNome
@@ -163,8 +164,8 @@
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(81, 320);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(306, 22);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.Size = new System.Drawing.Size(278, 22);
+            this.txtNome.TabIndex = 2;
             // 
             // lblNome
             // 
@@ -173,16 +174,8 @@
             this.lblNome.Location = new System.Drawing.Point(31, 323);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(48, 16);
-            this.lblNome.TabIndex = 8;
+            this.lblNome.TabIndex = 48;
             this.lblNome.Text = "Nome:";
-            // 
-            // txtRG
-            // 
-            this.txtRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRG.Location = new System.Drawing.Point(81, 354);
-            this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(219, 22);
-            this.txtRG.TabIndex = 7;
             // 
             // lblRG
             // 
@@ -191,17 +184,8 @@
             this.lblRG.Location = new System.Drawing.Point(48, 357);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(31, 16);
-            this.lblRG.TabIndex = 10;
+            this.lblRG.TabIndex = 49;
             this.lblRG.Text = "RG:";
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(81, 388);
-            this.txtCPF.MaxLength = 11;
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(219, 22);
-            this.txtCPF.TabIndex = 8;
             // 
             // lblCPF
             // 
@@ -210,7 +194,7 @@
             this.lblCPF.Location = new System.Drawing.Point(42, 391);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(37, 16);
-            this.lblCPF.TabIndex = 12;
+            this.lblCPF.TabIndex = 50;
             this.lblCPF.Text = "CPF:";
             // 
             // txtEndereco
@@ -218,8 +202,8 @@
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndereco.Location = new System.Drawing.Point(81, 422);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(306, 22);
-            this.txtEndereco.TabIndex = 9;
+            this.txtEndereco.Size = new System.Drawing.Size(278, 22);
+            this.txtEndereco.TabIndex = 5;
             // 
             // lblEndereco
             // 
@@ -228,17 +212,17 @@
             this.lblEndereco.Location = new System.Drawing.Point(9, 425);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(70, 16);
-            this.lblEndereco.TabIndex = 14;
+            this.lblEndereco.TabIndex = 51;
             this.lblEndereco.Text = "Endereço:";
             // 
             // txtUF
             // 
             this.txtUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUF.Location = new System.Drawing.Point(81, 456);
-            this.txtUF.MaxLength = 7;
+            this.txtUF.MaxLength = 2;
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(66, 22);
-            this.txtUF.TabIndex = 10;
+            this.txtUF.TabIndex = 6;
             // 
             // lblUF
             // 
@@ -247,7 +231,7 @@
             this.lblUF.Location = new System.Drawing.Point(50, 459);
             this.lblUF.Name = "lblUF";
             this.lblUF.Size = new System.Drawing.Size(29, 16);
-            this.lblUF.TabIndex = 16;
+            this.lblUF.TabIndex = 52;
             this.lblUF.Text = "UF:";
             // 
             // gpbVendas
@@ -261,7 +245,7 @@
             this.gpbVendas.Location = new System.Drawing.Point(728, 291);
             this.gpbVendas.Name = "gpbVendas";
             this.gpbVendas.Size = new System.Drawing.Size(268, 33);
-            this.gpbVendas.TabIndex = 42;
+            this.gpbVendas.TabIndex = 40;
             this.gpbVendas.TabStop = false;
             // 
             // rdbVendNao
@@ -272,7 +256,7 @@
             this.rdbVendNao.Location = new System.Drawing.Point(225, 12);
             this.rdbVendNao.Name = "rdbVendNao";
             this.rdbVendNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbVendNao.TabIndex = 12;
+            this.rdbVendNao.TabIndex = 17;
             this.rdbVendNao.TabStop = true;
             this.rdbVendNao.UseVisualStyleBackColor = true;
             // 
@@ -283,7 +267,7 @@
             this.rdbVendSim.Location = new System.Drawing.Point(168, 12);
             this.rdbVendSim.Name = "rdbVendSim";
             this.rdbVendSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbVendSim.TabIndex = 11;
+            this.rdbVendSim.TabIndex = 16;
             this.rdbVendSim.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -294,7 +278,7 @@
             this.label1.Location = new System.Drawing.Point(6, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 38;
+            this.label1.TabIndex = 32;
             this.label1.Text = "Vendas";
             // 
             // gpbClientes
@@ -308,7 +292,7 @@
             this.gpbClientes.Location = new System.Drawing.Point(728, 324);
             this.gpbClientes.Name = "gpbClientes";
             this.gpbClientes.Size = new System.Drawing.Size(268, 33);
-            this.gpbClientes.TabIndex = 43;
+            this.gpbClientes.TabIndex = 41;
             this.gpbClientes.TabStop = false;
             // 
             // rdbCliSim
@@ -318,7 +302,7 @@
             this.rdbCliSim.Location = new System.Drawing.Point(168, 12);
             this.rdbCliSim.Name = "rdbCliSim";
             this.rdbCliSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbCliSim.TabIndex = 13;
+            this.rdbCliSim.TabIndex = 18;
             this.rdbCliSim.TabStop = true;
             this.rdbCliSim.UseVisualStyleBackColor = true;
             // 
@@ -329,7 +313,7 @@
             this.label2.Location = new System.Drawing.Point(6, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 38;
+            this.label2.TabIndex = 33;
             this.label2.Text = "Clientes";
             // 
             // rdbCliNao
@@ -339,7 +323,7 @@
             this.rdbCliNao.Location = new System.Drawing.Point(225, 12);
             this.rdbCliNao.Name = "rdbCliNao";
             this.rdbCliNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbCliNao.TabIndex = 14;
+            this.rdbCliNao.TabIndex = 19;
             this.rdbCliNao.TabStop = true;
             this.rdbCliNao.UseVisualStyleBackColor = true;
             // 
@@ -354,7 +338,7 @@
             this.gpbProdutos.Location = new System.Drawing.Point(728, 357);
             this.gpbProdutos.Name = "gpbProdutos";
             this.gpbProdutos.Size = new System.Drawing.Size(268, 33);
-            this.gpbProdutos.TabIndex = 44;
+            this.gpbProdutos.TabIndex = 42;
             this.gpbProdutos.TabStop = false;
             // 
             // rdbProdSim
@@ -364,7 +348,7 @@
             this.rdbProdSim.Location = new System.Drawing.Point(168, 12);
             this.rdbProdSim.Name = "rdbProdSim";
             this.rdbProdSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbProdSim.TabIndex = 15;
+            this.rdbProdSim.TabIndex = 20;
             this.rdbProdSim.TabStop = true;
             this.rdbProdSim.UseVisualStyleBackColor = true;
             // 
@@ -376,7 +360,7 @@
             this.rdbProdNao.Location = new System.Drawing.Point(225, 12);
             this.rdbProdNao.Name = "rdbProdNao";
             this.rdbProdNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbProdNao.TabIndex = 16;
+            this.rdbProdNao.TabIndex = 21;
             this.rdbProdNao.TabStop = true;
             this.rdbProdNao.UseVisualStyleBackColor = true;
             // 
@@ -387,7 +371,7 @@
             this.label5.Location = new System.Drawing.Point(6, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 38;
+            this.label5.TabIndex = 34;
             this.label5.Text = "Produtos";
             // 
             // gpbFuncionarios
@@ -401,7 +385,7 @@
             this.gpbFuncionarios.Location = new System.Drawing.Point(728, 423);
             this.gpbFuncionarios.Name = "gpbFuncionarios";
             this.gpbFuncionarios.Size = new System.Drawing.Size(268, 33);
-            this.gpbFuncionarios.TabIndex = 46;
+            this.gpbFuncionarios.TabIndex = 44;
             this.gpbFuncionarios.TabStop = false;
             // 
             // rdbFuncSim
@@ -411,7 +395,7 @@
             this.rdbFuncSim.Location = new System.Drawing.Point(168, 13);
             this.rdbFuncSim.Name = "rdbFuncSim";
             this.rdbFuncSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbFuncSim.TabIndex = 19;
+            this.rdbFuncSim.TabIndex = 24;
             this.rdbFuncSim.TabStop = true;
             this.rdbFuncSim.UseVisualStyleBackColor = true;
             // 
@@ -423,7 +407,7 @@
             this.rdbFuncNao.Location = new System.Drawing.Point(225, 13);
             this.rdbFuncNao.Name = "rdbFuncNao";
             this.rdbFuncNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbFuncNao.TabIndex = 20;
+            this.rdbFuncNao.TabIndex = 25;
             this.rdbFuncNao.TabStop = true;
             this.rdbFuncNao.UseVisualStyleBackColor = true;
             // 
@@ -434,7 +418,7 @@
             this.label7.Location = new System.Drawing.Point(6, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
-            this.label7.TabIndex = 38;
+            this.label7.TabIndex = 36;
             this.label7.Text = "Funcionários";
             // 
             // gpbServicos
@@ -448,7 +432,7 @@
             this.gpbServicos.Location = new System.Drawing.Point(728, 390);
             this.gpbServicos.Name = "gpbServicos";
             this.gpbServicos.Size = new System.Drawing.Size(268, 33);
-            this.gpbServicos.TabIndex = 45;
+            this.gpbServicos.TabIndex = 43;
             this.gpbServicos.TabStop = false;
             // 
             // rdbServSim
@@ -458,7 +442,7 @@
             this.rdbServSim.Location = new System.Drawing.Point(168, 12);
             this.rdbServSim.Name = "rdbServSim";
             this.rdbServSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbServSim.TabIndex = 17;
+            this.rdbServSim.TabIndex = 22;
             this.rdbServSim.TabStop = true;
             this.rdbServSim.UseVisualStyleBackColor = true;
             // 
@@ -470,7 +454,7 @@
             this.rdbServNao.Location = new System.Drawing.Point(225, 12);
             this.rdbServNao.Name = "rdbServNao";
             this.rdbServNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbServNao.TabIndex = 18;
+            this.rdbServNao.TabIndex = 23;
             this.rdbServNao.TabStop = true;
             this.rdbServNao.UseVisualStyleBackColor = true;
             // 
@@ -481,8 +465,9 @@
             this.label6.Location = new System.Drawing.Point(6, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 38;
+            this.label6.TabIndex = 35;
             this.label6.Text = "Serviços";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label8
             // 
@@ -492,7 +477,7 @@
             this.label8.Location = new System.Drawing.Point(19, 280);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(190, 20);
-            this.label8.TabIndex = 47;
+            this.label8.TabIndex = 11;
             this.label8.Text = "Dados do Funcionário:";
             // 
             // label9
@@ -503,7 +488,7 @@
             this.label9.Location = new System.Drawing.Point(716, 263);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 20);
-            this.label9.TabIndex = 48;
+            this.label9.TabIndex = 13;
             this.label9.Text = "Permissões";
             // 
             // txtBusca
@@ -513,9 +498,11 @@
             this.txtBusca.Location = new System.Drawing.Point(688, 220);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(296, 24);
-            this.txtBusca.TabIndex = 1;
+            this.txtBusca.TabIndex = 55;
             this.txtBusca.Text = "Digite aqui o Nome do funcionario:";
             this.txtBusca.Click += new System.EventHandler(this.txtBusca_Click);
+            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
+            this.txtBusca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusca_KeyUp);
             this.txtBusca.Leave += new System.EventHandler(this.txtBusca_Leave);
             // 
             // gpbHotel
@@ -529,7 +516,7 @@
             this.gpbHotel.Location = new System.Drawing.Point(728, 456);
             this.gpbHotel.Name = "gpbHotel";
             this.gpbHotel.Size = new System.Drawing.Size(268, 33);
-            this.gpbHotel.TabIndex = 56;
+            this.gpbHotel.TabIndex = 45;
             this.gpbHotel.TabStop = false;
             // 
             // rdbHotelSim
@@ -539,7 +526,7 @@
             this.rdbHotelSim.Location = new System.Drawing.Point(168, 13);
             this.rdbHotelSim.Name = "rdbHotelSim";
             this.rdbHotelSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbHotelSim.TabIndex = 21;
+            this.rdbHotelSim.TabIndex = 26;
             this.rdbHotelSim.TabStop = true;
             this.rdbHotelSim.UseVisualStyleBackColor = true;
             // 
@@ -551,7 +538,7 @@
             this.rdbHotelNao.Location = new System.Drawing.Point(225, 13);
             this.rdbHotelNao.Name = "rdbHotelNao";
             this.rdbHotelNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbHotelNao.TabIndex = 22;
+            this.rdbHotelNao.TabIndex = 27;
             this.rdbHotelNao.TabStop = true;
             this.rdbHotelNao.UseVisualStyleBackColor = true;
             // 
@@ -562,7 +549,7 @@
             this.label4.Location = new System.Drawing.Point(6, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 38;
+            this.label4.TabIndex = 37;
             this.label4.Text = "Hotel";
             // 
             // gpbClinica
@@ -576,7 +563,7 @@
             this.gpbClinica.Location = new System.Drawing.Point(728, 489);
             this.gpbClinica.Name = "gpbClinica";
             this.gpbClinica.Size = new System.Drawing.Size(268, 33);
-            this.gpbClinica.TabIndex = 57;
+            this.gpbClinica.TabIndex = 46;
             this.gpbClinica.TabStop = false;
             // 
             // rdbClinSim
@@ -586,7 +573,7 @@
             this.rdbClinSim.Location = new System.Drawing.Point(168, 13);
             this.rdbClinSim.Name = "rdbClinSim";
             this.rdbClinSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbClinSim.TabIndex = 23;
+            this.rdbClinSim.TabIndex = 28;
             this.rdbClinSim.TabStop = true;
             this.rdbClinSim.UseVisualStyleBackColor = true;
             // 
@@ -598,7 +585,7 @@
             this.rdbClinNao.Location = new System.Drawing.Point(225, 13);
             this.rdbClinNao.Name = "rdbClinNao";
             this.rdbClinNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbClinNao.TabIndex = 24;
+            this.rdbClinNao.TabIndex = 29;
             this.rdbClinNao.TabStop = true;
             this.rdbClinNao.UseVisualStyleBackColor = true;
             // 
@@ -618,7 +605,7 @@
             this.checkPwd.Location = new System.Drawing.Point(481, 397);
             this.checkPwd.Name = "checkPwd";
             this.checkPwd.Size = new System.Drawing.Size(93, 17);
-            this.checkPwd.TabIndex = 5;
+            this.checkPwd.TabIndex = 10;
             this.checkPwd.TabStop = false;
             this.checkPwd.Text = "Mostrar senha";
             this.checkPwd.UseVisualStyleBackColor = true;
@@ -635,7 +622,7 @@
             this.gpbConfig.Location = new System.Drawing.Point(728, 522);
             this.gpbConfig.Name = "gpbConfig";
             this.gpbConfig.Size = new System.Drawing.Size(268, 33);
-            this.gpbConfig.TabIndex = 58;
+            this.gpbConfig.TabIndex = 47;
             this.gpbConfig.TabStop = false;
             // 
             // rdbConfigSim
@@ -645,7 +632,7 @@
             this.rdbConfigSim.Location = new System.Drawing.Point(168, 13);
             this.rdbConfigSim.Name = "rdbConfigSim";
             this.rdbConfigSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbConfigSim.TabIndex = 23;
+            this.rdbConfigSim.TabIndex = 30;
             this.rdbConfigSim.TabStop = true;
             this.rdbConfigSim.UseVisualStyleBackColor = true;
             // 
@@ -657,7 +644,7 @@
             this.rdbConfigNao.Location = new System.Drawing.Point(225, 13);
             this.rdbConfigNao.Name = "rdbConfigNao";
             this.rdbConfigNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbConfigNao.TabIndex = 24;
+            this.rdbConfigNao.TabIndex = 31;
             this.rdbConfigNao.TabStop = true;
             this.rdbConfigNao.UseVisualStyleBackColor = true;
             // 
@@ -668,7 +655,7 @@
             this.label12.Location = new System.Drawing.Point(6, 13);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 13);
-            this.label12.TabIndex = 38;
+            this.label12.TabIndex = 39;
             this.label12.Text = "Configurações";
             // 
             // lblAviso
@@ -696,7 +683,7 @@
             this.btnGravar.Location = new System.Drawing.Point(1081, 320);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(104, 74);
-            this.btnGravar.TabIndex = 61;
+            this.btnGravar.TabIndex = 58;
             this.btnGravar.Text = "&Gravar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGravar.UseVisualStyleBackColor = false;
@@ -710,7 +697,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(1081, 400);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(104, 74);
-            this.btnConfirm.TabIndex = 58;
+            this.btnConfirm.TabIndex = 59;
             this.btnConfirm.Text = "&Atualizar";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -722,7 +709,7 @@
             this.label10.Location = new System.Drawing.Point(943, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 36);
-            this.label10.TabIndex = 52;
+            this.label10.TabIndex = 15;
             // 
             // btnBusca
             // 
@@ -732,7 +719,7 @@
             this.btnBusca.Location = new System.Drawing.Point(1081, 160);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(104, 74);
-            this.btnBusca.TabIndex = 2;
+            this.btnBusca.TabIndex = 56;
             this.btnBusca.Text = "&Pesquisa";
             this.btnBusca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBusca.UseVisualStyleBackColor = false;
@@ -744,7 +731,7 @@
             this.btnSair.Location = new System.Drawing.Point(1127, 12);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(58, 54);
-            this.btnSair.TabIndex = 28;
+            this.btnSair.TabIndex = 61;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -754,7 +741,7 @@
             this.label3.Location = new System.Drawing.Point(886, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 36);
-            this.label3.TabIndex = 24;
+            this.label3.TabIndex = 14;
             // 
             // btnExcluir
             // 
@@ -764,7 +751,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(1081, 479);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(104, 74);
-            this.btnExcluir.TabIndex = 27;
+            this.btnExcluir.TabIndex = 60;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluir.UseVisualStyleBackColor = false;
@@ -778,7 +765,7 @@
             this.btnNovo.Location = new System.Drawing.Point(1081, 240);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(104, 74);
-            this.btnNovo.TabIndex = 25;
+            this.btnNovo.TabIndex = 57;
             this.btnNovo.Text = "&Cadastrar Novo";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNovo.UseVisualStyleBackColor = false;
@@ -792,7 +779,7 @@
             this.label13.Location = new System.Drawing.Point(412, 280);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(153, 20);
-            this.label13.TabIndex = 62;
+            this.label13.TabIndex = 12;
             this.label13.Text = "Dados do Usuário";
             // 
             // ckAltSenha
@@ -801,11 +788,36 @@
             this.ckAltSenha.Location = new System.Drawing.Point(615, 372);
             this.ckAltSenha.Name = "ckAltSenha";
             this.ckAltSenha.Size = new System.Drawing.Size(88, 17);
-            this.ckAltSenha.TabIndex = 63;
+            this.ckAltSenha.TabIndex = 9;
             this.ckAltSenha.TabStop = false;
             this.ckAltSenha.Text = "Alterar senha";
             this.ckAltSenha.UseVisualStyleBackColor = true;
             this.ckAltSenha.Click += new System.EventHandler(this.ckAltSenha_Click);
+            // 
+            // txtCPF
+            // 
+            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPF.Location = new System.Drawing.Point(81, 385);
+            this.txtCPF.Mask = "000.000.000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(107, 22);
+            this.txtCPF.TabIndex = 4;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(-15, -15);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 62;
+            // 
+            // txtRG
+            // 
+            this.txtRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRG.Location = new System.Drawing.Point(81, 354);
+            this.txtRG.Mask = "00.000.000-0";
+            this.txtRG.Name = "txtRG";
+            this.txtRG.Size = new System.Drawing.Size(95, 22);
+            this.txtRG.TabIndex = 63;
             // 
             // frmPermissoes
             // 
@@ -814,6 +826,9 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1199, 565);
             this.ControlBox = false;
+            this.Controls.Add(this.txtRG);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.ckAltSenha);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.lblWarning);
@@ -839,9 +854,7 @@
             this.Controls.Add(this.lblUF);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.lblEndereco);
-            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.lblCPF);
-            this.Controls.Add(this.txtRG);
             this.Controls.Add(this.lblRG);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
@@ -892,9 +905,7 @@
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txtRG;
         private System.Windows.Forms.Label lblRG;
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label lblEndereco;
@@ -946,5 +957,8 @@
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox ckAltSenha;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtRG;
     }
 }

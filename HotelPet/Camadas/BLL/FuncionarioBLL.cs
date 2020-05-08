@@ -3,6 +3,7 @@ using HotelPet.Camadas.MODEL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,5 +64,18 @@ namespace HotelPet.Camadas.BLL
             }
 
         }
+
+        public void Delete(Funcionario funcionario)
+        {
+            PermicoesDAL dalPerm = new PermicoesDAL();
+            UsuariosDAL dalUser = new UsuariosDAL();
+            FuncionarioDAL dalFunc = new FuncionarioDAL();
+
+            dalUser.Delete(funcionario.userID);
+            dalPerm.Delete(funcionario.permicaoID);
+
+            dalFunc.Delete(funcionario.id);
+        }
+
     }
 }

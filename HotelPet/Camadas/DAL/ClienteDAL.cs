@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HotelPet.Camadas.MODEL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -49,6 +50,45 @@ namespace HotelPet.Camadas.DAL
 
             return listaCliente;
         }// fim do select
+
+        public List<MODEL.Cliente> SelectConf(Cliente Cli)
+        {
+            List<MODEL.Cliente> listaCliente = new List<MODEL.Cliente>();
+            MySqlConnection conexao = new MySqlConnection(strCon);
+            string sql = "SELECT * FROM CLIENTES " +
+                         "WHERE NOME Like '%"+Cli.nome+"%' ";
+            MySqlCommand cmd = new MySqlCommand(sql, conexao);
+
+            try
+            {
+                conexao.Open();
+                MySqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Cliente cliente = new MODEL.Cliente();
+                    cliente.id = Convert.ToInt32(dados["id"].ToString());
+                    cliente.nome = dados["nome"].ToString();
+                    cliente.cpf = dados["cpf"].ToString();
+                    cliente.rg = dados["rg"].ToString();
+                    cliente.cidade = dados["cidade"].ToString();
+                    cliente.uf = dados["uf"].ToString();
+                    cliente.email = dados["telefone"].ToString();
+                    cliente.telefone = dados["email"].ToString();
+                    listaCliente.Add(cliente);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("ERRO NO SELECT DO CLIENTE");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaCliente;
+        }// fim do select
+
 
         public List<MODEL.Cliente> SelectNome()
         {
