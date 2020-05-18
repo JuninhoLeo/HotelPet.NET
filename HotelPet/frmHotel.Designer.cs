@@ -47,6 +47,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.rdbQuarto = new System.Windows.Forms.RadioButton();
             this.rdbCliente = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).BeginInit();
             this.SuspendLayout();
@@ -229,6 +230,17 @@
             this.rdbCliente.Text = "Nome do cliente";
             this.rdbCliente.UseVisualStyleBackColor = false;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(354, 370);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(64, 17);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.Text = "Informar";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
             // frmHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +248,7 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1344, 645);
             this.ControlBox = false;
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.rdbCliente);
             this.Controls.Add(this.rdbQuarto);
             this.Controls.Add(this.dateTimePicker2);
@@ -284,5 +297,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.RadioButton rdbQuarto;
         private System.Windows.Forms.RadioButton rdbCliente;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

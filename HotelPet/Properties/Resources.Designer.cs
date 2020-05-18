@@ -73,6 +73,26 @@ namespace HotelPet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alert_icon_129491 {
+            get {
+                object obj = ResourceManager.GetObject("alert_icon_129491", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap animal {
+            get {
+                object obj = ResourceManager.GetObject("animal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap businessapplication_distributor_report_document_negocio_2319 {
             get {
                 object obj = ResourceManager.GetObject("businessapplication_distributor_report_document_negocio_2319", resourceCulture);
@@ -86,6 +106,16 @@ namespace HotelPet.Properties {
         internal static System.Drawing.Bitmap cadeado {
             get {
                 object obj = ResourceManager.GetObject("cadeado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Calendar_40931 {
+            get {
+                object obj = ResourceManager.GetObject("Calendar_40931", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +173,29 @@ namespace HotelPet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap executive_person_icon_icons_com_72414 {
+            get {
+                object obj = ResourceManager.GetObject("executive_person_icon-icons.com_72414", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ext1 {
             get {
                 object obj = ResourceManager.GetObject("ext1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ios7_home_outline_icon_icons_com_50254 {
+            get {
+                object obj = ResourceManager.GetObject("ios7-home-outline_icon-icons.com_50254", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +216,16 @@ namespace HotelPet.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap market_120697 {
+            get {
+                object obj = ResourceManager.GetObject("market_120697", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +283,16 @@ namespace HotelPet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_icon_icons_com_66718 {
+            get {
+                object obj = ResourceManager.GetObject("plus_icon-icons.com_66718", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_102938 {
             get {
                 object obj = ResourceManager.GetObject("search_102938", resourceCulture);
@@ -256,6 +326,16 @@ namespace HotelPet.Properties {
         internal static System.Drawing.Bitmap shop_icon_34368 {
             get {
                 object obj = ResourceManager.GetObject("shop-icon_34368", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viewrefresh_104298 {
+            get {
+                object obj = ResourceManager.GetObject("viewrefresh_104298", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

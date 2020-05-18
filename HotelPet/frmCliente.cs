@@ -1,5 +1,4 @@
-﻿using HotelPet.Camadas.DAL;
-using HotelPet.Camadas.MODEL;
+﻿using HotelPet.Camadas.MODEL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +26,7 @@ namespace HotelPet
 
             if (confirm.ToString().ToUpper() == "YES")
             {
-                Camadas.DAL.ClienteDAL lista = new Camadas.DAL.ClienteDAL();
+                //Camadas.DAL.ClienteDAL lista = new Camadas.DAL.ClienteDAL();
                 Camadas.MODEL.Cliente cliente = new Camadas.MODEL.Cliente();
                 cliente.nome = txtNome.Text;
                 cliente.cpf = txtCPF.Text;
@@ -36,7 +35,7 @@ namespace HotelPet
                 cliente.uf = txtUF.Text;
                 cliente.telefone = txtTelefone.Text;
                 cliente.email = txtEmail.Text;
-                lista.Insert(cliente);
+                //lista.Insert(cliente);
             }
         }
 
@@ -65,21 +64,21 @@ namespace HotelPet
 
         private void txtBusca_KeyUp(object sender, KeyEventArgs e)
         {
-            ClienteDAL dal = new ClienteDAL();
+            //ClienteDAL dal = new ClienteDAL();
             Cliente cliente = new Cliente();
 
             cliente.nome = txtBusca.Text;
 
             dgvCliente.DataSource = "";
-            dgvCliente.DataSource = dal.SelectConf(cliente);
+            //dgvCliente.DataSource = dal.SelectConf(cliente);
         }
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
-            ClienteDAL dal = new ClienteDAL();
+            //ClienteDAL dal = new ClienteDAL();
 
             dgvCliente.DataSource = "";
-            dgvCliente.DataSource = dal.Select();
+            //dgvCliente.DataSource = dal.Select();
         }
     }
 }

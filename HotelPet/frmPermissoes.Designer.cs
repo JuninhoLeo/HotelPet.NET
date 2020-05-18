@@ -49,18 +49,14 @@
             this.rdbCliSim = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.rdbCliNao = new System.Windows.Forms.RadioButton();
-            this.gpbProdutos = new System.Windows.Forms.GroupBox();
-            this.rdbProdSim = new System.Windows.Forms.RadioButton();
-            this.rdbProdNao = new System.Windows.Forms.RadioButton();
+            this.gpbAddClientes = new System.Windows.Forms.GroupBox();
+            this.rdbAddCliSim = new System.Windows.Forms.RadioButton();
+            this.rdbAddCliNao = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.gpbFuncionarios = new System.Windows.Forms.GroupBox();
-            this.rdbFuncSim = new System.Windows.Forms.RadioButton();
-            this.rdbFuncNao = new System.Windows.Forms.RadioButton();
+            this.gpbDash = new System.Windows.Forms.GroupBox();
+            this.rdbDashSim = new System.Windows.Forms.RadioButton();
+            this.rdbDashNao = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.gpbServicos = new System.Windows.Forms.GroupBox();
-            this.rdbServSim = new System.Windows.Forms.RadioButton();
-            this.rdbServNao = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
@@ -90,17 +86,24 @@
             this.label13 = new System.Windows.Forms.Label();
             this.ckAltSenha = new System.Windows.Forms.CheckBox();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.txtRG = new System.Windows.Forms.MaskedTextBox();
+            this.gpbProd = new System.Windows.Forms.GroupBox();
+            this.rdbProdSim = new System.Windows.Forms.RadioButton();
+            this.rdbProdNao = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtUserId = new System.Windows.Forms.Label();
+            this.txtPermId = new System.Windows.Forms.Label();
+            this.txtFuncId = new System.Windows.Forms.Label();
+            this.txtSenhaUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermicoes)).BeginInit();
             this.gpbVendas.SuspendLayout();
             this.gpbClientes.SuspendLayout();
-            this.gpbProdutos.SuspendLayout();
-            this.gpbFuncionarios.SuspendLayout();
-            this.gpbServicos.SuspendLayout();
+            this.gpbAddClientes.SuspendLayout();
+            this.gpbDash.SuspendLayout();
             this.gpbHotel.SuspendLayout();
             this.gpbClinica.SuspendLayout();
             this.gpbConfig.SuspendLayout();
+            this.gpbProd.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPermicoes
@@ -327,42 +330,42 @@
             this.rdbCliNao.TabStop = true;
             this.rdbCliNao.UseVisualStyleBackColor = true;
             // 
-            // gpbProdutos
+            // gpbAddClientes
             // 
-            this.gpbProdutos.BackColor = System.Drawing.Color.White;
-            this.gpbProdutos.Controls.Add(this.rdbProdSim);
-            this.gpbProdutos.Controls.Add(this.rdbProdNao);
-            this.gpbProdutos.Controls.Add(this.label5);
-            this.gpbProdutos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gpbProdutos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbProdutos.Location = new System.Drawing.Point(728, 357);
-            this.gpbProdutos.Name = "gpbProdutos";
-            this.gpbProdutos.Size = new System.Drawing.Size(268, 33);
-            this.gpbProdutos.TabIndex = 42;
-            this.gpbProdutos.TabStop = false;
+            this.gpbAddClientes.BackColor = System.Drawing.Color.White;
+            this.gpbAddClientes.Controls.Add(this.rdbAddCliSim);
+            this.gpbAddClientes.Controls.Add(this.rdbAddCliNao);
+            this.gpbAddClientes.Controls.Add(this.label5);
+            this.gpbAddClientes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gpbAddClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gpbAddClientes.Location = new System.Drawing.Point(728, 357);
+            this.gpbAddClientes.Name = "gpbAddClientes";
+            this.gpbAddClientes.Size = new System.Drawing.Size(268, 33);
+            this.gpbAddClientes.TabIndex = 42;
+            this.gpbAddClientes.TabStop = false;
             // 
-            // rdbProdSim
+            // rdbAddCliSim
             // 
-            this.rdbProdSim.AutoSize = true;
-            this.rdbProdSim.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rdbProdSim.Location = new System.Drawing.Point(168, 12);
-            this.rdbProdSim.Name = "rdbProdSim";
-            this.rdbProdSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbProdSim.TabIndex = 20;
-            this.rdbProdSim.TabStop = true;
-            this.rdbProdSim.UseVisualStyleBackColor = true;
+            this.rdbAddCliSim.AutoSize = true;
+            this.rdbAddCliSim.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rdbAddCliSim.Location = new System.Drawing.Point(168, 12);
+            this.rdbAddCliSim.Name = "rdbAddCliSim";
+            this.rdbAddCliSim.Size = new System.Drawing.Size(14, 13);
+            this.rdbAddCliSim.TabIndex = 20;
+            this.rdbAddCliSim.TabStop = true;
+            this.rdbAddCliSim.UseVisualStyleBackColor = true;
             // 
-            // rdbProdNao
+            // rdbAddCliNao
             // 
-            this.rdbProdNao.AutoSize = true;
-            this.rdbProdNao.Checked = true;
-            this.rdbProdNao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rdbProdNao.Location = new System.Drawing.Point(225, 12);
-            this.rdbProdNao.Name = "rdbProdNao";
-            this.rdbProdNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbProdNao.TabIndex = 21;
-            this.rdbProdNao.TabStop = true;
-            this.rdbProdNao.UseVisualStyleBackColor = true;
+            this.rdbAddCliNao.AutoSize = true;
+            this.rdbAddCliNao.Checked = true;
+            this.rdbAddCliNao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rdbAddCliNao.Location = new System.Drawing.Point(225, 12);
+            this.rdbAddCliNao.Name = "rdbAddCliNao";
+            this.rdbAddCliNao.Size = new System.Drawing.Size(14, 13);
+            this.rdbAddCliNao.TabIndex = 21;
+            this.rdbAddCliNao.TabStop = true;
+            this.rdbAddCliNao.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -370,46 +373,46 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.Size = new System.Drawing.Size(109, 13);
             this.label5.TabIndex = 34;
-            this.label5.Text = "Produtos";
+            this.label5.Text = "Adicionar Clientes";
             // 
-            // gpbFuncionarios
+            // gpbDash
             // 
-            this.gpbFuncionarios.BackColor = System.Drawing.Color.White;
-            this.gpbFuncionarios.Controls.Add(this.rdbFuncSim);
-            this.gpbFuncionarios.Controls.Add(this.rdbFuncNao);
-            this.gpbFuncionarios.Controls.Add(this.label7);
-            this.gpbFuncionarios.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gpbFuncionarios.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbFuncionarios.Location = new System.Drawing.Point(728, 423);
-            this.gpbFuncionarios.Name = "gpbFuncionarios";
-            this.gpbFuncionarios.Size = new System.Drawing.Size(268, 33);
-            this.gpbFuncionarios.TabIndex = 44;
-            this.gpbFuncionarios.TabStop = false;
+            this.gpbDash.BackColor = System.Drawing.Color.White;
+            this.gpbDash.Controls.Add(this.rdbDashSim);
+            this.gpbDash.Controls.Add(this.rdbDashNao);
+            this.gpbDash.Controls.Add(this.label7);
+            this.gpbDash.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gpbDash.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gpbDash.Location = new System.Drawing.Point(728, 488);
+            this.gpbDash.Name = "gpbDash";
+            this.gpbDash.Size = new System.Drawing.Size(268, 33);
+            this.gpbDash.TabIndex = 46;
+            this.gpbDash.TabStop = false;
             // 
-            // rdbFuncSim
+            // rdbDashSim
             // 
-            this.rdbFuncSim.AutoSize = true;
-            this.rdbFuncSim.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rdbFuncSim.Location = new System.Drawing.Point(168, 13);
-            this.rdbFuncSim.Name = "rdbFuncSim";
-            this.rdbFuncSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbFuncSim.TabIndex = 24;
-            this.rdbFuncSim.TabStop = true;
-            this.rdbFuncSim.UseVisualStyleBackColor = true;
+            this.rdbDashSim.AutoSize = true;
+            this.rdbDashSim.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rdbDashSim.Location = new System.Drawing.Point(168, 13);
+            this.rdbDashSim.Name = "rdbDashSim";
+            this.rdbDashSim.Size = new System.Drawing.Size(14, 13);
+            this.rdbDashSim.TabIndex = 28;
+            this.rdbDashSim.TabStop = true;
+            this.rdbDashSim.UseVisualStyleBackColor = true;
             // 
-            // rdbFuncNao
+            // rdbDashNao
             // 
-            this.rdbFuncNao.AutoSize = true;
-            this.rdbFuncNao.Checked = true;
-            this.rdbFuncNao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rdbFuncNao.Location = new System.Drawing.Point(225, 13);
-            this.rdbFuncNao.Name = "rdbFuncNao";
-            this.rdbFuncNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbFuncNao.TabIndex = 25;
-            this.rdbFuncNao.TabStop = true;
-            this.rdbFuncNao.UseVisualStyleBackColor = true;
+            this.rdbDashNao.AutoSize = true;
+            this.rdbDashNao.Checked = true;
+            this.rdbDashNao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rdbDashNao.Location = new System.Drawing.Point(225, 13);
+            this.rdbDashNao.Name = "rdbDashNao";
+            this.rdbDashNao.Size = new System.Drawing.Size(14, 13);
+            this.rdbDashNao.TabIndex = 29;
+            this.rdbDashNao.TabStop = true;
+            this.rdbDashNao.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -417,57 +420,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(6, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.Size = new System.Drawing.Size(111, 13);
             this.label7.TabIndex = 36;
-            this.label7.Text = "Funcionários";
-            // 
-            // gpbServicos
-            // 
-            this.gpbServicos.BackColor = System.Drawing.Color.White;
-            this.gpbServicos.Controls.Add(this.rdbServSim);
-            this.gpbServicos.Controls.Add(this.rdbServNao);
-            this.gpbServicos.Controls.Add(this.label6);
-            this.gpbServicos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gpbServicos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbServicos.Location = new System.Drawing.Point(728, 390);
-            this.gpbServicos.Name = "gpbServicos";
-            this.gpbServicos.Size = new System.Drawing.Size(268, 33);
-            this.gpbServicos.TabIndex = 43;
-            this.gpbServicos.TabStop = false;
-            // 
-            // rdbServSim
-            // 
-            this.rdbServSim.AutoSize = true;
-            this.rdbServSim.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rdbServSim.Location = new System.Drawing.Point(168, 12);
-            this.rdbServSim.Name = "rdbServSim";
-            this.rdbServSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbServSim.TabIndex = 22;
-            this.rdbServSim.TabStop = true;
-            this.rdbServSim.UseVisualStyleBackColor = true;
-            // 
-            // rdbServNao
-            // 
-            this.rdbServNao.AutoSize = true;
-            this.rdbServNao.Checked = true;
-            this.rdbServNao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rdbServNao.Location = new System.Drawing.Point(225, 12);
-            this.rdbServNao.Name = "rdbServNao";
-            this.rdbServNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbServNao.TabIndex = 23;
-            this.rdbServNao.TabStop = true;
-            this.rdbServNao.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Serviços";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label7.Text = "Painel de Controle";
             // 
             // label8
             // 
@@ -513,10 +468,10 @@
             this.gpbHotel.Controls.Add(this.label4);
             this.gpbHotel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbHotel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbHotel.Location = new System.Drawing.Point(728, 456);
+            this.gpbHotel.Location = new System.Drawing.Point(728, 423);
             this.gpbHotel.Name = "gpbHotel";
             this.gpbHotel.Size = new System.Drawing.Size(268, 33);
-            this.gpbHotel.TabIndex = 45;
+            this.gpbHotel.TabIndex = 44;
             this.gpbHotel.TabStop = false;
             // 
             // rdbHotelSim
@@ -526,7 +481,7 @@
             this.rdbHotelSim.Location = new System.Drawing.Point(168, 13);
             this.rdbHotelSim.Name = "rdbHotelSim";
             this.rdbHotelSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbHotelSim.TabIndex = 26;
+            this.rdbHotelSim.TabIndex = 24;
             this.rdbHotelSim.TabStop = true;
             this.rdbHotelSim.UseVisualStyleBackColor = true;
             // 
@@ -538,7 +493,7 @@
             this.rdbHotelNao.Location = new System.Drawing.Point(225, 13);
             this.rdbHotelNao.Name = "rdbHotelNao";
             this.rdbHotelNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbHotelNao.TabIndex = 27;
+            this.rdbHotelNao.TabIndex = 25;
             this.rdbHotelNao.TabStop = true;
             this.rdbHotelNao.UseVisualStyleBackColor = true;
             // 
@@ -560,10 +515,10 @@
             this.gpbClinica.Controls.Add(this.label11);
             this.gpbClinica.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbClinica.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbClinica.Location = new System.Drawing.Point(728, 489);
+            this.gpbClinica.Location = new System.Drawing.Point(728, 456);
             this.gpbClinica.Name = "gpbClinica";
             this.gpbClinica.Size = new System.Drawing.Size(268, 33);
-            this.gpbClinica.TabIndex = 46;
+            this.gpbClinica.TabIndex = 45;
             this.gpbClinica.TabStop = false;
             // 
             // rdbClinSim
@@ -573,7 +528,7 @@
             this.rdbClinSim.Location = new System.Drawing.Point(168, 13);
             this.rdbClinSim.Name = "rdbClinSim";
             this.rdbClinSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbClinSim.TabIndex = 28;
+            this.rdbClinSim.TabIndex = 26;
             this.rdbClinSim.TabStop = true;
             this.rdbClinSim.UseVisualStyleBackColor = true;
             // 
@@ -585,7 +540,7 @@
             this.rdbClinNao.Location = new System.Drawing.Point(225, 13);
             this.rdbClinNao.Name = "rdbClinNao";
             this.rdbClinNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbClinNao.TabIndex = 29;
+            this.rdbClinNao.TabIndex = 27;
             this.rdbClinNao.TabStop = true;
             this.rdbClinNao.UseVisualStyleBackColor = true;
             // 
@@ -619,10 +574,10 @@
             this.gpbConfig.Controls.Add(this.label12);
             this.gpbConfig.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbConfig.Location = new System.Drawing.Point(728, 522);
+            this.gpbConfig.Location = new System.Drawing.Point(728, 390);
             this.gpbConfig.Name = "gpbConfig";
             this.gpbConfig.Size = new System.Drawing.Size(268, 33);
-            this.gpbConfig.TabIndex = 47;
+            this.gpbConfig.TabIndex = 43;
             this.gpbConfig.TabStop = false;
             // 
             // rdbConfigSim
@@ -632,7 +587,7 @@
             this.rdbConfigSim.Location = new System.Drawing.Point(168, 13);
             this.rdbConfigSim.Name = "rdbConfigSim";
             this.rdbConfigSim.Size = new System.Drawing.Size(14, 13);
-            this.rdbConfigSim.TabIndex = 30;
+            this.rdbConfigSim.TabIndex = 22;
             this.rdbConfigSim.TabStop = true;
             this.rdbConfigSim.UseVisualStyleBackColor = true;
             // 
@@ -644,7 +599,7 @@
             this.rdbConfigNao.Location = new System.Drawing.Point(225, 13);
             this.rdbConfigNao.Name = "rdbConfigNao";
             this.rdbConfigNao.Size = new System.Drawing.Size(14, 13);
-            this.rdbConfigNao.TabIndex = 31;
+            this.rdbConfigNao.TabIndex = 23;
             this.rdbConfigNao.TabStop = true;
             this.rdbConfigNao.UseVisualStyleBackColor = true;
             // 
@@ -803,13 +758,6 @@
             this.txtCPF.Size = new System.Drawing.Size(107, 22);
             this.txtCPF.TabIndex = 4;
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(-15, -15);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 62;
-            // 
             // txtRG
             // 
             this.txtRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -817,17 +765,100 @@
             this.txtRG.Mask = "00.000.000-0";
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(95, 22);
-            this.txtRG.TabIndex = 63;
+            this.txtRG.TabIndex = 3;
+            // 
+            // gpbProd
+            // 
+            this.gpbProd.BackColor = System.Drawing.Color.White;
+            this.gpbProd.Controls.Add(this.rdbProdSim);
+            this.gpbProd.Controls.Add(this.rdbProdNao);
+            this.gpbProd.Controls.Add(this.label6);
+            this.gpbProd.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gpbProd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gpbProd.Location = new System.Drawing.Point(728, 520);
+            this.gpbProd.Name = "gpbProd";
+            this.gpbProd.Size = new System.Drawing.Size(268, 33);
+            this.gpbProd.TabIndex = 47;
+            this.gpbProd.TabStop = false;
+            // 
+            // rdbProdSim
+            // 
+            this.rdbProdSim.AutoSize = true;
+            this.rdbProdSim.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rdbProdSim.Location = new System.Drawing.Point(168, 13);
+            this.rdbProdSim.Name = "rdbProdSim";
+            this.rdbProdSim.Size = new System.Drawing.Size(14, 13);
+            this.rdbProdSim.TabIndex = 30;
+            this.rdbProdSim.TabStop = true;
+            this.rdbProdSim.UseVisualStyleBackColor = true;
+            // 
+            // rdbProdNao
+            // 
+            this.rdbProdNao.AutoSize = true;
+            this.rdbProdNao.Checked = true;
+            this.rdbProdNao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rdbProdNao.Location = new System.Drawing.Point(225, 13);
+            this.rdbProdNao.Name = "rdbProdNao";
+            this.rdbProdNao.Size = new System.Drawing.Size(14, 13);
+            this.rdbProdNao.TabIndex = 31;
+            this.rdbProdNao.TabStop = true;
+            this.rdbProdNao.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Produtos e Serviços";
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserId.Location = new System.Drawing.Point(571, 283);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(48, 16);
+            this.txtUserId.TabIndex = 62;
+            // 
+            // txtPermId
+            // 
+            this.txtPermId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPermId.Location = new System.Drawing.Point(823, 267);
+            this.txtPermId.Name = "txtPermId";
+            this.txtPermId.Size = new System.Drawing.Size(48, 16);
+            this.txtPermId.TabIndex = 63;
+            // 
+            // txtFuncId
+            // 
+            this.txtFuncId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFuncId.Location = new System.Drawing.Point(215, 284);
+            this.txtFuncId.Name = "txtFuncId";
+            this.txtFuncId.Size = new System.Drawing.Size(48, 16);
+            this.txtFuncId.TabIndex = 64;
+            this.txtFuncId.Click += new System.EventHandler(this.txtFuncId_Click);
+            // 
+            // txtSenhaUser
+            // 
+            this.txtSenhaUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaUser.Location = new System.Drawing.Point(580, 394);
+            this.txtSenhaUser.Name = "txtSenhaUser";
+            this.txtSenhaUser.Size = new System.Drawing.Size(142, 19);
+            this.txtSenhaUser.TabIndex = 65;
             // 
             // frmPermissoes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1199, 565);
             this.ControlBox = false;
+            this.Controls.Add(this.txtSenhaUser);
+            this.Controls.Add(this.txtFuncId);
+            this.Controls.Add(this.txtPermId);
+            this.Controls.Add(this.txtUserId);
+            this.Controls.Add(this.gpbProd);
             this.Controls.Add(this.txtRG);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.ckAltSenha);
             this.Controls.Add(this.btnGravar);
@@ -844,9 +875,8 @@
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.gpbFuncionarios);
-            this.Controls.Add(this.gpbServicos);
-            this.Controls.Add(this.gpbProdutos);
+            this.Controls.Add(this.gpbDash);
+            this.Controls.Add(this.gpbAddClientes);
             this.Controls.Add(this.gpbClientes);
             this.Controls.Add(this.gpbVendas);
             this.Controls.Add(this.label3);
@@ -877,18 +907,18 @@
             this.gpbVendas.PerformLayout();
             this.gpbClientes.ResumeLayout(false);
             this.gpbClientes.PerformLayout();
-            this.gpbProdutos.ResumeLayout(false);
-            this.gpbProdutos.PerformLayout();
-            this.gpbFuncionarios.ResumeLayout(false);
-            this.gpbFuncionarios.PerformLayout();
-            this.gpbServicos.ResumeLayout(false);
-            this.gpbServicos.PerformLayout();
+            this.gpbAddClientes.ResumeLayout(false);
+            this.gpbAddClientes.PerformLayout();
+            this.gpbDash.ResumeLayout(false);
+            this.gpbDash.PerformLayout();
             this.gpbHotel.ResumeLayout(false);
             this.gpbHotel.PerformLayout();
             this.gpbClinica.ResumeLayout(false);
             this.gpbClinica.PerformLayout();
             this.gpbConfig.ResumeLayout(false);
             this.gpbConfig.PerformLayout();
+            this.gpbProd.ResumeLayout(false);
+            this.gpbProd.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -915,12 +945,10 @@
         private System.Windows.Forms.GroupBox gpbVendas;
         private System.Windows.Forms.GroupBox gpbClientes;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox gpbProdutos;
+        private System.Windows.Forms.GroupBox gpbAddClientes;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox gpbFuncionarios;
+        private System.Windows.Forms.GroupBox gpbDash;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox gpbServicos;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSair;
@@ -931,12 +959,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdbCliSim;
         private System.Windows.Forms.RadioButton rdbCliNao;
-        private System.Windows.Forms.RadioButton rdbProdSim;
-        private System.Windows.Forms.RadioButton rdbProdNao;
-        private System.Windows.Forms.RadioButton rdbFuncSim;
-        private System.Windows.Forms.RadioButton rdbFuncNao;
-        private System.Windows.Forms.RadioButton rdbServSim;
-        private System.Windows.Forms.RadioButton rdbServNao;
+        private System.Windows.Forms.RadioButton rdbAddCliSim;
+        private System.Windows.Forms.RadioButton rdbAddCliNao;
+        private System.Windows.Forms.RadioButton rdbDashSim;
+        private System.Windows.Forms.RadioButton rdbDashNao;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox gpbHotel;
         private System.Windows.Forms.RadioButton rdbHotelSim;
@@ -958,7 +984,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox ckAltSenha;
         private System.Windows.Forms.MaskedTextBox txtCPF;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox txtRG;
+        private System.Windows.Forms.GroupBox gpbProd;
+        private System.Windows.Forms.RadioButton rdbProdSim;
+        private System.Windows.Forms.RadioButton rdbProdNao;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txtUserId;
+        private System.Windows.Forms.Label txtPermId;
+        private System.Windows.Forms.Label txtFuncId;
+        private System.Windows.Forms.Label txtSenhaUser;
     }
 }

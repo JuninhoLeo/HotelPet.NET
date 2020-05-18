@@ -168,14 +168,14 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1011, 536);
+            this.pictureBox1.Size = new System.Drawing.Size(1111, 536);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
             // btnConfirm
             // 
             this.btnConfirm.Image = global::HotelPet.Properties.Resources.ok;
-            this.btnConfirm.Location = new System.Drawing.Point(803, 492);
+            this.btnConfirm.Location = new System.Drawing.Point(903, 492);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(103, 48);
             this.btnConfirm.TabIndex = 16;
@@ -185,7 +185,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::HotelPet.Properties.Resources.X;
-            this.btnCancelar.Location = new System.Drawing.Point(912, 492);
+            this.btnCancelar.Location = new System.Drawing.Point(1012, 492);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(103, 48);
             this.btnCancelar.TabIndex = 18;
@@ -199,7 +199,7 @@
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Location = new System.Drawing.Point(496, 105);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(499, 352);
+            this.dgvCliente.Size = new System.Drawing.Size(608, 352);
             this.dgvCliente.TabIndex = 19;
             // 
             // label1
@@ -218,7 +218,7 @@
             // 
             this.txtBusca.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusca.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtBusca.Location = new System.Drawing.Point(660, 76);
+            this.txtBusca.Location = new System.Drawing.Point(760, 76);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(335, 25);
             this.txtBusca.TabIndex = 21;
@@ -233,7 +233,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(579, 73);
+            this.label2.Location = new System.Drawing.Point(679, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 25);
             this.label2.TabIndex = 22;
@@ -245,7 +245,7 @@
             this.txtCPF.Location = new System.Drawing.Point(93, 140);
             this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(100, 25);
+            this.txtCPF.Size = new System.Drawing.Size(135, 25);
             this.txtCPF.TabIndex = 23;
             // 
             // txtRG
@@ -254,7 +254,7 @@
             this.txtRG.Location = new System.Drawing.Point(93, 182);
             this.txtRG.Mask = "00.000.000-0";
             this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(100, 25);
+            this.txtRG.Size = new System.Drawing.Size(107, 25);
             this.txtRG.TabIndex = 24;
             // 
             // txtTelefone
@@ -263,7 +263,7 @@
             this.txtTelefone.Location = new System.Drawing.Point(93, 309);
             this.txtTelefone.Mask = "(00) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 25);
+            this.txtTelefone.Size = new System.Drawing.Size(121, 25);
             this.txtTelefone.TabIndex = 25;
             // 
             // frmCliente
@@ -271,7 +271,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1035, 560);
+            this.ClientSize = new System.Drawing.Size(1135, 560);
             this.ControlBox = false;
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtRG);

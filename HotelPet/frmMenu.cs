@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelPet.Camadas.MODEL;
+using HotelPet.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,28 @@ namespace HotelPet
 {
     public partial class frmMenu : Form
     {
-        private int childFormNumber = 0;
-
         public frmMenu()
         {
             InitializeComponent();
-        }  
+        }
+
+        public frmMenu(int Usuario)
+        {
+            InitializeComponent();
+            Contexto contexto = new Contexto();
+
+            Permicoes permicoes = contexto.Permicao.FirstOrDefault(x => x.id == Usuario);
+
+            btnCadastros.Visible = permicoes.frmAddCliente;
+            btnConsultar.Visible = permicoes.frmCliente;
+            //btnClinica.Visible = permicoes.frmClinica;
+            btnConfig.Visible = permicoes.frmConfiguracoes;
+            btnHotel.Visible = permicoes.frmHotel;
+            btnDash.Visible = permicoes.frmPainel;
+            btnAdmin.Visible = permicoes.frmProdutos;
+            btnVendas.Visible = permicoes.frmVenda;
+
+        }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -47,9 +65,7 @@ namespace HotelPet
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            frmDashboard dashboard = new frmDashboard();
-            dashboard.MdiParent = this;
-            dashboard.Show();
+            
         }
 
         private void btnAnimais_Click(object sender, EventArgs e)
@@ -59,7 +75,7 @@ namespace HotelPet
 
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDashboard vendas = new frmDashboard();
+            frmVenda vendas = new frmVenda();
             vendas.MdiParent = this;
             vendas.Show();
         }
@@ -90,6 +106,23 @@ namespace HotelPet
             frmPermissoes permissao = new frmPermissoes();
             permissao.MdiParent = this;
             permissao.Show();
+        }
+
+        private void painelDeControleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDashboard dashboard = new frmDashboard();
+            dashboard.MdiParent = this;
+            dashboard.Show();
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void btnCadastros_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

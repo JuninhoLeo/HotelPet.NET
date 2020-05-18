@@ -142,7 +142,7 @@ namespace HotelPet
                 {
                     if (Convert.ToString(cmbCli.SelectedItem) != "")
                     {
-                        animal.idcli = Convert.ToInt32(cmbCli.SelectedItem);
+                        //animal.Cliente = Convert.ToInt32(cmbCli.SelectedItem);
                         Conf = 0;
                     }
                     else
@@ -217,8 +217,8 @@ namespace HotelPet
                                
                 if (Conf == 0)
                 {
-                    Camadas.DAL.AnimalDAL dalAnimal = new Camadas.DAL.AnimalDAL();
-                    dalAnimal.Insert(animal);
+                    //Camadas.DAL.AnimalDAL dalAnimal = new Camadas.DAL.AnimalDAL();
+                    //dalAnimal.Insert(animal);
                     this.Close();
                 }
             }            

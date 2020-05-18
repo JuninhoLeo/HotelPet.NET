@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelPet.Camadas.MODEL;
+using HotelPet.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,43 +36,52 @@ namespace HotelPet
         private void Button2_Click(object sender, EventArgs e)
         {
             byte[] passtohash = Encoding.UTF8.GetBytes(txtSenha.Text.ToString());
-            Camadas.BLL.UsuarioBLL bllUser = new Camadas.BLL.UsuarioBLL();
+            Contexto contexto = new Contexto(); 
 
-            string user = txtUsuario.Text;
-            string pwd = Hash(passtohash);
+            string user = txtUsuario.Text; 
+             string pwd = Hash(passtohash);
 
-            string ConfUser =bllUser.SelectUsr(user);
-            string ConfSenha =bllUser.SelectPwd(user);
+            Usuario usuario = contexto.Usuario.FirstOrDefault(u => u.usuario == user && u.senha == pwd);
+
+            //string ConfUser =bllUser.SelectUsr(user);
+            //string ConfSenha =bllUser.SelectPwd(user);
+
+            int ID=0;
 
             if(txtUsuario.Text == "" && txtSenha.Text == "")
             {
                 txtUsuario.Text = "";
                 txtSenha.Text = "";
-                lblErrUser.Text = "Usuario Nao Encontrado!";
+                lblErrUser.Text = " Nome de Usuario Nao informado!";
                 DialogResult = DialogResult.None;
+                
             }
             else
             {
-                if (ConfSenha == pwd && ConfUser == user)
+                if (usuario != null)
                 {
+                    Administrador administrador = contexto.Administrador.FirstOrDefault(x => x.Usuario_id == usuario.id);
+                    Funcionario funcionario = contexto.Funcionario.FirstOrDefault(x => x.Usuario_id == usuario.id);
+
                     btnEntrar.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    if (ConfUser == user && ConfSenha != pwd)
+
+                    if(administrador != null)
                     {
-                        txtUsuario.Text = "";
-                        txtSenha.Text = "";
-                        lblErrUser.Text = "Usuário ou senha estão incorretos";
-                        DialogResult = DialogResult.None;
+                        frmMenu frm = new frmMenu(administrador.Permicoes_id);
+                        frm.Show();
                     }
                     else
                     {
-                        txtUsuario.Text = "";
-                        txtSenha.Text = "";
-                        lblErrUser.Text = "Usuário ou senha estão incorretos";
-                        DialogResult = DialogResult.None;
+                        frmMenu frm = new frmMenu(funcionario.Permicoes_id);
+                        frm.Show();
                     }
+                }
+                else
+                {                    
+                    txtUsuario.Text = "";
+                    txtSenha.Text = "";
+                    lblErrUser.Text = "Usuário ou senha estão incorretos";
+                    DialogResult = DialogResult.None;
                 }
             }
         }

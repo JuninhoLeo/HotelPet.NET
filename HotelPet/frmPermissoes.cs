@@ -1,10 +1,10 @@
-﻿using HotelPet.Camadas.BLL;
-using HotelPet.Camadas.DAL;
-using HotelPet.Camadas.MODEL;
+﻿using HotelPet.Camadas.MODEL;
+using HotelPet.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -49,19 +49,52 @@ namespace HotelPet
         
         private void button3_Click(object sender, EventArgs e)
         {
-            FuncionarioBLL bll = new FuncionarioBLL();
+            Contexto contexto = new Contexto();
+            Usuario usuario = new Usuario();
             Funcionario funcionario = new Funcionario();
-            
-            funcionario.id = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString());
-            funcionario.permicaoID = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["permicaoID"].Value.ToString());
-            funcionario.userID = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["userID"].Value.ToString());
+            Permicoes permicao = new Permicoes();
+
+            string pass = txtSenha.Text.Trim();
+            byte[] passtohash = Encoding.UTF8.GetBytes(pass);
+            string pwd = txtSenhaUser.Text;
+
+            if (ckAltSenha.Checked)
+            {
+                pwd = Hash(passtohash);
+            }
+
+            usuario.id = Convert.ToInt32(txtUserId.Text);
+            usuario.usuario = txtUser.Text.Trim();
+            usuario.senha = pwd;
+
+            funcionario.id = Convert.ToInt32(txtFuncId.Text);
             funcionario.nome = txtNome.Text;
             funcionario.rg = txtRG.Text;
             funcionario.cpf = txtCPF.Text;
             funcionario.endereco = txtEndereco.Text;
             funcionario.uf = txtUF.Text;
+            funcionario.Permicoes_id = Convert.ToInt32(txtPermId.Text);
+            funcionario.Usuario_id = Convert.ToInt32(txtUserId.Text);
 
-            bll.Delete(funcionario);
+            permicao.id = Convert.ToInt32(txtPermId.Text);
+            permicao.tipo = txtUser.Text.Trim();
+            permicao.frmVenda = (rdbVendSim.Checked) ? true : false;
+            permicao.frmCliente = (rdbCliSim.Checked) ? true : false;
+            permicao.frmAddCliente = (rdbAddCliSim.Checked) ? true : false;
+            permicao.frmConfiguracoes = (rdbConfigSim.Checked) ? true : false;
+            permicao.frmHotel = (rdbHotelSim.Checked) ? true : false;
+            permicao.frmClinica = (rdbClinSim.Checked) ? true : false;
+            permicao.frmPainel = (rdbDashSim.Checked) ? true : false;
+            permicao.frmProdutos = (rdbProdSim.Checked) ? true : false;
+
+            contexto.Entry(funcionario).State = EntityState.Deleted;
+            contexto.SaveChanges();
+
+            contexto.Entry(permicao).State = EntityState.Deleted;
+            contexto.SaveChanges();
+
+            contexto.Entry(usuario).State = EntityState.Deleted;
+            contexto.SaveChanges();
 
             LimpaCampos();
             AtualizaView();
@@ -79,22 +112,16 @@ namespace HotelPet
 
         private void frmPermissoes_Load(object sender, EventArgs e)
         {
-            //frmLogin login = new frmLogin();
-            //login.ShowDialog();
-            
-            //if (login.DialogResult == DialogResult.Cancel)
-            {
-              //  BeginInvoke(new InvokeDelegate(confirm));
-            }
-
             AtualizaView();
-
             Atualizabtn(true);
             HabilitaCampos(false);
 
+            txtFuncId.Visible = false;
+            txtUserId.Visible = false;
+            txtPermId.Visible = false;
+            txtSenhaUser.Visible = false;
             ckAltSenha.Visible = false;
             ckAltSenha.Checked = false;
-
         }
 
         private void confirm()
@@ -129,16 +156,18 @@ namespace HotelPet
 
             gpbVendas.Enabled = campo;
             gpbClientes.Enabled = campo;
-            gpbProdutos.Enabled = campo;
-            gpbServicos.Enabled = campo;
-            gpbFuncionarios.Enabled = campo;
+            gpbAddClientes.Enabled = campo;
+            gpbDash.Enabled = campo;
             gpbHotel.Enabled = campo;
             gpbClinica.Enabled = campo;
             gpbConfig.Enabled = campo;
+            gpbProd.Enabled = campo;
         }
 
         private void dgvPermicoes_DoubleClick(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
+
             ckAltSenha.Visible = true;
             ckAltSenha.Checked = false;
             
@@ -148,106 +177,103 @@ namespace HotelPet
             btnExcluir.Enabled = true;
             btnNovo.Enabled = true;
 
-            int idUsr = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["userID"].Value.ToString());
+            txtFuncId.Text = dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString();
+            string X = dgvPermicoes.SelectedRows[0].Cells["Usuario_id"].Value.ToString();
+            txtUserId.Text = X;
+            int A = Convert.ToInt32(X);
+            Usuario usuario = contexto.Usuario.FirstOrDefault(x => x.id == A);
+            txtSenhaUser.Text = usuario.senha;
+            txtPermId.Text = dgvPermicoes.SelectedRows[0].Cells["Permicoes_id"].Value.ToString();
+
             int id = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString());
-
-            UsuariosDAL dal = new UsuariosDAL();
-            Usuario usuario = dal.Select(idUsr);
-            Funcionario func = new Funcionario
-            {
-                id = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString()),
-                nome = dgvPermicoes.SelectedRows[0].Cells["nome"].Value.ToString(),
-                rg = dgvPermicoes.SelectedRows[0].Cells["rg"].Value.ToString(),
-                cpf = dgvPermicoes.SelectedRows[0].Cells["cpf"].Value.ToString(),
-                endereco = dgvPermicoes.SelectedRows[0].Cells["endereco"].Value.ToString(),
-                uf = dgvPermicoes.SelectedRows[0].Cells["uf"].Value.ToString(),
-                userID = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["userID"].Value.ToString()),
-                permicaoID = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["permicaoID"].Value.ToString())
-            };
-
-            PermicoesBLL bll = new PermicoesBLL();
-            Permicoes tipo = bll.Select(func.permicaoID);
-
+            Funcionario funcionario = contexto.Funcionario.FirstOrDefault(x => x.id == id);
+          
             lblAviso.Text = "*Vazio para manter a mesma senha, ou digite uma nova para redefinir";
-            txtUser.Text = usuario.usuario;
+            txtUser.Text = funcionario.Usuario.usuario;
             txtNome.Text = dgvPermicoes.SelectedRows[0].Cells["nome"].Value.ToString();
             txtRG.Text = dgvPermicoes.SelectedRows[0].Cells["rg"].Value.ToString();
             txtCPF.Text = dgvPermicoes.SelectedRows[0].Cells["cpf"].Value.ToString();
             txtEndereco.Text = dgvPermicoes.SelectedRows[0].Cells["endereco"].Value.ToString();
             txtUF.Text = dgvPermicoes.SelectedRows[0].Cells["uf"].Value.ToString();
-            AtualizaRdb(tipo);
+            AtualizaRdb(funcionario.Permicoes);
             txtSenha.Enabled = false;
             checkPwd.Enabled = false;
         }
 
         private void AtualizaRdb(Permicoes permicao)
         {
-            _ = permicao.frmvendas == true ? rdbVendSim.Checked = true : rdbVendNao.Checked = true;
-            _ = permicao.frmclientes == true ? rdbCliSim.Checked = true : rdbCliNao.Checked = true;
-            _ = permicao.frmprodutos == true ? rdbProdSim.Checked = true : rdbProdNao.Checked = true;
-            _ = permicao.frmservicos == true ? rdbServSim.Checked = true : rdbServNao.Checked = true;
-            _ = permicao.frmfuncionarios == true ? rdbFuncSim.Checked = true : rdbFuncNao.Checked = true;
-            _ = permicao.frmConfig == true ? rdbConfigSim.Checked = true : rdbConfigNao.Checked = true;
-            _ = permicao.frmhotel == true ? rdbHotelSim.Checked = true : rdbHotelNao.Checked = true;
-            _ = permicao.frmclinica == true ? rdbClinSim.Checked = true : rdbClinNao.Checked = true;
+            _ = permicao.frmVenda == true ? rdbVendSim.Checked = true : rdbVendNao.Checked = true;
+            _ = permicao.frmCliente == true ? rdbCliSim.Checked = true : rdbCliNao.Checked = true;
+            _ = permicao.frmAddCliente == true ? rdbAddCliSim.Checked = true : rdbAddCliNao.Checked = true;
+            _ = permicao.frmConfiguracoes == true ? rdbConfigSim.Checked = true : rdbConfigNao.Checked = true;
+            _ = permicao.frmHotel == true ? rdbHotelSim.Checked = true : rdbHotelNao.Checked = true;
+            _ = permicao.frmClinica == true ? rdbClinSim.Checked = true : rdbClinNao.Checked = true;
+            _ = permicao.frmPainel == true ? rdbDashSim.Checked = true : rdbDashNao.Checked = true;
+            _ = permicao.frmProdutos == true ? rdbProdSim.Checked = true : rdbProdNao.Checked = true;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string pass = txtSenha.Text.Trim();
-            byte[] passtohash = Encoding.UTF8.GetBytes(pass);
-
+            Contexto contexto = new Contexto();
             Usuario usuario = new Usuario();
             Funcionario funcionario = new Funcionario();
             Permicoes permicao = new Permicoes();
 
-            UsuarioBLL bllUser = new UsuarioBLL();
-            FuncionarioBLL bllFunc = new FuncionarioBLL();
-            PermicoesBLL bllPerm = new PermicoesBLL();
+            string pass = txtSenha.Text.Trim();
+            byte[] passtohash = Encoding.UTF8.GetBytes(pass);
+            string pwd = txtSenhaUser.Text;
 
-            usuario.usuario = txtUser.Text;
-            string pwd = Hash(passtohash);
+            if (ckAltSenha.Checked)
+            {
+                pwd = Hash(passtohash);
+            }
 
+            usuario.id = Convert.ToInt32(txtUserId.Text);
+            usuario.usuario = txtUser.Text.Trim();
             usuario.senha = pwd;
 
+            funcionario.id = Convert.ToInt32(txtFuncId.Text);
             funcionario.nome = txtNome.Text;
             funcionario.rg = txtRG.Text;
             funcionario.cpf = txtCPF.Text;
             funcionario.endereco = txtEndereco.Text;
             funcionario.uf = txtUF.Text;
+            funcionario.Permicoes_id = Convert.ToInt32(txtPermId.Text);
+            funcionario.Usuario_id = Convert.ToInt32(txtUserId.Text);
 
-            permicao.frmclientes = (rdbCliSim.Checked) ? true : false;
-            permicao.frmConfig = (rdbConfigSim.Checked) ? true : false;
-            permicao.frmfuncionarios = (rdbFuncSim.Checked) ? true : false;
-            permicao.frmprodutos = (rdbProdSim.Checked) ? true : false;
-            permicao.frmservicos = (rdbServSim.Checked) ? true : false;
-            permicao.frmvendas = (rdbVendSim.Checked) ? true : false;
-            permicao.frmclinica = (rdbClinSim.Checked) ? true : false;
-            permicao.frmhotel = (rdbHotelSim.Checked) ? true : false;
+            permicao.id = Convert.ToInt32(txtPermId.Text);
+            permicao.tipo = txtUser.Text.Trim();
+            permicao.frmVenda = (rdbVendSim.Checked) ? true : false;
+            permicao.frmCliente = (rdbCliSim.Checked) ? true : false;
+            permicao.frmAddCliente = (rdbAddCliSim.Checked) ? true : false;
+            permicao.frmConfiguracoes = (rdbConfigSim.Checked) ? true : false;
+            permicao.frmHotel = (rdbHotelSim.Checked) ? true : false;
+            permicao.frmClinica = (rdbClinSim.Checked) ? true : false;
+            permicao.frmPainel = (rdbDashSim.Checked) ? true : false;
+            permicao.frmProdutos = (rdbProdSim.Checked) ? true : false;
 
-            Usuario user = bllUser.SelectUpd(usuario);
-            funcionario.userID = user.id;
+            contexto.Entry(usuario).State = EntityState.Modified;
+            contexto.SaveChanges();
 
-            Permicoes Perm = bllPerm.Select(funcionario, permicao);
-            funcionario.permicaoID = Perm.id;
-            
-            bllFunc.SelectUpd(funcionario);
+            contexto.Entry(funcionario).State = EntityState.Modified;
+            contexto.SaveChanges();
+
+            contexto.Entry(permicao).State = EntityState.Modified;
+            contexto.SaveChanges();
 
             AtualizaView();
             ckAltSenha.Checked = false;
             ckAltSenha.Visible = false;
+            LimpaCampos();
         }
 
         private void AtualizaView()
         {
+            Contexto contexto = new Contexto();
+
             dgvPermicoes.Visible = true;
-
-            FuncionarioDAL dal = new FuncionarioDAL();
-            //Funcionario funcionario = new Funcionario();
-
-            //funcionario.nome = "";
             dgvPermicoes.DataSource = "";
-            dgvPermicoes.DataSource = dal.Select();
+            dgvPermicoes.DataSource = contexto.Funcionario.Where(x => x.nome != "").ToList();
 
             HabilitaCampos(true);
             checkPwd.Checked = false;
@@ -280,13 +306,15 @@ namespace HotelPet
 
             rdbVendSim.Checked = true;
             rdbCliSim.Checked = true;
-            rdbProdSim.Checked = true;
-            rdbServSim.Checked = true;
-            rdbFuncSim.Checked = true;
+            rdbAddCliSim.Checked = true;
+            rdbConfigSim.Checked = true;
             rdbHotelSim.Checked = true;
             rdbClinSim.Checked = true;
-            rdbConfigSim.Checked = true;
+            rdbDashSim.Checked = true;
+            rdbProdSim.Checked = true;
+
             checkPwd.Checked = false;
+
             ckAltSenha.Checked = false;
             ckAltSenha.Visible = false;
         }
@@ -325,9 +353,8 @@ namespace HotelPet
                 lblWarning.Text = "";
             }
 
-            Usuario usuario = new Usuario();
-            UsuariosDAL dal = new UsuariosDAL();
-            List<Usuario> lst = dal.Select();
+            Contexto contexto = new Contexto();
+            List<Usuario> lst = contexto.Usuario.ToList();
             int i = 0;
 
             foreach (var User in lst)
@@ -379,10 +406,6 @@ namespace HotelPet
             Funcionario funcionario = new Funcionario();
             Permicoes permicao = new Permicoes();
 
-            UsuarioBLL bllUser = new UsuarioBLL();
-            FuncionarioBLL bllFunc = new FuncionarioBLL();
-            PermicoesBLL bllPerm = new PermicoesBLL();
-
             string pwd = Hash(passtohash);
 
             usuario.usuario = txtUser.Text;
@@ -394,17 +417,19 @@ namespace HotelPet
             funcionario.endereco = txtEndereco.Text;
             funcionario.uf = txtUF.Text;
 
-            permicao.frmclientes = (rdbCliSim.Checked) ?  true : false;
-            permicao.frmConfig = (rdbConfigSim.Checked) ? true : false;
-            permicao.frmfuncionarios= (rdbFuncSim.Checked) ? true : false;
-            permicao.frmprodutos= (rdbProdSim.Checked) ? true : false;
-            permicao.frmservicos= (rdbServSim.Checked) ? true : false;
-            permicao.frmvendas= (rdbVendSim.Checked) ? true : false;
-            permicao.frmclinica= (rdbClinSim.Checked) ? true : false;
-            permicao.frmhotel= (rdbHotelSim.Checked) ? true : false;
+            permicao.tipo = txtUser.Text.Trim();
+            permicao.frmVenda= (rdbVendSim.Checked) ? true : false;
+            permicao.frmCliente = (rdbCliSim.Checked) ?  true : false;
+            permicao.frmAddCliente= (rdbAddCliSim.Checked) ? true : false;
+            permicao.frmConfiguracoes = (rdbConfigSim.Checked) ? true : false;
+            permicao.frmHotel= (rdbHotelSim.Checked) ? true : false;
+            permicao.frmClinica= (rdbClinSim.Checked) ? true : false;
+            permicao.frmPainel= (rdbDashSim.Checked) ? true : false;
+            permicao.frmProdutos = (rdbProdSim.Checked) ? true : false;
 
+            Contexto contexto = new Contexto();
             List<Usuario> lstuser = new List<Usuario>();
-            lstuser = bllUser.Select();
+            lstuser = contexto.Usuario.ToList();
             int cont = 0;
             string estiver ="OK";
 
@@ -471,7 +496,21 @@ namespace HotelPet
 
                 if (cont == 0)
                 {
-                    bllFunc.Insert(funcionario, usuario, permicao);
+                    //bllFunc.Insert(funcionario, usuario, permicao);
+                    contexto.Usuario.Add(usuario);
+                    contexto.SaveChanges();
+
+                    contexto.Permicao.Add(permicao);
+                    contexto.SaveChanges();
+
+                    Usuario user = contexto.Usuario.FirstOrDefault(x => x.usuario == usuario.usuario);
+                    Permicoes perm = contexto.Permicao.FirstOrDefault(x => x.tipo == usuario.usuario);
+
+                    funcionario.Usuario_id = user.id;
+                    funcionario.Permicoes_id = perm.id;
+
+                    contexto.Funcionario.Add(funcionario);
+                    contexto.SaveChanges();
                 }
                 else
                 {
@@ -511,19 +550,20 @@ namespace HotelPet
 
         private void txtBusca_KeyUp(object sender, KeyEventArgs e)
         {
-            FuncionarioDAL dal = new FuncionarioDAL();
-            Funcionario funcionario = new Funcionario();
-
-            funcionario.nome = txtBusca.Text;
+            Contexto contexto = new Contexto();
 
             dgvPermicoes.DataSource = "";
-            dgvPermicoes.DataSource = dal.SelectConf(funcionario);
-
+            dgvPermicoes.DataSource = contexto.Funcionario.Where(x => x.nome == txtBusca.Text).ToList();
         }
 
         private void txtCPF_KeyUp(object sender, KeyEventArgs e)
         {
             //000.000.000-00                        
+        }
+
+        private void txtFuncId_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
