@@ -17,11 +17,13 @@ namespace HotelPet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frmLogin login = new frmLogin();
+            
+            login.Show();
 
-            if(login.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new frmMenu());
-            }
+            //if(login.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new frmMenu());
+            //}
         }
     }
 }

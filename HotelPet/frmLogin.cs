@@ -43,11 +43,6 @@ namespace HotelPet
 
             Usuario usuario = contexto.Usuario.FirstOrDefault(u => u.usuario == user && u.senha == pwd);
 
-            //string ConfUser =bllUser.SelectUsr(user);
-            //string ConfSenha =bllUser.SelectPwd(user);
-
-            int ID=0;
-
             if(txtUsuario.Text == "" && txtSenha.Text == "")
             {
                 txtUsuario.Text = "";

@@ -84,6 +84,7 @@
             this.lblCli = new System.Windows.Forms.Label();
             this.cmbCli = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Imagem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbxPorte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -615,7 +616,7 @@
             // pbxImage
             // 
             this.pbxImage.BackColor = System.Drawing.Color.DarkGray;
-            this.pbxImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxImage.BackgroundImage")));
+            this.pbxImage.BackgroundImage = global::HotelPet.Properties.Resources.camera;
             this.pbxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxImage.Location = new System.Drawing.Point(1102, 84);
@@ -624,6 +625,7 @@
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImage.TabIndex = 52;
             this.pbxImage.TabStop = false;
+            this.pbxImage.Click += new System.EventHandler(this.pbxImage_Click);
             // 
             // btnDiretorio
             // 
@@ -644,6 +646,7 @@
             this.btnLimpar.TabIndex = 27;
             this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnGravar
             // 
@@ -698,6 +701,15 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "**Obs: Certifique-se que o Cliente está cadastrado antes do animal.";
             // 
+            // Imagem
+            // 
+            this.Imagem.BackColor = System.Drawing.Color.White;
+            this.Imagem.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Imagem.Location = new System.Drawing.Point(1131, 65);
+            this.Imagem.Name = "Imagem";
+            this.Imagem.Size = new System.Drawing.Size(127, 19);
+            this.Imagem.TabIndex = 55;
+            // 
             // frmAnimais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -705,6 +717,7 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1360, 684);
             this.ControlBox = false;
+            this.Controls.Add(this.Imagem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCli);
             this.Controls.Add(this.lblCli);
@@ -823,5 +836,6 @@
         private System.Windows.Forms.Label lblCli;
         private System.Windows.Forms.ComboBox cmbCli;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Imagem;
     }
 }

@@ -14,17 +14,15 @@ namespace HotelPet
 {
     public partial class frmMenu : Form
     {
-        public frmMenu()
-        {
-            InitializeComponent();
-        }
+        public int UsuarioId = 0;
 
         public frmMenu(int Usuario)
         {
+            UsuarioId = Usuario;
             InitializeComponent();
             Contexto contexto = new Contexto();
 
-            Permicoes permicoes = contexto.Permicao.FirstOrDefault(x => x.id == Usuario);
+            Permicoes permicoes = contexto.Permicao.FirstOrDefault(x => x.id == UsuarioId);
 
             btnCadastros.Visible = permicoes.frmAddCliente;
             btnConsultar.Visible = permicoes.frmCliente;

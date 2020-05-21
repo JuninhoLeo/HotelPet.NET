@@ -1,9 +1,13 @@
-﻿using System;
+﻿using HotelPet.Camadas.MODEL;
+using HotelPet.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +23,15 @@ namespace HotelPet
 
         private void Produtos_Load(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
+            List<Cliente> lstCli = contexto.Cliente.ToList();
 
+            cmbCli.DataSource = lstCli;
+            cmbCli.DisplayMember = "nome";
+            cmbCli.ValueMember = "id";
+
+            cmbCli.Text = "";
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -39,23 +51,16 @@ namespace HotelPet
 
         private void btnDiretorio_Click(object sender, EventArgs e)
         {
-            string imageLocation = "";
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
 
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    imageLocation = dialog.FileName;
-
-                    pbxImage.ImageLocation = imageLocation;
-                }
-            }
-            catch (Exception)
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("UM Erro Ocorreu", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string imageLocation = dialog.FileName.ToString(); ;
+                pbxImage.ImageLocation = imageLocation;
+                Imagem.Text = imageLocation;
             }
+            
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
@@ -104,27 +109,17 @@ namespace HotelPet
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            DialogResult confirm = MessageBox.Show("Deseja Salvar as alterações deste documento?", "Deseja Fechar?",
-                           MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-
-            if (confirm.ToString().ToUpper() == "YES")
-            {
-                // Salvar os dados
-                this.Close();
-            }
-            if (confirm.ToString().ToUpper() == "NO")
-            {
-                // Sair sem salvar
-                this.Close();
-            }
+        {          
+            this.Close();            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
+
             int Conf = 0;
-            DialogResult confirm = MessageBox.Show("Deseja Salvar as alterações deste documento antes do fechar? " +
-                                                   "Clique em Sim para salvar e fechar", "Deseja Salvar?",
+            DialogResult confirm = MessageBox.Show("Deseja Salvar as alterações deste documento? " +
+                                                   "Clique em Sim para salvar e fechar", "Deseja Salvar",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
             if (confirm.ToString().ToUpper() == "YES")
@@ -142,7 +137,7 @@ namespace HotelPet
                 {
                     if (Convert.ToString(cmbCli.SelectedItem) != "")
                     {
-                        //animal.Cliente = Convert.ToInt32(cmbCli.SelectedItem);
+                        animal.Cliente_id = Convert.ToInt32(cmbCli.SelectedValue);
                         Conf = 0;
                     }
                     else
@@ -165,6 +160,25 @@ namespace HotelPet
                     }
                 }
 
+                 /*
+                    Recuperar a imagem do banco:
+                 
+                    MemoryStream mstream = new MemoryStream(imagem);
+                    pbxImage.Image = Image.FromStream(mstream);
+                 */
+
+                if (Imagem.Text != "")
+                {
+                    FileStream fstream = new FileStream(Imagem.Text, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fstream);
+                    byte[] imagem = br.ReadBytes((int)fstream.Length);
+
+                    animal.imagem = imagem;
+                }
+                else
+                {
+                    animal.imagem = null;
+                }
 
                 animal.nascimento = dateNasc.Value;
                 animal.nascpai = datePai.Value;
@@ -217,11 +231,32 @@ namespace HotelPet
                                
                 if (Conf == 0)
                 {
-                    //Camadas.DAL.AnimalDAL dalAnimal = new Camadas.DAL.AnimalDAL();
-                    //dalAnimal.Insert(animal);
+                    contexto.Animal.Add(animal);
+                    contexto.SaveChanges();
+                    LimpaCampos();
                     this.Close();
                 }
             }            
+        }
+
+        public void LimpaCampos()
+        {
+            dateNasc.Value = DateTime.Now;
+            datePai.Value = DateTime.Now;
+            dateMae.Value = DateTime.Now;
+            txtEspecie.Text = "";
+            txtRaca.Text = "";
+            txtPelagem.Text = "";
+            txtCor.Text = "";
+            rbdMini.Checked = true;
+            rbdMacho.Checked = true;
+            txtApelido.Text = "";
+            txtNome.Text = "";
+            txtPai.Text = "";
+            txtMae.Text = "";
+            txtObs.Text = "";
+            txtCuidados.Text = "";
+            pbxImage.ImageLocation = "C:\\Users\\JrJos\\Desktop\\ProjetoTcc\\HotelPet.NET\\HotelPet\\images\\camera.png";
         }
 
         private void txtObs_Click(object sender, EventArgs e)
@@ -232,6 +267,16 @@ namespace HotelPet
         private void txtCuidados_Click(object sender, EventArgs e)
         {
             txtCuidados.Text = "";
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxImage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,9 +39,6 @@
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
@@ -49,8 +46,13 @@
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtRG = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNome
@@ -59,7 +61,7 @@
             this.txtNome.Location = new System.Drawing.Point(93, 97);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(335, 25);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 11;
             // 
             // lblNome
             // 
@@ -69,7 +71,7 @@
             this.lblNome.Location = new System.Drawing.Point(41, 102);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(49, 17);
-            this.lblNome.TabIndex = 2;
+            this.lblNome.TabIndex = 4;
             this.lblNome.Text = "Nome:";
             // 
             // lblUF
@@ -80,7 +82,7 @@
             this.lblUF.Location = new System.Drawing.Point(60, 270);
             this.lblUF.Name = "lblUF";
             this.lblUF.Size = new System.Drawing.Size(30, 17);
-            this.lblUF.TabIndex = 6;
+            this.lblUF.TabIndex = 8;
             this.lblUF.Text = "UF:";
             // 
             // txtUF
@@ -90,7 +92,7 @@
             this.txtUF.MaxLength = 2;
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(33, 25);
-            this.txtUF.TabIndex = 5;
+            this.txtUF.TabIndex = 15;
             // 
             // lblCidade
             // 
@@ -100,7 +102,7 @@
             this.lblCidade.Location = new System.Drawing.Point(36, 228);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(54, 17);
-            this.lblCidade.TabIndex = 8;
+            this.lblCidade.TabIndex = 7;
             this.lblCidade.Text = "Cidade:";
             // 
             // txtCidade
@@ -109,7 +111,7 @@
             this.txtCidade.Location = new System.Drawing.Point(93, 223);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(199, 25);
-            this.txtCidade.TabIndex = 7;
+            this.txtCidade.TabIndex = 14;
             // 
             // lblRG
             // 
@@ -119,7 +121,7 @@
             this.lblRG.Location = new System.Drawing.Point(60, 186);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(30, 17);
-            this.lblRG.TabIndex = 10;
+            this.lblRG.TabIndex = 6;
             this.lblRG.Text = "RG:";
             // 
             // lblCPF
@@ -130,7 +132,7 @@
             this.lblCPF.Location = new System.Drawing.Point(53, 144);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(37, 17);
-            this.lblCPF.TabIndex = 12;
+            this.lblCPF.TabIndex = 5;
             this.lblCPF.Text = "CPF:";
             // 
             // lblTelefone
@@ -141,7 +143,7 @@
             this.lblTelefone.Location = new System.Drawing.Point(24, 312);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(66, 17);
-            this.lblTelefone.TabIndex = 4;
+            this.lblTelefone.TabIndex = 9;
             this.lblTelefone.Text = "Telefone:";
             // 
             // lblEmail
@@ -152,7 +154,7 @@
             this.lblEmail.Location = new System.Drawing.Point(38, 354);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 17);
-            this.lblEmail.TabIndex = 14;
+            this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "e-mail:";
             // 
             // txtEmail
@@ -161,46 +163,19 @@
             this.txtEmail.Location = new System.Drawing.Point(93, 349);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(335, 25);
-            this.txtEmail.TabIndex = 13;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1111, 536);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Image = global::HotelPet.Properties.Resources.ok;
-            this.btnConfirm.Location = new System.Drawing.Point(903, 492);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(103, 48);
-            this.btnConfirm.TabIndex = 16;
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::HotelPet.Properties.Resources.X;
-            this.btnCancelar.Location = new System.Drawing.Point(1012, 492);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(103, 48);
-            this.btnCancelar.TabIndex = 18;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.button3_Click);
+            this.txtEmail.TabIndex = 17;
             // 
             // dgvCliente
             // 
             this.dgvCliente.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(496, 105);
+            this.dgvCliente.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvCliente.Location = new System.Drawing.Point(529, 94);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(608, 352);
-            this.dgvCliente.TabIndex = 19;
+            this.dgvCliente.TabIndex = 18;
+            this.dgvCliente.DoubleClick += new System.EventHandler(this.dgvCliente_DoubleClick);
             // 
             // label1
             // 
@@ -211,17 +186,17 @@
             this.label1.Location = new System.Drawing.Point(26, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 32);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Cadastro de Cliente";
             // 
             // txtBusca
             // 
             this.txtBusca.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusca.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtBusca.Location = new System.Drawing.Point(760, 76);
+            this.txtBusca.Location = new System.Drawing.Point(618, 67);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(335, 25);
-            this.txtBusca.TabIndex = 21;
+            this.txtBusca.TabIndex = 3;
             this.txtBusca.Text = "Digite aqui o Nome do Cliente:";
             this.txtBusca.Click += new System.EventHandler(this.textBox1_Click);
             this.txtBusca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusca_KeyUp);
@@ -233,10 +208,10 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(679, 73);
+            this.label2.Location = new System.Drawing.Point(532, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 25);
-            this.label2.TabIndex = 22;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Buscar:";
             // 
             // txtCPF
@@ -246,7 +221,7 @@
             this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(135, 25);
-            this.txtCPF.TabIndex = 23;
+            this.txtCPF.TabIndex = 12;
             // 
             // txtRG
             // 
@@ -255,7 +230,7 @@
             this.txtRG.Mask = "00.000.000-0";
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(107, 25);
-            this.txtRG.TabIndex = 24;
+            this.txtRG.TabIndex = 13;
             // 
             // txtTelefone
             // 
@@ -264,15 +239,65 @@
             this.txtTelefone.Mask = "(00) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(121, 25);
-            this.txtTelefone.TabIndex = 25;
+            this.txtTelefone.TabIndex = 16;
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Image = global::HotelPet.Properties.Resources.trash;
+            this.btnDeletar.Location = new System.Drawing.Point(816, 485);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(103, 48);
+            this.btnDeletar.TabIndex = 19;
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::HotelPet.Properties.Resources.X;
+            this.btnCancelar.Location = new System.Drawing.Point(1034, 485);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(103, 48);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Image = global::HotelPet.Properties.Resources.ok;
+            this.btnConfirm.Location = new System.Drawing.Point(925, 485);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(103, 48);
+            this.btnConfirm.TabIndex = 20;
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1148, 536);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.White;
+            this.txtId.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtId.Location = new System.Drawing.Point(434, 97);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(80, 25);
+            this.txtId.TabIndex = 22;
             // 
             // frmCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1135, 560);
+            this.ClientSize = new System.Drawing.Size(1172, 560);
             this.ControlBox = false;
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.txtCPF);
@@ -301,8 +326,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +355,7 @@
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtRG;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Label txtId;
     }
 }

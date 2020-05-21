@@ -220,6 +220,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camadas\BLL\ClienteBLL.cs" />
+    <Compile Include="Camadas\DAL\AnimalDAL.cs" />
+    <Compile Include="Camadas\DAL\ClienteDAL.cs" />
     <Compile Include="Camadas\MODEL\Administrador.cs" />
     <Compile Include="Camadas\MODEL\Servicos.cs" />
     <Compile Include="Camadas\MODEL\Cliente.cs" />
@@ -437,9 +440,12 @@
   <ItemGroup>
     <None Include="images\alert_icon_129491.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Camadas\BLL\" />
-    <Folder Include="Camadas\DAL\" />
+    <None Include="images\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\trash.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
