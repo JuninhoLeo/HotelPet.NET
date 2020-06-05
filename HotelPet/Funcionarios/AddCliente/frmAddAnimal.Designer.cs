@@ -95,9 +95,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1356, 646);
+            this.pictureBox1.Size = new System.Drawing.Size(1356, 626);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -105,7 +105,7 @@
             // txtEspecie
             // 
             this.txtEspecie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEspecie.Location = new System.Drawing.Point(117, 126);
+            this.txtEspecie.Location = new System.Drawing.Point(108, 94);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(229, 25);
             this.txtEspecie.TabIndex = 1;
@@ -113,7 +113,7 @@
             // txtCor
             // 
             this.txtCor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCor.Location = new System.Drawing.Point(117, 276);
+            this.txtCor.Location = new System.Drawing.Point(108, 244);
             this.txtCor.Name = "txtCor";
             this.txtCor.Size = new System.Drawing.Size(229, 25);
             this.txtCor.TabIndex = 4;
@@ -121,7 +121,7 @@
             // txtPelagem
             // 
             this.txtPelagem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPelagem.Location = new System.Drawing.Point(117, 226);
+            this.txtPelagem.Location = new System.Drawing.Point(108, 194);
             this.txtPelagem.Name = "txtPelagem";
             this.txtPelagem.Size = new System.Drawing.Size(229, 25);
             this.txtPelagem.TabIndex = 3;
@@ -129,7 +129,7 @@
             // txtRaca
             // 
             this.txtRaca.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaca.Location = new System.Drawing.Point(117, 176);
+            this.txtRaca.Location = new System.Drawing.Point(108, 144);
             this.txtRaca.Name = "txtRaca";
             this.txtRaca.Size = new System.Drawing.Size(229, 25);
             this.txtRaca.TabIndex = 2;
@@ -140,7 +140,7 @@
             this.lblEspecie.AutoSize = true;
             this.lblEspecie.BackColor = System.Drawing.Color.White;
             this.lblEspecie.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecie.Location = new System.Drawing.Point(48, 129);
+            this.lblEspecie.Location = new System.Drawing.Point(39, 97);
             this.lblEspecie.Name = "lblEspecie";
             this.lblEspecie.Size = new System.Drawing.Size(65, 19);
             this.lblEspecie.TabIndex = 9;
@@ -151,7 +151,7 @@
             this.lblCor.AutoSize = true;
             this.lblCor.BackColor = System.Drawing.Color.White;
             this.lblCor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCor.Location = new System.Drawing.Point(75, 279);
+            this.lblCor.Location = new System.Drawing.Point(66, 247);
             this.lblCor.Name = "lblCor";
             this.lblCor.Size = new System.Drawing.Size(38, 19);
             this.lblCor.TabIndex = 11;
@@ -162,7 +162,7 @@
             this.lblPelagem.AutoSize = true;
             this.lblPelagem.BackColor = System.Drawing.Color.White;
             this.lblPelagem.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPelagem.Location = new System.Drawing.Point(42, 230);
+            this.lblPelagem.Location = new System.Drawing.Point(33, 198);
             this.lblPelagem.Name = "lblPelagem";
             this.lblPelagem.Size = new System.Drawing.Size(71, 19);
             this.lblPelagem.TabIndex = 12;
@@ -173,7 +173,7 @@
             this.lblRaca.AutoSize = true;
             this.lblRaca.BackColor = System.Drawing.Color.White;
             this.lblRaca.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaca.Location = new System.Drawing.Point(67, 179);
+            this.lblRaca.Location = new System.Drawing.Point(58, 147);
             this.lblRaca.Name = "lblRaca";
             this.lblRaca.Size = new System.Drawing.Size(46, 19);
             this.lblRaca.TabIndex = 13;
@@ -184,7 +184,7 @@
             this.lblMae.AutoSize = true;
             this.lblMae.BackColor = System.Drawing.Color.White;
             this.lblMae.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMae.Location = new System.Drawing.Point(404, 110);
+            this.lblMae.Location = new System.Drawing.Point(395, 78);
             this.lblMae.Name = "lblMae";
             this.lblMae.Size = new System.Drawing.Size(42, 19);
             this.lblMae.TabIndex = 21;
@@ -195,7 +195,7 @@
             this.lblPai.AutoSize = true;
             this.lblPai.BackColor = System.Drawing.Color.White;
             this.lblPai.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPai.Location = new System.Drawing.Point(412, 156);
+            this.lblPai.Location = new System.Drawing.Point(403, 124);
             this.lblPai.Name = "lblPai";
             this.lblPai.Size = new System.Drawing.Size(34, 19);
             this.lblPai.TabIndex = 20;
@@ -206,7 +206,7 @@
             this.lblApelido.AutoSize = true;
             this.lblApelido.BackColor = System.Drawing.Color.White;
             this.lblApelido.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApelido.Location = new System.Drawing.Point(380, 202);
+            this.lblApelido.Location = new System.Drawing.Point(371, 170);
             this.lblApelido.Name = "lblApelido";
             this.lblApelido.Size = new System.Drawing.Size(66, 19);
             this.lblApelido.TabIndex = 19;
@@ -217,7 +217,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.White;
             this.lblNome.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(392, 64);
+            this.lblNome.Location = new System.Drawing.Point(383, 32);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(54, 19);
             this.lblNome.TabIndex = 18;
@@ -226,7 +226,7 @@
             // txtMae
             // 
             this.txtMae.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMae.Location = new System.Drawing.Point(450, 107);
+            this.txtMae.Location = new System.Drawing.Point(441, 75);
             this.txtMae.Name = "txtMae";
             this.txtMae.Size = new System.Drawing.Size(229, 25);
             this.txtMae.TabIndex = 7;
@@ -234,7 +234,7 @@
             // txtPai
             // 
             this.txtPai.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPai.Location = new System.Drawing.Point(450, 153);
+            this.txtPai.Location = new System.Drawing.Point(441, 121);
             this.txtPai.Name = "txtPai";
             this.txtPai.Size = new System.Drawing.Size(229, 25);
             this.txtPai.TabIndex = 9;
@@ -242,7 +242,7 @@
             // txtApelido
             // 
             this.txtApelido.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApelido.Location = new System.Drawing.Point(450, 199);
+            this.txtApelido.Location = new System.Drawing.Point(441, 167);
             this.txtApelido.Name = "txtApelido";
             this.txtApelido.Size = new System.Drawing.Size(229, 25);
             this.txtApelido.TabIndex = 11;
@@ -250,7 +250,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(450, 61);
+            this.txtNome.Location = new System.Drawing.Point(441, 29);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(229, 25);
             this.txtNome.TabIndex = 5;
@@ -391,7 +391,7 @@
             this.gbxPorte.Controls.Add(this.label14);
             this.gbxPorte.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxPorte.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gbxPorte.Location = new System.Drawing.Point(36, 455);
+            this.gbxPorte.Location = new System.Drawing.Point(27, 423);
             this.gbxPorte.Name = "gbxPorte";
             this.gbxPorte.Size = new System.Drawing.Size(373, 192);
             this.gbxPorte.TabIndex = 15;
@@ -464,7 +464,7 @@
             // txtCuidados
             // 
             this.txtCuidados.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCuidados.Location = new System.Drawing.Point(534, 464);
+            this.txtCuidados.Location = new System.Drawing.Point(525, 432);
             this.txtCuidados.Multiline = true;
             this.txtCuidados.Name = "txtCuidados";
             this.txtCuidados.Size = new System.Drawing.Size(503, 186);
@@ -476,7 +476,7 @@
             // txtObs
             // 
             this.txtObs.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObs.Location = new System.Drawing.Point(534, 255);
+            this.txtObs.Location = new System.Drawing.Point(525, 223);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(503, 186);
@@ -490,7 +490,7 @@
             this.lblObs.AutoSize = true;
             this.lblObs.BackColor = System.Drawing.Color.White;
             this.lblObs.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObs.Location = new System.Drawing.Point(433, 255);
+            this.lblObs.Location = new System.Drawing.Point(424, 223);
             this.lblObs.Name = "lblObs";
             this.lblObs.Size = new System.Drawing.Size(101, 19);
             this.lblObs.TabIndex = 41;
@@ -502,7 +502,7 @@
             this.lblCuidados.AutoSize = true;
             this.lblCuidados.BackColor = System.Drawing.Color.White;
             this.lblCuidados.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCuidados.Location = new System.Drawing.Point(456, 464);
+            this.lblCuidados.Location = new System.Drawing.Point(447, 432);
             this.lblCuidados.Name = "lblCuidados";
             this.lblCuidados.Size = new System.Drawing.Size(77, 19);
             this.lblCuidados.TabIndex = 42;
@@ -541,7 +541,7 @@
             this.gbxSexo.Controls.Add(this.rbdMacho);
             this.gbxSexo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxSexo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gbxSexo.Location = new System.Drawing.Point(57, 344);
+            this.gbxSexo.Location = new System.Drawing.Point(48, 312);
             this.gbxSexo.Name = "gbxSexo";
             this.gbxSexo.Size = new System.Drawing.Size(200, 94);
             this.gbxSexo.TabIndex = 12;
@@ -553,7 +553,7 @@
             this.lblNascMae.AutoSize = true;
             this.lblNascMae.BackColor = System.Drawing.Color.White;
             this.lblNascMae.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNascMae.Location = new System.Drawing.Point(701, 109);
+            this.lblNascMae.Location = new System.Drawing.Point(692, 77);
             this.lblNascMae.Name = "lblNascMae";
             this.lblNascMae.Size = new System.Drawing.Size(94, 19);
             this.lblNascMae.TabIndex = 47;
@@ -564,7 +564,7 @@
             this.lblNascPai.AutoSize = true;
             this.lblNascPai.BackColor = System.Drawing.Color.White;
             this.lblNascPai.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNascPai.Location = new System.Drawing.Point(701, 155);
+            this.lblNascPai.Location = new System.Drawing.Point(692, 123);
             this.lblNascPai.Name = "lblNascPai";
             this.lblNascPai.Size = new System.Drawing.Size(94, 19);
             this.lblNascPai.TabIndex = 46;
@@ -575,7 +575,7 @@
             this.lblNasc.AutoSize = true;
             this.lblNasc.BackColor = System.Drawing.Color.White;
             this.lblNasc.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNasc.Location = new System.Drawing.Point(701, 63);
+            this.lblNasc.Location = new System.Drawing.Point(692, 31);
             this.lblNasc.Name = "lblNasc";
             this.lblNasc.Size = new System.Drawing.Size(94, 19);
             this.lblNasc.TabIndex = 45;
@@ -583,21 +583,21 @@
             // 
             // dateNasc
             // 
-            this.dateNasc.Location = new System.Drawing.Point(798, 63);
+            this.dateNasc.Location = new System.Drawing.Point(789, 31);
             this.dateNasc.Name = "dateNasc";
             this.dateNasc.Size = new System.Drawing.Size(220, 20);
             this.dateNasc.TabIndex = 6;
             // 
             // datePai
             // 
-            this.datePai.Location = new System.Drawing.Point(798, 155);
+            this.datePai.Location = new System.Drawing.Point(789, 123);
             this.datePai.Name = "datePai";
             this.datePai.Size = new System.Drawing.Size(220, 20);
             this.datePai.TabIndex = 10;
             // 
             // dateMae
             // 
-            this.dateMae.Location = new System.Drawing.Point(798, 109);
+            this.dateMae.Location = new System.Drawing.Point(789, 77);
             this.dateMae.Name = "dateMae";
             this.dateMae.Size = new System.Drawing.Size(220, 20);
             this.dateMae.TabIndex = 8;
@@ -607,7 +607,7 @@
             this.lblImagem.AutoSize = true;
             this.lblImagem.BackColor = System.Drawing.Color.White;
             this.lblImagem.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImagem.Location = new System.Drawing.Point(1057, 64);
+            this.lblImagem.Location = new System.Drawing.Point(1048, 32);
             this.lblImagem.Name = "lblImagem";
             this.lblImagem.Size = new System.Drawing.Size(68, 19);
             this.lblImagem.TabIndex = 51;
@@ -619,7 +619,7 @@
             this.pbxImage.BackgroundImage = global::HotelPet.Properties.Resources.camera;
             this.pbxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxImage.Location = new System.Drawing.Point(1102, 84);
+            this.pbxImage.Location = new System.Drawing.Point(1093, 52);
             this.pbxImage.Name = "pbxImage";
             this.pbxImage.Size = new System.Drawing.Size(212, 275);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -630,7 +630,7 @@
             // btnDiretorio
             // 
             this.btnDiretorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDiretorio.BackgroundImage")));
-            this.btnDiretorio.Location = new System.Drawing.Point(1244, 376);
+            this.btnDiretorio.Location = new System.Drawing.Point(1235, 344);
             this.btnDiretorio.Name = "btnDiretorio";
             this.btnDiretorio.Size = new System.Drawing.Size(70, 71);
             this.btnDiretorio.TabIndex = 22;
@@ -640,7 +640,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(1124, 619);
+            this.btnLimpar.Location = new System.Drawing.Point(1115, 566);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(224, 43);
             this.btnLimpar.TabIndex = 27;
@@ -651,7 +651,7 @@
             // btnGravar
             // 
             this.btnGravar.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGravar.Location = new System.Drawing.Point(1124, 572);
+            this.btnGravar.Location = new System.Drawing.Point(1115, 519);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(224, 43);
             this.btnGravar.TabIndex = 26;
@@ -662,7 +662,7 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(1124, 525);
+            this.btnSair.Location = new System.Drawing.Point(1115, 472);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(224, 43);
             this.btnSair.TabIndex = 25;
@@ -675,7 +675,7 @@
             this.lblCli.AutoSize = true;
             this.lblCli.BackColor = System.Drawing.Color.White;
             this.lblCli.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCli.Location = new System.Drawing.Point(55, 79);
+            this.lblCli.Location = new System.Drawing.Point(46, 47);
             this.lblCli.Name = "lblCli";
             this.lblCli.Size = new System.Drawing.Size(60, 19);
             this.lblCli.TabIndex = 53;
@@ -684,7 +684,7 @@
             // cmbCli
             // 
             this.cmbCli.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCli.Location = new System.Drawing.Point(119, 76);
+            this.cmbCli.Location = new System.Drawing.Point(110, 44);
             this.cmbCli.Name = "cmbCli";
             this.cmbCli.Size = new System.Drawing.Size(121, 25);
             this.cmbCli.TabIndex = 0;
@@ -695,7 +695,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(22, 39);
+            this.label1.Location = new System.Drawing.Point(13, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(468, 19);
             this.label1.TabIndex = 54;
@@ -705,7 +705,7 @@
             // 
             this.Imagem.BackColor = System.Drawing.Color.White;
             this.Imagem.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Imagem.Location = new System.Drawing.Point(1131, 65);
+            this.Imagem.Location = new System.Drawing.Point(1122, 33);
             this.Imagem.Name = "Imagem";
             this.Imagem.Size = new System.Drawing.Size(127, 19);
             this.Imagem.TabIndex = 55;
@@ -715,7 +715,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1360, 684);
+            this.ClientSize = new System.Drawing.Size(1364, 632);
             this.ControlBox = false;
             this.Controls.Add(this.Imagem);
             this.Controls.Add(this.label1);
@@ -763,9 +763,8 @@
             this.Name = "frmAnimais";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Produtos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbxPorte.ResumeLayout(false);

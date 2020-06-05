@@ -62,8 +62,7 @@ namespace HotelPet
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmImportar frm = new frmImportar();
-            frm.MdiParent = this;
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -79,15 +78,13 @@ namespace HotelPet
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVenda vendas = new frmVenda();
-            vendas.MdiParent = this;
-            vendas.Show();
+            vendas.ShowDialog();
         }
 
         private void animaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAnimais animais = new frmAnimais();
-            animais.MdiParent = this;
-            animais.Show();
+            animais.ShowDialog();
         }
 
         private void hotelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,15 +97,13 @@ namespace HotelPet
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddCliente cliente = new frmAddCliente();
-            cliente.MdiParent = this;
-            cliente.Show();
+            cliente.ShowDialog();
         }
 
         private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPermissoes permissao = new frmPermissoes();
-            permissao.MdiParent = this;
-            permissao.Show();
+            permissao.ShowDialog();
         }
 
         private void painelDeControleToolStripMenuItem_Click(object sender, EventArgs e)
