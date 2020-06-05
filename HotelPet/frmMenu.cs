@@ -1,4 +1,5 @@
-﻿using HotelPet.Camadas.MODEL;
+﻿using HotelPet.Admin;
+using HotelPet.Camadas.MODEL;
 using HotelPet.Entity;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,12 @@ namespace HotelPet
     {
         public int UsuarioId = 0;
 
-        public frmMenu(int Usuario)
+        public frmMenu(int Usuario, frmLogin login)
         {
-            UsuarioId = Usuario;
+            login.Visible = false;
             InitializeComponent();
+
+            UsuarioId = Usuario;
             Contexto contexto = new Contexto();
 
             Permicoes permicoes = contexto.Permicao.FirstOrDefault(x => x.id == UsuarioId);
@@ -51,14 +54,16 @@ namespace HotelPet
 
                 // if (login.ShowDialog() == DialogResult.OK)
                 // {
-                this.Close();
+                Application.Exit();
                 // }
             }
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmImportar frm = new frmImportar();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -94,7 +99,7 @@ namespace HotelPet
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCliente cliente = new frmCliente();
+            frmAddCliente cliente = new frmAddCliente();
             cliente.MdiParent = this;
             cliente.Show();
         }

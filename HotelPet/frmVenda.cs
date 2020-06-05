@@ -1,4 +1,8 @@
-﻿using System;
+﻿using HotelPet.Camadas.MODEL;
+using HotelPet.Entity;
+using HotelPet.Layers.BLL;
+using HotelPet.Layers.MODEL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +16,8 @@ namespace HotelPet
 {
     public partial class frmVenda : Form
     {
+        public List<ListaCompra> ItemVenda = new List<ListaCompra>();
+
         public frmVenda()
         {
             InitializeComponent();
@@ -20,16 +26,17 @@ namespace HotelPet
         private void Dashboard_Load(object sender, EventArgs e)
         {
             lblSeparador.Text = "-";
+            txtValorUnt.Enabled = false;
 
-            //Camadas.DAL.ClienteDAL cliente = new Camadas.DAL.ClienteDAL();
+            Contexto contexto = new Contexto();
+
             cmbCli.DisplayMember = "nome";
             cmbCli.ValueMember = "id";
-            //cmbCli.DataSource = cliente.Select();
+            cmbCli.DataSource = contexto.Cliente.ToList();
 
-            //Camadas.DAL.FuncionarioDAL funcionario = new Camadas.DAL.FuncionarioDAL();
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
-            //cmbFunc.DataSource = funcionario.Select();
+            cmbFunc.DataSource = contexto.Funcionario.ToList();
 
             AtualizaView();
             LimpaCampos();
@@ -102,28 +109,23 @@ namespace HotelPet
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            Camadas.MODEL.Venda venda = new Camadas.MODEL.Venda();
-            //Camadas.DAL.VendaDAL dalVenda = new Camadas.DAL.VendaDAL();
+            Contexto contexto = new Contexto();
+            List<ListaCompra> listaCompra = new List<ListaCompra>();
+            ListaCompra compras = new ListaCompra();
 
-            Camadas.MODEL.Itemvenda listCompra = new Camadas.MODEL.Itemvenda();
-            //Camadas.DAL.ItemVendaDAL movimentacao = new Camadas.DAL.ItemVendaDAL();
-
-            venda.Funcionario_id = 1;
-            venda.Cliente_id = cmbCli.SelectedIndex;
-            venda.Funcionario_id = cmbFunc.SelectedIndex;
-            //dalVenda.Insert(venda);
-            
             int Qtde = Convert.ToInt32(txtQuantidade.Text);
             double Unt = Convert.ToDouble(txtValorUnt.Text);
             double Desc = Convert.ToDouble(txtDesc.Text);
             double total = (Qtde * Unt) - Desc;
 
-            //listCompra.Venda_id = dalVenda.SelectId();
-            //listCompra.Produto_id = Convert.ToInt64(txtCod.Text);
-            listCompra.quantidade = Convert.ToInt32(txtQuantidade.Text);
-            listCompra.valor = total;
+            compras.Codigo = Convert.ToInt32(txtCod.Text);
+            compras.descricao = lblNomeProdutoServico.Text;
+            compras.Quantidade = Qtde;
+            compras.valor = total;
+            listaCompra.Add(compras);
 
-            //movimentacao.Insert(listCompra);
+            ItemVenda = listaCompra;
+            
             LimpaCampos();
             AtualizaView();
         }
@@ -166,24 +168,39 @@ namespace HotelPet
 
         public void AtualizaView()
         {
-            //Camadas.BLL.MovimentacaoBLL lista = new Camadas.BLL.MovimentacaoBLL();
             dgvCompra.DataSource = "";
-            //dgvCompra.DataSource = lista.Select();
-            dgvCompra.Columns["id"].Visible = false;
-            dgvCompra.Columns["id_venda"].Visible = false;
-            dgvCompra.Columns["id_produto"].DisplayIndex = 1;
-            dgvCompra.Columns["id_produto"].Width = 180;
+            dgvCompra.DataSource = ItemVenda;
+
+            dgvCompra.Columns["Codigo"].DisplayIndex = 1;
+            dgvCompra.Columns["Codigo"].Width = 180;
+
             dgvCompra.Columns["descricao"].DisplayIndex = 2;
             dgvCompra.Columns["descricao"].Width = 300;
-            dgvCompra.Columns["quantidade"].DisplayIndex = 3;
-            dgvCompra.Columns["quantidade"].Width = 120;
+
+            dgvCompra.Columns["Quantidade"].DisplayIndex = 3;
+            dgvCompra.Columns["Quantidade"].Width = 120;
+
             dgvCompra.Columns["valor"].DisplayIndex = 4;
             dgvCompra.Columns["valor"].Width = 100;
         }
 
         private void TxtCod_Leave(object sender, EventArgs e)
         {
-
+            Contexto contexto = new Contexto();
+            try
+            {
+                var prod = contexto.Produto.FirstOrDefault(x => x.id == Convert.ToInt64(txtCod.Text));
+                 lblNomeProdutoServico.Text = prod.descricao;
+                 txtValUnt.Text = prod.valor.ToString("C");
+                 txtValorUnt.Text = prod.valor.ToString("C");
+            }
+            catch (Exception)
+            {
+                var serv = contexto.Servico.FirstOrDefault(x => x.id == Convert.ToInt64(txtCod.Text));
+                lblNomeProdutoServico.Text = serv.descricao;
+                txtValUnt.Text = serv.valor.ToString("C");
+                txtValorUnt.Text = serv.valor.ToString("C");
+            }
         }
 
         private void TxtQuantidade_Leave(object sender, EventArgs e)
@@ -215,10 +232,29 @@ namespace HotelPet
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
-            //Camadas.BLL.MovimentacaoBLL movimentacao = new Camadas.BLL.MovimentacaoBLL();
-            //int id = movimentacao.SelectId();
-            //movimentacao.Finaliza(id);
-            AtualizaView();
+            MessageBox.Show("Confirma pagamento?", "Obrigado pela preferencia", MessageBoxButtons.YesNoCancel, MessageBoxIcon.None, MessageBoxDefaultButton.Button3);
+
+            if (DialogResult == DialogResult.No)
+            {
+                Contexto contexto = new Contexto();
+                ListaCompraBLL bll = new ListaCompraBLL();
+                Venda venda = new Venda();
+
+                venda.data = DateTime.Now;
+                venda.Cliente_id = cmbCli.SelectedIndex;
+                venda.Funcionario_id = cmbFunc.SelectedIndex;
+                contexto.Venda.Add(venda);
+                contexto.SaveChanges();
+
+                int id = venda.id;
+                bll.Insert(ItemVenda, id);
+
+                ItemVenda.Clear();
+                AtualizaView();
+            } else if (DialogResult == DialogResult.No)
+            {
+                ItemVenda.Clear();
+            }
         }
 
         private void lbldesconto_Click(object sender, EventArgs e)

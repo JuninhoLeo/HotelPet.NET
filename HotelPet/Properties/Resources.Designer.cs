@@ -73,6 +73,16 @@ namespace HotelPet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1491313933_plus_83004 {
+            get {
+                object obj = ResourceManager.GetObject("1491313933-plus_83004", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alert_icon_129491 {
             get {
                 object obj = ResourceManager.GetObject("alert_icon_129491", resourceCulture);
@@ -146,6 +156,16 @@ namespace HotelPet.Properties {
         internal static System.Drawing.Bitmap close_delete_delete_theaction_theoutput_10252 {
             get {
                 object obj = ResourceManager.GetObject("close_delete_delete_theaction_theoutput_10252", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Control_Panel_23581 {
+            get {
+                object obj = ResourceManager.GetObject("Control_Panel_23581", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +253,16 @@ namespace HotelPet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loupe_78347 {
+            get {
+                object obj = ResourceManager.GetObject("loupe_78347", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap market_120697 {
             get {
                 object obj = ResourceManager.GetObject("market_120697", resourceCulture);
@@ -283,6 +313,16 @@ namespace HotelPet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap openFolder {
+            get {
+                object obj = ResourceManager.GetObject("openFolder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pet_store_shop_building_animal_icon_124625 {
             get {
                 object obj = ResourceManager.GetObject("pet_store_shop_building_animal_icon_124625", resourceCulture);
@@ -296,6 +336,16 @@ namespace HotelPet.Properties {
         internal static System.Drawing.Bitmap plus_icon_icons_com_66718 {
             get {
                 object obj = ResourceManager.GetObject("plus_icon-icons.com_66718", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_arrows_14418 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_arrows_14418", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -150,6 +150,9 @@
     <Reference Include="EPPlus, Version=5.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.5.1.2\lib\net45\EPPlus.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.12.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.12.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -186,6 +189,7 @@
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -220,46 +224,62 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camadas\BLL\ClienteBLL.cs" />
-    <Compile Include="Camadas\DAL\AnimalDAL.cs" />
-    <Compile Include="Camadas\DAL\ClienteDAL.cs" />
-    <Compile Include="Camadas\MODEL\Administrador.cs" />
-    <Compile Include="Camadas\MODEL\Servicos.cs" />
-    <Compile Include="Camadas\MODEL\Cliente.cs" />
-    <Compile Include="Camadas\MODEL\Consumo.cs" />
-    <Compile Include="Camadas\MODEL\Funcionario.cs" />
-    <Compile Include="Camadas\MODEL\Itemvenda.cs" />
-    <Compile Include="Camadas\MODEL\Animal.cs" />
-    <Compile Include="Camadas\MODEL\Permicoes.cs" />
-    <Compile Include="Camadas\MODEL\Produtos.cs" />
-    <Compile Include="Camadas\MODEL\Quarto.cs" />
-    <Compile Include="Camadas\MODEL\Reserva.cs" />
-    <Compile Include="Camadas\MODEL\Usuario.cs" />
-    <Compile Include="Camadas\MODEL\Venda.cs" />
-    <Compile Include="Dashboard\frmDashboard.cs">
+    <Compile Include="Admin\frmImportar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+    <Compile Include="Admin\frmImportar.Designer.cs">
+      <DependentUpon>frmImportar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastrarSe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastrarSe.Designer.cs">
+      <DependentUpon>frmCadastrarSe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\BLL\ClienteBLL.cs" />
+    <Compile Include="Layers\BLL\ListaCompraBLL.cs" />
+    <Compile Include="Layers\BLL\ProdutosBLL.cs" />
+    <Compile Include="Layers\DAL\AnimalDAL.cs" />
+    <Compile Include="Layers\DAL\ClienteDAL.cs" />
+    <Compile Include="Layers\DAL\ListaCompraDAL.cs" />
+    <Compile Include="Layers\DAL\ProdutosDAL.cs" />
+    <Compile Include="Layers\MODEL\Administrador.cs" />
+    <Compile Include="Layers\MODEL\Consumo.cs" />
+    <Compile Include="Layers\MODEL\ListaCompra.cs" />
+    <Compile Include="Layers\MODEL\Servicos.cs" />
+    <Compile Include="Layers\MODEL\Cliente.cs" />
+    <Compile Include="Layers\MODEL\Funcionario.cs" />
+    <Compile Include="Layers\MODEL\Animal.cs" />
+    <Compile Include="Layers\MODEL\Permicoes.cs" />
+    <Compile Include="Layers\MODEL\Produtos.cs" />
+    <Compile Include="Layers\MODEL\Quarto.cs" />
+    <Compile Include="Layers\MODEL\Reserva.cs" />
+    <Compile Include="Layers\MODEL\Usuario.cs" />
+    <Compile Include="Layers\MODEL\Venda.cs" />
+    <Compile Include="Admin\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Camadas\Entity\Contexto.cs" />
-    <Compile Include="frmPermissoes.cs">
+    <Compile Include="Layers\Entity\Contexto.cs" />
+    <Compile Include="Admin\frmPermissoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPermissoes.Designer.cs">
+    <Compile Include="Admin\frmPermissoes.Designer.cs">
       <DependentUpon>frmPermissoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAnimal.cs">
+    <Compile Include="Funcionarios\AddCliente\frmAddAnimal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAnimal.Designer.cs">
-      <DependentUpon>frmAnimal.cs</DependentUpon>
+    <Compile Include="Funcionarios\AddCliente\frmAddAnimal.Designer.cs">
+      <DependentUpon>frmAddAnimal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCliente.cs">
+    <Compile Include="Funcionarios\AddCliente\frmAddCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCliente.Designer.cs">
-      <DependentUpon>frmCliente.cs</DependentUpon>
+    <Compile Include="Funcionarios\AddCliente\frmAddCliente.Designer.cs">
+      <DependentUpon>frmAddCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVenda.cs">
       <SubType>Form</SubType>
@@ -285,24 +305,26 @@
     <Compile Include="frmHotel.Designer.cs">
       <DependentUpon>frmHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005172329384_TabelasMigrations.cs" />
-    <Compile Include="Migrations\202005172329384_TabelasMigrations.designer.cs">
-      <DependentUpon>202005172329384_TabelasMigrations.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+    <EmbeddedResource Include="Admin\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPermissoes.resx">
+    <EmbeddedResource Include="Admin\frmImportar.resx">
+      <DependentUpon>frmImportar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmPermissoes.resx">
       <DependentUpon>frmPermissoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAnimal.resx">
-      <DependentUpon>frmAnimal.cs</DependentUpon>
+    <EmbeddedResource Include="frmCadastrarSe.resx">
+      <DependentUpon>frmCadastrarSe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCliente.resx">
-      <DependentUpon>frmCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Funcionarios\AddCliente\frmAddAnimal.resx">
+      <DependentUpon>frmAddAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\AddCliente\frmAddCliente.resx">
+      <DependentUpon>frmAddCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>
@@ -315,9 +337,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHotel.resx">
       <DependentUpon>frmHotel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005172329384_TabelasMigrations.resx">
-      <DependentUpon>202005172329384_TabelasMigrations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -345,10 +364,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\close_delete_delete_theaction_theoutput_10252.ico" />
+    <None Include="Resources\close_delete_delete_theaction_theoutput_10252.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\cadeado.png" />
+    <None Include="Resources\cadeado.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -363,89 +382,108 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\logo.jpg" />
+    <None Include="Resources\logo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\search.ico" />
+    <None Include="Resources\search.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\ext.ico" />
+    <None Include="Resources\ext.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\X.ico" />
+    <None Include="Resources\X.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\ok.ico" />
+    <None Include="Resources\ok.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\lançar.ico" />
+    <None Include="Resources\lançar.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\1486395874-settings_80622.ico" />
+    <None Include="Resources\1486395874-settings_80622.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\pet_store_shop_building_animal_icon_124625.ico" />
+    <None Include="Resources\pet_store_shop_building_animal_icon_124625.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\shop-icon_34368.ico" />
+    <None Include="Resources\shop-icon_34368.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\search_102938.ico" />
+    <None Include="Resources\search_102938.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\businessapplication_distributor_report_document_negocio_2319.png" />
+    <None Include="Resources\businessapplication_distributor_report_document_negocio_2319.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\new_add_user_16734.png" />
+    <None Include="Resources\new_add_user_16734.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\delete_remove_user_16732.png" />
+    <None Include="Resources\delete_remove_user_16732.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\search_find_user_16727.png" />
+    <None Include="Resources\search_find_user_16727.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\check_ok_accept_apply_1582.png" />
+    <None Include="Resources\check_ok_accept_apply_1582.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\delete_delete_exit_1577.png" />
+    <None Include="Resources\delete_delete_exit_1577.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\next_user_16730.png" />
+    <None Include="Resources\next_user_16730.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\download_update_user_16728.png" />
+    <None Include="Resources\download_update_user_16728.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\ios7-home-outline_icon-icons.com_50254.png" />
+    <None Include="Resources\ios7-home-outline_icon-icons.com_50254.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\market_120697.png" />
+    <None Include="Resources\market_120697.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\executive_person_icon-icons.com_72414.png" />
+    <None Include="Resources\executive_person_icon-icons.com_72414.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\plus_icon-icons.com_66718.png" />
+    <None Include="Resources\plus_icon-icons.com_66718.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\animal.ico" />
+    <None Include="Resources\animal.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\Calendar_40931.png" />
+    <None Include="Resources\Calendar_40931.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\viewrefresh_104298.png" />
+    <None Include="Resources\viewrefresh_104298.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\alert_icon_129491.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="images\camera.png" />
+    <None Include="Resources\alert_icon_129491.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\trash.ico" />
+    <None Include="Resources\refresh_arrows_14418.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_78347.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491313933-plus_83004.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Funcionarios\Clinica\" />
+    <Folder Include="Funcionarios\Hotel\" />
+    <Folder Include="Funcionarios\Vendas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control_Panel_23581.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openFolder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

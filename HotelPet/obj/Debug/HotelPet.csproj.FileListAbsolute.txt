@@ -28,7 +28,6 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Ubiety.Dns.Cor
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Renci.SshNet.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.csprojAssemblyReference.cache
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmAnimais.resources
-C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmCliente.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmDashboard.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmLogin.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmMenu.resources
@@ -125,4 +124,9 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\System.Buffers
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\System.Memory.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Migrations.TabelasMigrations.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmAddCliente.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.frmCadastrarSe.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.frmImportar.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.dll
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.pdb
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.xml

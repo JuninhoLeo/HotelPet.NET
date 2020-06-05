@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVenda));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVenda));
             this.lblHora = new System.Windows.Forms.Label();
             this.hora = new System.Windows.Forms.Timer(this.components);
             this.lblData = new System.Windows.Forms.Label();
@@ -63,10 +63,13 @@
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.txtValorUnt = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
+            this.dgvCompra = new System.Windows.Forms.DataGridView();
+            this.lblFunc = new System.Windows.Forms.Label();
+            this.cmbFunc = new System.Windows.Forms.ComboBox();
+            this.lblNomeProdutoServico = new System.Windows.Forms.Label();
             this.btnAdCli = new System.Windows.Forms.Button();
             this.btnLancar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.img6 = new System.Windows.Forms.PictureBox();
             this.img4 = new System.Windows.Forms.PictureBox();
             this.img5 = new System.Windows.Forms.PictureBox();
@@ -75,9 +78,7 @@
             this.img1 = new System.Windows.Forms.PictureBox();
             this.img2 = new System.Windows.Forms.PictureBox();
             this.img3 = new System.Windows.Forms.PictureBox();
-            this.dgvCompra = new System.Windows.Forms.DataGridView();
-            this.lblFunc = new System.Windows.Forms.Label();
-            this.cmbFunc = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img5)).BeginInit();
@@ -85,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.img1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHora
@@ -440,6 +440,73 @@
             this.txtDesc.TabIndex = 7;
             this.txtDesc.Leave += new System.EventHandler(this.TxtDesc_Leave);
             // 
+            // dgvCompra
+            // 
+            this.dgvCompra.AllowUserToOrderColumns = true;
+            this.dgvCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCompra.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompra.ColumnHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCompra.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCompra.Enabled = false;
+            this.dgvCompra.GridColor = System.Drawing.Color.LightGray;
+            this.dgvCompra.Location = new System.Drawing.Point(645, 111);
+            this.dgvCompra.Name = "dgvCompra";
+            this.dgvCompra.RowHeadersVisible = false;
+            this.dgvCompra.RowHeadersWidth = 50;
+            this.dgvCompra.Size = new System.Drawing.Size(700, 291);
+            this.dgvCompra.TabIndex = 47;
+            // 
+            // lblFunc
+            // 
+            this.lblFunc.AutoSize = true;
+            this.lblFunc.BackColor = System.Drawing.Color.White;
+            this.lblFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFunc.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblFunc.Location = new System.Drawing.Point(28, 419);
+            this.lblFunc.Name = "lblFunc";
+            this.lblFunc.Size = new System.Drawing.Size(92, 20);
+            this.lblFunc.TabIndex = 49;
+            this.lblFunc.Text = "Funcionario";
+            // 
+            // cmbFunc
+            // 
+            this.cmbFunc.BackColor = System.Drawing.Color.LightGray;
+            this.cmbFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFunc.FormattingEnabled = true;
+            this.cmbFunc.Location = new System.Drawing.Point(25, 448);
+            this.cmbFunc.Name = "cmbFunc";
+            this.cmbFunc.Size = new System.Drawing.Size(394, 24);
+            this.cmbFunc.TabIndex = 48;
+            // 
+            // lblNomeProdutoServico
+            // 
+            this.lblNomeProdutoServico.BackColor = System.Drawing.Color.White;
+            this.lblNomeProdutoServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeProdutoServico.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNomeProdutoServico.Location = new System.Drawing.Point(126, 419);
+            this.lblNomeProdutoServico.Name = "lblNomeProdutoServico";
+            this.lblNomeProdutoServico.Size = new System.Drawing.Size(445, 20);
+            this.lblNomeProdutoServico.TabIndex = 50;
+            // 
             // btnAdCli
             // 
             this.btnAdCli.Image = ((System.Drawing.Image)(resources.GetObject("btnAdCli.Image")));
@@ -470,17 +537,6 @@
             this.btnFinalizar.TabIndex = 11;
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.BtnFinalizar_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCancel.Image = global::HotelPet.Properties.Resources.X;
-            this.btnCancel.Location = new System.Drawing.Point(492, 487);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(123, 51);
-            this.btnCancel.TabIndex = 8;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.Button3_Click);
             // 
             // img6
             // 
@@ -561,68 +617,12 @@
             this.img3.TabIndex = 0;
             this.img3.TabStop = false;
             // 
-            // dgvCompra
-            // 
-            this.dgvCompra.AllowUserToOrderColumns = true;
-            this.dgvCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCompra.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompra.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCompra.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCompra.Enabled = false;
-            this.dgvCompra.GridColor = System.Drawing.Color.LightGray;
-            this.dgvCompra.Location = new System.Drawing.Point(645, 111);
-            this.dgvCompra.Name = "dgvCompra";
-            this.dgvCompra.RowHeadersVisible = false;
-            this.dgvCompra.RowHeadersWidth = 50;
-            this.dgvCompra.Size = new System.Drawing.Size(700, 291);
-            this.dgvCompra.TabIndex = 47;
-            // 
-            // lblFunc
-            // 
-            this.lblFunc.AutoSize = true;
-            this.lblFunc.BackColor = System.Drawing.Color.White;
-            this.lblFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFunc.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblFunc.Location = new System.Drawing.Point(28, 419);
-            this.lblFunc.Name = "lblFunc";
-            this.lblFunc.Size = new System.Drawing.Size(92, 20);
-            this.lblFunc.TabIndex = 49;
-            this.lblFunc.Text = "Funcionario";
-            // 
-            // cmbFunc
-            // 
-            this.cmbFunc.BackColor = System.Drawing.Color.LightGray;
-            this.cmbFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFunc.FormattingEnabled = true;
-            this.cmbFunc.Location = new System.Drawing.Point(25, 448);
-            this.cmbFunc.Name = "cmbFunc";
-            this.cmbFunc.Size = new System.Drawing.Size(394, 24);
-            this.cmbFunc.TabIndex = 48;
-            // 
             // frmVenda
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1360, 648);
+            this.Controls.Add(this.lblNomeProdutoServico);
             this.Controls.Add(this.lblFunc);
             this.Controls.Add(this.cmbFunc);
             this.Controls.Add(this.dgvCompra);
@@ -635,7 +635,6 @@
             this.Controls.Add(this.lblCli);
             this.Controls.Add(this.cmbCli);
             this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblLista);
             this.Controls.Add(this.img6);
             this.Controls.Add(this.lblToalProd);
@@ -671,6 +670,7 @@
             this.Name = "frmVenda";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img5)).EndInit();
@@ -678,7 +678,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.img1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -719,7 +718,6 @@
         private System.Windows.Forms.Label lblToalProd;
         private System.Windows.Forms.PictureBox img6;
         private System.Windows.Forms.Label lblLista;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.ComboBox cmbCli;
         private System.Windows.Forms.Label lblCli;
@@ -732,5 +730,6 @@
         private System.Windows.Forms.DataGridView dgvCompra;
         private System.Windows.Forms.Label lblFunc;
         private System.Windows.Forms.ComboBox cmbFunc;
+        private System.Windows.Forms.Label lblNomeProdutoServico;
     }
 }

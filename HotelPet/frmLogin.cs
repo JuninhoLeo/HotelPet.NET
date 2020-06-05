@@ -25,12 +25,19 @@ namespace HotelPet
             btnSair.DialogResult = DialogResult.Cancel;
             AcceptButton = btnEntrar;
             CancelButton = btnSair;
-            
+
+            Contexto contexto = new Contexto();
+            int qtde = contexto.Administrador.Count();
+            if (qtde > 0)
+            {
+                btnCadastro.Visible = false;
+            }
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -62,12 +69,12 @@ namespace HotelPet
 
                     if(administrador != null)
                     {
-                        frmMenu frm = new frmMenu(administrador.Permicoes_id);
+                        frmMenu frm = new frmMenu(administrador.Permicoes_id, this);
                         frm.Show();
                     }
                     else
                     {
-                        frmMenu frm = new frmMenu(funcionario.Permicoes_id);
+                        frmMenu frm = new frmMenu(funcionario.Permicoes_id, this);
                         frm.Show();
                     }
                 }
@@ -93,6 +100,12 @@ namespace HotelPet
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            frmCadastrarSe frm = new frmCadastrarSe();
+            frm.Show();
         }
     }
 }

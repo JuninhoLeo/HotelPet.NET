@@ -34,10 +34,10 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.CkLembrar = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.PbLogo = new System.Windows.Forms.PictureBox();
             this.lblErrUser = new System.Windows.Forms.Label();
+            this.btnCadastro = new System.Windows.Forms.Button();
+            this.PbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,18 +115,6 @@
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // CkLembrar
-            // 
-            this.CkLembrar.AutoSize = true;
-            this.CkLembrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkLembrar.ForeColor = System.Drawing.Color.DimGray;
-            this.CkLembrar.Location = new System.Drawing.Point(342, 107);
-            this.CkLembrar.Name = "CkLembrar";
-            this.CkLembrar.Size = new System.Drawing.Size(126, 22);
-            this.CkLembrar.TabIndex = 5;
-            this.CkLembrar.Text = "Lembrar senha";
-            this.CkLembrar.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -139,6 +127,30 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Copyright 2019 José Leocadio de Barros Junior. Todos os direitos reservados";
             // 
+            // lblErrUser
+            // 
+            this.lblErrUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrUser.ForeColor = System.Drawing.Color.Red;
+            this.lblErrUser.Location = new System.Drawing.Point(342, 59);
+            this.lblErrUser.Name = "lblErrUser";
+            this.lblErrUser.Size = new System.Drawing.Size(168, 20);
+            this.lblErrUser.TabIndex = 9;
+            // 
+            // btnCadastro
+            // 
+            this.btnCadastro.BackColor = System.Drawing.Color.White;
+            this.btnCadastro.DialogResult = System.Windows.Forms.DialogResult.Retry;
+            this.btnCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastro.ForeColor = System.Drawing.Color.Black;
+            this.btnCadastro.Location = new System.Drawing.Point(342, 185);
+            this.btnCadastro.Margin = new System.Windows.Forms.Padding(1);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(164, 31);
+            this.btnCadastro.TabIndex = 10;
+            this.btnCadastro.Text = "Primeiro acesso";
+            this.btnCadastro.UseVisualStyleBackColor = false;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
+            // 
             // PbLogo
             // 
             this.PbLogo.BackgroundImage = global::HotelPet.Properties.Resources.logo;
@@ -149,15 +161,6 @@
             this.PbLogo.TabIndex = 0;
             this.PbLogo.TabStop = false;
             // 
-            // lblErrUser
-            // 
-            this.lblErrUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrUser.ForeColor = System.Drawing.Color.Red;
-            this.lblErrUser.Location = new System.Drawing.Point(342, 59);
-            this.lblErrUser.Name = "lblErrUser";
-            this.lblErrUser.Size = new System.Drawing.Size(168, 20);
-            this.lblErrUser.TabIndex = 9;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,9 +169,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(561, 287);
+            this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.lblErrUser);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.CkLembrar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.txtSenha);
@@ -177,6 +180,8 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.PbLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(561, 287);
+            this.MinimumSize = new System.Drawing.Size(561, 287);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -196,8 +201,8 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.CheckBox CkLembrar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblErrUser;
+        private System.Windows.Forms.Button btnCadastro;
     }
 }

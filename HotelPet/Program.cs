@@ -15,15 +15,10 @@ namespace HotelPet
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            frmLogin login = new frmLogin();
-            
-            login.Show();
+            Application.SetCompatibleTextRenderingDefault(false);            
 
-            //if(login.ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new frmMenu());
-            //}
+                Application.Run(new frmLogin());
+
         }
     }
 }
