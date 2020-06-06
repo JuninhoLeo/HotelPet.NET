@@ -281,10 +281,10 @@
     <Compile Include="Funcionarios\AddCliente\frmAddCliente.Designer.cs">
       <DependentUpon>frmAddCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVenda.cs">
+    <Compile Include="Funcionarios\Vendas\frmVenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVenda.Designer.cs">
+    <Compile Include="Funcionarios\Vendas\frmVenda.Designer.cs">
       <DependentUpon>frmVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -326,7 +326,7 @@
     <EmbeddedResource Include="Funcionarios\AddCliente\frmAddCliente.resx">
       <DependentUpon>frmAddCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVenda.resx">
+    <EmbeddedResource Include="Funcionarios\Vendas\frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -477,7 +477,6 @@
   <ItemGroup>
     <Folder Include="Funcionarios\Clinica\" />
     <Folder Include="Funcionarios\Hotel\" />
-    <Folder Include="Funcionarios\Vendas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Control_Panel_23581.ico" />

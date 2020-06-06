@@ -5,11 +5,7 @@ using HotelPet.Layers.MODEL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelPet
@@ -19,8 +15,9 @@ namespace HotelPet
         List<ListaCompra> ItemVenda = new List<ListaCompra>();
         List<ListaCompra> listaCompra = new List<ListaCompra>();
 
-        public frmVenda()
+        public frmVenda(ToolStripMenuItem btnVendas)
         {
+            btnVendas.Visible = false;
             InitializeComponent();
         }
 
@@ -129,7 +126,7 @@ namespace HotelPet
             listaCompra.Add(compras);
 
             ItemVenda = listaCompra;
-            
+
             LimpaCampos();
             AtualizaView();
         }
@@ -137,7 +134,7 @@ namespace HotelPet
         public void LimpaCampos()
         {
             txtCod.Text = "";
-            cmbCli.Text = "";
+            //cmbCli.Text = "";
             txtQuantidade.Text = "";
             txtValorUnt.Text = "";
             txtDesc.Text = "";
@@ -145,6 +142,14 @@ namespace HotelPet
             txtValUnt.Text = "R$";
             txtdesconto.Text = "R$";
             txtTotal.Text = "R$";
+            lblNomeProdutoServico.Text = "";
+
+            cmbCli.Visible = true;
+            lblCli.Visible = true;
+            lblCPF.Visible = false;
+            txtCpf.Visible = false;
+            CkNotInform.Checked = false;
+            CkCPF.Checked = false;
         }
 
         private void Txtdesconto_Click(object sender, EventArgs e)
@@ -195,6 +200,8 @@ namespace HotelPet
             dgvCompra.Columns["valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dgvCompra.Columns["valor"].DefaultCellStyle.Format = "c";
             dgvCompra.Columns["valor"].Width = 90;
+
+            txtValorTotal.Text = dgvCompra.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["valor"].Value ?? 0)).ToString("C");
         }
 
         private void TxtCod_Leave(object sender, EventArgs e)
@@ -205,9 +212,12 @@ namespace HotelPet
                 try
                 {
                     var prod = contexto.Produto.FirstOrDefault(x => x.codigo == txtCod.Text);
-                    lblNomeProdutoServico.Text = prod.descricao;
-                    txtValUnt.Text = prod.valor.ToString("C");
-                    txtValorUnt.Text = prod.valor.ToString("C");
+                    if (prod != null)
+                    {
+                        lblNomeProdutoServico.Text = prod.descricao;
+                        txtValUnt.Text = prod.valor.ToString("C");
+                        txtValorUnt.Text = prod.valor.ToString("C");
+                    }
                 }
                 catch (Exception)
                 {
@@ -216,11 +226,19 @@ namespace HotelPet
                     txtValUnt.Text = serv.valor.ToString("C");
                     txtValorUnt.Text = serv.valor.ToString("C");
                 }
+                finally
+                {
+                    if (lblNomeProdutoServico.Text == "")
+                    {
+                        MessageBox.Show("Produto não Encontrado!", "Sem Estoque", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpaCampos();
+                    }
+                }
             }
-            else
-            {
-                MessageBox.Show("Informe o codigo do Produto");
-            }
+            //else
+            //{
+            //    MessageBox.Show("Informe o codigo do Produto");
+            //}
         }
 
         private void TxtQuantidade_Leave(object sender, EventArgs e)
@@ -231,10 +249,10 @@ namespace HotelPet
                 string Qtde = valor.ToString();
                 txtQtde.Text = Qtde;
             }
-            else
-            {
-                MessageBox.Show("Informe a quantidade!");
-            }
+            //else
+            //{
+            //    MessageBox.Show("Informe a quantidade!");
+            //}
         }
 
         private void TxtValorUnt_Leave(object sender, EventArgs e)
@@ -244,12 +262,12 @@ namespace HotelPet
 
         private void TxtDesc_Leave(object sender, EventArgs e)
         {
-            if (true)
+            if (txtValorUnt.Text != "" && txtQuantidade.Text != "")
             {
                 string valorSub = txtValorUnt.Text.Substring(3);
                 double unt = Convert.ToDouble(valorSub);
                 double Quantidade = Convert.ToDouble(txtQuantidade.Text);
-                double desc = (txtDesc.Text == "")? 0 : Convert.ToDouble(txtDesc.Text);
+                double desc = (txtDesc.Text == "") ? 0 : Convert.ToDouble(txtDesc.Text);
 
                 string Qtde = unt.ToString("C");
                 string total = (unt * Quantidade).ToString("C");
@@ -263,9 +281,9 @@ namespace HotelPet
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Confirma pagamento?", "Obrigado pela preferencia", MessageBoxButtons.YesNoCancel, MessageBoxIcon.None, MessageBoxDefaultButton.Button3);
+            DialogResult = MessageBox.Show("Confirma pagamento?", "Obrigado pela preferência", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button3);
 
-            if (DialogResult == DialogResult.No)
+            if (DialogResult == DialogResult.Yes)
             {
                 Contexto contexto = new Contexto();
                 ListaCompraBLL bll = new ListaCompraBLL();
@@ -280,11 +298,15 @@ namespace HotelPet
                 int id = venda.id;
                 bll.Insert(ItemVenda, id);
 
-                ItemVenda.Clear();
+                ItemVenda = null;
                 AtualizaView();
-            } else if (DialogResult == DialogResult.No)
+            }
+            else 
             {
-                ItemVenda.Clear();
+                DialogResult = DialogResult.Retry;
+                List<ListaCompra> Aux = new List<ListaCompra>();
+                ItemVenda = Aux;
+                AtualizaView();
             }
         }
 
@@ -296,6 +318,46 @@ namespace HotelPet
         private void cmbCli_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CkCPF_Click(object sender, EventArgs e)
+        {
+            if (CkCPF.Checked == true)
+            {
+                cmbCli.Visible = false;
+                lblCli.Visible = false;
+                lblCPF.Visible = true;
+                txtCpf.Visible = true;
+            }
+            else
+            {
+                cmbCli.Visible = true;
+                lblCli.Visible = true;
+                lblCPF.Visible = false;
+                txtCpf.Visible = false;
+            }
+
+            CkNotInform.Checked = (CkNotInform.Checked == true) ? false : false;
+
+        }
+
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+            if (CkNotInform.Checked == true)
+            {
+                cmbCli.Visible = false;
+                lblCli.Visible = false;
+                lblCPF.Visible = false;
+                txtCpf.Visible = false;
+            }
+            else
+            {
+                cmbCli.Visible = true;
+                lblCli.Visible = true;
+                lblCPF.Visible = false;
+                txtCpf.Visible = false;
+            }
+            CkCPF.Checked = (CkCPF.Checked == true) ? false : false;
         }
     }
 }

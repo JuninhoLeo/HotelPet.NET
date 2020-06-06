@@ -77,8 +77,10 @@ namespace HotelPet
 
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVenda vendas = new frmVenda();
-            vendas.ShowDialog();
+            
+            frmVenda vendas = new frmVenda(btnVendas);
+            vendas.MdiParent = this;
+            vendas.Show();
         }
 
         private void animaisToolStripMenuItem_Click(object sender, EventArgs e)
