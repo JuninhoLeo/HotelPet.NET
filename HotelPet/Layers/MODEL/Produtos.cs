@@ -15,7 +15,7 @@ namespace HotelPet.Camadas.MODEL
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long id { get; set; }
 
-        public string codigo { get; set; }
+        public long codigo { get; set; }
 
         [StringLength(255)]
         public string descricao { get; set; }

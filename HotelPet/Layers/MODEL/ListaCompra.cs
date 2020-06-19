@@ -20,6 +20,8 @@ namespace HotelPet.Layers.MODEL
         public double Quantidade { get; set; }
         public double valor { get; set; }
 
+        public double total { get; set; }
+
         [ForeignKey("Vendas")]
         public int Vendas_id { get; set; }
         virtual public Venda Vendas { get; set; }

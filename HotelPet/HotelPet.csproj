@@ -236,6 +236,12 @@
     <Compile Include="frmCadastrarSe.Designer.cs">
       <DependentUpon>frmCadastrarSe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\Vendas\frmConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\Vendas\frmConsulta.Designer.cs">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layers\BLL\ClienteBLL.cs" />
     <Compile Include="Layers\BLL\ListaCompraBLL.cs" />
     <Compile Include="Layers\BLL\ProdutosBLL.cs" />
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\AddCliente\frmAddCliente.resx">
       <DependentUpon>frmAddCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\Vendas\frmConsulta.resx">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Vendas\frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>

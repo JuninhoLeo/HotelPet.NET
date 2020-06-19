@@ -86,7 +86,7 @@ namespace HotelPet.Admin
                     lblProgress.Text = progress.ToString() + "%";
                     lblProgress.Refresh();
 
-                    produtos.codigo = (reader[0] != null) ? reader[0].ToString() : "";
+                    produtos.codigo = (reader[0] != null) ? Convert.ToInt32(reader[0]) : 0;
                     produtos.descricao = (reader[1] != null) ? reader[1].ToString() : "";
                     produtos.quantidade = (reader[2] != null) ? Convert.ToDouble(reader[2].ToString()) : 0;
                     produtos.valor = (reader[3] != null) ? Convert.ToDouble(reader[3].ToString()) : 0;

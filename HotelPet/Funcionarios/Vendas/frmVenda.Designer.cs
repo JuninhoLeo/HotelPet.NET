@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHora = new System.Windows.Forms.Label();
             this.hora = new System.Windows.Forms.Timer(this.components);
             this.lblData = new System.Windows.Forms.Label();
@@ -61,9 +61,17 @@
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.txtValorUnt = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
-            this.dgvCompra = new System.Windows.Forms.DataGridView();
             this.lblFunc = new System.Windows.Forms.Label();
             this.cmbFunc = new System.Windows.Forms.ComboBox();
+            this.lblNomeProdutoServico = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.cmbCli = new System.Windows.Forms.ComboBox();
+            this.lblCli = new System.Windows.Forms.Label();
+            this.CkNotInform = new System.Windows.Forms.CheckBox();
+            this.CkCPF = new System.Windows.Forms.CheckBox();
+            this.dgvCompra = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnLancar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.img6 = new System.Windows.Forms.PictureBox();
@@ -74,13 +82,10 @@
             this.img1 = new System.Windows.Forms.PictureBox();
             this.img2 = new System.Windows.Forms.PictureBox();
             this.img3 = new System.Windows.Forms.PictureBox();
-            this.lblNomeProdutoServico = new System.Windows.Forms.TextBox();
-            this.txtCpf = new System.Windows.Forms.TextBox();
-            this.lblCPF = new System.Windows.Forms.Label();
-            this.cmbCli = new System.Windows.Forms.ComboBox();
-            this.lblCli = new System.Windows.Forms.Label();
-            this.CkNotInform = new System.Windows.Forms.CheckBox();
-            this.CkCPF = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).BeginInit();
@@ -346,7 +351,7 @@
             this.lblQtdE_x_Valor.BackColor = System.Drawing.Color.White;
             this.lblQtdE_x_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQtdE_x_Valor.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblQtdE_x_Valor.Location = new System.Drawing.Point(1121, 79);
+            this.lblQtdE_x_Valor.Location = new System.Drawing.Point(1135, 79);
             this.lblQtdE_x_Valor.Name = "lblQtdE_x_Valor";
             this.lblQtdE_x_Valor.Size = new System.Drawing.Size(66, 29);
             this.lblQtdE_x_Valor.TabIndex = 32;
@@ -358,11 +363,11 @@
             this.lblToalProd.BackColor = System.Drawing.Color.White;
             this.lblToalProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblToalProd.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblToalProd.Location = new System.Drawing.Point(1240, 79);
+            this.lblToalProd.Location = new System.Drawing.Point(1231, 79);
             this.lblToalProd.Name = "lblToalProd";
-            this.lblToalProd.Size = new System.Drawing.Size(68, 29);
+            this.lblToalProd.Size = new System.Drawing.Size(67, 29);
             this.lblToalProd.TabIndex = 34;
-            this.lblToalProd.Text = "Total";
+            this.lblToalProd.Text = "Unit. ";
             // 
             // lblLista
             // 
@@ -431,40 +436,6 @@
             this.txtDesc.TabIndex = 7;
             this.txtDesc.Leave += new System.EventHandler(this.TxtDesc_Leave);
             // 
-            // dgvCompra
-            // 
-            this.dgvCompra.AllowUserToOrderColumns = true;
-            this.dgvCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCompra.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompra.ColumnHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCompra.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCompra.Enabled = false;
-            this.dgvCompra.GridColor = System.Drawing.Color.LightGray;
-            this.dgvCompra.Location = new System.Drawing.Point(645, 111);
-            this.dgvCompra.Name = "dgvCompra";
-            this.dgvCompra.RowHeadersVisible = false;
-            this.dgvCompra.RowHeadersWidth = 50;
-            this.dgvCompra.Size = new System.Drawing.Size(700, 291);
-            this.dgvCompra.TabIndex = 47;
-            // 
             // lblFunc
             // 
             this.lblFunc.AutoSize = true;
@@ -488,6 +459,144 @@
             this.cmbFunc.Size = new System.Drawing.Size(394, 24);
             this.cmbFunc.TabIndex = 48;
             // 
+            // lblNomeProdutoServico
+            // 
+            this.lblNomeProdutoServico.BackColor = System.Drawing.Color.LightGray;
+            this.lblNomeProdutoServico.Enabled = false;
+            this.lblNomeProdutoServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeProdutoServico.Location = new System.Drawing.Point(21, 359);
+            this.lblNomeProdutoServico.Name = "lblNomeProdutoServico";
+            this.lblNomeProdutoServico.Size = new System.Drawing.Size(394, 22);
+            this.lblNomeProdutoServico.TabIndex = 51;
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.BackColor = System.Drawing.Color.LightGray;
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(21, 467);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(394, 22);
+            this.txtCpf.TabIndex = 4;
+            this.txtCpf.TabStop = false;
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.BackColor = System.Drawing.Color.White;
+            this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCPF.Location = new System.Drawing.Point(21, 443);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(40, 20);
+            this.lblCPF.TabIndex = 3;
+            this.lblCPF.Text = "CPF";
+            // 
+            // cmbCli
+            // 
+            this.cmbCli.BackColor = System.Drawing.Color.LightGray;
+            this.cmbCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCli.FormattingEnabled = true;
+            this.cmbCli.Location = new System.Drawing.Point(21, 466);
+            this.cmbCli.Name = "cmbCli";
+            this.cmbCli.Size = new System.Drawing.Size(394, 24);
+            this.cmbCli.TabIndex = 6;
+            // 
+            // lblCli
+            // 
+            this.lblCli.AutoSize = true;
+            this.lblCli.BackColor = System.Drawing.Color.White;
+            this.lblCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCli.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCli.Location = new System.Drawing.Point(21, 444);
+            this.lblCli.Name = "lblCli";
+            this.lblCli.Size = new System.Drawing.Size(58, 20);
+            this.lblCli.TabIndex = 5;
+            this.lblCli.Text = "Cliente";
+            // 
+            // CkNotInform
+            // 
+            this.CkNotInform.AutoSize = true;
+            this.CkNotInform.BackColor = System.Drawing.Color.White;
+            this.CkNotInform.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CkNotInform.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CkNotInform.Location = new System.Drawing.Point(510, 473);
+            this.CkNotInform.Name = "CkNotInform";
+            this.CkNotInform.Size = new System.Drawing.Size(119, 24);
+            this.CkNotInform.TabIndex = 2;
+            this.CkNotInform.TabStop = false;
+            this.CkNotInform.Text = "Não informar";
+            this.CkNotInform.UseVisualStyleBackColor = false;
+            this.CkNotInform.Click += new System.EventHandler(this.checkBox1_Click);
+            // 
+            // CkCPF
+            // 
+            this.CkCPF.AutoSize = true;
+            this.CkCPF.BackColor = System.Drawing.Color.White;
+            this.CkCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CkCPF.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CkCPF.Location = new System.Drawing.Point(510, 443);
+            this.CkCPF.Name = "CkCPF";
+            this.CkCPF.Size = new System.Drawing.Size(59, 24);
+            this.CkCPF.TabIndex = 52;
+            this.CkCPF.TabStop = false;
+            this.CkCPF.Text = "CPF";
+            this.CkCPF.UseVisualStyleBackColor = false;
+            this.CkCPF.Click += new System.EventHandler(this.CkCPF_Click);
+            // 
+            // dgvCompra
+            // 
+            this.dgvCompra.AllowUserToOrderColumns = true;
+            this.dgvCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCompra.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompra.ColumnHeadersVisible = false;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCompra.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvCompra.Enabled = false;
+            this.dgvCompra.GridColor = System.Drawing.Color.LightGray;
+            this.dgvCompra.Location = new System.Drawing.Point(645, 111);
+            this.dgvCompra.Name = "dgvCompra";
+            this.dgvCompra.RowHeadersVisible = false;
+            this.dgvCompra.RowHeadersWidth = 50;
+            this.dgvCompra.Size = new System.Drawing.Size(700, 291);
+            this.dgvCompra.TabIndex = 47;
+            this.dgvCompra.DoubleClick += new System.EventHandler(this.dgvCompra_DoubleClick);
+            this.dgvCompra.Leave += new System.EventHandler(this.dgvCompra_Leave);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Image = global::HotelPet.Properties.Resources.trash;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(654, 438);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 36);
+            this.button1.TabIndex = 53;
+            this.button1.TabStop = false;
+            this.button1.Text = "Remover Itens";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnLancar
             // 
             this.btnLancar.BackColor = System.Drawing.Color.DarkGray;
@@ -507,6 +616,7 @@
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(193, 61);
             this.btnFinalizar.TabIndex = 11;
+            this.btnFinalizar.TabStop = false;
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.BtnFinalizar_Click);
             // 
@@ -589,99 +699,74 @@
             this.img3.TabIndex = 0;
             this.img3.TabStop = false;
             // 
-            // lblNomeProdutoServico
+            // textBox1
             // 
-            this.lblNomeProdutoServico.BackColor = System.Drawing.Color.LightGray;
-            this.lblNomeProdutoServico.Enabled = false;
-            this.lblNomeProdutoServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeProdutoServico.Location = new System.Drawing.Point(21, 359);
-            this.lblNomeProdutoServico.Name = "lblNomeProdutoServico";
-            this.lblNomeProdutoServico.Size = new System.Drawing.Size(394, 22);
-            this.lblNomeProdutoServico.TabIndex = 51;
+            this.textBox1.Location = new System.Drawing.Point(794, 413);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(251, 20);
+            this.textBox1.TabIndex = 54;
+            this.textBox1.TabStop = false;
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
-            // txtCpf
+            // label1
             // 
-            this.txtCpf.BackColor = System.Drawing.Color.LightGray;
-            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpf.Location = new System.Drawing.Point(21, 467);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(394, 22);
-            this.txtCpf.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(650, 413);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 20);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Codigo/Descrição:";
             // 
-            // lblCPF
+            // button2
             // 
-            this.lblCPF.AutoSize = true;
-            this.lblCPF.BackColor = System.Drawing.Color.White;
-            this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPF.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblCPF.Location = new System.Drawing.Point(21, 443);
-            this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(40, 20);
-            this.lblCPF.TabIndex = 3;
-            this.lblCPF.Text = "CPF";
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.Image = global::HotelPet.Properties.Resources.loupe_78347;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(510, 283);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 36);
+            this.button2.TabIndex = 56;
+            this.button2.TabStop = false;
+            this.button2.Text = "Pesquisar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // cmbCli
+            // checkBox1
             // 
-            this.cmbCli.BackColor = System.Drawing.Color.LightGray;
-            this.cmbCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCli.FormattingEnabled = true;
-            this.cmbCli.Location = new System.Drawing.Point(21, 466);
-            this.cmbCli.Name = "cmbCli";
-            this.cmbCli.Size = new System.Drawing.Size(394, 24);
-            this.cmbCli.TabIndex = 6;
-            // 
-            // lblCli
-            // 
-            this.lblCli.AutoSize = true;
-            this.lblCli.BackColor = System.Drawing.Color.White;
-            this.lblCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCli.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblCli.Location = new System.Drawing.Point(21, 444);
-            this.lblCli.Name = "lblCli";
-            this.lblCli.Size = new System.Drawing.Size(58, 20);
-            this.lblCli.TabIndex = 5;
-            this.lblCli.Text = "Cliente";
-            // 
-            // CkNotInform
-            // 
-            this.CkNotInform.AutoSize = true;
-            this.CkNotInform.BackColor = System.Drawing.Color.White;
-            this.CkNotInform.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkNotInform.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CkNotInform.Location = new System.Drawing.Point(510, 466);
-            this.CkNotInform.Name = "CkNotInform";
-            this.CkNotInform.Size = new System.Drawing.Size(119, 24);
-            this.CkNotInform.TabIndex = 2;
-            this.CkNotInform.Text = "Não informar";
-            this.CkNotInform.UseVisualStyleBackColor = false;
-            this.CkNotInform.Click += new System.EventHandler(this.checkBox1_Click);
-            // 
-            // CkCPF
-            // 
-            this.CkCPF.AutoSize = true;
-            this.CkCPF.BackColor = System.Drawing.Color.White;
-            this.CkCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkCPF.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CkCPF.Location = new System.Drawing.Point(435, 466);
-            this.CkCPF.Name = "CkCPF";
-            this.CkCPF.Size = new System.Drawing.Size(59, 24);
-            this.CkCPF.TabIndex = 52;
-            this.CkCPF.Text = "CPF";
-            this.CkCPF.UseVisualStyleBackColor = false;
-            this.CkCPF.Click += new System.EventHandler(this.CkCPF_Click);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.checkBox1.Location = new System.Drawing.Point(510, 413);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(85, 24);
+            this.checkBox1.TabIndex = 57;
+            this.checkBox1.TabStop = false;
+            this.checkBox1.Text = "Clientes";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click_1);
             // 
             // frmVenda
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1360, 648);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CkCPF);
             this.Controls.Add(this.lblNomeProdutoServico);
             this.Controls.Add(this.lblFunc);
             this.Controls.Add(this.CkNotInform);
             this.Controls.Add(this.cmbFunc);
-            this.Controls.Add(this.dgvCompra);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtValorUnt);
@@ -719,11 +804,12 @@
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.imglogo);
             this.Controls.Add(this.img1);
-            this.Controls.Add(this.img3);
             this.Controls.Add(this.cmbCli);
             this.Controls.Add(this.lblCli);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.img2);
+            this.Controls.Add(this.dgvCompra);
+            this.Controls.Add(this.img3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(1, 5);
             this.Name = "frmVenda";
@@ -743,8 +829,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox img3;
         private System.Windows.Forms.PictureBox img2;
         private System.Windows.Forms.PictureBox img1;
         private System.Windows.Forms.PictureBox imglogo;
@@ -784,7 +868,6 @@
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.TextBox txtValorUnt;
         private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.DataGridView dgvCompra;
         private System.Windows.Forms.Label lblFunc;
         private System.Windows.Forms.ComboBox cmbFunc;
         private System.Windows.Forms.TextBox lblNomeProdutoServico;
@@ -794,5 +877,12 @@
         private System.Windows.Forms.Label lblCli;
         private System.Windows.Forms.CheckBox CkNotInform;
         private System.Windows.Forms.CheckBox CkCPF;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvCompra;
+        private System.Windows.Forms.PictureBox img3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

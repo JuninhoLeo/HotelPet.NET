@@ -1,10 +1,10 @@
 ﻿using HotelPet.Camadas.MODEL;
 using HotelPet.Entity;
+using HotelPet.Funcionarios.Vendas;
 using HotelPet.Layers.BLL;
 using HotelPet.Layers.MODEL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,7 +13,7 @@ namespace HotelPet
     public partial class frmVenda : Form
     {
         List<ListaCompra> ItemVenda = new List<ListaCompra>();
-        List<ListaCompra> listaCompra = new List<ListaCompra>();
+        //List<ListaCompra> listaCompra = new List<ListaCompra>();
 
         public frmVenda(ToolStripMenuItem btnVendas)
         {
@@ -30,13 +30,13 @@ namespace HotelPet
 
             cmbCli.DisplayMember = "nome";
             cmbCli.ValueMember = "id";
-            cmbCli.DataSource = contexto.Cliente.ToList();
+            cmbCli.DataSource = contexto.Cliente.Where(x => x.nome != null).ToList();
 
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
             cmbFunc.DataSource = contexto.Funcionario.ToList();
 
-            AtualizaView();
+            AtualizaView(dgvCompra);
             LimpaCampos();
         }
 
@@ -78,7 +78,7 @@ namespace HotelPet
 
         private void Button3_Click(object sender, EventArgs e)
         {
- 
+
         }
 
         private void desconectar()
@@ -107,34 +107,40 @@ namespace HotelPet
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            Contexto contexto = new Contexto();
-            ListaCompra compras = new ListaCompra();
+            try
+            {
+                Contexto contexto = new Contexto();
+                ListaCompra compras = new ListaCompra();
 
-            ///fazer o verifica aqui
-            ///----><---------
+                double Qtde = Convert.ToDouble(txtQuantidade.Text.Replace(".",","));
+                string valorSub = txtValorUnt.Text.Substring(3);
+                double Unt = Convert.ToDouble(valorSub);
+                double Desc = (txtDesc.Text == "") ? 0 : Convert.ToDouble(txtDesc.Text);
+                double vlUnit = Unt - Desc;
+                double total = (Unt * Qtde) - Desc;
 
-            int Qtde = Convert.ToInt32(txtQuantidade.Text);
-            string valorSub = txtValorUnt.Text.Substring(3);
-            double Unt = Convert.ToDouble(valorSub);
-            double Desc = (txtDesc.Text == "") ? 0 : Convert.ToDouble(txtDesc.Text);
-            double total = (Qtde * Unt) - Desc;
+                compras.Codigo = Convert.ToInt32(txtCod.Text);
+                compras.descricao = lblNomeProdutoServico.Text;
+                compras.Quantidade = Qtde;
+                compras.valor = vlUnit;
+                compras.total = total;
 
-            compras.Codigo = Convert.ToInt32(txtCod.Text);
-            compras.descricao = lblNomeProdutoServico.Text;
-            compras.Quantidade = Qtde;
-            compras.valor = total;
-            listaCompra.Add(compras);
+                ItemVenda.Add(compras);
 
-            ItemVenda = listaCompra;
+            }
+            catch (Exception)
+            {
+
+            }
 
             LimpaCampos();
-            AtualizaView();
+            AtualizaView(dgvCompra);
         }
 
         public void LimpaCampos()
         {
+
             txtCod.Text = "";
-            //cmbCli.Text = "";
             txtQuantidade.Text = "";
             txtValorUnt.Text = "";
             txtDesc.Text = "";
@@ -144,11 +150,11 @@ namespace HotelPet
             txtTotal.Text = "R$";
             lblNomeProdutoServico.Text = "";
 
-            cmbCli.Visible = true;
-            lblCli.Visible = true;
+            cmbCli.Visible = false;
+            lblCli.Visible = false;
             lblCPF.Visible = false;
             txtCpf.Visible = false;
-            CkNotInform.Checked = false;
+            CkNotInform.Checked = true;
             CkCPF.Checked = false;
         }
 
@@ -175,33 +181,34 @@ namespace HotelPet
             txtValUnt.Text = "R$: " + txtValorUnt;
         }
 
-        public void AtualizaView()
+        public void AtualizaView(DataGridView dgv)
         {
-            dgvCompra.DataSource = "";
-            dgvCompra.DataSource = ItemVenda;
+            dgv.DataSource = "";
+            dgv.DataSource = ItemVenda;
 
-            dgvCompra.Columns["id"].Visible = false;
-            dgvCompra.Columns["Vendas_id"].Visible = false;
-            dgvCompra.Columns["Vendas"].Visible = false;
+            dgv.Columns["id"].Visible = false;
+            dgv.Columns["Vendas_id"].Visible = false;
+            dgv.Columns["Vendas"].Visible = false;
+            dgv.Columns["total"].Visible = false;
 
-            dgvCompra.Columns["Codigo"].DisplayIndex = 1;
-            dgvCompra.Columns["Codigo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCompra.Columns["Codigo"].Width = 90;
+            dgv.Columns["Codigo"].DisplayIndex = 1;
+            dgv.Columns["Codigo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgv.Columns["Codigo"].Width = 90;
 
-            dgvCompra.Columns["descricao"].DisplayIndex = 2;
-            dgvCompra.Columns["descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCompra.Columns["descricao"].Width = 390;
+            dgv.Columns["descricao"].DisplayIndex = 2;
+            dgv.Columns["descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgv.Columns["descricao"].Width = 390;
 
-            dgvCompra.Columns["Quantidade"].DisplayIndex = 3;
-            dgvCompra.Columns["Quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCompra.Columns["Quantidade"].Width = 90;
+            dgv.Columns["Quantidade"].DisplayIndex = 3;
+            dgv.Columns["Quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgv.Columns["Quantidade"].Width = 90;
 
-            dgvCompra.Columns["valor"].DisplayIndex = 4;
-            dgvCompra.Columns["valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCompra.Columns["valor"].DefaultCellStyle.Format = "c";
-            dgvCompra.Columns["valor"].Width = 90;
+            dgv.Columns["valor"].DisplayIndex = 4;
+            dgv.Columns["valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgv.Columns["valor"].DefaultCellStyle.Format = "c";
+            dgv.Columns["valor"].Width = 90;
 
-            txtValorTotal.Text = dgvCompra.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["valor"].Value ?? 0)).ToString("C");
+            txtValorTotal.Text = dgv.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["total"].Value ?? 0)).ToString("C");
         }
 
         private void TxtCod_Leave(object sender, EventArgs e)
@@ -209,9 +216,10 @@ namespace HotelPet
             if (txtCod.Text != "")
             {
                 Contexto contexto = new Contexto();
+                var cod = Convert.ToInt64(txtCod.Text);
                 try
                 {
-                    var prod = contexto.Produto.FirstOrDefault(x => x.codigo == txtCod.Text);
+                    var prod = contexto.Produto.FirstOrDefault(x => x.codigo == cod);
                     if (prod != null)
                     {
                         lblNomeProdutoServico.Text = prod.descricao;
@@ -221,7 +229,8 @@ namespace HotelPet
                 }
                 catch (Exception)
                 {
-                    var serv = contexto.Servico.FirstOrDefault(x => x.id == Convert.ToInt64(txtCod.Text));
+                    Convert.ToInt64(txtCod.Text);
+                    var serv = contexto.Servico.FirstOrDefault(x => x.id == cod);
                     lblNomeProdutoServico.Text = serv.descricao;
                     txtValUnt.Text = serv.valor.ToString("C");
                     txtValorUnt.Text = serv.valor.ToString("C");
@@ -245,7 +254,8 @@ namespace HotelPet
         {
             if (txtQuantidade.Text != "")
             {
-                int valor = Convert.ToInt32(txtQuantidade.Text);
+                var abc = txtQuantidade.Text.Replace(".", ",");
+                double valor = Convert.ToDouble(abc);
                 string Qtde = valor.ToString();
                 txtQtde.Text = Qtde;
             }
@@ -257,7 +267,7 @@ namespace HotelPet
 
         private void TxtValorUnt_Leave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void TxtDesc_Leave(object sender, EventArgs e)
@@ -266,7 +276,7 @@ namespace HotelPet
             {
                 string valorSub = txtValorUnt.Text.Substring(3);
                 double unt = Convert.ToDouble(valorSub);
-                double Quantidade = Convert.ToDouble(txtQuantidade.Text);
+                double Quantidade = Convert.ToDouble(txtQuantidade.Text.Replace(".",","));
                 double desc = (txtDesc.Text == "") ? 0 : Convert.ToDouble(txtDesc.Text);
 
                 string Qtde = unt.ToString("C");
@@ -283,30 +293,60 @@ namespace HotelPet
         {
             DialogResult = MessageBox.Show("Confirma pagamento?", "Obrigado pela preferência", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button3);
 
-            if (DialogResult == DialogResult.Yes)
+            if (ItemVenda.Count() > 0)
             {
-                Contexto contexto = new Contexto();
-                ListaCompraBLL bll = new ListaCompraBLL();
-                Venda venda = new Venda();
 
-                venda.data = DateTime.Now;
-                venda.Cliente_id = cmbCli.SelectedIndex;
-                venda.Funcionario_id = cmbFunc.SelectedIndex;
-                contexto.Venda.Add(venda);
-                contexto.SaveChanges();
+                if (DialogResult == DialogResult.Yes)
+                {
+                    Contexto contexto = new Contexto();
+                    ListaCompraBLL bll = new ListaCompraBLL();
+                    Venda venda = new Venda();
+                    venda.data = DateTime.Now;
+                    venda.Funcionario_id = Convert.ToInt32(cmbFunc.SelectedValue);
 
-                int id = venda.id;
-                bll.Insert(ItemVenda, id);
+                    int idCmb = (!CkNotInform.Checked && !CkCPF.Checked) ? Convert.ToInt32(cmbCli.SelectedValue) : 0;
 
-                ItemVenda = null;
-                AtualizaView();
+                    Cliente cli = contexto.Cliente.FirstOrDefault(x => x.cpf == txtCpf.Text || x.id == idCmb);
+
+                    if (cli == null)
+                    {
+                        cli = new Cliente();
+                        cli.cpf = txtCpf.Text;
+                    }
+
+
+                    if (CkNotInform.Checked)
+                    {
+                        venda.Cliente_id = cli.id;
+                        venda.Cliente = cli;
+                    }
+                    else if (CkCPF.Checked)
+                    {
+                        venda.Cliente_id = cli.id;
+                        venda.Cliente = cli;
+                    }
+                    else
+                    {
+                        venda.Cliente_id = idCmb;
+                    }
+
+
+                    contexto.Venda.Add(venda);
+                    contexto.SaveChanges();
+
+                    int id = venda.id;
+                    bll.Insert(ItemVenda, id);
+
+                    ItemVenda.Clear();
+                    AtualizaView(dgvCompra);
+                }
             }
-            else 
+            else
             {
                 DialogResult = DialogResult.Retry;
                 List<ListaCompra> Aux = new List<ListaCompra>();
                 ItemVenda = Aux;
-                AtualizaView();
+                AtualizaView(dgvCompra);
             }
         }
 
@@ -337,7 +377,8 @@ namespace HotelPet
                 txtCpf.Visible = false;
             }
 
-            CkNotInform.Checked = (CkNotInform.Checked == true) ? false : false;
+            checkBox1.Checked = false;
+            CkNotInform.Checked = false;
 
         }
 
@@ -357,7 +398,68 @@ namespace HotelPet
                 lblCPF.Visible = false;
                 txtCpf.Visible = false;
             }
-            CkCPF.Checked = (CkCPF.Checked == true) ? false : false;
+
+            checkBox1.Checked = false;
+            CkCPF.Checked = false;
+        }
+
+        private void dgvCompra_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                long cod = Convert.ToInt64(dgvCompra.Rows[0].Cells["Codigo"].Value);
+                string desc = dgvCompra.Rows[0].Cells["descricao"].Value.ToString();
+                double qtde = Convert.ToDouble(dgvCompra.Rows[0].Cells["Quantidade"].Value);
+                double valor = Convert.ToDouble(dgvCompra.Rows[0].Cells["valor"].Value);
+
+                ItemVenda.RemoveAll(x => x.Codigo == cod && x.descricao == desc && x.Quantidade == qtde && x.valor == valor);
+                AtualizaView(dgvCompra);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void dgvCompra_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                long id = Convert.ToInt64(textBox1.Text.Trim());
+                var item = ItemVenda.Where(x => x.Codigo == id).ToList();
+                dgvCompra.DataSource = item;
+            }
+            catch (Exception)
+            {
+                var item = ItemVenda.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper())).ToList();
+                dgvCompra.DataSource = item;
+            }
+        }
+
+        private void checkBox1_Click_1(object sender, EventArgs e)
+        {
+            cmbCli.Visible = true;
+            lblCli.Visible = true;
+            lblCPF.Visible = false;
+            txtCpf.Visible = false;
+
+            CkCPF.Checked = (CkCPF.Checked == true) && false;
+            CkNotInform.Checked = (CkNotInform.Checked == true) && false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmConsulta frm = new frmConsulta();
+            frm.ShowDialog();
         }
     }
 }

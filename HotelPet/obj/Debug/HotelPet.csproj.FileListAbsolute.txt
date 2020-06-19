@@ -130,3 +130,4 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.pdb
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.xml
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.Vendas.frmConsulta.resources

@@ -2,10 +2,8 @@
 using HotelPet.Entity;
 using HotelPet.Layers.MODEL;
 using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelPet.Layers.DAL
 {
@@ -16,6 +14,18 @@ namespace HotelPet.Layers.DAL
             Contexto contexto = new Contexto();
             contexto.ListaCompras.Add(compras);
             contexto.SaveChanges();
+
+            try
+            {
+                Produtos Prod = contexto.Produto.FirstOrDefault(x=> x.codigo == compras.Codigo);
+                Prod.quantidade -= compras.Quantidade;
+                contexto.Entry(Prod).State = EntityState.Modified;
+                contexto.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
             contexto.Dispose();
         }
