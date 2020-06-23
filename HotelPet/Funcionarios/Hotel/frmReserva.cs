@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelPet
+namespace HotelPet.Funcionarios.Hotel
 {
-    public partial class frmHotel : Form
+    public partial class frmReserva : Form
     {
-        public frmHotel()
+        public frmReserva()
         {
             InitializeComponent();
-        }
-
-        private void frmHotel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -686,7 +686,7 @@
             this.cmbCli.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCli.Location = new System.Drawing.Point(110, 44);
             this.cmbCli.Name = "cmbCli";
-            this.cmbCli.Size = new System.Drawing.Size(121, 25);
+            this.cmbCli.Size = new System.Drawing.Size(227, 25);
             this.cmbCli.TabIndex = 0;
             // 
             // label1

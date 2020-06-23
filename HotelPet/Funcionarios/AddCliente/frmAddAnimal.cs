@@ -24,14 +24,10 @@ namespace HotelPet
         private void Produtos_Load(object sender, EventArgs e)
         {
             Contexto contexto = new Contexto();
-            List<Cliente> lstCli = contexto.Cliente.ToList();
-
-            cmbCli.DataSource = lstCli;
+            
+            cmbCli.DataSource = contexto.Cliente.Where(x => x.nome != null).ToList();
             cmbCli.DisplayMember = "nome";
             cmbCli.ValueMember = "id";
-
-            cmbCli.Text = "";
-           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -49,6 +49,12 @@ namespace HotelPet
             }
 
             Contexto contexto = new Contexto();
+            var consulta = contexto.Cliente.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(txtNome.Text.ToLower()));
+            if(consulta != null)
+            {
+                estaOK = false;
+                DialogResult confirm = MessageBox.Show("Cliente já cadastrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
 
             if (estaOK)
             {
@@ -69,9 +75,7 @@ namespace HotelPet
                     contexto.SaveChanges();
                 }
 
-                dgvCliente.DataSource = "";
-                dgvCliente.DataSource = contexto.Cliente.ToList();
-                LimpaCampos();
+                AtualizaView();
             }
         }
 
@@ -87,6 +91,10 @@ namespace HotelPet
             txtEmail.Text = "";
             txtBusca.ForeColor = Color.DarkGray;
             txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            btnDeletar.Enabled = false;
+            btnAtualizar.Enabled = false;
+            btnConfirm.Enabled = true;
+            AtualizaView();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -145,22 +153,40 @@ namespace HotelPet
             Contexto contexto = new Contexto();
             
             dgvCliente.DataSource = "";
-            dgvCliente.DataSource = contexto.Cliente.ToList();
+            dgvCliente.DataSource = contexto.Cliente.Where(x=> !x.nome.Trim().Contains("")).ToList();
 
             txtBusca.ForeColor = Color.DarkGray;
             txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            AtualizaView();
         }
 
         private void dgvCliente_DoubleClick(object sender, EventArgs e)
         {
-            txtId.Text = dgvCliente.SelectedRows[0].Cells["id"].Value.ToString();
-            txtNome.Text = dgvCliente.SelectedRows[0].Cells["nome"].Value.ToString();
-            txtCPF.Text = dgvCliente.SelectedRows[0].Cells["cpf"].Value.ToString();
-            txtRG.Text = dgvCliente.SelectedRows[0].Cells["rg"].Value.ToString();
-            txtCidade.Text = dgvCliente.SelectedRows[0].Cells["cidade"].Value.ToString();
-            txtUF.Text = dgvCliente.SelectedRows[0].Cells["uf"].Value.ToString();
-            txtTelefone.Text = dgvCliente.SelectedRows[0].Cells["telefone"].Value.ToString();
-            txtEmail.Text = dgvCliente.SelectedRows[0].Cells["email"].Value.ToString();
+            try
+            {
+                txtId.Text = dgvCliente.SelectedRows[0].Cells["id"].Value.ToString();
+                txtNome.Text = dgvCliente.SelectedRows[0].Cells["nome"].Value.ToString();
+                txtCPF.Text = dgvCliente.SelectedRows[0].Cells["cpf"].Value.ToString();
+                txtRG.Text = dgvCliente.SelectedRows[0].Cells["rg"].Value.ToString();
+                txtCidade.Text = dgvCliente.SelectedRows[0].Cells["cidade"].Value.ToString();
+                txtUF.Text = dgvCliente.SelectedRows[0].Cells["uf"].Value.ToString();
+                txtTelefone.Text = dgvCliente.SelectedRows[0].Cells["telefone"].Value.ToString();
+                txtEmail.Text = dgvCliente.SelectedRows[0].Cells["email"].Value.ToString();
+                btnDeletar.Enabled = true;
+                btnAtualizar.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void AtualizaView()
+        {
+            Contexto contexto = new Contexto();
+
+            dgvCliente.DataSource = "";
+            dgvCliente.DataSource = contexto.Cliente.Where(x => x.nome.Contains("")).ToList();
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
@@ -191,9 +217,6 @@ namespace HotelPet
             }
             else { MessageBox.Show("Para apagar, precisa selecionar um cliente!","Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
-            Contexto contexto = new Contexto();
-            dgvCliente.DataSource = "";
-            dgvCliente.DataSource = contexto.Cliente.ToList();
             LimpaCampos();
         }
 
@@ -204,7 +227,10 @@ namespace HotelPet
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LimpaCampos();
             HabilitaCampos(true);
+            btnDeletar.Enabled = false;
+            btnAtualizar.Enabled = false;
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -236,8 +262,6 @@ namespace HotelPet
             }
             else { MessageBox.Show("Para apagar, precisa selecionar um cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
-            dgvCliente.DataSource = "";
-            dgvCliente.DataSource = contexto.Cliente.ToList();
             LimpaCampos();
         }
 

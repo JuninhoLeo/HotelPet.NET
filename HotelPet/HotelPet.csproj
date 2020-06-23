@@ -236,6 +236,12 @@
     <Compile Include="frmCadastrarSe.Designer.cs">
       <DependentUpon>frmCadastrarSe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\Hotel\frmReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\Hotel\frmReserva.Designer.cs">
+      <DependentUpon>frmReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionarios\Vendas\frmConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,10 +311,10 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHotel.cs">
+    <Compile Include="Funcionarios\Hotel\frmHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHotel.Designer.cs">
+    <Compile Include="Funcionarios\Hotel\frmHotel.Designer.cs">
       <DependentUpon>frmHotel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
@@ -332,6 +338,9 @@
     <EmbeddedResource Include="Funcionarios\AddCliente\frmAddCliente.resx">
       <DependentUpon>frmAddCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\Hotel\frmReserva.resx">
+      <DependentUpon>frmReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Vendas\frmConsulta.resx">
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,7 +353,7 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHotel.resx">
+    <EmbeddedResource Include="Funcionarios\Hotel\frmHotel.resx">
       <DependentUpon>frmHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -485,7 +494,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Funcionarios\Clinica\" />
-    <Folder Include="Funcionarios\Hotel\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Control_Panel_23581.ico" />

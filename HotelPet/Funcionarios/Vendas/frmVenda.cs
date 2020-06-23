@@ -34,7 +34,7 @@ namespace HotelPet
 
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
-            cmbFunc.DataSource = contexto.Funcionario.ToList();
+            cmbFunc.DataSource = contexto.Funcionario.Where(x=> x.Permicoes.frmVenda == true).ToList();
 
             AtualizaView(dgvCompra);
             LimpaCampos();

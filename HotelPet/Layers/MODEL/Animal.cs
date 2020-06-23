@@ -54,6 +54,8 @@ namespace HotelPet.Camadas.MODEL
 
         public string cuidados { get; set; }
 
+        public bool hospedado { get; set; } = false;
+
         public byte[] imagem { get; set; }
 
         //CHAVE ESTRANGEIRA

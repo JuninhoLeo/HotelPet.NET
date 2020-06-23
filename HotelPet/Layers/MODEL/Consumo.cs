@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelPet.Camadas.MODEL
 {
@@ -14,6 +9,8 @@ namespace HotelPet.Camadas.MODEL
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
+        public double vlTotal { get; set; }
+        public double Quantidade { get; set; }
         public double total { get; set; }
 
         //chaves estrangeiras
@@ -24,11 +21,6 @@ namespace HotelPet.Camadas.MODEL
         [ForeignKey("Produtos")]
         public long Produtos_id { get; set; }
         virtual public Produtos Produtos { get; set; }
-
-        [ForeignKey("Quarto")]
-        public int Quarto_id { get; set; }
-        virtual public Quarto Quarto { get; set; }
-
     }
 }
 
