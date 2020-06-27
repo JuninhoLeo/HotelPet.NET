@@ -236,11 +236,11 @@
     <Compile Include="frmCadastrarSe.Designer.cs">
       <DependentUpon>frmCadastrarSe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcionarios\Hotel\frmReserva.cs">
+    <Compile Include="Funcionarios\Hotel\frmConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Funcionarios\Hotel\frmReserva.Designer.cs">
-      <DependentUpon>frmReserva.cs</DependentUpon>
+    <Compile Include="Funcionarios\Hotel\frmConsulta.Designer.cs">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionarios\Vendas\frmConsulta.cs">
       <SubType>Form</SubType>
@@ -249,10 +249,12 @@
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Layers\BLL\ClienteBLL.cs" />
+    <Compile Include="Layers\BLL\ConsumoBLL.cs" />
     <Compile Include="Layers\BLL\ListaCompraBLL.cs" />
     <Compile Include="Layers\BLL\ProdutosBLL.cs" />
     <Compile Include="Layers\DAL\AnimalDAL.cs" />
     <Compile Include="Layers\DAL\ClienteDAL.cs" />
+    <Compile Include="Layers\DAL\ConsumoDAL.cs" />
     <Compile Include="Layers\DAL\ListaCompraDAL.cs" />
     <Compile Include="Layers\DAL\ProdutosDAL.cs" />
     <Compile Include="Layers\MODEL\Administrador.cs" />
@@ -338,8 +340,8 @@
     <EmbeddedResource Include="Funcionarios\AddCliente\frmAddCliente.resx">
       <DependentUpon>frmAddCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Funcionarios\Hotel\frmReserva.resx">
-      <DependentUpon>frmReserva.cs</DependentUpon>
+    <EmbeddedResource Include="Funcionarios\Hotel\frmConsulta.resx">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Vendas\frmConsulta.resx">
       <DependentUpon>frmConsulta.cs</DependentUpon>
@@ -362,7 +364,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\HotelPet.Camadas.MODEL.Movimentacao.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -494,12 +495,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Funcionarios\Clinica\" />
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Control_Panel_23581.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\openFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

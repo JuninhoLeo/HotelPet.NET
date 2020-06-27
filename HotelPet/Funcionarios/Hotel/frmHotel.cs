@@ -1,6 +1,9 @@
 ﻿using HotelPet.Camadas.MODEL;
 using HotelPet.Entity;
+using HotelPet.Funcionarios.Hotel;
+using HotelPet.Layers.BLL;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -10,6 +13,12 @@ namespace HotelPet
 {
     public partial class frmHotel : Form
     {
+
+        public int idCliente { get; set; }
+        public int idAnimal { get; set; }
+        public List<Animal> listAnimal { get; set; }
+        public List<Consumo> lstConsumo { get; set; }
+
         Contexto contexto = new Contexto();
 
         public frmHotel()
@@ -33,16 +42,24 @@ namespace HotelPet
             dtpSaida.Value = DateTime.Now;
 
             lblcli.Text = "";
+            lblCliente.Text = "";
             lblAnimal.Text = "";
+            lblAni.Text = "";
             lblEspecie.Text = "";
+            lblEsp.Text = "";
             lblQuarto.Text = "";
+            lblDescr.Text = "";
             lblNumQuarto.Text = "";
+            lblNumero.Text = "";
             lblEntrada.Text = "";
+            lblDataEntr.Text = "";
             lblSaida.Text = "Não Informado";
+            lblDataSai.Text = "";
             lblValor.Text = "";
 
             int val = 0;
             txtValorTotal.Text = val.ToString("C");
+            lblValorTotal.Text = val.ToString("C");
             txtBuscQuarto.Text = "";
             txtBuscaCli.Text = "";
 
@@ -65,23 +82,50 @@ namespace HotelPet
             cmbAnimal.DisplayMember = "nome";
             cmbAnimal.ValueMember = "id";
 
-            cmbQuartos.DataSource = contexto.Quarto.Where(x => x.disponivel == true).OrderByDescending(x => x.descricao).OrderBy(x => x.descricao).ToList();
+            cmbQuartos.DataSource = contexto.Quarto.Where(x => x.disponivel == true).OrderByDescending(x => x.descricao).ToList();
             cmbQuartos.DisplayMember = "descricao";
             cmbQuartos.ValueMember = "id";
 
             cmbFunc.DataSource = contexto.Funcionario.Where(x => x.Permicoes.frmHotel == true).OrderBy(x => x.nome).ToList();
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
+
+            var lstCli = from Cli in contexto.Reserva.OrderBy(x => x.Cliente.nome).ToList()
+                         group Cli by new { Cli.Cliente.nome, Cli.Cliente_id  } into cli
+                         select new
+                         {
+                             nome = cli.Key.nome,
+                             id = cli.Key.Cliente_id
+                         };
+
+            cmbCli.DataSource = lstCli.ToList();
+            cmbCli.DisplayMember = "nome";
+            cmbCli.ValueMember = "id";
+
+            dgvCheckOut.DataSource = "";
+            cmbAni.Enabled = false;
+            //var lstAnimal = from Cli in contexto.Reserva.OrderBy(x => x.Animal.nome).ToList()
+            //             select new
+            //             {
+            //                 Cli.Animal.nome,
+            //                 Cli.Animal.id
+            //             };
+
+            //cmbAni.DataSource = lstAnimal.ToList();
+            //cmbAni.DisplayMember = "nome";
+            //cmbAni.ValueMember = "id";
         }
 
         private void data_Tick(object sender, EventArgs e)
         {
             lblData.Text = DateTime.Now.ToShortDateString();
+            lbldata2.Text = DateTime.Now.ToShortDateString();
         }
 
         private void Hora_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblHora2.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void label17_Click(object sender, EventArgs e)
@@ -212,24 +256,31 @@ namespace HotelPet
         {
             cmbNumero.Enabled = true;
             lblQuarto.Text = cmbQuartos.Text;
-            Quarto quarto = contexto.Quarto.First(x => x.descricao == cmbQuartos.Text);
 
-            lblValor.Text = quarto.valor.ToString();
+            try
+            {
+                Quarto quarto = contexto.Quarto.First(x => x.descricao == cmbQuartos.Text);
 
-            var qtde = dtpSaida.Value - dtpEntr.Value;
-            int dias = qtde.Days + 1;
+                lblValor.Text = quarto.valor.ToString();
 
-            double total = Convert.ToDouble(lblValor.Text);
-            double valor = total * dias;
+                var qtde = dtpSaida.Value - dtpEntr.Value;
+                int dias = qtde.Days + 1;
 
-            txtValorTotal.Text = valor.ToString("C");
+                double total = Convert.ToDouble(lblValor.Text);
+                double valor = total * dias;
 
-            cmbNumero.DataSource = contexto.Quarto.Where(x => x.disponivel == true && x.descricao == cmbQuartos.Text).ToList();
-            cmbNumero.DisplayMember = "numero";
-            cmbNumero.ValueMember = "id";
+                txtValorTotal.Text = valor.ToString("C");
 
-            lblValor.Text = quarto.valor.ToString();
-            lblEntrada.Text = dtpEntr.Text;
+                cmbNumero.DataSource = contexto.Quarto.Where(x => x.disponivel == true && x.descricao == cmbQuartos.Text).ToList();
+                cmbNumero.DisplayMember = "numero";
+                cmbNumero.ValueMember = "id";
+
+                lblValor.Text = quarto.valor.ToString();
+                lblEntrada.Text = dtpEntr.Text;
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void dtpSaida_Leave(object sender, EventArgs e)
@@ -240,8 +291,8 @@ namespace HotelPet
                 {
                     lblSaida.Text = dtpSaida.Text;
 
-                    var qtde = dtpSaida.Value - dtpEntr.Value;
-                    int dias = qtde.Days + 1;
+                    var qtde = dtpSaida.Value.Date - dtpEntr.Value.Date;
+                    int dias = qtde.Days;
 
                     double total = Convert.ToDouble(lblValor.Text);
                     double valor = total * dias;
@@ -255,7 +306,7 @@ namespace HotelPet
             }
             else
             {
-                MessageBox.Show("Erro: A DATA DE SAÍDA NÃO pode ser MAIOR que a DATA DE ENTRADA", "Erro de Data", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Erro: A DATA DE SAÍDA NÃO PODE SER MENOR QUE A DATA DE ENTRADA", "Erro de Data", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 dtpSaida.Value = dtpEntr.Value;
             }
         }
@@ -278,8 +329,8 @@ namespace HotelPet
                 {
                     lblSaida.Text = dtpSaida.Text;
 
-                    var qtde = dtpSaida.Value - dtpEntr.Value;
-                    int dias = qtde.Days + 1;
+                    var qtde = dtpSaida.Value.Date - dtpEntr.Value.Date;
+                    int dias = qtde.Days;
 
                     double total = Convert.ToDouble(lblValor.Text);
                     double valor = total * dias;
@@ -327,19 +378,13 @@ namespace HotelPet
 
             if (EstaOK)
             {
-                DialogResult = MessageBox.Show("Confirma Pagamento da Reserva?", "Obrigado pela preferência", MessageBoxButtons.YesNoCancel, MessageBoxIcon.None, MessageBoxDefaultButton.Button3);
+                DialogResult = MessageBox.Show("Confirmar Reserva?", "Obrigado pela preferência", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
 
-                if(DialogResult != DialogResult.Cancel)
+                if(DialogResult == DialogResult.Yes)
                 { 
                     Reserva reserva = new Reserva();
-                    if (DialogResult == DialogResult.Yes)
-                    {
-                        reserva.pago = Convert.ToDouble(txtValorTotal.Text.Replace("R$",""));
-                    }
-                    else if (DialogResult == DialogResult.No)
-                    {
-                        reserva.pago = 0;
-                    }
+
+                    reserva.pago = false;
 
                     if (lblSaida.Text != "Não Informado")
                     {
@@ -371,6 +416,174 @@ namespace HotelPet
 
 
 
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmConsulta frmConsulta = new frmConsulta(this);
+            frmConsulta.ShowDialog();
+            cmbCli.SelectedValue = idCliente;
+
+            cmbAni.DataSource = listAnimal;
+            cmbAni.DisplayMember = "nome";
+            cmbAni.ValueMember = "id";
+
+            cmbAni.SelectedValue = idAnimal;
+        }
+
+        private void cmbCli_Leave(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cmbCli.SelectedValue);
+            var lstAnimal = from Cli in contexto.Reserva.Where(x => x.Cliente.id == id && x.Animal.hospedado == true && x.pago == false).OrderBy(x => x.Animal.nome).ToList()
+                            select new
+                            {
+                                Cli.Animal.nome,
+                                Cli.Animal.id
+                            };
+
+            cmbAni.Enabled = true;
+            cmbAni.DataSource = lstAnimal.ToList();
+            cmbAni.DisplayMember = "nome";
+            cmbAni.ValueMember = "id";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lstConsumo = new List<Consumo>();
+
+            int IDCliente = contexto.Cliente.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(cmbCli.Text.Trim().ToLower())).id;
+            int IDAnimal = contexto.Animal.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(cmbAni.Text.Trim().ToLower()) 
+                                                            && x.Cliente_id == IDCliente && x.hospedado == true).id;
+
+            var reserva = contexto.Reserva.FirstOrDefault(x => x.Cliente_id == IDCliente && x.Animal_id == IDAnimal && x.pago == false);
+
+            lblCliente.Text = reserva.Cliente.nome;
+            lblAni.Text = reserva.Animal.nome;
+            lblEsp.Text = reserva.Animal.especie;
+            lblDescr.Text = reserva.Quarto.descricao;
+            lblNumero.Text = reserva.Quarto.numero.ToString();
+            lblDataEntr.Text = reserva.entrada.ToShortDateString();
+            lblDataSai.Text = DateTime.Now.ToShortDateString();
+
+            DateTime dateTime = DateTime.Now;
+
+            var qtde = dateTime - reserva.entrada.Date;
+            int dias = qtde.Days;
+
+            double total = reserva.Quarto.valor;
+            double valor = total * dias;
+
+            txtValorTotal.Text = valor.ToString("C");
+
+            lstConsumo = contexto.Consumo.Where(x => x.Reserva_id == reserva.id).ToList();
+
+            Servicos servico = new Servicos();
+            servico = contexto.Servico.FirstOrDefault(x => x.descricao == reserva.Quarto.descricao && x.quantidade == dias);
+
+            if (servico == null)
+            {
+                servico = new Servicos();
+                servico.descricao = reserva.Quarto.descricao;
+                servico.quantidade = dias;
+                servico.valor = valor;
+                contexto.Servico.Add(servico);
+                contexto.SaveChanges();
+            }
+
+            Consumo consumo = new Consumo();
+            consumo.valor = total;
+            consumo.Quantidade = dias;
+            consumo.total = valor;
+            consumo.Reserva = reserva;
+            consumo.Servicos = servico;
+
+            lstConsumo.Add(consumo);
+
+            var lista = from Cons in lstConsumo
+                        select new
+                        {
+                            Codigo = Cons.Servicos.id,
+                            descricao = Cons.Servicos.descricao,
+                            Quantidade = Cons.Servicos.quantidade,
+                            valor = Cons.valor,
+                            total = Cons.total
+                        };
+
+            dgvCheckOut.DataSource = "";
+            dgvCheckOut.DataSource = lista.ToList();
+
+            dgvCheckOut.Columns["total"].Visible = false;
+
+            dgvCheckOut.Columns["Codigo"].DisplayIndex = 1;
+            dgvCheckOut.Columns["Codigo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvCheckOut.Columns["Codigo"].Width = 85;
+
+            dgvCheckOut.Columns["descricao"].DisplayIndex = 2;
+            dgvCheckOut.Columns["descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvCheckOut.Columns["descricao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvCheckOut.Columns["descricao"].Width = 383;
+
+            dgvCheckOut.Columns["Quantidade"].DisplayIndex = 3;
+            dgvCheckOut.Columns["Quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvCheckOut.Columns["Quantidade"].Width = 85;
+
+            dgvCheckOut.Columns["valor"].DisplayIndex = 4;
+            dgvCheckOut.Columns["valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvCheckOut.Columns["valor"].DefaultCellStyle.Format = "c";
+            dgvCheckOut.Columns["valor"].Width = 90;
+
+            lblValorTotal.Text = dgvCheckOut.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["total"].Value ?? 0)).ToString("C");
+
+        }
+
+        private void dgvCheckOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Confirma Pagamento da Reserva?", "Finalizar Reserva", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                Animal animal = contexto.Animal.FirstOrDefault(x => x.nome.Contains(lblAni.Text) && x.Cliente.nome.Contains(lblCliente.Text) && x.hospedado == true);
+                animal.hospedado = false;
+
+                contexto.Entry(animal).State = EntityState.Modified;
+                contexto.SaveChanges();
+
+                double valor = Convert.ToDouble(lblValorTotal.Text.Replace("R$", ""));
+
+                ConsumoBLL bll = new ConsumoBLL();
+                int id = bll.Insert(lstConsumo);
+
+                Reserva reserva = contexto.Reserva.FirstOrDefault(x => x.id == id);
+                reserva.pago = true;
+
+                reserva.Quarto.disponivel = true;
+
+                contexto.Entry(reserva).State = EntityState.Modified;
+                contexto.SaveChanges();
+                lstConsumo = new List<Consumo>();
+                LimpaCampos();
+            }
+            else
+            {
+                LimpaCampos();
+            }
+ 
         }
     }
 }

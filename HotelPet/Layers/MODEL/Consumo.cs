@@ -9,7 +9,7 @@ namespace HotelPet.Camadas.MODEL
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
-        public double vlTotal { get; set; }
+        public double valor { get; set; }
         public double Quantidade { get; set; }
         public double total { get; set; }
 
@@ -18,9 +18,9 @@ namespace HotelPet.Camadas.MODEL
         public int Reserva_id { get; set; }
         virtual public Reserva Reserva { get; set; }
 
-        [ForeignKey("Produtos")]
-        public long Produtos_id { get; set; }
-        virtual public Produtos Produtos { get; set; }
+        [ForeignKey("Servicos")]
+        public long Servicos_id { get; set; }
+        virtual public Servicos Servicos { get; set; }
     }
 }
 

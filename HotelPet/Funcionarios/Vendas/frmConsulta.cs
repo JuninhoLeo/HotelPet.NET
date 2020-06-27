@@ -34,6 +34,10 @@ namespace HotelPet.Funcionarios.Vendas
                     var item = contexto.Produto.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper())).ToList();
                     dgvProdutos.DataSource = item;
                 }
+
+                dgvProdutos.Columns["id"].Visible = false;
+                dgvProdutos.Columns["valor"].DefaultCellStyle.Format = "c";
+
             }
             else
             {
@@ -48,6 +52,8 @@ namespace HotelPet.Funcionarios.Vendas
                     var item = contexto.Servico.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper())).ToList();
                     dgvProdutos.DataSource = item;
                 }
+
+                dgvProdutos.Columns["valor"].DefaultCellStyle.Format = "c";
             }
         }
 

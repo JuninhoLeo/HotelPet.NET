@@ -76,11 +76,6 @@ namespace HotelPet
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void desconectar()
         {
             DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Fechar Aplicação", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
@@ -351,11 +346,6 @@ namespace HotelPet
         }
 
         private void lbldesconto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbCli_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

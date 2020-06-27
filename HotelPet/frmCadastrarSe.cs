@@ -43,7 +43,7 @@ namespace HotelPet
                     permicao.tipo = user;
                     permicao.frmVenda = false;
                     permicao.frmCliente = false;
-                    permicao.frmAddCliente = true;
+                    permicao.frmAddCliente = false;
                     permicao.frmConfiguracoes = true;
                     permicao.frmHotel = false;
                     permicao.frmClinica =  false;

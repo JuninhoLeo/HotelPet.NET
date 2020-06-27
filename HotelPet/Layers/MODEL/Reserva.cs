@@ -17,7 +17,7 @@ namespace HotelPet.Camadas.MODEL
         public int id { get; set; }
         public DateTime entrada { get; set; }
         public DateTime? saida { get; set; }
-        public double pago { get; set; }
+        public bool pago { get; set; }
 
         // chaves estrangeiras
 

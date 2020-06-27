@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHora = new System.Windows.Forms.Label();
             this.hora = new System.Windows.Forms.Timer(this.components);
             this.lblData = new System.Windows.Forms.Label();
@@ -71,29 +71,29 @@
             this.CkNotInform = new System.Windows.Forms.CheckBox();
             this.CkCPF = new System.Windows.Forms.CheckBox();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnLancar = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
             this.img6 = new System.Windows.Forms.PictureBox();
             this.img4 = new System.Windows.Forms.PictureBox();
             this.img5 = new System.Windows.Forms.PictureBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.imglogo = new System.Windows.Forms.PictureBox();
             this.img1 = new System.Windows.Forms.PictureBox();
             this.img2 = new System.Windows.Forms.PictureBox();
             this.img3 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnLancar = new System.Windows.Forms.Button();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imglogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHora
@@ -550,25 +550,25 @@
             this.dgvCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompra.BackgroundColor = System.Drawing.Color.White;
             this.dgvCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompra.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCompra.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCompra.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCompra.Enabled = false;
             this.dgvCompra.GridColor = System.Drawing.Color.LightGray;
             this.dgvCompra.Location = new System.Drawing.Point(645, 111);
@@ -579,46 +579,6 @@
             this.dgvCompra.TabIndex = 47;
             this.dgvCompra.DoubleClick += new System.EventHandler(this.dgvCompra_DoubleClick);
             this.dgvCompra.Leave += new System.EventHandler(this.dgvCompra_Leave);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Image = global::HotelPet.Properties.Resources.trash;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(654, 438);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 36);
-            this.button1.TabIndex = 53;
-            this.button1.TabStop = false;
-            this.button1.Text = "Remover Itens";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnLancar
-            // 
-            this.btnLancar.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLancar.Image = global::HotelPet.Properties.Resources.lançar;
-            this.btnLancar.Location = new System.Drawing.Point(506, 565);
-            this.btnLancar.Name = "btnLancar";
-            this.btnLancar.Size = new System.Drawing.Size(123, 51);
-            this.btnLancar.TabIndex = 9;
-            this.btnLancar.UseVisualStyleBackColor = false;
-            this.btnLancar.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnFinalizar.Image = global::HotelPet.Properties.Resources.ok;
-            this.btnFinalizar.Location = new System.Drawing.Point(1143, 413);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(193, 61);
-            this.btnFinalizar.TabIndex = 11;
-            this.btnFinalizar.TabStop = false;
-            this.btnFinalizar.UseVisualStyleBackColor = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.BtnFinalizar_Click);
             // 
             // img6
             // 
@@ -647,29 +607,6 @@
             this.img5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img5.TabIndex = 26;
             this.img5.TabStop = false;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackgroundImage = global::HotelPet.Properties.Resources.ext1;
-            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLimpar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLimpar.Location = new System.Drawing.Point(421, 305);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(29, 25);
-            this.btnLimpar.TabIndex = 3;
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            // 
-            // imglogo
-            // 
-            this.imglogo.BackColor = System.Drawing.Color.White;
-            this.imglogo.BackgroundImage = global::HotelPet.Properties.Resources.logo;
-            this.imglogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imglogo.Location = new System.Drawing.Point(152, 4);
-            this.imglogo.Name = "imglogo";
-            this.imglogo.Size = new System.Drawing.Size(340, 187);
-            this.imglogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imglogo.TabIndex = 4;
-            this.imglogo.TabStop = false;
             // 
             // img1
             // 
@@ -720,6 +657,73 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Codigo/Descrição:";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.checkBox1.Location = new System.Drawing.Point(510, 413);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(85, 24);
+            this.checkBox1.TabIndex = 57;
+            this.checkBox1.TabStop = false;
+            this.checkBox1.Text = "Clientes";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click_1);
+            // 
+            // btnLancar
+            // 
+            this.btnLancar.BackColor = System.Drawing.Color.DarkGray;
+            this.btnLancar.Image = global::HotelPet.Properties.Resources.lançar;
+            this.btnLancar.Location = new System.Drawing.Point(506, 565);
+            this.btnLancar.Name = "btnLancar";
+            this.btnLancar.Size = new System.Drawing.Size(123, 51);
+            this.btnLancar.TabIndex = 9;
+            this.btnLancar.UseVisualStyleBackColor = false;
+            this.btnLancar.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // imglogo
+            // 
+            this.imgLogo.BackColor = System.Drawing.Color.White;
+            this.imgLogo.BackgroundImage = global::HotelPet.Properties.Resources.logo;
+            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgLogo.Location = new System.Drawing.Point(152, 4);
+            this.imgLogo.Name = "imglogo";
+            this.imgLogo.Size = new System.Drawing.Size(340, 187);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgLogo.TabIndex = 4;
+            this.imgLogo.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Image = global::HotelPet.Properties.Resources.trash;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(654, 438);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 36);
+            this.button1.TabIndex = 53;
+            this.button1.TabStop = false;
+            this.button1.Text = "Remover Itens";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnFinalizar.Image = global::HotelPet.Properties.Resources.ok;
+            this.btnFinalizar.Location = new System.Drawing.Point(1143, 413);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(193, 61);
+            this.btnFinalizar.TabIndex = 11;
+            this.btnFinalizar.TabStop = false;
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.BtnFinalizar_Click);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
@@ -737,32 +741,32 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox1
+            // btnLimpar
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.White;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.checkBox1.Location = new System.Drawing.Point(510, 413);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 24);
-            this.checkBox1.TabIndex = 57;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.Text = "Clientes";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click_1);
+            this.btnLimpar.BackgroundImage = global::HotelPet.Properties.Resources.ext1;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLimpar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLimpar.Location = new System.Drawing.Point(421, 305);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(29, 25);
+            this.btnLimpar.TabIndex = 3;
+            this.btnLimpar.UseVisualStyleBackColor = false;
             // 
             // frmVenda
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1360, 648);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.imgLogo);
+            this.Controls.Add(this.btnLancar);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.CkCPF);
             this.Controls.Add(this.lblNomeProdutoServico);
             this.Controls.Add(this.lblFunc);
@@ -772,10 +776,8 @@
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtValorUnt);
             this.Controls.Add(this.txtQuantidade);
-            this.Controls.Add(this.btnLancar);
             this.Controls.Add(this.lblFinalizar);
             this.Controls.Add(this.lblProd);
-            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.lblLista);
             this.Controls.Add(this.img6);
             this.Controls.Add(this.lblToalProd);
@@ -798,11 +800,9 @@
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblQtde);
             this.Controls.Add(this.lblCod);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.lblSeparador);
             this.Controls.Add(this.lblData);
-            this.Controls.Add(this.imglogo);
             this.Controls.Add(this.img1);
             this.Controls.Add(this.cmbCli);
             this.Controls.Add(this.lblCli);
@@ -819,10 +819,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.img6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imglogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -831,14 +831,12 @@
         #endregion
         private System.Windows.Forms.PictureBox img2;
         private System.Windows.Forms.PictureBox img1;
-        private System.Windows.Forms.PictureBox imglogo;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer hora;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblSeparador;
         private System.Windows.Forms.Timer data;
         private System.Windows.Forms.TextBox txtCod;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label lblCod;
         private System.Windows.Forms.Label lblQtde;
         private System.Windows.Forms.Label lblValor;
@@ -861,10 +859,8 @@
         private System.Windows.Forms.Label lblToalProd;
         private System.Windows.Forms.PictureBox img6;
         private System.Windows.Forms.Label lblLista;
-        private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Label lblProd;
         private System.Windows.Forms.Label lblFinalizar;
-        private System.Windows.Forms.Button btnLancar;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.TextBox txtValorUnt;
         private System.Windows.Forms.TextBox txtDesc;
@@ -877,12 +873,16 @@
         private System.Windows.Forms.Label lblCli;
         private System.Windows.Forms.CheckBox CkNotInform;
         private System.Windows.Forms.CheckBox CkCPF;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvCompra;
         private System.Windows.Forms.PictureBox img3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnLancar;
+        private System.Windows.Forms.PictureBox imgLogo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
