@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblData = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -50,9 +52,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtpSaida = new System.Windows.Forms.DateTimePicker();
             this.dtpEntr = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.imglogo = new System.Windows.Forms.PictureBox();
             this.lblTraco = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtValorTotal = new System.Windows.Forms.Label();
             this.lblVtotal = new System.Windows.Forms.Label();
+            this.img4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.lblNumQuarto = new System.Windows.Forms.Label();
@@ -69,15 +76,61 @@
             this.lblEntrada = new System.Windows.Forms.Label();
             this.lblQuarto = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtBuscaCli = new System.Windows.Forms.TextBox();
             this.dgvCli = new System.Windows.Forms.DataGridView();
+            this.btnCadastroAnimal = new System.Windows.Forms.Button();
+            this.btnCadastroCli = new System.Windows.Forms.Button();
             this.cmbAnimal = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblLista = new System.Windows.Forms.Label();
+            this.img6 = new System.Windows.Forms.PictureBox();
+            this.lblToalProd = new System.Windows.Forms.Label();
+            this.lblQtdE_x_Valor = new System.Windows.Forms.Label();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.dgvCheckOut = new System.Windows.Forms.DataGridView();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cmbAni = new System.Windows.Forms.ComboBox();
+            this.cmbCli = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lblEsp = new System.Windows.Forms.Label();
+            this.lblAni = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.lblDataSai = new System.Windows.Forms.Label();
+            this.lblDataEntr = new System.Windows.Forms.Label();
+            this.lblDescr = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.lbldata2 = new System.Windows.Forms.Label();
+            this.lblHora2 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -98,86 +151,33 @@
             this.label15 = new System.Windows.Forms.Label();
             this.data = new System.Windows.Forms.Timer(this.components);
             this.Hora = new System.Windows.Forms.Timer(this.components);
-            this.lbldata2 = new System.Windows.Forms.Label();
-            this.lblHora2 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.lblNumero = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.lblEsp = new System.Windows.Forms.Label();
-            this.lblAni = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.lblDataSai = new System.Windows.Forms.Label();
-            this.lblDataEntr = new System.Windows.Forms.Label();
-            this.lblDescr = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.cmbCli = new System.Windows.Forms.ComboBox();
-            this.cmbAni = new System.Windows.Forms.ComboBox();
-            this.dgvCheckOut = new System.Windows.Forms.DataGridView();
-            this.lblValorTotal = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.imglogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.img4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCadastroAnimal = new System.Windows.Forms.Button();
-            this.btnCadastroCli = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblLista = new System.Windows.Forms.Label();
-            this.img6 = new System.Windows.Forms.PictureBox();
-            this.lblToalProd = new System.Windows.Forms.Label();
-            this.lblQtdE_x_Valor = new System.Windows.Forms.Label();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuarto)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCli)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imglogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img6)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -191,6 +191,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1360, 660);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPage1
             // 
@@ -230,6 +231,33 @@
             this.groupBox4.TabIndex = 96;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Finalizar Reserva";
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirm.Image = global::HotelPet.Properties.Resources.ok;
+            this.btnConfirm.Location = new System.Drawing.Point(197, 45);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(153, 58);
+            this.btnConfirm.TabIndex = 24;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCancelar.Image = global::HotelPet.Properties.Resources.X;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.Location = new System.Drawing.Point(6, 65);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(131, 38);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.TabStop = false;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblData
             // 
@@ -422,6 +450,27 @@
             this.dtpEntr.TabIndex = 18;
             this.dtpEntr.Leave += new System.EventHandler(this.dtpEntr_Leave);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox5.Location = new System.Drawing.Point(577, 498);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(380, 124);
+            this.pictureBox5.TabIndex = 95;
+            this.pictureBox5.TabStop = false;
+            // 
+            // imglogo
+            // 
+            this.imglogo.BackColor = System.Drawing.Color.White;
+            this.imglogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imglogo.Image = global::HotelPet.Properties.Resources.logo;
+            this.imglogo.Location = new System.Drawing.Point(788, 17);
+            this.imglogo.Name = "imglogo";
+            this.imglogo.Size = new System.Drawing.Size(340, 175);
+            this.imglogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imglogo.TabIndex = 94;
+            this.imglogo.TabStop = false;
+            // 
             // lblTraco
             // 
             this.lblTraco.BackColor = System.Drawing.Color.White;
@@ -432,6 +481,15 @@
             this.lblTraco.TabIndex = 93;
             this.lblTraco.Text = "-";
             this.lblTraco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox4.Location = new System.Drawing.Point(577, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(763, 207);
+            this.pictureBox4.TabIndex = 90;
+            this.pictureBox4.TabStop = false;
             // 
             // txtValorTotal
             // 
@@ -456,6 +514,24 @@
             this.lblVtotal.Size = new System.Drawing.Size(219, 32);
             this.lblVtotal.TabIndex = 84;
             this.lblVtotal.Text = "Valor Total(R$):";
+            // 
+            // img4
+            // 
+            this.img4.BackColor = System.Drawing.Color.DimGray;
+            this.img4.Location = new System.Drawing.Point(960, 498);
+            this.img4.Name = "img4";
+            this.img4.Size = new System.Drawing.Size(384, 126);
+            this.img4.TabIndex = 83;
+            this.img4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox3.Location = new System.Drawing.Point(577, 225);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(763, 267);
+            this.pictureBox3.TabIndex = 74;
+            this.pictureBox3.TabStop = false;
             // 
             // groupBox3
             // 
@@ -660,6 +736,15 @@
             this.label7.TabIndex = 74;
             this.label7.Text = "Animal:";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox2.Location = new System.Drawing.Point(9, 342);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(563, 280);
+            this.pictureBox2.TabIndex = 73;
+            this.pictureBox2.TabStop = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -725,6 +810,34 @@
             this.dgvCli.TabStop = false;
             this.dgvCli.DoubleClick += new System.EventHandler(this.dgvCli_DoubleClick);
             // 
+            // btnCadastroAnimal
+            // 
+            this.btnCadastroAnimal.Image = global::HotelPet.Properties.Resources.animal;
+            this.btnCadastroAnimal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCadastroAnimal.Location = new System.Drawing.Point(425, 132);
+            this.btnCadastroAnimal.Name = "btnCadastroAnimal";
+            this.btnCadastroAnimal.Size = new System.Drawing.Size(75, 89);
+            this.btnCadastroAnimal.TabIndex = 6;
+            this.btnCadastroAnimal.TabStop = false;
+            this.btnCadastroAnimal.Text = "Cadastrar Animal";
+            this.btnCadastroAnimal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCadastroAnimal.UseVisualStyleBackColor = true;
+            this.btnCadastroAnimal.Click += new System.EventHandler(this.btnCadastroAnimal_Click);
+            // 
+            // btnCadastroCli
+            // 
+            this.btnCadastroCli.Image = global::HotelPet.Properties.Resources.new_add_user_167341;
+            this.btnCadastroCli.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCadastroCli.Location = new System.Drawing.Point(425, 24);
+            this.btnCadastroCli.Name = "btnCadastroCli";
+            this.btnCadastroCli.Size = new System.Drawing.Size(75, 89);
+            this.btnCadastroCli.TabIndex = 5;
+            this.btnCadastroCli.TabStop = false;
+            this.btnCadastroCli.Text = "Cadastrar Cliente";
+            this.btnCadastroCli.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCadastroCli.UseVisualStyleBackColor = true;
+            this.btnCadastroCli.Click += new System.EventHandler(this.btnCadastroCli_Click);
+            // 
             // cmbAnimal
             // 
             this.cmbAnimal.FormattingEnabled = true;
@@ -757,6 +870,15 @@
             this.label3.Size = new System.Drawing.Size(125, 19);
             this.label3.TabIndex = 53;
             this.label3.Text = "Nome do cliente:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(563, 323);
+            this.pictureBox1.TabIndex = 72;
+            this.pictureBox1.TabStop = false;
             // 
             // tabPage2
             // 
@@ -793,236 +915,248 @@
             this.tabPage2.Text = "Check-out";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // tabPage3
+            // label24
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Silver;
-            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.checkBox2);
-            this.tabPage3.Controls.Add(this.dateTimePicker3);
-            this.tabPage3.Controls.Add(this.dateTimePicker4);
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.textBox8);
-            this.tabPage3.Controls.Add(this.textBox9);
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1352, 630);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Consumo";
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.White;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.DarkGray;
+            this.label24.Location = new System.Drawing.Point(803, 436);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(332, 37);
+            this.label24.TabIndex = 118;
+            this.label24.Text = "Confirmar Check-out";
             // 
-            // textBox5
+            // lblLista
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(150, 198);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(248, 26);
-            this.textBox5.TabIndex = 84;
+            this.lblLista.AutoSize = true;
+            this.lblLista.BackColor = System.Drawing.Color.White;
+            this.lblLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLista.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblLista.Location = new System.Drawing.Point(676, 13);
+            this.lblLista.Name = "lblLista";
+            this.lblLista.Size = new System.Drawing.Size(411, 31);
+            this.lblLista.TabIndex = 117;
+            this.lblLista.Text = "Lista de Produtos Consumidos";
             // 
-            // label8
+            // img6
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(23, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 19);
-            this.label8.TabIndex = 83;
-            this.label8.Text = "Nome do Animal:";
+            this.img6.BackColor = System.Drawing.Color.LightGray;
+            this.img6.Location = new System.Drawing.Point(681, 61);
+            this.img6.Name = "img6";
+            this.img6.Size = new System.Drawing.Size(653, 3);
+            this.img6.TabIndex = 116;
+            this.img6.TabStop = false;
             // 
-            // label9
+            // lblToalProd
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(335, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(284, 19);
-            this.label9.TabIndex = 82;
-            this.label9.Text = "Nome do Cliente ou Numero do Quarto:";
+            this.lblToalProd.AutoSize = true;
+            this.lblToalProd.BackColor = System.Drawing.Color.White;
+            this.lblToalProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToalProd.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblToalProd.Location = new System.Drawing.Point(1261, 64);
+            this.lblToalProd.Name = "lblToalProd";
+            this.lblToalProd.Size = new System.Drawing.Size(67, 29);
+            this.lblToalProd.TabIndex = 115;
+            this.lblToalProd.Text = "Unit. ";
             // 
-            // checkBox2
+            // lblQtdE_x_Valor
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(452, 408);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(79, 21);
-            this.checkBox2.TabIndex = 81;
-            this.checkBox2.Text = "Informar";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.lblQtdE_x_Valor.AutoSize = true;
+            this.lblQtdE_x_Valor.BackColor = System.Drawing.Color.White;
+            this.lblQtdE_x_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdE_x_Valor.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblQtdE_x_Valor.Location = new System.Drawing.Point(1165, 64);
+            this.lblQtdE_x_Valor.Name = "lblQtdE_x_Valor";
+            this.lblQtdE_x_Valor.Size = new System.Drawing.Size(66, 29);
+            this.lblQtdE_x_Valor.TabIndex = 114;
+            this.lblQtdE_x_Valor.Text = "Qtde";
             // 
-            // dateTimePicker3
+            // lblDescricao
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(172, 407);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(253, 25);
-            this.dateTimePicker3.TabIndex = 80;
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.BackColor = System.Drawing.Color.White;
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblDescricao.Location = new System.Drawing.Point(853, 64);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(121, 29);
+            this.lblDescricao.TabIndex = 113;
+            this.lblDescricao.Text = "Descrição";
             // 
-            // dateTimePicker4
+            // lblCodigo
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(150, 358);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(275, 25);
-            this.dateTimePicker4.TabIndex = 79;
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.BackColor = System.Drawing.Color.White;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblCodigo.Location = new System.Drawing.Point(679, 64);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(92, 29);
+            this.lblCodigo.TabIndex = 112;
+            this.lblCodigo.Text = "Codigo";
             // 
-            // label10
+            // button1
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 122);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 19);
-            this.label10.TabIndex = 78;
-            this.label10.Text = "Codigo da reserva:";
+            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.Image = global::HotelPet.Properties.Resources.lançar;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(482, 335);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 61);
+            this.button1.TabIndex = 111;
+            this.button1.Text = "&Confirmar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label11
+            // button3
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(105, 387);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 19);
-            this.label11.TabIndex = 77;
-            this.label11.Text = "Saída:";
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Image = global::HotelPet.Properties.Resources.loupe_78347;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(577, 247);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(76, 62);
+            this.button3.TabIndex = 110;
+            this.button3.Text = "&Buscar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label12
+            // btnFinalizar
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(87, 334);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 19);
-            this.label12.TabIndex = 76;
-            this.label12.Text = "Entrada:";
+            this.btnFinalizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnFinalizar.Image = global::HotelPet.Properties.Resources.ok;
+            this.btnFinalizar.Location = new System.Drawing.Point(1141, 412);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(193, 61);
+            this.btnFinalizar.TabIndex = 106;
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // textBox6
+            // lblValorTotal
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(150, 304);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(134, 26);
-            this.textBox6.TabIndex = 75;
+            this.lblValorTotal.BackColor = System.Drawing.Color.DimGray;
+            this.lblValorTotal.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorTotal.ForeColor = System.Drawing.Color.White;
+            this.lblValorTotal.Location = new System.Drawing.Point(898, 519);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.Size = new System.Drawing.Size(444, 76);
+            this.lblValorTotal.TabIndex = 109;
+            this.lblValorTotal.Text = "0,00";
+            this.lblValorTotal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label13
+            // label46
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 281);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(143, 19);
-            this.label13.TabIndex = 74;
-            this.label13.Text = "Número do quarto:";
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.DimGray;
+            this.label46.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.Silver;
+            this.label46.Location = new System.Drawing.Point(677, 491);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(219, 32);
+            this.label46.TabIndex = 108;
+            this.label46.Text = "Valor Total(R$):";
             // 
-            // textBox7
+            // pictureBox11
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(150, 250);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(248, 26);
-            this.textBox7.TabIndex = 73;
+            this.pictureBox11.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox11.Location = new System.Drawing.Point(673, 487);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(669, 135);
+            this.pictureBox11.TabIndex = 107;
+            this.pictureBox11.TabStop = false;
             // 
-            // label14
+            // dgvCheckOut
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(23, 228);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 19);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "Nome do cliente:";
+            this.dgvCheckOut.AllowUserToOrderColumns = true;
+            this.dgvCheckOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCheckOut.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCheckOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCheckOut.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCheckOut.Enabled = false;
+            this.dgvCheckOut.GridColor = System.Drawing.Color.LightGray;
+            this.dgvCheckOut.Location = new System.Drawing.Point(683, 96);
+            this.dgvCheckOut.Name = "dgvCheckOut";
+            this.dgvCheckOut.RowHeadersVisible = false;
+            this.dgvCheckOut.RowHeadersWidth = 50;
+            this.dgvCheckOut.Size = new System.Drawing.Size(649, 310);
+            this.dgvCheckOut.TabIndex = 105;
+            this.dgvCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckOut_CellContentClick);
             // 
-            // textBox8
+            // pictureBox9
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(150, 143);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(134, 26);
-            this.textBox8.TabIndex = 71;
+            this.pictureBox9.BackColor = System.Drawing.Color.White;
+            this.pictureBox9.Location = new System.Drawing.Point(673, 6);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(669, 475);
+            this.pictureBox9.TabIndex = 103;
+            this.pictureBox9.TabStop = false;
             // 
-            // textBox9
+            // groupBox6
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(339, 102);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(389, 26);
-            this.textBox9.TabIndex = 70;
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.cmbAni);
+            this.groupBox6.Controls.Add(this.cmbCli);
+            this.groupBox6.Controls.Add(this.label43);
+            this.groupBox6.Controls.Add(this.label44);
+            this.groupBox6.Location = new System.Drawing.Point(17, 271);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(409, 129);
+            this.groupBox6.TabIndex = 102;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Selecionar Cliente:";
             // 
-            // dataGridView1
+            // cmbAni
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(734, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(588, 478);
-            this.dataGridView1.TabIndex = 69;
+            this.cmbAni.FormattingEnabled = true;
+            this.cmbAni.Location = new System.Drawing.Point(75, 64);
+            this.cmbAni.Name = "cmbAni";
+            this.cmbAni.Size = new System.Drawing.Size(264, 25);
+            this.cmbAni.TabIndex = 90;
             // 
-            // label15
+            // cmbCli
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(87, 407);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 19);
-            this.label15.TabIndex = 85;
-            this.label15.Text = "Indefinida";
+            this.cmbCli.FormattingEnabled = true;
+            this.cmbCli.Location = new System.Drawing.Point(75, 30);
+            this.cmbCli.Name = "cmbCli";
+            this.cmbCli.Size = new System.Drawing.Size(264, 25);
+            this.cmbCli.TabIndex = 89;
+            this.cmbCli.Leave += new System.EventHandler(this.cmbCli_Leave);
             // 
-            // data
+            // label43
             // 
-            this.data.Enabled = true;
-            this.data.Interval = 1000;
-            this.data.Tick += new System.EventHandler(this.data_Tick);
+            this.label43.AutoSize = true;
+            this.label43.BackColor = System.Drawing.Color.White;
+            this.label43.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(9, 33);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(60, 19);
+            this.label43.TabIndex = 88;
+            this.label43.Text = "Cliente:";
             // 
-            // Hora
+            // label44
             // 
-            this.Hora.Enabled = true;
-            this.Hora.Interval = 1000;
-            this.Hora.Tick += new System.EventHandler(this.Hora_Tick);
-            // 
-            // lbldata2
-            // 
-            this.lbldata2.BackColor = System.Drawing.Color.White;
-            this.lbldata2.ForeColor = System.Drawing.Color.DimGray;
-            this.lbldata2.Location = new System.Drawing.Point(164, 597);
-            this.lbldata2.Name = "lbldata2";
-            this.lbldata2.Size = new System.Drawing.Size(163, 17);
-            this.lbldata2.TabIndex = 96;
-            this.lbldata2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblHora2
-            // 
-            this.lblHora2.BackColor = System.Drawing.Color.White;
-            this.lblHora2.ForeColor = System.Drawing.Color.DimGray;
-            this.lblHora2.Location = new System.Drawing.Point(342, 597);
-            this.lblHora2.Name = "lblHora2";
-            this.lblHora2.Size = new System.Drawing.Size(168, 17);
-            this.lblHora2.TabIndex = 97;
-            this.lblHora2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label26
-            // 
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.ForeColor = System.Drawing.Color.DimGray;
-            this.label26.Location = new System.Drawing.Point(322, 598);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(28, 17);
-            this.label26.TabIndex = 98;
-            this.label26.Text = "-";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.Color.White;
+            this.label44.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(8, 67);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(61, 19);
+            this.label44.TabIndex = 87;
+            this.label44.Text = "Animal:";
             // 
             // groupBox5
             // 
@@ -1228,273 +1362,6 @@
             this.label42.Text = "Animal:";
             this.label42.Click += new System.EventHandler(this.label42_Click);
             // 
-            // groupBox6
-            // 
-            this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.cmbAni);
-            this.groupBox6.Controls.Add(this.cmbCli);
-            this.groupBox6.Controls.Add(this.label43);
-            this.groupBox6.Controls.Add(this.label44);
-            this.groupBox6.Location = new System.Drawing.Point(17, 271);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(409, 129);
-            this.groupBox6.TabIndex = 102;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Selecionar Cliente:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.Color.White;
-            this.label43.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(9, 33);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(60, 19);
-            this.label43.TabIndex = 88;
-            this.label43.Text = "Cliente:";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.White;
-            this.label44.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(8, 67);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(61, 19);
-            this.label44.TabIndex = 87;
-            this.label44.Text = "Animal:";
-            // 
-            // cmbCli
-            // 
-            this.cmbCli.FormattingEnabled = true;
-            this.cmbCli.Location = new System.Drawing.Point(75, 30);
-            this.cmbCli.Name = "cmbCli";
-            this.cmbCli.Size = new System.Drawing.Size(264, 25);
-            this.cmbCli.TabIndex = 89;
-            this.cmbCli.Leave += new System.EventHandler(this.cmbCli_Leave);
-            // 
-            // cmbAni
-            // 
-            this.cmbAni.FormattingEnabled = true;
-            this.cmbAni.Location = new System.Drawing.Point(75, 64);
-            this.cmbAni.Name = "cmbAni";
-            this.cmbAni.Size = new System.Drawing.Size(264, 25);
-            this.cmbAni.TabIndex = 90;
-            // 
-            // dgvCheckOut
-            // 
-            this.dgvCheckOut.AllowUserToOrderColumns = true;
-            this.dgvCheckOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCheckOut.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCheckOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCheckOut.ColumnHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCheckOut.Enabled = false;
-            this.dgvCheckOut.GridColor = System.Drawing.Color.LightGray;
-            this.dgvCheckOut.Location = new System.Drawing.Point(683, 96);
-            this.dgvCheckOut.Name = "dgvCheckOut";
-            this.dgvCheckOut.RowHeadersVisible = false;
-            this.dgvCheckOut.RowHeadersWidth = 50;
-            this.dgvCheckOut.Size = new System.Drawing.Size(649, 310);
-            this.dgvCheckOut.TabIndex = 105;
-            this.dgvCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckOut_CellContentClick);
-            // 
-            // lblValorTotal
-            // 
-            this.lblValorTotal.BackColor = System.Drawing.Color.DimGray;
-            this.lblValorTotal.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTotal.ForeColor = System.Drawing.Color.White;
-            this.lblValorTotal.Location = new System.Drawing.Point(898, 519);
-            this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(444, 76);
-            this.lblValorTotal.TabIndex = 109;
-            this.lblValorTotal.Text = "0,00";
-            this.lblValorTotal.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.DimGray;
-            this.label46.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.Silver;
-            this.label46.Location = new System.Drawing.Point(677, 491);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(219, 32);
-            this.label46.TabIndex = 108;
-            this.label46.Text = "Valor Total(R$):";
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnConfirm.Image = global::HotelPet.Properties.Resources.ok;
-            this.btnConfirm.Location = new System.Drawing.Point(197, 45);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(153, 58);
-            this.btnConfirm.TabIndex = 24;
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancelar.Image = global::HotelPet.Properties.Resources.X;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(6, 65);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(131, 38);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.TabStop = false;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox5.Location = new System.Drawing.Point(577, 498);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(380, 124);
-            this.pictureBox5.TabIndex = 95;
-            this.pictureBox5.TabStop = false;
-            // 
-            // imglogo
-            // 
-            this.imglogo.BackColor = System.Drawing.Color.White;
-            this.imglogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imglogo.Image = global::HotelPet.Properties.Resources.logo;
-            this.imglogo.Location = new System.Drawing.Point(788, 17);
-            this.imglogo.Name = "imglogo";
-            this.imglogo.Size = new System.Drawing.Size(340, 175);
-            this.imglogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imglogo.TabIndex = 94;
-            this.imglogo.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox4.Location = new System.Drawing.Point(577, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(763, 207);
-            this.pictureBox4.TabIndex = 90;
-            this.pictureBox4.TabStop = false;
-            // 
-            // img4
-            // 
-            this.img4.BackColor = System.Drawing.Color.DimGray;
-            this.img4.Location = new System.Drawing.Point(960, 498);
-            this.img4.Name = "img4";
-            this.img4.Size = new System.Drawing.Size(384, 126);
-            this.img4.TabIndex = 83;
-            this.img4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox3.Location = new System.Drawing.Point(577, 225);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(763, 267);
-            this.pictureBox3.TabIndex = 74;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 342);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(563, 280);
-            this.pictureBox2.TabIndex = 73;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnCadastroAnimal
-            // 
-            this.btnCadastroAnimal.Image = global::HotelPet.Properties.Resources.animal;
-            this.btnCadastroAnimal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCadastroAnimal.Location = new System.Drawing.Point(425, 132);
-            this.btnCadastroAnimal.Name = "btnCadastroAnimal";
-            this.btnCadastroAnimal.Size = new System.Drawing.Size(75, 89);
-            this.btnCadastroAnimal.TabIndex = 6;
-            this.btnCadastroAnimal.TabStop = false;
-            this.btnCadastroAnimal.Text = "Cadastrar Animal";
-            this.btnCadastroAnimal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCadastroAnimal.UseVisualStyleBackColor = true;
-            this.btnCadastroAnimal.Click += new System.EventHandler(this.btnCadastroAnimal_Click);
-            // 
-            // btnCadastroCli
-            // 
-            this.btnCadastroCli.Image = global::HotelPet.Properties.Resources.new_add_user_167341;
-            this.btnCadastroCli.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCadastroCli.Location = new System.Drawing.Point(425, 24);
-            this.btnCadastroCli.Name = "btnCadastroCli";
-            this.btnCadastroCli.Size = new System.Drawing.Size(75, 89);
-            this.btnCadastroCli.TabIndex = 5;
-            this.btnCadastroCli.TabStop = false;
-            this.btnCadastroCli.Text = "Cadastrar Cliente";
-            this.btnCadastroCli.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCadastroCli.UseVisualStyleBackColor = true;
-            this.btnCadastroCli.Click += new System.EventHandler(this.btnCadastroCli_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(563, 323);
-            this.pictureBox1.TabIndex = 72;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Image = global::HotelPet.Properties.Resources.loupe_78347;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(577, 247);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 62);
-            this.button3.TabIndex = 110;
-            this.button3.Text = "&Buscar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnFinalizar.Image = global::HotelPet.Properties.Resources.ok;
-            this.btnFinalizar.Location = new System.Drawing.Point(1141, 412);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(193, 61);
-            this.btnFinalizar.TabIndex = 106;
-            this.btnFinalizar.UseVisualStyleBackColor = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox11.Location = new System.Drawing.Point(673, 487);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(669, 135);
-            this.pictureBox11.TabIndex = 107;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.White;
-            this.pictureBox9.Location = new System.Drawing.Point(673, 6);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(669, 475);
-            this.pictureBox9.TabIndex = 103;
-            this.pictureBox9.TabStop = false;
-            // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
@@ -1503,6 +1370,26 @@
             this.pictureBox8.Size = new System.Drawing.Size(662, 404);
             this.pictureBox8.TabIndex = 100;
             this.pictureBox8.TabStop = false;
+            // 
+            // lbldata2
+            // 
+            this.lbldata2.BackColor = System.Drawing.Color.White;
+            this.lbldata2.ForeColor = System.Drawing.Color.DimGray;
+            this.lbldata2.Location = new System.Drawing.Point(164, 597);
+            this.lbldata2.Name = "lbldata2";
+            this.lbldata2.Size = new System.Drawing.Size(163, 17);
+            this.lbldata2.TabIndex = 96;
+            this.lbldata2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblHora2
+            // 
+            this.lblHora2.BackColor = System.Drawing.Color.White;
+            this.lblHora2.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHora2.Location = new System.Drawing.Point(342, 597);
+            this.lblHora2.Name = "lblHora2";
+            this.lblHora2.Size = new System.Drawing.Size(168, 17);
+            this.lblHora2.TabIndex = 97;
+            this.lblHora2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox6
             // 
@@ -1516,6 +1403,17 @@
             this.pictureBox6.TabIndex = 99;
             this.pictureBox6.TabStop = false;
             // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.ForeColor = System.Drawing.Color.DimGray;
+            this.label26.Location = new System.Drawing.Point(322, 598);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(28, 17);
+            this.label26.TabIndex = 98;
+            this.label26.Text = "-";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -1525,102 +1423,205 @@
             this.pictureBox7.TabIndex = 95;
             this.pictureBox7.TabStop = false;
             // 
-            // button1
+            // tabPage3
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = global::HotelPet.Properties.Resources.lançar;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(482, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 61);
-            this.button1.TabIndex = 111;
-            this.button1.Text = "&Confirmar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tabPage3.BackColor = System.Drawing.Color.Silver;
+            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.checkBox2);
+            this.tabPage3.Controls.Add(this.dateTimePicker3);
+            this.tabPage3.Controls.Add(this.dateTimePicker4);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.textBox6);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.textBox8);
+            this.tabPage3.Controls.Add(this.textBox9);
+            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1352, 630);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Consumo";
             // 
-            // lblLista
+            // textBox5
             // 
-            this.lblLista.AutoSize = true;
-            this.lblLista.BackColor = System.Drawing.Color.White;
-            this.lblLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLista.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblLista.Location = new System.Drawing.Point(676, 13);
-            this.lblLista.Name = "lblLista";
-            this.lblLista.Size = new System.Drawing.Size(411, 31);
-            this.lblLista.TabIndex = 117;
-            this.lblLista.Text = "Lista de Produtos Consumidos";
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(150, 198);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(248, 26);
+            this.textBox5.TabIndex = 84;
             // 
-            // img6
+            // label8
             // 
-            this.img6.BackColor = System.Drawing.Color.LightGray;
-            this.img6.Location = new System.Drawing.Point(681, 61);
-            this.img6.Name = "img6";
-            this.img6.Size = new System.Drawing.Size(653, 3);
-            this.img6.TabIndex = 116;
-            this.img6.TabStop = false;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(23, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 19);
+            this.label8.TabIndex = 83;
+            this.label8.Text = "Nome do Animal:";
             // 
-            // lblToalProd
+            // label9
             // 
-            this.lblToalProd.AutoSize = true;
-            this.lblToalProd.BackColor = System.Drawing.Color.White;
-            this.lblToalProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToalProd.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblToalProd.Location = new System.Drawing.Point(1261, 64);
-            this.lblToalProd.Name = "lblToalProd";
-            this.lblToalProd.Size = new System.Drawing.Size(67, 29);
-            this.lblToalProd.TabIndex = 115;
-            this.lblToalProd.Text = "Unit. ";
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(335, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(284, 19);
+            this.label9.TabIndex = 82;
+            this.label9.Text = "Nome do Cliente ou Numero do Quarto:";
             // 
-            // lblQtdE_x_Valor
+            // checkBox2
             // 
-            this.lblQtdE_x_Valor.AutoSize = true;
-            this.lblQtdE_x_Valor.BackColor = System.Drawing.Color.White;
-            this.lblQtdE_x_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdE_x_Valor.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblQtdE_x_Valor.Location = new System.Drawing.Point(1165, 64);
-            this.lblQtdE_x_Valor.Name = "lblQtdE_x_Valor";
-            this.lblQtdE_x_Valor.Size = new System.Drawing.Size(66, 29);
-            this.lblQtdE_x_Valor.TabIndex = 114;
-            this.lblQtdE_x_Valor.Text = "Qtde";
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(452, 408);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(79, 21);
+            this.checkBox2.TabIndex = 81;
+            this.checkBox2.Text = "Informar";
+            this.checkBox2.UseVisualStyleBackColor = false;
             // 
-            // lblDescricao
+            // dateTimePicker3
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.BackColor = System.Drawing.Color.White;
-            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblDescricao.Location = new System.Drawing.Point(853, 64);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(121, 29);
-            this.lblDescricao.TabIndex = 113;
-            this.lblDescricao.Text = "Descrição";
+            this.dateTimePicker3.Location = new System.Drawing.Point(172, 407);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(253, 25);
+            this.dateTimePicker3.TabIndex = 80;
             // 
-            // lblCodigo
+            // dateTimePicker4
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.BackColor = System.Drawing.Color.White;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblCodigo.Location = new System.Drawing.Point(679, 64);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(92, 29);
-            this.lblCodigo.TabIndex = 112;
-            this.lblCodigo.Text = "Codigo";
+            this.dateTimePicker4.Location = new System.Drawing.Point(150, 358);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(275, 25);
+            this.dateTimePicker4.TabIndex = 79;
             // 
-            // label24
+            // label10
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.White;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.DarkGray;
-            this.label24.Location = new System.Drawing.Point(803, 436);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(332, 37);
-            this.label24.TabIndex = 118;
-            this.label24.Text = "Confirmar Check-out";
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(16, 122);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 19);
+            this.label10.TabIndex = 78;
+            this.label10.Text = "Codigo da reserva:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(105, 387);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 19);
+            this.label11.TabIndex = 77;
+            this.label11.Text = "Saída:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(87, 334);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 19);
+            this.label12.TabIndex = 76;
+            this.label12.Text = "Entrada:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(150, 304);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(134, 26);
+            this.textBox6.TabIndex = 75;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 281);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 19);
+            this.label13.TabIndex = 74;
+            this.label13.Text = "Número do quarto:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(150, 250);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(248, 26);
+            this.textBox7.TabIndex = 73;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(23, 228);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(125, 19);
+            this.label14.TabIndex = 72;
+            this.label14.Text = "Nome do cliente:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(150, 143);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(134, 26);
+            this.textBox8.TabIndex = 71;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(339, 102);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(389, 26);
+            this.textBox9.TabIndex = 70;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(734, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(588, 478);
+            this.dataGridView1.TabIndex = 69;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(87, 407);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(79, 19);
+            this.label15.TabIndex = 85;
+            this.label15.Text = "Indefinida";
+            // 
+            // data
+            // 
+            this.data.Enabled = true;
+            this.data.Interval = 1000;
+            this.data.Tick += new System.EventHandler(this.data_Tick);
+            // 
+            // Hora
+            // 
+            this.Hora.Enabled = true;
+            this.Hora.Interval = 1000;
+            this.Hora.Tick += new System.EventHandler(this.Hora_Tick);
             // 
             // frmHotel
             // 
@@ -1644,34 +1645,34 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuarto)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCli)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imglogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img6)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

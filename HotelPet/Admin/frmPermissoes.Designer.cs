@@ -901,6 +901,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPermissoes";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmPermissoes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermicoes)).EndInit();

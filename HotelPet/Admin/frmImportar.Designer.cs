@@ -130,7 +130,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(740, 301);
+            this.ClientSize = new System.Drawing.Size(756, 340);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnDone);
@@ -146,6 +146,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(756, 340);
             this.Name = "frmImportar";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmImportar_Load);
             this.ResumeLayout(false);

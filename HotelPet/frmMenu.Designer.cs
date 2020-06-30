@@ -92,15 +92,16 @@
             // btnProdutos
             // 
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(140, 24);
+            this.btnProdutos.Size = new System.Drawing.Size(180, 24);
             this.btnProdutos.Text = "&Produtos";
             this.btnProdutos.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // serviçosToolStripMenuItem
             // 
             this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.serviçosToolStripMenuItem.Text = "&Serviços";
+            this.serviçosToolStripMenuItem.Click += new System.EventHandler(this.serviçosToolStripMenuItem_Click);
             // 
             // btnConsultar
             // 
@@ -137,14 +138,14 @@
             // animaisToolStripMenuItem
             // 
             this.animaisToolStripMenuItem.Name = "animaisToolStripMenuItem";
-            this.animaisToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.animaisToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.animaisToolStripMenuItem.Text = "&Animais";
             this.animaisToolStripMenuItem.Click += new System.EventHandler(this.animaisToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.clientesToolStripMenuItem.Text = "&Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -200,6 +201,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1029, 446);
             this.ControlBox = false;
             this.Controls.Add(this.statusStrip);
@@ -207,8 +210,10 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "frmMenu";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip.ResumeLayout(false);

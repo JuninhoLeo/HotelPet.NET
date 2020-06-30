@@ -2,6 +2,7 @@
 using HotelPet.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,14 @@ namespace HotelPet.Layers.DAL
             contexto.SaveChanges();
             contexto.Dispose();
 
+        }
+
+        public void Delete(Consumo consumo)
+        {
+            Contexto contexto = new Contexto();
+            contexto.Entry(consumo).State = EntityState.Deleted; ;
+            contexto.SaveChanges();
+            contexto.Dispose();
         }
 
     }

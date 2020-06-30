@@ -224,6 +224,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\frmCadServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmCadServicos.Designer.cs">
+      <DependentUpon>frmCadServicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frmImportar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,7 @@
     <Compile Include="Layers\BLL\ConsumoBLL.cs" />
     <Compile Include="Layers\BLL\ListaCompraBLL.cs" />
     <Compile Include="Layers\BLL\ProdutosBLL.cs" />
+    <Compile Include="Layers\BLL\ServicosBLL.cs" />
     <Compile Include="Layers\DAL\AnimalDAL.cs" />
     <Compile Include="Layers\DAL\ClienteDAL.cs" />
     <Compile Include="Layers\DAL\ConsumoDAL.cs" />
@@ -322,6 +329,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\frmCadServicos.resx">
+      <DependentUpon>frmCadServicos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>

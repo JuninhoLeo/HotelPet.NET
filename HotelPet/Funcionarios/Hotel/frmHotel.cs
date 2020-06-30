@@ -90,7 +90,7 @@ namespace HotelPet
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
 
-            var lstCli = from Cli in contexto.Reserva.OrderBy(x => x.Cliente.nome).ToList()
+            var lstCli = from Cli in contexto.Reserva.Where(x=> x.pago == false).OrderBy(x => x.Cliente.nome).ToList()
                          group Cli by new { Cli.Cliente.nome, Cli.Cliente_id  } into cli
                          select new
                          {
@@ -98,11 +98,13 @@ namespace HotelPet
                              id = cli.Key.Cliente_id
                          };
 
+            cmbCli.Text = "";
             cmbCli.DataSource = lstCli.ToList();
             cmbCli.DisplayMember = "nome";
             cmbCli.ValueMember = "id";
 
             dgvCheckOut.DataSource = "";
+            cmbAni.Text = "";
             cmbAni.Enabled = false;
             //var lstAnimal = from Cli in contexto.Reserva.OrderBy(x => x.Animal.nome).ToList()
             //             select new
@@ -459,91 +461,102 @@ namespace HotelPet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lstConsumo = new List<Consumo>();
 
-            int IDCliente = contexto.Cliente.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(cmbCli.Text.Trim().ToLower())).id;
-            int IDAnimal = contexto.Animal.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(cmbAni.Text.Trim().ToLower()) 
-                                                            && x.Cliente_id == IDCliente && x.hospedado == true).id;
+                lstConsumo = new List<Consumo>();
+                var Cliente = contexto.Cliente.FirstOrDefault(x => x.nome == cmbCli.Text);
+                int IDCliente = (Cliente == null) ? 0 : Cliente.id;
 
-            var reserva = contexto.Reserva.FirstOrDefault(x => x.Cliente_id == IDCliente && x.Animal_id == IDAnimal && x.pago == false);
+                var animal = contexto.Animal.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(cmbAni.Text.Trim().ToLower())
+                                                                && x.Cliente_id == IDCliente && x.hospedado == true);
+                int IDAnimal = (animal == null)? 0 : animal.id;
 
-            lblCliente.Text = reserva.Cliente.nome;
-            lblAni.Text = reserva.Animal.nome;
-            lblEsp.Text = reserva.Animal.especie;
-            lblDescr.Text = reserva.Quarto.descricao;
-            lblNumero.Text = reserva.Quarto.numero.ToString();
-            lblDataEntr.Text = reserva.entrada.ToShortDateString();
-            lblDataSai.Text = DateTime.Now.ToShortDateString();
+                var reserva = contexto.Reserva.FirstOrDefault(x => x.Cliente_id == IDCliente && x.Animal_id == IDAnimal && x.pago == false);
 
-            DateTime dateTime = DateTime.Now;
-
-            var qtde = dateTime - reserva.entrada.Date;
-            int dias = qtde.Days;
-
-            double total = reserva.Quarto.valor;
-            double valor = total * dias;
-
-            txtValorTotal.Text = valor.ToString("C");
-
-            lstConsumo = contexto.Consumo.Where(x => x.Reserva_id == reserva.id).ToList();
-
-            Servicos servico = new Servicos();
-            servico = contexto.Servico.FirstOrDefault(x => x.descricao == reserva.Quarto.descricao && x.quantidade == dias);
-
-            if (servico == null)
+            if(IDCliente != 0 && IDAnimal != 0)
             {
-                servico = new Servicos();
-                servico.descricao = reserva.Quarto.descricao;
-                servico.quantidade = dias;
-                servico.valor = valor;
-                contexto.Servico.Add(servico);
-                contexto.SaveChanges();
+
+                lblCliente.Text = reserva.Cliente.nome;
+                lblAni.Text = reserva.Animal.nome;
+                lblEsp.Text = reserva.Animal.especie;
+                lblDescr.Text = reserva.Quarto.descricao;
+                lblNumero.Text = reserva.Quarto.numero.ToString();
+                lblDataEntr.Text = reserva.entrada.ToShortDateString();
+                lblDataSai.Text = DateTime.Now.ToShortDateString();
+
+                DateTime dateTime = DateTime.Now;
+
+                var qtde = dateTime - reserva.entrada.Date;
+                int dias = qtde.Days;
+
+                double total = reserva.Quarto.valor;
+                double valor = total * dias;
+
+                txtValorTotal.Text = valor.ToString("C");
+
+                lstConsumo = contexto.Consumo.Where(x => x.Reserva_id == reserva.id).ToList();
+
+                Servicos servico = new Servicos();
+                servico = contexto.Servico.FirstOrDefault(x => x.descricao == reserva.Quarto.descricao && x.quantidade == dias);
+
+                if (servico == null)
+                {
+                    servico = new Servicos();
+                    servico.descricao = reserva.Quarto.descricao;
+                    servico.quantidade = dias;
+                    servico.valor = valor;
+                    contexto.Servico.Add(servico);
+                    contexto.SaveChanges();
+                }
+
+                Consumo consumo = new Consumo();
+                consumo.valor = total;
+                consumo.Quantidade = dias;
+                consumo.total = valor;
+                consumo.Reserva = reserva;
+                consumo.Servicos = servico;
+
+                lstConsumo.Add(consumo);
+
+                var lista = from Cons in lstConsumo
+                            select new
+                            {
+                                Codigo = Cons.Servicos.id,
+                                descricao = Cons.Servicos.descricao,
+                                Quantidade = Cons.Servicos.quantidade,
+                                valor = Cons.valor,
+                                total = Cons.total
+                            };
+
+                dgvCheckOut.DataSource = "";
+                dgvCheckOut.DataSource = lista.ToList();
+
+                dgvCheckOut.Columns["total"].Visible = false;
+
+                dgvCheckOut.Columns["Codigo"].DisplayIndex = 1;
+                dgvCheckOut.Columns["Codigo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvCheckOut.Columns["Codigo"].Width = 85;
+
+                dgvCheckOut.Columns["descricao"].DisplayIndex = 2;
+                dgvCheckOut.Columns["descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvCheckOut.Columns["descricao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvCheckOut.Columns["descricao"].Width = 383;
+
+                dgvCheckOut.Columns["Quantidade"].DisplayIndex = 3;
+                dgvCheckOut.Columns["Quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvCheckOut.Columns["Quantidade"].Width = 85;
+
+                dgvCheckOut.Columns["valor"].DisplayIndex = 4;
+                dgvCheckOut.Columns["valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvCheckOut.Columns["valor"].DefaultCellStyle.Format = "c";
+                dgvCheckOut.Columns["valor"].Width = 90;
+
+                lblValorTotal.Text = dgvCheckOut.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["total"].Value ?? 0)).ToString("C");
+
             }
-
-            Consumo consumo = new Consumo();
-            consumo.valor = total;
-            consumo.Quantidade = dias;
-            consumo.total = valor;
-            consumo.Reserva = reserva;
-            consumo.Servicos = servico;
-
-            lstConsumo.Add(consumo);
-
-            var lista = from Cons in lstConsumo
-                        select new
-                        {
-                            Codigo = Cons.Servicos.id,
-                            descricao = Cons.Servicos.descricao,
-                            Quantidade = Cons.Servicos.quantidade,
-                            valor = Cons.valor,
-                            total = Cons.total
-                        };
-
-            dgvCheckOut.DataSource = "";
-            dgvCheckOut.DataSource = lista.ToList();
-
-            dgvCheckOut.Columns["total"].Visible = false;
-
-            dgvCheckOut.Columns["Codigo"].DisplayIndex = 1;
-            dgvCheckOut.Columns["Codigo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCheckOut.Columns["Codigo"].Width = 85;
-
-            dgvCheckOut.Columns["descricao"].DisplayIndex = 2;
-            dgvCheckOut.Columns["descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCheckOut.Columns["descricao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvCheckOut.Columns["descricao"].Width = 383;
-
-            dgvCheckOut.Columns["Quantidade"].DisplayIndex = 3;
-            dgvCheckOut.Columns["Quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCheckOut.Columns["Quantidade"].Width = 85;
-
-            dgvCheckOut.Columns["valor"].DisplayIndex = 4;
-            dgvCheckOut.Columns["valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvCheckOut.Columns["valor"].DefaultCellStyle.Format = "c";
-            dgvCheckOut.Columns["valor"].Width = 90;
-
-            lblValorTotal.Text = dgvCheckOut.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["total"].Value ?? 0)).ToString("C");
-
+            else
+            {
+                MessageBox.Show("ERRO: Nenhum Cliente foi selecionado", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void dgvCheckOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -557,6 +570,10 @@ namespace HotelPet
 
             if (dialogResult == DialogResult.Yes)
             {
+                if (true)
+                {
+
+                }
 
                 Animal animal = contexto.Animal.FirstOrDefault(x => x.nome.Contains(lblAni.Text) && x.Cliente.nome.Contains(lblCliente.Text) && x.hospedado == true);
                 animal.hospedado = false;
@@ -584,6 +601,11 @@ namespace HotelPet
                 LimpaCampos();
             }
  
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            LimpaCampos();
         }
     }
 }

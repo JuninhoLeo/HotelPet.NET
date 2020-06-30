@@ -124,5 +124,11 @@ namespace HotelPet
         {
 
         }
+
+        private void serviçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadServicos frm = new frmCadServicos();
+            frm.ShowDialog();
+        }
     }
 }
