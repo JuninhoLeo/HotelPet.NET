@@ -1,11 +1,16 @@
-﻿using HotelPet.Camadas.MODEL;
+﻿using Google.Protobuf.WellKnownTypes;
+using HotelPet.Camadas.MODEL;
 using HotelPet.Entity;
 using HotelPet.Funcionarios.Hotel;
+using HotelPet.Functions;
 using HotelPet.Layers.BLL;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -19,7 +24,9 @@ namespace HotelPet
         public List<Animal> listAnimal { get; set; }
         public List<Consumo> lstConsumo { get; set; }
 
-        Contexto contexto = new Contexto();
+        private static FileStream fstream = new FileStream("C:\\Users\\JrJos\\Desktop\\ProjetoTcc\\HotelPet.NET\\HotelPet\\Resources\\SEM-IMAGEM-13.jpg", FileMode.Open, FileAccess.Read);
+        private static BinaryReader br = new BinaryReader(fstream);
+        private static byte[] imagem = br.ReadBytes((int)fstream.Length);
 
         public frmHotel()
         {
@@ -41,6 +48,9 @@ namespace HotelPet
             dtpEntr.Value = DateTime.Now;
             dtpSaida.Value = DateTime.Now;
 
+            lblCodigoReserva.Text = "0";
+            txtObservacoes.Text = "";
+            txtCuidados.Text = "";
             lblcli.Text = "";
             lblCliente.Text = "";
             lblAnimal.Text = "";
@@ -57,11 +67,16 @@ namespace HotelPet
             lblDataSai.Text = "";
             lblValor.Text = "";
 
+            txtConsBuscAnimal.Text = "";
+            txtConsBuscServicos.Text = "";
+
             int val = 0;
             txtValorTotal.Text = val.ToString("C");
             lblValorTotal.Text = val.ToString("C");
             txtBuscQuarto.Text = "";
             txtBuscaCli.Text = "";
+
+            Contexto contexto = new Contexto();
 
             cmbClientes.DataSource = contexto.Cliente.Where(x => x.nome != null).OrderBy(x => x.nome).ToList();
             cmbClientes.DisplayMember = "nome";
@@ -90,8 +105,8 @@ namespace HotelPet
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
 
-            var lstCli = from Cli in contexto.Reserva.Where(x=> x.pago == false).OrderBy(x => x.Cliente.nome).ToList()
-                         group Cli by new { Cli.Cliente.nome, Cli.Cliente_id  } into cli
+            var lstCli = from Cli in contexto.Reserva.Where(x => x.pago == false).OrderBy(x => x.Cliente.nome).ToList()
+                         group Cli by new { Cli.Cliente.nome, Cli.Cliente_id } into cli
                          select new
                          {
                              nome = cli.Key.nome,
@@ -106,16 +121,48 @@ namespace HotelPet
             dgvCheckOut.DataSource = "";
             cmbAni.Text = "";
             cmbAni.Enabled = false;
-            //var lstAnimal = from Cli in contexto.Reserva.OrderBy(x => x.Animal.nome).ToList()
-            //             select new
-            //             {
-            //                 Cli.Animal.nome,
-            //                 Cli.Animal.id
-            //             };
 
-            //cmbAni.DataSource = lstAnimal.ToList();
-            //cmbAni.DisplayMember = "nome";
-            //cmbAni.ValueMember = "id";
+            var lstAnimal = from Cli in contexto.Reserva.Where(x => x.Animal.hospedado == true && x.pago == false).OrderBy(x => x.Animal.nome).ToList()
+                            select new
+                            {
+                                Cli.id,
+                                cliente = Cli.Cliente.nome,
+                                animal = Cli.Animal.nome,
+                                quarto = Cli.Quarto.descricao,
+                                Cli.Quarto.numero,
+                                Cli.Animal.especie,
+                                Cli.Animal.raca,
+                                Cli.Animal.pelagem,
+                                Cli.Animal.cor,
+                                Cli.Animal.porte,
+                                Cli.Animal.sexo,
+                                Cli.Animal.observacoes,
+                                Cli.Animal.cuidados,
+                                foto = (Cli.Animal.imagem == null) ? Image.FromStream(new MemoryStream(imagem)) : Image.FromStream(new MemoryStream(Cli.Animal.imagem))
+                            };
+
+            InterfaceTools.dgvTransformation(dgvConsAnimal);
+            dgvConsAnimal.DataSource = lstAnimal.ToList();
+
+            dgvConsServicos.DataSource = "";
+            var lista = from Serv in contexto.Servico.ToList()
+                        select new
+                        {
+                            Código = Serv.id,
+                            Descrição = Serv.descricao,
+                            Qtde = Serv.quantidade,
+                            Valor = Serv.valor
+                        };
+
+            dgvConsServicos.DataSource = lista.ToList();
+            dgvConsServicos.Columns["Código"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvConsServicos.Columns["Qtde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvConsServicos.Columns["Qtde"].DefaultCellStyle.Format = "N3";
+            dgvConsServicos.Columns["Valor"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvConsServicos.Columns["Valor"].DefaultCellStyle.Format = "C";
+
+            dgvConsumos.DataSource = "";
+
         }
 
         private void data_Tick(object sender, EventArgs e)
@@ -149,6 +196,8 @@ namespace HotelPet
 
         private void cmbClientes_Leave(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
+
             lblcli.Text = cmbClientes.Text;
             cmbAnimal.Text = "";
             cmbAnimal.DataSource = contexto.Animal.Where(x => x.hospedado == false && x.Cliente.nome.Trim().ToLower().Contains(cmbClientes.SelectedText.ToLower())).ToList();
@@ -160,6 +209,8 @@ namespace HotelPet
         {
             string Anim = cmbAnimal.Text;
             lblAnimal.Text = Anim;
+
+            Contexto contexto = new Contexto();
 
             Animal animal = contexto.Animal.FirstOrDefault(x => x.nome == Anim);
             lblEspecie.Text = (animal == null) ? "" : animal.especie;
@@ -186,6 +237,8 @@ namespace HotelPet
 
         private void txtBuscaCli_KeyUp(object sender, KeyEventArgs e)
         {
+            Contexto contexto = new Contexto();
+
             dgvCli.DataSource = "";
             dgvCli.DataSource = contexto.Cliente.Where(x => x.nome.Contains(txtBuscaCli.Text)).ToList();
         }
@@ -194,6 +247,8 @@ namespace HotelPet
         {
             try
             {
+                Contexto contexto = new Contexto();
+
                 string cli = dgvCli.SelectedRows[0].Cells["nome"].Value.ToString();
                 lblcli.Text = cli;
                 cmbAnimal.Text = "";
@@ -209,9 +264,10 @@ namespace HotelPet
 
         private void txtBuscQuarto_KeyUp(object sender, KeyEventArgs e)
         {
+            Contexto contexto = new Contexto();
+
             dgvQuarto.DataSource = "";
-            dgvQuarto.DataSource = contexto.Quarto.Where(x => x.descricao.Contains(txtBuscQuarto.Text)
-                                                           && x.disponivel == true).ToList();
+            dgvQuarto.DataSource = contexto.Quarto.Where(x => x.descricao.Contains(txtBuscQuarto.Text) && x.disponivel == true).ToList();
             dgvQuarto.Columns["id"].Visible = false;
             dgvQuarto.Columns["disponivel"].Visible = false;
             dgvQuarto.Columns["valor"].DefaultCellStyle.Format = "c";
@@ -261,6 +317,8 @@ namespace HotelPet
 
             try
             {
+                Contexto contexto = new Contexto();
+
                 Quarto quarto = contexto.Quarto.First(x => x.descricao == cmbQuartos.Text);
 
                 lblValor.Text = quarto.valor.ToString();
@@ -382,8 +440,8 @@ namespace HotelPet
             {
                 DialogResult = MessageBox.Show("Confirmar Reserva?", "Obrigado pela preferência", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
 
-                if(DialogResult == DialogResult.Yes)
-                { 
+                if (DialogResult == DialogResult.Yes)
+                {
                     Reserva reserva = new Reserva();
 
                     reserva.pago = false;
@@ -399,12 +457,14 @@ namespace HotelPet
                     reserva.Animal_id = Convert.ToInt32(cmbAnimal.SelectedValue);
                     reserva.Quarto_id = Convert.ToInt32(cmbQuartos.SelectedValue);
 
+                    Contexto contexto = new Contexto();
+
                     Quarto quarto = contexto.Quarto.First(x => x.id == reserva.Quarto_id);
                     quarto.disponivel = false;
                     contexto.Entry(quarto).State = EntityState.Modified;
                     contexto.SaveChanges();
 
-                    Animal animal  = contexto.Animal.First(x => x.id == reserva.Animal_id);
+                    Animal animal = contexto.Animal.First(x => x.id == reserva.Animal_id);
                     animal.hospedado = true;
                     contexto.Entry(animal).State = EntityState.Modified;
                     contexto.SaveChanges();
@@ -415,8 +475,6 @@ namespace HotelPet
                 }
 
             }
-
-
 
         }
 
@@ -445,6 +503,8 @@ namespace HotelPet
 
         private void cmbCli_Leave(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
+
             int id = Convert.ToInt32(cmbCli.SelectedValue);
             var lstAnimal = from Cli in contexto.Reserva.Where(x => x.Cliente.id == id && x.Animal.hospedado == true && x.pago == false).OrderBy(x => x.Animal.nome).ToList()
                             select new
@@ -461,18 +521,19 @@ namespace HotelPet
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
 
-                lstConsumo = new List<Consumo>();
-                var Cliente = contexto.Cliente.FirstOrDefault(x => x.nome == cmbCli.Text);
-                int IDCliente = (Cliente == null) ? 0 : Cliente.id;
+            lstConsumo = new List<Consumo>();
+            var Cliente = contexto.Cliente.FirstOrDefault(x => x.nome == cmbCli.Text);
+            int IDCliente = (Cliente == null) ? 0 : Cliente.id;
 
-                var animal = contexto.Animal.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(cmbAni.Text.Trim().ToLower())
-                                                                && x.Cliente_id == IDCliente && x.hospedado == true);
-                int IDAnimal = (animal == null)? 0 : animal.id;
+            var animal = contexto.Animal.FirstOrDefault(x => x.nome.Trim().ToLower().Contains(cmbAni.Text.Trim().ToLower())
+                                                            && x.Cliente_id == IDCliente && x.hospedado == true);
+            int IDAnimal = (animal == null) ? 0 : animal.id;
 
-                var reserva = contexto.Reserva.FirstOrDefault(x => x.Cliente_id == IDCliente && x.Animal_id == IDAnimal && x.pago == false);
+            var reserva = contexto.Reserva.FirstOrDefault(x => x.Cliente_id == IDCliente && x.Animal_id == IDAnimal && x.pago == false);
 
-            if(IDCliente != 0 && IDAnimal != 0)
+            if (IDCliente != 0 && IDAnimal != 0)
             {
 
                 lblCliente.Text = reserva.Cliente.nome;
@@ -514,6 +575,7 @@ namespace HotelPet
                 consumo.total = valor;
                 consumo.Reserva = reserva;
                 consumo.Servicos = servico;
+                consumo.data = DateTime.Now;
 
                 lstConsumo.Add(consumo);
 
@@ -521,9 +583,9 @@ namespace HotelPet
                             select new
                             {
                                 Codigo = Cons.Servicos.id,
-                                descricao = Cons.Servicos.descricao,
+                                Descricao = Cons.Servicos.descricao,
                                 Quantidade = Cons.Servicos.quantidade,
-                                valor = Cons.valor,
+                                Valor = Cons.valor,
                                 total = Cons.total
                             };
 
@@ -536,19 +598,19 @@ namespace HotelPet
                 dgvCheckOut.Columns["Codigo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 dgvCheckOut.Columns["Codigo"].Width = 85;
 
-                dgvCheckOut.Columns["descricao"].DisplayIndex = 2;
-                dgvCheckOut.Columns["descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                dgvCheckOut.Columns["descricao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                dgvCheckOut.Columns["descricao"].Width = 383;
+                dgvCheckOut.Columns["Descricao"].DisplayIndex = 2;
+                dgvCheckOut.Columns["Descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvCheckOut.Columns["Descricao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvCheckOut.Columns["Descricao"].Width = 383;
 
                 dgvCheckOut.Columns["Quantidade"].DisplayIndex = 3;
                 dgvCheckOut.Columns["Quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 dgvCheckOut.Columns["Quantidade"].Width = 85;
 
-                dgvCheckOut.Columns["valor"].DisplayIndex = 4;
-                dgvCheckOut.Columns["valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                dgvCheckOut.Columns["valor"].DefaultCellStyle.Format = "c";
-                dgvCheckOut.Columns["valor"].Width = 90;
+                dgvCheckOut.Columns["Valor"].DisplayIndex = 4;
+                dgvCheckOut.Columns["Valor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvCheckOut.Columns["Valor"].DefaultCellStyle.Format = "c";
+                dgvCheckOut.Columns["Valor"].Width = 90;
 
                 lblValorTotal.Text = dgvCheckOut.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["total"].Value ?? 0)).ToString("C");
 
@@ -570,10 +632,7 @@ namespace HotelPet
 
             if (dialogResult == DialogResult.Yes)
             {
-                if (true)
-                {
-
-                }
+                Contexto contexto = new Contexto();
 
                 Animal animal = contexto.Animal.FirstOrDefault(x => x.nome.Contains(lblAni.Text) && x.Cliente.nome.Contains(lblCliente.Text) && x.hospedado == true);
                 animal.hospedado = false;
@@ -584,11 +643,11 @@ namespace HotelPet
                 double valor = Convert.ToDouble(lblValorTotal.Text.Replace("R$", ""));
 
                 ConsumoBLL bll = new ConsumoBLL();
-                int id = bll.Insert(lstConsumo);
+                int id = bll.Insert(lstConsumo.Where(x=> x.Reserva_id == 0).ToList());
 
                 Reserva reserva = contexto.Reserva.FirstOrDefault(x => x.id == id);
                 reserva.pago = true;
-
+                reserva.saida = DateTime.Now;
                 reserva.Quarto.disponivel = true;
 
                 contexto.Entry(reserva).State = EntityState.Modified;
@@ -600,12 +659,203 @@ namespace HotelPet
             {
                 LimpaCampos();
             }
- 
+
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             LimpaCampos();
+        }
+
+        private void txtConsBuscAnimal_KeyUp(object sender, KeyEventArgs e)
+        {
+            Contexto contexto = new Contexto();
+            string busca = txtConsBuscAnimal.Text.Trim().ToLower();
+
+            var lstAnimal = from Cli in contexto.Reserva.Where(x => (x.Animal.nome.Trim().ToLower().Contains(busca) || x.Animal.Cliente.nome.Trim().ToLower().Contains(busca)) && x.Animal.hospedado == true && x.pago == false).OrderBy(x => x.Animal.nome).ToList()
+                            select new
+                            {
+                                Cli.id,
+                                cliente = Cli.Cliente.nome,
+                                animal = Cli.Animal.nome,
+                                quarto = Cli.Quarto.descricao,
+                                Cli.Quarto.numero,
+                                Cli.Animal.especie,
+                                Cli.Animal.raca,
+                                Cli.Animal.pelagem,
+                                Cli.Animal.cor,
+                                Cli.Animal.porte,
+                                Cli.Animal.sexo,
+                                Cli.Animal.observacoes,
+                                Cli.Animal.cuidados,
+                                foto = (Cli.Animal.imagem == null) ? Image.FromStream(new MemoryStream(imagem)) : Image.FromStream(new MemoryStream(Cli.Animal.imagem))
+                            };
+
+            InterfaceTools.dgvTransformation(dgvConsAnimal);
+            dgvConsAnimal.DataSource = lstAnimal.ToList();
+        }
+
+        private void dgvConsAnimal_DoubleClick(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvConsAnimal.SelectedRows[0].Cells["id"].Value);
+           
+            Contexto contexto = new Contexto();
+            var reserva = contexto.Reserva.FirstOrDefault(x => x.id == id);
+
+            lblCodigoReserva.Text = reserva.id.ToString();
+            txtObservacoes.Text = reserva.Animal.observacoes;
+            txtCuidados.Text = reserva.Animal.cuidados;
+
+            var Consumos = from Cons in contexto.Consumo.Where(x => x.Reserva_id == id).ToList()
+                           select new
+                           {
+                               Cons.id,
+                               Código = Cons.Servicos_id,
+                               Consumos = Cons.Servicos.descricao,
+                               Data = Cons.data,
+                               Qtde = Cons.Quantidade,
+                               Valor = Cons.valor
+                           };
+
+            dgvConsumos.DataSource = "";
+            dgvConsumos.DataSource = Consumos.ToList();
+            dgvConsumos.Columns["id"].Visible = false;
+            dgvConsumos.Columns["Qtde"].DefaultCellStyle.Format = "N3";
+            dgvConsumos.Columns["Valor"].DefaultCellStyle.Format = "C";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+        }
+
+        private void btnLancar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Reserva_id = Convert.ToInt32(lblCodigoReserva.Text);
+                int id = Convert.ToInt32(dgvConsServicos.SelectedRows[0].Cells["Código"].Value);
+                
+                Contexto contexto = new Contexto();
+                Servicos servico = contexto.Servico.FirstOrDefault(x => x.id == id);
+                Consumo consumo = new Consumo();
+
+                consumo.Quantidade = servico.quantidade;
+                consumo.valor = servico.valor;
+                consumo.total = servico.valor;
+                consumo.Reserva_id = Reserva_id;
+                consumo.Servicos_id = servico.id;
+                consumo.data = DateTime.Now;
+
+                contexto.Consumo.Add(consumo);
+                contexto.SaveChanges();
+
+                var Consumos = from Cons in contexto.Consumo.Where(x => x.Reserva_id == Reserva_id).ToList()
+                               select new
+                               {
+                                   Cons.id,
+                                   Código = Cons.Servicos_id,
+                                   Consumos = Cons.Servicos.descricao,
+                                   Data = Cons.data,
+                                   Qtde = Cons.Quantidade,
+                                   Valor = Cons.valor
+                               };
+
+                dgvConsumos.DataSource = "";
+                dgvConsumos.DataSource = Consumos.ToList();
+                dgvConsumos.Columns["id"].Visible = false;
+                dgvConsumos.Columns["Qtde"].DefaultCellStyle.Format = "N3";
+                dgvConsumos.Columns["Valor"].DefaultCellStyle.Format = "C";
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERRO: Nenhum Serviço foi Selecionado.", "Erro ao lançar o serviço", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+
+        }
+
+        private void txtConsBuscServicos_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            Contexto contexto = new Contexto();
+            dgvConsServicos.DataSource = "";
+
+            try
+            {
+                var busca = Convert.ToInt64(txtConsBuscServicos.Text);
+                var lista = from Serv in contexto.Servico.Where(x => x.id == busca).ToList()
+                            select new
+                            {
+                                Código = Serv.id,
+                                Descrição = Serv.descricao,
+                                Qtde = Serv.quantidade,
+                                Valor = Serv.valor
+                            };
+                dgvConsServicos.DataSource = lista.ToList();
+            }
+            catch (Exception)
+            {
+                var busca = txtConsBuscServicos.Text;
+                var lista = from Serv in contexto.Servico.Where(x => x.descricao.Trim().ToLower().Contains(busca)).ToList()
+                            select new
+                            {
+                                Código = Serv.id,
+                                Descrição = Serv.descricao,
+                                Qtde = Serv.quantidade,
+                                Valor = Serv.valor
+                            };
+                dgvConsServicos.DataSource = lista.ToList();
+            }
+
+            dgvConsServicos.Columns["Código"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvConsServicos.Columns["Qtde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvConsServicos.Columns["Qtde"].DefaultCellStyle.Format = "N3";
+            dgvConsServicos.Columns["Valor"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvConsServicos.Columns["Valor"].DefaultCellStyle.Format = "C";
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Contexto contexto = new Contexto();
+
+                int Reserva_id = Convert.ToInt32(lblCodigoReserva.Text);
+                int id = Convert.ToInt32(dgvConsumos.SelectedRows[0].Cells["Código"].Value);
+                DateTime data = Convert.ToDateTime(dgvConsumos.SelectedRows[0].Cells["Data"].Value);
+
+                Consumo consumo = contexto.Consumo.FirstOrDefault(x => x.Servicos_id == id && x.data == data && x.Reserva_id == Reserva_id);
+
+                contexto.Entry(consumo).State = EntityState.Deleted;
+                contexto.SaveChanges();
+
+                var Consumos = from Cons in contexto.Consumo.Where(x => x.Reserva_id == Reserva_id).ToList()
+                               select new
+                               {
+                                   Cons.id,
+                                   Código = Cons.Servicos_id,
+                                   Consumos = Cons.Servicos.descricao,
+                                   Data = Cons.data,
+                                   Qtde = Cons.Quantidade,
+                                   Valor = Cons.valor
+                               };
+
+                dgvConsumos.DataSource = "";
+                dgvConsumos.DataSource = Consumos.ToList();
+                dgvConsumos.Columns["id"].Visible = false;
+                dgvConsumos.Columns["Qtde"].DefaultCellStyle.Format = "N3";
+                dgvConsumos.Columns["Valor"].DefaultCellStyle.Format = "C";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERRO: Nenhum item foi selecionado.", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            }
         }
     }
 }

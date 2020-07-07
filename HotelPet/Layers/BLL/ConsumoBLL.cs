@@ -21,5 +21,11 @@ namespace HotelPet.Layers.BLL
             }
             return id;
         }
+
+        public void Delete(Consumo consumo) 
+        {
+            ConsumoDAL dal = new ConsumoDAL();
+            dal.Delete(consumo);
+        } 
     }
 }

@@ -29,7 +29,7 @@ namespace HotelPet.Layers.DAL
         public void Delete(Consumo consumo)
         {
             Contexto contexto = new Contexto();
-            contexto.Entry(consumo).State = EntityState.Deleted; ;
+            contexto.Entry(consumo).State = EntityState.Deleted;
             contexto.SaveChanges();
             contexto.Dispose();
         }

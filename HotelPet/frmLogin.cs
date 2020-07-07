@@ -22,15 +22,24 @@ namespace HotelPet
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
+
             btnSair.DialogResult = DialogResult.Cancel;
             AcceptButton = btnEntrar;
             CancelButton = btnSair;
 
-            Contexto contexto = new Contexto();
-            int qtde = contexto.Administrador.Count();
-            if (qtde > 0)
+            try
             {
-                btnCadastro.Visible = false;
+                int qtde = contexto.Administrador.Count();
+                if (qtde > 0)
+                {
+                    btnCadastro.Visible = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro Seu banco de dados está desligado. Por favor ligue-o antes de iniciar a aplicação", "O BANCO DE DADOS ESTÁ DESLIGADO.", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                this.Close();
             }
 
         }

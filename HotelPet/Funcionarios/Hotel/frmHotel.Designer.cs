@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -91,19 +91,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
             this.lblLista = new System.Windows.Forms.Label();
-            this.img6 = new System.Windows.Forms.PictureBox();
             this.lblToalProd = new System.Windows.Forms.Label();
             this.lblQtdE_x_Valor = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.dgvCheckOut = new System.Windows.Forms.DataGridView();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cmbAni = new System.Windows.Forms.ComboBox();
             this.cmbCli = new System.Windows.Forms.ComboBox();
@@ -125,32 +119,54 @@
             this.lblDataEntr = new System.Windows.Forms.Label();
             this.lblDescr = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lbldata2 = new System.Windows.Forms.Label();
             this.lblHora2 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.img6 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnApagar = new System.Windows.Forms.Button();
+            this.btnLancar = new System.Windows.Forms.Button();
+            this.txtConsBuscServicos = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
+            this.txtConsBuscAnimal = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtObservacoes = new System.Windows.Forms.RichTextBox();
+            this.txtCuidados = new System.Windows.Forms.RichTextBox();
+            this.dgvConsumos = new System.Windows.Forms.DataGridView();
+            this.dgvConsServicos = new System.Windows.Forms.DataGridView();
+            this.dgvConsAnimal = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Foto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.quarto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.animal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pelagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.data = new System.Windows.Forms.Timer(this.components);
             this.Hora = new System.Windows.Forms.Timer(this.components);
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblCodigoReserva = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -167,17 +183,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsServicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsAnimal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -886,26 +907,26 @@
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage2.Controls.Add(this.label24);
             this.tabPage2.Controls.Add(this.lblLista);
-            this.tabPage2.Controls.Add(this.img6);
             this.tabPage2.Controls.Add(this.lblToalProd);
             this.tabPage2.Controls.Add(this.lblQtdE_x_Valor);
             this.tabPage2.Controls.Add(this.lblDescricao);
             this.tabPage2.Controls.Add(this.lblCodigo);
+            this.tabPage2.Controls.Add(this.lblValorTotal);
+            this.tabPage2.Controls.Add(this.label46);
+            this.tabPage2.Controls.Add(this.dgvCheckOut);
+            this.tabPage2.Controls.Add(this.groupBox6);
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Controls.Add(this.lbldata2);
+            this.tabPage2.Controls.Add(this.lblHora2);
+            this.tabPage2.Controls.Add(this.label26);
+            this.tabPage2.Controls.Add(this.img6);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.btnFinalizar);
-            this.tabPage2.Controls.Add(this.lblValorTotal);
-            this.tabPage2.Controls.Add(this.label46);
             this.tabPage2.Controls.Add(this.pictureBox11);
-            this.tabPage2.Controls.Add(this.dgvCheckOut);
             this.tabPage2.Controls.Add(this.pictureBox9);
-            this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.pictureBox8);
-            this.tabPage2.Controls.Add(this.lbldata2);
-            this.tabPage2.Controls.Add(this.lblHora2);
             this.tabPage2.Controls.Add(this.pictureBox6);
-            this.tabPage2.Controls.Add(this.label26);
             this.tabPage2.Controls.Add(this.pictureBox7);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
@@ -938,15 +959,6 @@
             this.lblLista.Size = new System.Drawing.Size(411, 31);
             this.lblLista.TabIndex = 117;
             this.lblLista.Text = "Lista de Produtos Consumidos";
-            // 
-            // img6
-            // 
-            this.img6.BackColor = System.Drawing.Color.LightGray;
-            this.img6.Location = new System.Drawing.Point(681, 61);
-            this.img6.Name = "img6";
-            this.img6.Size = new System.Drawing.Size(653, 3);
-            this.img6.TabIndex = 116;
-            this.img6.TabStop = false;
             // 
             // lblToalProd
             // 
@@ -996,47 +1008,6 @@
             this.lblCodigo.TabIndex = 112;
             this.lblCodigo.Text = "Codigo";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = global::HotelPet.Properties.Resources.lançar;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(482, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 61);
-            this.button1.TabIndex = 111;
-            this.button1.Text = "&Confirmar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Image = global::HotelPet.Properties.Resources.loupe_78347;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(577, 247);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 62);
-            this.button3.TabIndex = 110;
-            this.button3.Text = "&Buscar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnFinalizar.Image = global::HotelPet.Properties.Resources.ok;
-            this.btnFinalizar.Location = new System.Drawing.Point(1141, 412);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(193, 61);
-            this.btnFinalizar.TabIndex = 106;
-            this.btnFinalizar.UseVisualStyleBackColor = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
             // lblValorTotal
             // 
             this.lblValorTotal.BackColor = System.Drawing.Color.DimGray;
@@ -1061,15 +1032,6 @@
             this.label46.TabIndex = 108;
             this.label46.Text = "Valor Total(R$):";
             // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox11.Location = new System.Drawing.Point(673, 487);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(669, 135);
-            this.pictureBox11.TabIndex = 107;
-            this.pictureBox11.TabStop = false;
-            // 
             // dgvCheckOut
             // 
             this.dgvCheckOut.AllowUserToOrderColumns = true;
@@ -1078,14 +1040,14 @@
             this.dgvCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCheckOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheckOut.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCheckOut.Enabled = false;
             this.dgvCheckOut.GridColor = System.Drawing.Color.LightGray;
             this.dgvCheckOut.Location = new System.Drawing.Point(683, 96);
@@ -1095,15 +1057,6 @@
             this.dgvCheckOut.Size = new System.Drawing.Size(649, 310);
             this.dgvCheckOut.TabIndex = 105;
             this.dgvCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckOut_CellContentClick);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.White;
-            this.pictureBox9.Location = new System.Drawing.Point(673, 6);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(669, 475);
-            this.pictureBox9.TabIndex = 103;
-            this.pictureBox9.TabStop = false;
             // 
             // groupBox6
             // 
@@ -1362,15 +1315,6 @@
             this.label42.Text = "Animal:";
             this.label42.Click += new System.EventHandler(this.label42_Click);
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.White;
-            this.pictureBox8.Location = new System.Drawing.Point(5, 6);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(662, 404);
-            this.pictureBox8.TabIndex = 100;
-            this.pictureBox8.TabStop = false;
-            // 
             // lbldata2
             // 
             this.lbldata2.BackColor = System.Drawing.Color.White;
@@ -1391,6 +1335,94 @@
             this.lblHora2.TabIndex = 97;
             this.lblHora2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.ForeColor = System.Drawing.Color.DimGray;
+            this.label26.Location = new System.Drawing.Point(322, 598);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(28, 17);
+            this.label26.TabIndex = 98;
+            this.label26.Text = "-";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // img6
+            // 
+            this.img6.BackColor = System.Drawing.Color.LightGray;
+            this.img6.Location = new System.Drawing.Point(681, 61);
+            this.img6.Name = "img6";
+            this.img6.Size = new System.Drawing.Size(653, 3);
+            this.img6.TabIndex = 116;
+            this.img6.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.Image = global::HotelPet.Properties.Resources.lançar;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(482, 335);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 61);
+            this.button1.TabIndex = 111;
+            this.button1.Text = "&Confirmar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Image = global::HotelPet.Properties.Resources.loupe_78347;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(577, 247);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(76, 62);
+            this.button3.TabIndex = 110;
+            this.button3.Text = "&Buscar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnFinalizar.Image = global::HotelPet.Properties.Resources.ok;
+            this.btnFinalizar.Location = new System.Drawing.Point(1141, 412);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(193, 61);
+            this.btnFinalizar.TabIndex = 106;
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox11.Location = new System.Drawing.Point(673, 487);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(669, 135);
+            this.pictureBox11.TabIndex = 107;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.White;
+            this.pictureBox9.Location = new System.Drawing.Point(673, 6);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(669, 475);
+            this.pictureBox9.TabIndex = 103;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.White;
+            this.pictureBox8.Location = new System.Drawing.Point(5, 6);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(662, 404);
+            this.pictureBox8.TabIndex = 100;
+            this.pictureBox8.TabStop = false;
+            // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
@@ -1402,17 +1434,6 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 99;
             this.pictureBox6.TabStop = false;
-            // 
-            // label26
-            // 
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.ForeColor = System.Drawing.Color.DimGray;
-            this.label26.Location = new System.Drawing.Point(322, 598);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(28, 17);
-            this.label26.TabIndex = 98;
-            this.label26.Text = "-";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox7
             // 
@@ -1427,189 +1448,370 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Silver;
             this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.checkBox2);
-            this.tabPage3.Controls.Add(this.dateTimePicker3);
-            this.tabPage3.Controls.Add(this.dateTimePicker4);
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.lblCodigoReserva);
             this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.textBox8);
-            this.tabPage3.Controls.Add(this.textBox9);
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.btnApagar);
+            this.tabPage3.Controls.Add(this.btnLancar);
+            this.tabPage3.Controls.Add(this.txtConsBuscServicos);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.txtConsBuscAnimal);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.groupBox7);
+            this.tabPage3.Controls.Add(this.dgvConsumos);
+            this.tabPage3.Controls.Add(this.dgvConsServicos);
+            this.tabPage3.Controls.Add(this.dgvConsAnimal);
+            this.tabPage3.Controls.Add(this.pictureBox12);
+            this.tabPage3.Controls.Add(this.richTextBox3);
+            this.tabPage3.Controls.Add(this.pictureBox10);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1352, 630);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Consumo";
             // 
-            // textBox5
+            // button6
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(150, 198);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(248, 26);
-            this.textBox5.TabIndex = 84;
+            this.button6.BackColor = System.Drawing.Color.Silver;
+            this.button6.Image = global::HotelPet.Properties.Resources.done_accept;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.Location = new System.Drawing.Point(841, 514);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 75);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "&Finalizar";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // label8
+            // button5
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(23, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 19);
-            this.label8.TabIndex = 83;
-            this.label8.Text = "Nome do Animal:";
+            this.button5.BackColor = System.Drawing.Color.Silver;
+            this.button5.Image = global::HotelPet.Properties.Resources.cancel;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button5.Location = new System.Drawing.Point(556, 514);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 75);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "&Cancelar";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // label9
+            // btnApagar
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(335, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(284, 19);
-            this.label9.TabIndex = 82;
-            this.label9.Text = "Nome do Cliente ou Numero do Quarto:";
+            this.btnApagar.BackColor = System.Drawing.Color.Silver;
+            this.btnApagar.Image = global::HotelPet.Properties.Resources.bin_delete;
+            this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnApagar.Location = new System.Drawing.Point(746, 514);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(75, 75);
+            this.btnApagar.TabIndex = 11;
+            this.btnApagar.Text = "&Apagar";
+            this.btnApagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
-            // checkBox2
+            // btnLancar
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(452, 408);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(79, 21);
-            this.checkBox2.TabIndex = 81;
-            this.checkBox2.Text = "Informar";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.btnLancar.BackColor = System.Drawing.Color.Silver;
+            this.btnLancar.Image = global::HotelPet.Properties.Resources.arrow_right_icon;
+            this.btnLancar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLancar.Location = new System.Drawing.Point(651, 514);
+            this.btnLancar.Name = "btnLancar";
+            this.btnLancar.Size = new System.Drawing.Size(75, 75);
+            this.btnLancar.TabIndex = 10;
+            this.btnLancar.Text = "&Lançar";
+            this.btnLancar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLancar.UseVisualStyleBackColor = false;
+            this.btnLancar.Click += new System.EventHandler(this.btnLancar_Click);
             // 
-            // dateTimePicker3
+            // txtConsBuscServicos
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(172, 407);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(253, 25);
-            this.dateTimePicker3.TabIndex = 80;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(150, 358);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(275, 25);
-            this.dateTimePicker4.TabIndex = 79;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 122);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 19);
-            this.label10.TabIndex = 78;
-            this.label10.Text = "Codigo da reserva:";
+            this.txtConsBuscServicos.Location = new System.Drawing.Point(654, 74);
+            this.txtConsBuscServicos.Name = "txtConsBuscServicos";
+            this.txtConsBuscServicos.Size = new System.Drawing.Size(269, 25);
+            this.txtConsBuscServicos.TabIndex = 9;
+            this.txtConsBuscServicos.TabStop = false;
+            this.txtConsBuscServicos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConsBuscServicos_KeyUp);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(105, 387);
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(538, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 19);
-            this.label11.TabIndex = 77;
-            this.label11.Text = "Saída:";
+            this.label11.Size = new System.Drawing.Size(110, 19);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Buscar Serviços:";
             // 
-            // label12
+            // txtConsBuscAnimal
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(87, 334);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 19);
-            this.label12.TabIndex = 76;
-            this.label12.Text = "Entrada:";
+            this.txtConsBuscAnimal.Location = new System.Drawing.Point(133, 69);
+            this.txtConsBuscAnimal.Name = "txtConsBuscAnimal";
+            this.txtConsBuscAnimal.Size = new System.Drawing.Size(308, 25);
+            this.txtConsBuscAnimal.TabIndex = 7;
+            this.txtConsBuscAnimal.TabStop = false;
+            this.txtConsBuscAnimal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConsBuscAnimal_KeyUp);
             // 
-            // textBox6
+            // label10
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(150, 304);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(134, 26);
-            this.textBox6.TabIndex = 75;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(23, 72);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(105, 19);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Buscar Animais:";
             // 
-            // label13
+            // groupBox7
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 281);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(143, 19);
-            this.label13.TabIndex = 74;
-            this.label13.Text = "Número do quarto:";
+            this.groupBox7.BackColor = System.Drawing.Color.White;
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Controls.Add(this.txtObservacoes);
+            this.groupBox7.Controls.Add(this.txtCuidados);
+            this.groupBox7.Location = new System.Drawing.Point(20, 348);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(495, 258);
+            this.groupBox7.TabIndex = 5;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Dados do Animal:";
             // 
-            // textBox7
+            // label9
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(150, 250);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(248, 26);
-            this.textBox7.TabIndex = 73;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 146);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 17);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Observações:";
             // 
-            // label14
+            // label8
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(23, 228);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 19);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "Nome do cliente:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 17);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Cuidados:";
             // 
-            // textBox8
+            // txtObservacoes
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(150, 143);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(134, 26);
-            this.textBox8.TabIndex = 71;
+            this.txtObservacoes.Enabled = false;
+            this.txtObservacoes.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservacoes.Location = new System.Drawing.Point(6, 166);
+            this.txtObservacoes.Name = "txtObservacoes";
+            this.txtObservacoes.Size = new System.Drawing.Size(483, 83);
+            this.txtObservacoes.TabIndex = 3;
+            this.txtObservacoes.Text = "";
             // 
-            // textBox9
+            // txtCuidados
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(339, 102);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(389, 26);
-            this.textBox9.TabIndex = 70;
+            this.txtCuidados.Enabled = false;
+            this.txtCuidados.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCuidados.Location = new System.Drawing.Point(6, 45);
+            this.txtCuidados.Name = "txtCuidados";
+            this.txtCuidados.Size = new System.Drawing.Size(483, 83);
+            this.txtCuidados.TabIndex = 2;
+            this.txtCuidados.Text = "";
             // 
-            // dataGridView1
+            // dgvConsumos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(734, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(588, 478);
-            this.dataGridView1.TabIndex = 69;
+            this.dgvConsumos.AllowUserToAddRows = false;
+            this.dgvConsumos.AllowUserToDeleteRows = false;
+            this.dgvConsumos.AllowUserToResizeColumns = false;
+            this.dgvConsumos.AllowUserToResizeRows = false;
+            this.dgvConsumos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvConsumos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvConsumos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvConsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsumos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvConsumos.Location = new System.Drawing.Point(947, 105);
+            this.dgvConsumos.Name = "dgvConsumos";
+            this.dgvConsumos.ReadOnly = true;
+            this.dgvConsumos.Size = new System.Drawing.Size(381, 506);
+            this.dgvConsumos.TabIndex = 2;
+            this.dgvConsumos.TabStop = false;
             // 
-            // label15
+            // dgvConsServicos
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(87, 407);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 19);
-            this.label15.TabIndex = 85;
-            this.label15.Text = "Indefinida";
+            this.dgvConsServicos.AllowUserToAddRows = false;
+            this.dgvConsServicos.AllowUserToDeleteRows = false;
+            this.dgvConsServicos.AllowUserToResizeColumns = false;
+            this.dgvConsServicos.AllowUserToResizeRows = false;
+            this.dgvConsServicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvConsServicos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvConsServicos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvConsServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsServicos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvConsServicos.Location = new System.Drawing.Point(542, 105);
+            this.dgvConsServicos.Name = "dgvConsServicos";
+            this.dgvConsServicos.ReadOnly = true;
+            this.dgvConsServicos.Size = new System.Drawing.Size(381, 355);
+            this.dgvConsServicos.TabIndex = 1;
+            this.dgvConsServicos.TabStop = false;
+            // 
+            // dgvConsAnimal
+            // 
+            this.dgvConsAnimal.AllowUserToAddRows = false;
+            this.dgvConsAnimal.AllowUserToDeleteRows = false;
+            this.dgvConsAnimal.AllowUserToResizeColumns = false;
+            this.dgvConsAnimal.AllowUserToResizeRows = false;
+            this.dgvConsAnimal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvConsAnimal.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvConsAnimal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvConsAnimal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsAnimal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Foto,
+            this.quarto,
+            this.numero,
+            this.nome,
+            this.animal,
+            this.especie,
+            this.sexo,
+            this.raca,
+            this.porte,
+            this.pelagem,
+            this.cor});
+            this.dgvConsAnimal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvConsAnimal.Location = new System.Drawing.Point(23, 100);
+            this.dgvConsAnimal.Name = "dgvConsAnimal";
+            this.dgvConsAnimal.ReadOnly = true;
+            this.dgvConsAnimal.Size = new System.Drawing.Size(488, 207);
+            this.dgvConsAnimal.TabIndex = 0;
+            this.dgvConsAnimal.TabStop = false;
+            this.dgvConsAnimal.DoubleClick += new System.EventHandler(this.dgvConsAnimal_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Código";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 74;
+            // 
+            // Foto
+            // 
+            this.Foto.DataPropertyName = "foto";
+            this.Foto.HeaderText = "Foto";
+            this.Foto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Foto.Name = "Foto";
+            this.Foto.ReadOnly = true;
+            this.Foto.Width = 40;
+            // 
+            // quarto
+            // 
+            this.quarto.DataPropertyName = "quarto";
+            this.quarto.HeaderText = "Quarto";
+            this.quarto.Name = "quarto";
+            this.quarto.ReadOnly = true;
+            this.quarto.Width = 74;
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero";
+            this.numero.HeaderText = "Número";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            this.numero.Width = 81;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "cliente";
+            this.nome.HeaderText = "Cliente";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 74;
+            // 
+            // animal
+            // 
+            this.animal.DataPropertyName = "animal";
+            this.animal.HeaderText = "Animal";
+            this.animal.Name = "animal";
+            this.animal.ReadOnly = true;
+            this.animal.Width = 75;
+            // 
+            // especie
+            // 
+            this.especie.DataPropertyName = "especie";
+            this.especie.HeaderText = "Espécie";
+            this.especie.Name = "especie";
+            this.especie.ReadOnly = true;
+            this.especie.Width = 79;
+            // 
+            // sexo
+            // 
+            this.sexo.DataPropertyName = "sexo";
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            this.sexo.Width = 62;
+            // 
+            // raca
+            // 
+            this.raca.DataPropertyName = "raca";
+            this.raca.HeaderText = "Raça";
+            this.raca.Name = "raca";
+            this.raca.ReadOnly = true;
+            this.raca.Width = 64;
+            // 
+            // porte
+            // 
+            this.porte.DataPropertyName = "porte";
+            this.porte.HeaderText = "Porte";
+            this.porte.Name = "porte";
+            this.porte.ReadOnly = true;
+            this.porte.Width = 65;
+            // 
+            // pelagem
+            // 
+            this.pelagem.DataPropertyName = "pelagem";
+            this.pelagem.HeaderText = "Pelagem";
+            this.pelagem.Name = "pelagem";
+            this.pelagem.ReadOnly = true;
+            this.pelagem.Width = 84;
+            // 
+            // cor
+            // 
+            this.cor.DataPropertyName = "cor";
+            this.cor.HeaderText = "Cor";
+            this.cor.Name = "cor";
+            this.cor.ReadOnly = true;
+            this.cor.Width = 55;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.White;
+            this.pictureBox12.Location = new System.Drawing.Point(7, 14);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(521, 605);
+            this.pictureBox12.TabIndex = 4;
+            this.pictureBox12.TabStop = false;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.Gainsboro;
+            this.richTextBox3.Enabled = false;
+            this.richTextBox3.Location = new System.Drawing.Point(542, 482);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(390, 129);
+            this.richTextBox3.TabIndex = 6;
+            this.richTextBox3.Text = "";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.White;
+            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox10.Location = new System.Drawing.Point(534, 13);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(801, 605);
+            this.pictureBox10.TabIndex = 3;
+            this.pictureBox10.TabStop = false;
             // 
             // data
             // 
@@ -1622,6 +1824,30 @@
             this.Hora.Enabled = true;
             this.Hora.Interval = 1000;
             this.Hora.Tick += new System.EventHandler(this.Hora_Tick);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1004, 83);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(124, 19);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Código da reserva:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblCodigoReserva
+            // 
+            this.lblCodigoReserva.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCodigoReserva.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCodigoReserva.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoReserva.Location = new System.Drawing.Point(1132, 77);
+            this.lblCodigoReserva.Name = "lblCodigoReserva";
+            this.lblCodigoReserva.Size = new System.Drawing.Size(177, 25);
+            this.lblCodigoReserva.TabIndex = 15;
+            this.lblCodigoReserva.Text = "0";
+            this.lblCodigoReserva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmHotel
             // 
@@ -1659,20 +1885,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsumos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsServicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsAnimal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1706,23 +1938,6 @@
         private System.Windows.Forms.Button btnCadastroCli;
         private System.Windows.Forms.ComboBox cmbAnimal;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblcli;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lblEspecie;
@@ -1800,5 +2015,38 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btnLancar;
+        private System.Windows.Forms.TextBox txtConsBuscServicos;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtConsBuscAnimal;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RichTextBox txtObservacoes;
+        private System.Windows.Forms.RichTextBox txtCuidados;
+        private System.Windows.Forms.DataGridView dgvConsumos;
+        private System.Windows.Forms.DataGridView dgvConsServicos;
+        private System.Windows.Forms.DataGridView dgvConsAnimal;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewImageColumn Foto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quarto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn animal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn raca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pelagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cor;
+        private System.Windows.Forms.Label lblCodigoReserva;
+        private System.Windows.Forms.Label label12;
     }
 }

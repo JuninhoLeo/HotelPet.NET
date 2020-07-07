@@ -154,5 +154,42 @@ namespace HotelPet.Admin
                 MessageBox.Show("ERRO: Nenhum Serviço selecionado", "ERRO NA REMOÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bool estaOk = true;
+
+            if(txtDescricao.Text == "") 
+            {
+                estaOk = false;
+                MessageBox.Show("Informe a Descrição/Nome do Serviço.", "Informações necessárias não informadas", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            else if(txtQtde.Text == "") 
+            {
+                estaOk = false;
+                MessageBox.Show("Informe a Quantidade do Serviço ou defina como 1(Padrão).", "Informações necessárias não informadas", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            else if(txtValor.Text == "") 
+            {
+                estaOk = false;
+                MessageBox.Show("Informe o Valor(R$) do Serviço.", "Informações necessárias não informadas", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+
+            if (estaOk)
+            {
+                Servicos servico = new Servicos();
+
+                servico.descricao = txtDescricao.Text;
+                servico.quantidade = Convert.ToDouble(txtQtde.Text);
+                servico.valor = Convert.ToDouble(txtValor.Text);
+
+                contexto.Servico.Add(servico);
+                contexto.SaveChanges();
+
+                LimpaCampos();
+                //var id = servico.id;
+            }
+
+        }
     }
 }

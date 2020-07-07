@@ -254,6 +254,7 @@
     <Compile Include="Funcionarios\Vendas\frmConsulta.Designer.cs">
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\InterfaceTools.cs" />
     <Compile Include="Layers\BLL\ClienteBLL.cs" />
     <Compile Include="Layers\BLL\ConsumoBLL.cs" />
     <Compile Include="Layers\BLL\ListaCompraBLL.cs" />
@@ -515,6 +516,18 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bin_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\done_accept.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

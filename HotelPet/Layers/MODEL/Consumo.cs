@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelPet.Camadas.MODEL
@@ -9,9 +10,11 @@ namespace HotelPet.Camadas.MODEL
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
-        public double valor { get; set; }
         public double Quantidade { get; set; }
+        public double valor { get; set; }
         public double total { get; set; }
+
+        public DateTime data { get; set; }
 
         //chaves estrangeiras
         [ForeignKey("Reserva")]

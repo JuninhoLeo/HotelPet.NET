@@ -156,13 +156,6 @@ namespace HotelPet
                     }
                 }
 
-                 /*
-                    Recuperar a imagem do banco:
-                 
-                    MemoryStream mstream = new MemoryStream(imagem);
-                    pbxImage.Image = Image.FromStream(mstream);
-                 */
-
                 if (Imagem.Text != "")
                 {
                     FileStream fstream = new FileStream(Imagem.Text, FileMode.Open, FileAccess.Read);
