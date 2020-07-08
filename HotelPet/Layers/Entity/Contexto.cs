@@ -18,7 +18,9 @@ namespace HotelPet.Entity
         public DbSet<Animal> Animal { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Consumo> Consumo { get; set; }
+        public DbSet<Historico> Historico { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
+        public DbSet<ListaCompra> ListaCompras { get; set; }
         public DbSet<Permicoes> Permicao { get; set; }
         public DbSet<Produtos> Produto { get; set; }
         public DbSet<Quarto> Quarto { get; set; }
@@ -26,7 +28,6 @@ namespace HotelPet.Entity
         public DbSet<Servicos> Servico { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Venda> Venda { get; set; }
-        public DbSet<ListaCompra> ListaCompras { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -26,17 +26,30 @@ namespace HotelPet.Funcionarios.Vendas
                 try
                 {
                     long id = Convert.ToInt64(textBox1.Text.Trim());
-                    var item = contexto.Produto.Where(x => x.codigo == id).ToList();
-                    dgvProdutos.DataSource = item;
+                    var item = from prod in contexto.Produto.Where(x => x.codigo == id).ToList()
+                               select new
+                               {
+                                   Código = prod.codigo,
+                                   Descrição = prod.descricao,
+                                   Qtde = prod.quantidade,
+                                   Valor = prod.valor
+                               };
+                    dgvProdutos.DataSource = item.ToList();
                 }
                 catch (Exception)
                 {
-                    var item = contexto.Produto.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper())).ToList();
-                    dgvProdutos.DataSource = item;
+                    var item = from prod in contexto.Produto.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper())).ToList()
+                               select new
+                               {
+                                   Código = prod.codigo,
+                                   Descrição = prod.descricao,
+                                   Qtde = prod.quantidade,
+                                   Valor = prod.valor
+                               };
+                    dgvProdutos.DataSource = item.ToList();
                 }
 
-                dgvProdutos.Columns["id"].Visible = false;
-                dgvProdutos.Columns["valor"].DefaultCellStyle.Format = "c";
+                dgvProdutos.Columns["Valor"].DefaultCellStyle.Format = "c";
 
             }
             else
@@ -44,16 +57,28 @@ namespace HotelPet.Funcionarios.Vendas
                 try
                 {
                     long id = Convert.ToInt64(textBox1.Text.Trim());
-                    var item = contexto.Servico.Where(x => x.id == id).ToList();
-                    dgvProdutos.DataSource = item;
+                    var item = from serv in contexto.Servico.Where(x => x.id == id && x.isQuarto == false).ToList()
+                               select new
+                               {
+                                   Código = serv.id,
+                                   Descrição = serv.descricao,
+                                   Valor = serv.valor
+                               };
+                    dgvProdutos.DataSource = item.ToList();
                 }
                 catch (Exception)
                 {
-                    var item = contexto.Servico.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper())).ToList();
-                    dgvProdutos.DataSource = item;
+                    var item = from serv in contexto.Servico.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper()) && x.isQuarto == false).ToList()
+                               select new
+                               {
+                                   Código = serv.id,
+                                   Descrição = serv.descricao,
+                                   Valor = serv.valor
+                               };
+                    dgvProdutos.DataSource = item.ToList();
                 }
 
-                dgvProdutos.Columns["valor"].DefaultCellStyle.Format = "c";
+                dgvProdutos.Columns["Valor"].DefaultCellStyle.Format = "c";
             }
         }
 

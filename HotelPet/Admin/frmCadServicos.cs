@@ -60,6 +60,7 @@ namespace HotelPet.Admin
                 servicos.descricao = txtDescricao.Text;
                 servicos.quantidade = Convert.ToDouble(txtQtde.Text);
                 servicos.valor = Convert.ToDouble(txtValor.Text);
+                servicos.isQuarto = false;
 
                 contexto.Entry(servicos).State = EntityState.Modified;
                 contexto.SaveChanges();
@@ -80,7 +81,7 @@ namespace HotelPet.Admin
             txtValor.Text = "";
 
             dgvServicos.DataSource = "";
-            var lista = from Serv in contexto.Servico.ToList()
+            var lista = from Serv in contexto.Servico.Where(x=> x.isQuarto == false).ToList()
                         select new
                         {
                             Código = Serv.id,
@@ -109,7 +110,7 @@ namespace HotelPet.Admin
             var Texto = txtBusca.Text.Trim().ToLower();
 
             dgvServicos.DataSource = "";
-            var lista = from Serv in contexto.Servico.Where(x=> x.descricao.Trim().ToLower().Contains(Texto)).ToList()
+            var lista = from Serv in contexto.Servico.Where(x=> x.descricao.Trim().ToLower().Contains(Texto) && x.isQuarto == false).ToList()
                         select new
                         {
                             Código = Serv.id,
@@ -182,6 +183,7 @@ namespace HotelPet.Admin
                 servico.descricao = txtDescricao.Text;
                 servico.quantidade = Convert.ToDouble(txtQtde.Text);
                 servico.valor = Convert.ToDouble(txtValor.Text);
+                servico.isQuarto = false;
 
                 contexto.Servico.Add(servico);
                 contexto.SaveChanges();

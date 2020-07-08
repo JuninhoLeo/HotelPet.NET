@@ -242,6 +242,12 @@
     <Compile Include="frmCadastrarSe.Designer.cs">
       <DependentUpon>frmCadastrarSe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\Clinica\frmClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\Clinica\frmClinica.Designer.cs">
+      <DependentUpon>frmClinica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionarios\Hotel\frmConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,7 @@
     <Compile Include="Layers\DAL\ProdutosDAL.cs" />
     <Compile Include="Layers\MODEL\Administrador.cs" />
     <Compile Include="Layers\MODEL\Consumo.cs" />
+    <Compile Include="Layers\MODEL\Historico.cs" />
     <Compile Include="Layers\MODEL\ListaCompra.cs" />
     <Compile Include="Layers\MODEL\Servicos.cs" />
     <Compile Include="Layers\MODEL\Cliente.cs" />
@@ -350,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\AddCliente\frmAddCliente.resx">
       <DependentUpon>frmAddCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\Clinica\frmClinica.resx">
+      <DependentUpon>frmClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Hotel\frmConsulta.resx">
       <DependentUpon>frmConsulta.cs</DependentUpon>
@@ -505,7 +515,6 @@
     <None Include="Resources\1491313933-plus_83004.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Funcionarios\Clinica\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>

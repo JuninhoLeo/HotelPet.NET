@@ -4,6 +4,7 @@ using HotelPet.Entity;
 using HotelPet.Funcionarios.Hotel;
 using HotelPet.Functions;
 using HotelPet.Layers.BLL;
+using HotelPet.Layers.MODEL;
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
@@ -145,7 +146,7 @@ namespace HotelPet
             dgvConsAnimal.DataSource = lstAnimal.ToList();
 
             dgvConsServicos.DataSource = "";
-            var lista = from Serv in contexto.Servico.ToList()
+            var lista = from Serv in contexto.Servico.Where(x => x.isQuarto == false).ToList()
                         select new
                         {
                             Código = Serv.id,
@@ -562,9 +563,10 @@ namespace HotelPet
                 if (servico == null)
                 {
                     servico = new Servicos();
-                    servico.descricao = reserva.Quarto.descricao;
+                    servico.descricao = "Quarto " + reserva.Quarto.descricao;
                     servico.quantidade = dias;
                     servico.valor = valor;
+                    servico.isQuarto = true;
                     contexto.Servico.Add(servico);
                     contexto.SaveChanges();
                 }
@@ -653,6 +655,15 @@ namespace HotelPet
                 contexto.Entry(reserva).State = EntityState.Modified;
                 contexto.SaveChanges();
                 lstConsumo = new List<Consumo>();
+
+                Historico historico = new Historico();
+                historico.data = DateTime.Now;
+                historico.descricao = "Hotel";
+                historico.valor = Convert.ToDouble(lblValorTotal.Text.Replace("R$", ""));
+
+                contexto.Historico.Add(historico);
+                contexto.SaveChanges();
+                
                 LimpaCampos();
             }
             else
@@ -754,6 +765,7 @@ namespace HotelPet
 
                 contexto.Consumo.Add(consumo);
                 contexto.SaveChanges();
+                contexto.Entry(consumo).Reload();
 
                 var Consumos = from Cons in contexto.Consumo.Where(x => x.Reserva_id == Reserva_id).ToList()
                                select new
@@ -789,7 +801,7 @@ namespace HotelPet
             try
             {
                 var busca = Convert.ToInt64(txtConsBuscServicos.Text);
-                var lista = from Serv in contexto.Servico.Where(x => x.id == busca).ToList()
+                var lista = from Serv in contexto.Servico.Where(x => x.id == busca && x.isQuarto == false).ToList()
                             select new
                             {
                                 Código = Serv.id,
@@ -802,7 +814,7 @@ namespace HotelPet
             catch (Exception)
             {
                 var busca = txtConsBuscServicos.Text;
-                var lista = from Serv in contexto.Servico.Where(x => x.descricao.Trim().ToLower().Contains(busca)).ToList()
+                var lista = from Serv in contexto.Servico.Where(x => x.descricao.Trim().ToLower().Contains(busca) && x.isQuarto == false).ToList()
                             select new
                             {
                                 Código = Serv.id,
@@ -822,7 +834,7 @@ namespace HotelPet
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
                 Contexto contexto = new Contexto();
 
@@ -832,8 +844,9 @@ namespace HotelPet
 
                 Consumo consumo = contexto.Consumo.FirstOrDefault(x => x.Servicos_id == id && x.data == data && x.Reserva_id == Reserva_id);
 
-                contexto.Entry(consumo).State = EntityState.Deleted;
+                contexto.Consumo.Remove(consumo);
                 contexto.SaveChanges();
+                
 
                 var Consumos = from Cons in contexto.Consumo.Where(x => x.Reserva_id == Reserva_id).ToList()
                                select new
@@ -852,9 +865,9 @@ namespace HotelPet
                 dgvConsumos.Columns["Qtde"].DefaultCellStyle.Format = "N3";
                 dgvConsumos.Columns["Valor"].DefaultCellStyle.Format = "C";
             }
-            catch (Exception)
+          //  catch (Exception)
             {
-                MessageBox.Show("ERRO: Nenhum item foi selecionado.", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            //    MessageBox.Show("ERRO: Nenhum item foi selecionado.", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             }
         }
     }

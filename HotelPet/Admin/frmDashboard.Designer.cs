@@ -28,6 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -45,25 +54,23 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotFunc = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTotCli = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotCapacidade = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -72,11 +79,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblReceita = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            //this.hotelDataSet = new HotelPet.hotelDataSet();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvVendasDiarias = new System.Windows.Forms.DataGridView();
+            this.dgvMetricaAnual = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -91,17 +102,16 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel12.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel6.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendasDiarias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMetricaAnual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -440,16 +450,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Capacidade";
             // 
-            // label9
+            // lblTotFunc
             // 
-            this.label9.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.label9.Location = new System.Drawing.Point(3, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(206, 32);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "35";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotFunc.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotFunc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.lblTotFunc.Location = new System.Drawing.Point(3, 37);
+            this.lblTotFunc.Name = "lblTotFunc";
+            this.lblTotFunc.Size = new System.Drawing.Size(206, 32);
+            this.lblTotFunc.TabIndex = 9;
+            this.lblTotFunc.Text = "35";
+            this.lblTotFunc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
@@ -465,7 +475,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.label9);
+            this.panel9.Controls.Add(this.lblTotFunc);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Location = new System.Drawing.Point(1049, 155);
             this.panel9.Name = "panel9";
@@ -505,16 +515,16 @@
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
             // 
-            // label8
+            // lblTotCli
             // 
-            this.label8.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.label8.Location = new System.Drawing.Point(3, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(203, 32);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "1350";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotCli.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotCli.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.lblTotCli.Location = new System.Drawing.Point(3, 37);
+            this.lblTotCli.Name = "lblTotCli";
+            this.lblTotCli.Size = new System.Drawing.Size(203, 32);
+            this.lblTotCli.TabIndex = 8;
+            this.lblTotCli.Text = "1350";
+            this.lblTotCli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -533,23 +543,23 @@
             this.panel8.Controls.Add(this.pictureBox8);
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.pictureBox5);
-            this.panel8.Controls.Add(this.label8);
+            this.panel8.Controls.Add(this.lblTotCli);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Location = new System.Drawing.Point(776, 155);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(212, 129);
             this.panel8.TabIndex = 30;
             // 
-            // label6
+            // lblTotCapacidade
             // 
-            this.label6.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.label6.Location = new System.Drawing.Point(3, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 32);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "49/100";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotCapacidade.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotCapacidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.lblTotCapacidade.Location = new System.Drawing.Point(3, 56);
+            this.lblTotCapacidade.Name = "lblTotCapacidade";
+            this.lblTotCapacidade.Size = new System.Drawing.Size(206, 32);
+            this.lblTotCapacidade.TabIndex = 1;
+            this.lblTotCapacidade.Text = "49/100";
+            this.lblTotCapacidade.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox7
             // 
@@ -578,9 +588,9 @@
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
             this.panel16.Controls.Add(this.label14);
-            this.panel16.Location = new System.Drawing.Point(592, 347);
+            this.panel16.Location = new System.Drawing.Point(649, 347);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(358, 64);
+            this.panel16.Size = new System.Drawing.Size(296, 64);
             this.panel16.TabIndex = 41;
             // 
             // label14
@@ -594,16 +604,6 @@
             this.label14.TabIndex = 3;
             this.label14.Text = "Métrica anual";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(969, 408);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(358, 279);
-            this.dataGridView3.TabIndex = 38;
             // 
             // panel11
             // 
@@ -620,7 +620,7 @@
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(69)))), ((int)(((byte)(66)))));
             this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel13.Controls.Add(this.label15);
-            this.panel13.Location = new System.Drawing.Point(970, 347);
+            this.panel13.Location = new System.Drawing.Point(969, 347);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(358, 64);
             this.panel13.TabIndex = 40;
@@ -636,16 +636,6 @@
             this.label15.TabIndex = 3;
             this.label15.Text = "Estatísticas dos funcionários";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(592, 408);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(358, 279);
-            this.dataGridView2.TabIndex = 37;
             // 
             // panel14
             // 
@@ -674,7 +664,7 @@
             this.panel12.Controls.Add(this.label13);
             this.panel12.Location = new System.Drawing.Point(218, 347);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(358, 64);
+            this.panel12.Size = new System.Drawing.Size(407, 64);
             this.panel12.TabIndex = 39;
             // 
             // label13
@@ -717,7 +707,7 @@
             this.panel7.Controls.Add(this.pictureBox7);
             this.panel7.Controls.Add(this.label11);
             this.panel7.Controls.Add(this.pictureBox6);
-            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.lblReceita);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Location = new System.Drawing.Point(503, 155);
             this.panel7.Name = "panel7";
@@ -734,16 +724,16 @@
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
-            // label7
+            // lblReceita
             // 
-            this.label7.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.label7.Location = new System.Drawing.Point(3, 37);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "R$ 239,65";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblReceita.Font = new System.Drawing.Font("PMingLiU-ExtB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReceita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.lblReceita.Location = new System.Drawing.Point(3, 37);
+            this.lblReceita.Name = "lblReceita";
+            this.lblReceita.Size = new System.Drawing.Size(203, 32);
+            this.lblReceita.TabIndex = 7;
+            this.lblReceita.Text = "R$ 239,65";
+            this.lblReceita.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
@@ -762,27 +752,164 @@
             this.panel6.Controls.Add(this.pictureBox9);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.lblTotCapacidade);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(230, 155);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(212, 163);
             this.panel6.TabIndex = 28;
             // 
-            // hotelDataSet
+            // dgvVendasDiarias
             // 
-           // this.hotelDataSet.DataSetName = "hotelDataSet";
-            //this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dgvVendasDiarias.AllowUserToAddRows = false;
+            this.dgvVendasDiarias.AllowUserToDeleteRows = false;
+            this.dgvVendasDiarias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvVendasDiarias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvVendasDiarias.BackgroundColor = System.Drawing.Color.White;
+            this.dgvVendasDiarias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVendasDiarias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVendasDiarias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVendasDiarias.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVendasDiarias.Location = new System.Drawing.Point(217, 412);
+            this.dgvVendasDiarias.Name = "dgvVendasDiarias";
+            this.dgvVendasDiarias.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVendasDiarias.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVendasDiarias.Size = new System.Drawing.Size(408, 279);
+            this.dgvVendasDiarias.TabIndex = 36;
+            this.dgvVendasDiarias.TabStop = false;
             // 
-            // dataGridView1
+            // dgvMetricaAnual
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(218, 408);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(358, 279);
-            this.dataGridView1.TabIndex = 36;
+            this.dgvMetricaAnual.AllowUserToAddRows = false;
+            this.dgvMetricaAnual.AllowUserToDeleteRows = false;
+            this.dgvMetricaAnual.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMetricaAnual.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMetricaAnual.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMetricaAnual.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMetricaAnual.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMetricaAnual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMetricaAnual.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mes,
+            this.quantidade,
+            this.valor});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMetricaAnual.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvMetricaAnual.Location = new System.Drawing.Point(649, 412);
+            this.dgvMetricaAnual.Name = "dgvMetricaAnual";
+            this.dgvMetricaAnual.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMetricaAnual.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvMetricaAnual.Size = new System.Drawing.Size(296, 279);
+            this.dgvMetricaAnual.TabIndex = 42;
+            this.dgvMetricaAnual.TabStop = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView2.Location = new System.Drawing.Point(969, 412);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView2.Size = new System.Drawing.Size(358, 279);
+            this.dataGridView2.TabIndex = 43;
+            this.dataGridView2.TabStop = false;
+            // 
+            // mes
+            // 
+            this.mes.DataPropertyName = "Mes";
+            this.mes.FillWeight = 500F;
+            this.mes.HeaderText = "Mês/Ano";
+            this.mes.Name = "mes";
+            this.mes.ReadOnly = true;
+            this.mes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mes.Width = 94;
+            // 
+            // quantidade
+            // 
+            this.quantidade.DataPropertyName = "qtde";
+            this.quantidade.HeaderText = "Qtde";
+            this.quantidade.Name = "quantidade";
+            this.quantidade.ReadOnly = true;
+            this.quantidade.Width = 66;
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "Valor";
+            this.valor.FillWeight = 500F;
+            this.valor.HeaderText = "Valor(R$)";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            this.valor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.valor.Width = 96;
             // 
             // frmDashboard
             // 
@@ -790,6 +917,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1357, 709);
             this.ControlBox = false;
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvMetricaAnual);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
@@ -797,10 +926,8 @@
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.panel11);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvVendasDiarias);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -810,8 +937,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -831,10 +958,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -844,8 +969,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendasDiarias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMetricaAnual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -869,25 +995,23 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTotFunc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTotCli;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotCapacidade;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel12;
@@ -896,10 +1020,15 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblReceita;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel6;
         //private hotelDataSet hotelDataSet;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvVendasDiarias;
+        private System.Windows.Forms.DataGridView dgvMetricaAnual;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }
 }

@@ -329,6 +329,14 @@ namespace HotelPet
                     contexto.Venda.Add(venda);
                     contexto.SaveChanges();
 
+                    Historico historico = new Historico();
+                    historico.data = DateTime.Now;
+                    historico.descricao = "Venda";
+                    historico.valor = Convert.ToDouble(txtValorTotal.Text.Replace("R$", ""));
+
+                    contexto.Historico.Add(historico);
+                    contexto.SaveChanges();
+
                     int id = venda.id;
                     bll.Insert(ItemVenda, id);
 
