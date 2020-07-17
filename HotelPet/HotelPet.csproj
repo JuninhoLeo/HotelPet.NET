@@ -147,8 +147,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus, Version=5.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.5.1.2\lib\net45\EPPlus.dll</HintPath>
+    <Reference Include="EPPlusFree, Version=4.5.3.8, Culture=neutral, PublicKeyToken=85bfa0499e2db48a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlusFree.4.5.3.8\lib\net40\EPPlusFree.dll</HintPath>
     </Reference>
     <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
@@ -236,11 +236,29 @@
     <Compile Include="Admin\frmImportar.Designer.cs">
       <DependentUpon>frmImportar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\frmQuartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmQuartos.Designer.cs">
+      <DependentUpon>frmQuartos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioReservas.Designer.cs">
+      <DependentUpon>frmRelatorioReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastrarSe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCadastrarSe.Designer.cs">
       <DependentUpon>frmCadastrarSe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionarios\AddCliente\frmUpdAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\AddCliente\frmUpdAnimal.Designer.cs">
+      <DependentUpon>frmUpdAnimal.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionarios\Clinica\frmClinica.cs">
       <SubType>Form</SubType>
@@ -349,6 +367,12 @@
     <EmbeddedResource Include="Admin\frmPermissoes.resx">
       <DependentUpon>frmPermissoes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmQuartos.resx">
+      <DependentUpon>frmQuartos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Report\frmRelatorioReservas.resx">
+      <DependentUpon>frmRelatorioReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastrarSe.resx">
       <DependentUpon>frmCadastrarSe.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\AddCliente\frmAddCliente.resx">
       <DependentUpon>frmAddCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\AddCliente\frmUpdAnimal.resx">
+      <DependentUpon>frmUpdAnimal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Clinica\frmClinica.resx">
       <DependentUpon>frmClinica.cs</DependentUpon>
@@ -537,6 +564,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\done_accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEM-IMAGEM-13.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

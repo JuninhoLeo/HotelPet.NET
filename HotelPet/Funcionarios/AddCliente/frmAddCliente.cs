@@ -2,14 +2,10 @@
 using HotelPet.Camadas.MODEL;
 using HotelPet.Entity;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelPet
@@ -90,7 +86,7 @@ namespace HotelPet
             txtTelefone.Text = "";
             txtEmail.Text = "";
             txtBusca.ForeColor = Color.DarkGray;
-            txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            txtBusca.Text = "Digite aqui o Nome do Cliente:";
             btnDeletar.Enabled = false;
             btnAtualizar.Enabled = false;
             btnConfirm.Enabled = true;
@@ -104,7 +100,7 @@ namespace HotelPet
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            if (txtBusca.Text == "Digite aqui o Nome do funcionario:")
+            if (txtBusca.Text == "Digite aqui o Nome do Cliente:")
             {
                 txtBusca.ForeColor = Color.Black;
                 txtBusca.Text = "";
@@ -116,7 +112,7 @@ namespace HotelPet
             if (txtBusca.Text == "")
             {
                 txtBusca.ForeColor = Color.DarkGray;
-                txtBusca.Text = "Digite aqui o Nome do funcionario:";
+                txtBusca.Text = "Digite aqui o Nome do Cliente:";
             }
         }
 
@@ -156,7 +152,7 @@ namespace HotelPet
             dgvCliente.DataSource = contexto.Cliente.Where(x=> !x.nome.Trim().Contains("")).ToList();
 
             txtBusca.ForeColor = Color.DarkGray;
-            txtBusca.Text = "Digite aqui o Nome do funcionario:";
+            txtBusca.Text = "Digite aqui o Nome do Cliente:";
             AtualizaView();
         }
 
@@ -265,5 +261,9 @@ namespace HotelPet
             LimpaCampos();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -658,7 +658,7 @@ namespace HotelPet
 
                 Historico historico = new Historico();
                 historico.data = DateTime.Now;
-                historico.descricao = "Hotel";
+                historico.descricao = reserva.Funcionario.nome;
                 historico.valor = Convert.ToDouble(lblValorTotal.Text.Replace("R$", ""));
 
                 contexto.Historico.Add(historico);
@@ -869,6 +869,11 @@ namespace HotelPet
             {
             //    MessageBox.Show("ERRO: Nenhum item foi selecionado.", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -190,11 +190,11 @@ namespace HotelPet
           
             lblAviso.Text = "*Vazio para manter a mesma senha, ou digite uma nova para redefinir";
             txtUser.Text = funcionario.Usuario.usuario;
-            txtNome.Text = dgvPermicoes.SelectedRows[0].Cells["nome"].Value.ToString();
-            txtRG.Text = dgvPermicoes.SelectedRows[0].Cells["rg"].Value.ToString();
-            txtCPF.Text = dgvPermicoes.SelectedRows[0].Cells["cpf"].Value.ToString();
-            txtEndereco.Text = dgvPermicoes.SelectedRows[0].Cells["endereco"].Value.ToString();
-            txtUF.Text = dgvPermicoes.SelectedRows[0].Cells["uf"].Value.ToString();
+            txtNome.Text = dgvPermicoes.SelectedRows[0].Cells["Funcionário"].Value.ToString();
+            txtRG.Text = dgvPermicoes.SelectedRows[0].Cells["RG"].Value.ToString();
+            txtCPF.Text = dgvPermicoes.SelectedRows[0].Cells["CPF"].Value.ToString();
+            txtEndereco.Text = dgvPermicoes.SelectedRows[0].Cells["Endereço"].Value.ToString();
+            txtUF.Text = dgvPermicoes.SelectedRows[0].Cells["UF"].Value.ToString();
             AtualizaRdb(funcionario.Permicoes);
             txtSenha.Enabled = false;
             checkPwd.Enabled = false;
@@ -273,7 +273,25 @@ namespace HotelPet
 
             dgvPermicoes.Visible = true;
             dgvPermicoes.DataSource = "";
-            dgvPermicoes.DataSource = contexto.Funcionario.Where(x => x.nome != "").ToList();
+
+            var lista = from func in contexto.Funcionario.Where(x => x.nome != "").ToList()
+                        orderby func.nome
+                        select new
+                        {
+                            func.id,
+                            Funcionário = func.nome,
+                            CPF = func.cpf.Replace(",", "."),
+                            RG = func.rg.Replace(",", "."),
+                            Endereço = func.endereco,
+                            UF = func.uf,
+                            Usuário = func.Usuario.usuario,
+                            func.Permicoes_id,
+                            func.Usuario_id
+                        };
+
+            dgvPermicoes.DataSource = lista.ToList();
+            dgvPermicoes.Columns["Permicoes_id"].Visible = false;
+            dgvPermicoes.Columns["Usuario_id"].Visible = false;
 
             HabilitaCampos(true);
             checkPwd.Checked = false;
@@ -304,14 +322,14 @@ namespace HotelPet
             txtBusca.ForeColor = Color.DarkGray;
             txtBusca.Text = "Digite aqui o Nome do funcionario:";
 
-            rdbVendSim.Checked = true;
-            rdbCliSim.Checked = true;
-            rdbAddCliSim.Checked = true;
-            rdbConfigSim.Checked = true;
-            rdbHotelSim.Checked = true;
-            rdbClinSim.Checked = true;
-            rdbDashSim.Checked = true;
-            rdbProdSim.Checked = true;
+            rdbVendNao.Checked = true;
+            rdbCliNao.Checked = true;
+            rdbAddCliNao.Checked = true;
+            rdbConfigNao.Checked = true;
+            rdbHotelNao.Checked = true;
+            rdbClinNao.Checked = true;
+            rdbDashNao.Checked = true;
+            rdbProdNao.Checked = true;
 
             checkPwd.Checked = false;
 
@@ -553,7 +571,25 @@ namespace HotelPet
             Contexto contexto = new Contexto();
 
             dgvPermicoes.DataSource = "";
-            dgvPermicoes.DataSource = contexto.Funcionario.Where(x => x.nome == txtBusca.Text).ToList();
+
+            var lista = from func in contexto.Funcionario.Where(x => x.nome == txtBusca.Text).ToList()
+                        orderby func.nome
+                        select new
+                        {
+                            func.id,
+                            Funcionário = func.nome,
+                            CPF = func.cpf.Replace(",", "."),
+                            RG = func.rg.Replace(",", "."),
+                            Endereço = func.endereco,
+                            UF = func.uf,
+                            Usuário = func.Usuario.usuario,
+                            func.Permicoes_id,
+                            func.Usuario_id
+                        };
+
+            dgvPermicoes.DataSource = lista.ToList();
+            dgvPermicoes.Columns["Permicoes_id"].Visible = false;
+            dgvPermicoes.Columns["Usuario_id"].Visible = false;
         }
 
         private void txtCPF_KeyUp(object sender, KeyEventArgs e)
@@ -567,6 +603,11 @@ namespace HotelPet
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAviso_Click(object sender, EventArgs e)
         {
 
         }

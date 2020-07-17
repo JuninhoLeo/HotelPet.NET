@@ -622,6 +622,7 @@
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(193, 67);
             this.lblAviso.TabIndex = 59;
+            this.lblAviso.Click += new System.EventHandler(this.lblAviso_Click);
             // 
             // lblWarning
             // 

@@ -29,12 +29,18 @@ namespace HotelPet
 
             btnCadastros.Visible = permicoes.frmAddCliente;
             btnConsultar.Visible = permicoes.frmCliente;
-            //btnClinica.Visible = permicoes.frmClinica;
             btnConfig.Visible = permicoes.frmConfiguracoes;
             btnHotel.Visible = permicoes.frmHotel;
-            btnDash.Visible = permicoes.frmPainel;
+            btnDash.Visible = false;
             btnAdmin.Visible = permicoes.frmProdutos;
             btnVendas.Visible = permicoes.frmVenda;
+
+            if (permicoes.frmPainel)
+            {
+                frmDashboard frm = new frmDashboard();
+                frm.MdiParent = this;
+                frm.Show();
+            }
 
         }
 
@@ -79,8 +85,8 @@ namespace HotelPet
         {
             
             frmVenda vendas = new frmVenda(btnVendas);
-            vendas.MdiParent = this;
-            vendas.Show();
+            //vendas.MdiParent = this;
+            vendas.ShowDialog();
         }
 
         private void animaisToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,8 +98,8 @@ namespace HotelPet
         private void hotelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmHotel hotel = new frmHotel();
-            hotel.MdiParent = this;
-            hotel.Show();
+            //hotel.MdiParent = this;
+            hotel.ShowDialog();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,6 +134,19 @@ namespace HotelPet
         private void serviçosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadServicos frm = new frmCadServicos();
+            frm.ShowDialog();
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            frmDashboard frm = new frmDashboard();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void quartosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuartos frm = new frmQuartos();
             frm.ShowDialog();
         }
     }

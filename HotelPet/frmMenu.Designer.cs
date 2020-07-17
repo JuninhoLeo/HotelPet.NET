@@ -48,6 +48,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.quartosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -78,12 +79,14 @@
             this.btnDash.Name = "btnDash";
             this.btnDash.Size = new System.Drawing.Size(161, 24);
             this.btnDash.Text = "Painel de Controle";
+            this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
             // 
             // btnAdmin
             // 
             this.btnAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnProdutos,
-            this.serviçosToolStripMenuItem});
+            this.serviçosToolStripMenuItem,
+            this.quartosToolStripMenuItem});
             this.btnAdmin.Image = global::HotelPet.Properties.Resources.businessapplication_distributor_report_document_negocio_2319;
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(139, 24);
@@ -197,6 +200,13 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // quartosToolStripMenuItem
+            // 
+            this.quartosToolStripMenuItem.Name = "quartosToolStripMenuItem";
+            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.quartosToolStripMenuItem.Text = "&Quartos";
+            this.quartosToolStripMenuItem.Click += new System.EventHandler(this.quartosToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnConsultar;
         private System.Windows.Forms.ToolStripMenuItem animaisCadastradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesCadstradosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quartosToolStripMenuItem;
     }
 }
 

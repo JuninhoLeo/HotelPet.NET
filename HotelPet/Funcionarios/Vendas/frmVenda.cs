@@ -14,10 +14,12 @@ namespace HotelPet
     {
         List<ListaCompra> ItemVenda = new List<ListaCompra>();
         //List<ListaCompra> listaCompra = new List<ListaCompra>();
+        private double qtdeProd { get; set; } = 0;
+        private double qtdeCompra { get; set; } = 0;
 
         public frmVenda(ToolStripMenuItem btnVendas)
         {
-            btnVendas.Visible = false;
+            //btnVendas.Visible = false;
             InitializeComponent();
         }
 
@@ -102,6 +104,7 @@ namespace HotelPet
 
         private void Button5_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 Contexto contexto = new Contexto();
@@ -134,7 +137,7 @@ namespace HotelPet
 
         public void LimpaCampos()
         {
-
+            
             txtCod.Text = "";
             txtQuantidade.Text = "";
             txtValorUnt.Text = "";
@@ -214,12 +217,21 @@ namespace HotelPet
                 var cod = Convert.ToInt64(txtCod.Text);
                 try
                 {
-                    var prod = contexto.Produto.FirstOrDefault(x => x.codigo == cod);
+
+                    var prod = contexto.Produto.FirstOrDefault(x => x.codigo == cod && x.quantidade > 0);
                     if (prod != null)
                     {
                         lblNomeProdutoServico.Text = prod.descricao;
                         txtValUnt.Text = prod.valor.ToString("C");
                         txtValorUnt.Text = prod.valor.ToString("C");
+
+                        qtdeProd = prod.quantidade;
+                        qtdeCompra = ItemVenda.Where(x => x.Codigo == prod.codigo).ToList().Sum(x => x.Quantidade);
+                        
+                        if ((qtdeProd - qtdeCompra) <= 0 )
+                        {
+                            lblNomeProdutoServico.Text = "";
+                        }
                     }
                 }
                 catch (Exception)
@@ -247,17 +259,20 @@ namespace HotelPet
 
         private void TxtQuantidade_Leave(object sender, EventArgs e)
         {
-            if (txtQuantidade.Text != "")
+            var qtde = (txtQuantidade.Text.Trim() != "") ? Convert.ToDouble(txtQuantidade.Text) : 0;
+            if ((qtdeProd - qtde) < 0)
+            {
+                MessageBox.Show("ERRO: Quantidade indisponível!", "Sem Estoque", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQuantidade.Text = qtdeProd.ToString();
+            }
+            else if (txtQuantidade.Text != "")
             {
                 var abc = txtQuantidade.Text.Replace(".", ",");
                 double valor = Convert.ToDouble(abc);
                 string Qtde = valor.ToString();
                 txtQtde.Text = Qtde;
             }
-            //else
-            //{
-            //    MessageBox.Show("Informe a quantidade!");
-            //}
+            
         }
 
         private void TxtValorUnt_Leave(object sender, EventArgs e)
@@ -331,7 +346,7 @@ namespace HotelPet
 
                     Historico historico = new Historico();
                     historico.data = DateTime.Now;
-                    historico.descricao = "Venda";
+                    historico.descricao = cmbFunc.Text;
                     historico.valor = Convert.ToDouble(txtValorTotal.Text.Replace("R$", ""));
 
                     contexto.Historico.Add(historico);
@@ -343,10 +358,11 @@ namespace HotelPet
                     ItemVenda.Clear();
                     AtualizaView(dgvCompra);
                 }
+                DialogResult = new DialogResult();
             }
             else
             {
-                DialogResult = DialogResult.Retry;
+                DialogResult = new DialogResult();
                 List<ListaCompra> Aux = new List<ListaCompra>();
                 ItemVenda = Aux;
                 AtualizaView(dgvCompra);
@@ -458,6 +474,16 @@ namespace HotelPet
         {
             frmConsulta frm = new frmConsulta();
             frm.ShowDialog();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();   
         }
     }
 }

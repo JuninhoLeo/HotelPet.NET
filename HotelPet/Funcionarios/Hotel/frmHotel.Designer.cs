@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -132,6 +133,8 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblCodigoReserva = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
@@ -165,8 +168,6 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.data = new System.Windows.Forms.Timer(this.components);
             this.Hora = new System.Windows.Forms.Timer(this.components);
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblCodigoReserva = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -207,10 +208,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
+            this.tabControl1.Location = new System.Drawing.Point(-1, -2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1360, 660);
+            this.tabControl1.Size = new System.Drawing.Size(1364, 662);
             this.tabControl1.TabIndex = 4;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -218,6 +219,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.bunifuFlatButton1);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.lblData);
             this.tabPage1.Controls.Add(this.lblHora);
@@ -237,9 +239,46 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1352, 630);
+            this.tabPage1.Size = new System.Drawing.Size(1356, 632);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Check-in";
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Active = false;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "X";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = false;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = false;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(1288, 13);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Red;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(52, 33);
+            this.bunifuFlatButton1.TabIndex = 97;
+            this.bunifuFlatButton1.Text = "X";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Black;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // groupBox4
             // 
@@ -327,9 +366,9 @@
             // cmbNumero
             // 
             this.cmbNumero.FormattingEnabled = true;
-            this.cmbNumero.Location = new System.Drawing.Point(167, 63);
+            this.cmbNumero.Location = new System.Drawing.Point(97, 63);
             this.cmbNumero.Name = "cmbNumero";
-            this.cmbNumero.Size = new System.Drawing.Size(87, 25);
+            this.cmbNumero.Size = new System.Drawing.Size(157, 25);
             this.cmbNumero.TabIndex = 80;
             this.cmbNumero.Leave += new System.EventHandler(this.cmbNumero_Leave);
             // 
@@ -340,16 +379,16 @@
             this.label19.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(20, 66);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(143, 19);
+            this.label19.Size = new System.Drawing.Size(70, 19);
             this.label19.TabIndex = 81;
-            this.label19.Text = "Numero do quarto:";
+            this.label19.Text = "Numero:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(66, 105);
+            this.label17.Location = new System.Drawing.Point(25, 108);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(97, 19);
             this.label17.TabIndex = 78;
@@ -359,18 +398,18 @@
             // cmbQuartos
             // 
             this.cmbQuartos.FormattingEnabled = true;
-            this.cmbQuartos.Location = new System.Drawing.Point(167, 24);
+            this.cmbQuartos.Location = new System.Drawing.Point(96, 24);
             this.cmbQuartos.Name = "cmbQuartos";
-            this.cmbQuartos.Size = new System.Drawing.Size(211, 25);
+            this.cmbQuartos.Size = new System.Drawing.Size(282, 25);
             this.cmbQuartos.TabIndex = 16;
             this.cmbQuartos.Leave += new System.EventHandler(this.cmbQuartos_Leave);
             // 
             // cmbFunc
             // 
             this.cmbFunc.FormattingEnabled = true;
-            this.cmbFunc.Location = new System.Drawing.Point(167, 102);
+            this.cmbFunc.Location = new System.Drawing.Point(128, 102);
             this.cmbFunc.Name = "cmbFunc";
-            this.cmbFunc.Size = new System.Drawing.Size(213, 25);
+            this.cmbFunc.Size = new System.Drawing.Size(252, 25);
             this.cmbFunc.TabIndex = 17;
             // 
             // label1
@@ -427,9 +466,9 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 19);
+            this.label4.Size = new System.Drawing.Size(81, 19);
             this.label4.TabIndex = 55;
-            this.label4.Text = "Descrição do quarto:";
+            this.label4.Text = "Descrição:";
             // 
             // label6
             // 
@@ -508,7 +547,7 @@
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox4.Location = new System.Drawing.Point(577, 13);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(763, 207);
+            this.pictureBox4.Size = new System.Drawing.Size(767, 207);
             this.pictureBox4.TabIndex = 90;
             this.pictureBox4.TabStop = false;
             // 
@@ -550,7 +589,7 @@
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox3.Location = new System.Drawing.Point(577, 225);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(763, 267);
+            this.pictureBox3.Size = new System.Drawing.Size(767, 267);
             this.pictureBox3.TabIndex = 74;
             this.pictureBox3.TabStop = false;
             // 
@@ -931,7 +970,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1352, 630);
+            this.tabPage2.Size = new System.Drawing.Size(1356, 632);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Check-out";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -1040,14 +1079,14 @@
             this.dgvCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCheckOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheckOut.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCheckOut.Enabled = false;
             this.dgvCheckOut.GridColor = System.Drawing.Color.LightGray;
             this.dgvCheckOut.Location = new System.Drawing.Point(683, 96);
@@ -1467,9 +1506,33 @@
             this.tabPage3.Controls.Add(this.pictureBox10);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1352, 630);
+            this.tabPage3.Size = new System.Drawing.Size(1356, 632);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Consumo";
+            // 
+            // lblCodigoReserva
+            // 
+            this.lblCodigoReserva.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCodigoReserva.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCodigoReserva.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoReserva.Location = new System.Drawing.Point(1132, 77);
+            this.lblCodigoReserva.Name = "lblCodigoReserva";
+            this.lblCodigoReserva.Size = new System.Drawing.Size(177, 25);
+            this.lblCodigoReserva.TabIndex = 15;
+            this.lblCodigoReserva.Text = "0";
+            this.lblCodigoReserva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1004, 83);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(124, 19);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Código da reserva:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button6
             // 
@@ -1825,43 +1888,21 @@
             this.Hora.Interval = 1000;
             this.Hora.Tick += new System.EventHandler(this.Hora_Tick);
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1004, 83);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(124, 19);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Código da reserva:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblCodigoReserva
-            // 
-            this.lblCodigoReserva.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblCodigoReserva.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCodigoReserva.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoReserva.Location = new System.Drawing.Point(1132, 77);
-            this.lblCodigoReserva.Name = "lblCodigoReserva";
-            this.lblCodigoReserva.Size = new System.Drawing.Size(177, 25);
-            this.lblCodigoReserva.TabIndex = 15;
-            this.lblCodigoReserva.Text = "0";
-            this.lblCodigoReserva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmHotel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1360, 660);
+            this.ClientSize = new System.Drawing.Size(1360, 665);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(0, 150);
+            this.Location = new System.Drawing.Point(2, 55);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHotel";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Hotel";
             this.Load += new System.EventHandler(this.frmHotel_Load);
             this.tabControl1.ResumeLayout(false);
@@ -2048,5 +2089,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cor;
         private System.Windows.Forms.Label lblCodigoReserva;
         private System.Windows.Forms.Label label12;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }

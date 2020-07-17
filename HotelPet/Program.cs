@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using HotelPet.Admin.Report;
+using System;
 using System.Windows.Forms;
 
 namespace HotelPet
@@ -15,11 +13,9 @@ namespace HotelPet
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);            
-
-          //  Application.Run(new frmLogin());
-            Application.Run(new frmDashboard());
-
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmLogin());
+            //Application.Run(new frmReservas());
         }
     }
 }

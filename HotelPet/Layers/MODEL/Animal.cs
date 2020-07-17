@@ -29,7 +29,7 @@ namespace HotelPet.Camadas.MODEL
         [StringLength(25)]
         public string pelagem { get; set; }
 
-        [StringLength(25)]
+        [StringLength(100)]
         public string cor { get; set; }
 
         [StringLength(10)]

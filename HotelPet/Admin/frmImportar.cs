@@ -69,7 +69,7 @@ namespace HotelPet.Admin
                 var reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
 
                 ProdutosBLL bll = new ProdutosBLL();
-                Produtos produtos = new Produtos();
+                Produtos produto = new Produtos();
 
                 reader.Read();
                 lblStatus.Text = "Carregando...";
@@ -86,12 +86,22 @@ namespace HotelPet.Admin
                     lblProgress.Text = progress.ToString() + "%";
                     lblProgress.Refresh();
 
-                    produtos.codigo = (reader[0] != null) ? Convert.ToInt32(reader[0]) : 0;
-                    produtos.descricao = (reader[1] != null) ? reader[1].ToString() : "";
-                    produtos.quantidade = (reader[2] != null) ? Convert.ToDouble(reader[2].ToString()) : 0;
-                    produtos.valor = (reader[3] != null) ? Convert.ToDouble(reader[3].ToString()) : 0;
+                    produto.codigo = (reader[0] != null) ? Convert.ToInt32(reader[0]) : 0;
+                    produto.descricao = (reader[1] != null) ? reader[1].ToString() : "";
+                    produto.quantidade = (reader[2] != null) ? Convert.ToDouble(reader[2].ToString()) : 0;
+                    produto.valor = (reader[3] != null) ? Convert.ToDouble(reader[3].ToString()) : 0;
 
-                    bll.VerificaProduto(produtos);
+                    string remover = (reader[4] != null) ? reader[4].ToString() : "N";
+
+                    if (remover.ToLower() == "s")
+                    {
+                        bll.Delete(produto);
+                    }
+                    else
+                    {
+                        bll.VerificaProduto(produto);
+                    }
+
                 }
                 MessageBox.Show("Importado com êxito!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

@@ -28,6 +28,15 @@ namespace HotelPet.Layers.BLL
 
                 dal.Update(prod);
             }
+            
         }
+
+        public void Delete(Produtos produto)
+        {
+            ProdutosDAL dal = new ProdutosDAL();
+
+            dal.Delete(produto);
+        }
+
     }
 }

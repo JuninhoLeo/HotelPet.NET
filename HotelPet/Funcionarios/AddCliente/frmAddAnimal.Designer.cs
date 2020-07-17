@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnimais));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtEspecie = new System.Windows.Forms.TextBox();
             this.txtCor = new System.Windows.Forms.TextBox();
             this.txtPelagem = new System.Windows.Forms.TextBox();
@@ -61,7 +60,6 @@
             this.rbdMedio = new System.Windows.Forms.RadioButton();
             this.rbdPequeno = new System.Windows.Forms.RadioButton();
             this.rbdGrande = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtCuidados = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.lblObs = new System.Windows.Forms.Label();
@@ -76,8 +74,6 @@
             this.datePai = new System.Windows.Forms.DateTimePicker();
             this.dateMae = new System.Windows.Forms.DateTimePicker();
             this.lblImagem = new System.Windows.Forms.Label();
-            this.pbxImage = new System.Windows.Forms.PictureBox();
-            this.btnDiretorio = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -85,22 +81,19 @@
             this.cmbCli = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Imagem = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblId = new System.Windows.Forms.Label();
+            this.btnDiretorio = new System.Windows.Forms.Button();
+            this.pbxImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxPorte.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gbxSexo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1356, 626);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtEspecie
             // 
@@ -451,16 +444,6 @@
             this.rbdGrande.Text = "Grande";
             this.rbdGrande.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(342, 2);
-            this.pictureBox2.TabIndex = 60;
-            this.pictureBox2.TabStop = false;
-            // 
             // txtCuidados
             // 
             this.txtCuidados.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -613,30 +596,6 @@
             this.lblImagem.TabIndex = 51;
             this.lblImagem.Text = "Imagem:";
             // 
-            // pbxImage
-            // 
-            this.pbxImage.BackColor = System.Drawing.Color.DarkGray;
-            this.pbxImage.BackgroundImage = global::HotelPet.Properties.Resources.camera;
-            this.pbxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxImage.Location = new System.Drawing.Point(1093, 52);
-            this.pbxImage.Name = "pbxImage";
-            this.pbxImage.Size = new System.Drawing.Size(212, 275);
-            this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImage.TabIndex = 52;
-            this.pbxImage.TabStop = false;
-            this.pbxImage.Click += new System.EventHandler(this.pbxImage_Click);
-            // 
-            // btnDiretorio
-            // 
-            this.btnDiretorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDiretorio.BackgroundImage")));
-            this.btnDiretorio.Location = new System.Drawing.Point(1235, 344);
-            this.btnDiretorio.Name = "btnDiretorio";
-            this.btnDiretorio.Size = new System.Drawing.Size(70, 71);
-            this.btnDiretorio.TabIndex = 22;
-            this.btnDiretorio.UseVisualStyleBackColor = true;
-            this.btnDiretorio.Click += new System.EventHandler(this.btnDiretorio_Click);
-            // 
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -651,22 +610,22 @@
             // btnGravar
             // 
             this.btnGravar.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGravar.Location = new System.Drawing.Point(1115, 519);
+            this.btnGravar.Location = new System.Drawing.Point(1115, 419);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(224, 43);
             this.btnGravar.TabIndex = 26;
-            this.btnGravar.Text = "&Gravar";
+            this.btnGravar.Text = "&Gravar Novo";
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(1115, 472);
+            this.btnSair.Location = new System.Drawing.Point(1115, 517);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(224, 43);
             this.btnSair.TabIndex = 25;
-            this.btnSair.Text = "&Sair";
+            this.btnSair.Text = "&Buscar";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -710,6 +669,106 @@
             this.Imagem.Size = new System.Drawing.Size(127, 19);
             this.Imagem.TabIndex = 55;
             // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Active = false;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "X";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(1320, 12);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Red;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(39, 38);
+            this.bunifuFlatButton1.TabIndex = 56;
+            this.bunifuFlatButton1.Text = "X";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Black;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1115, 468);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(224, 43);
+            this.button1.TabIndex = 57;
+            this.button1.Text = "&Atualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblId
+            // 
+            this.lblId.BackColor = System.Drawing.Color.White;
+            this.lblId.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(1201, 364);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(138, 45);
+            this.lblId.TabIndex = 58;
+            // 
+            // btnDiretorio
+            // 
+            this.btnDiretorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDiretorio.BackgroundImage")));
+            this.btnDiretorio.Location = new System.Drawing.Point(1235, 275);
+            this.btnDiretorio.Name = "btnDiretorio";
+            this.btnDiretorio.Size = new System.Drawing.Size(70, 71);
+            this.btnDiretorio.TabIndex = 22;
+            this.btnDiretorio.UseVisualStyleBackColor = true;
+            this.btnDiretorio.Click += new System.EventHandler(this.btnDiretorio_Click);
+            // 
+            // pbxImage
+            // 
+            this.pbxImage.BackColor = System.Drawing.Color.DarkGray;
+            this.pbxImage.BackgroundImage = global::HotelPet.Properties.Resources.SEM_IMAGEM_13;
+            this.pbxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxImage.Location = new System.Drawing.Point(1093, 52);
+            this.pbxImage.Name = "pbxImage";
+            this.pbxImage.Size = new System.Drawing.Size(212, 217);
+            this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImage.TabIndex = 52;
+            this.pbxImage.TabStop = false;
+            this.pbxImage.Click += new System.EventHandler(this.pbxImage_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.Location = new System.Drawing.Point(19, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(342, 2);
+            this.pictureBox2.TabIndex = 60;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1356, 616);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frmAnimais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -717,6 +776,9 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1364, 632);
             this.ControlBox = false;
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.Imagem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCli);
@@ -766,13 +828,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
             this.Load += new System.EventHandler(this.Produtos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbxPorte.ResumeLayout(false);
             this.gbxPorte.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gbxSexo.ResumeLayout(false);
             this.gbxSexo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -836,5 +898,8 @@
         private System.Windows.Forms.ComboBox cmbCli;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Imagem;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblId;
     }
 }

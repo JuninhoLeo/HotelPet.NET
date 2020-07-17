@@ -69,7 +69,6 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinF
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.Deprecated.dll
-C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\EPPlus.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\SD.LLBLGen.Pro.ORMSupportClasses.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
@@ -97,7 +96,6 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinF
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
-C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\EPPlus.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\SD.LLBLGen.Pro.ORMSupportClasses.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\EntityFramework.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\EntityFramework.SqlServer.dll
@@ -134,3 +132,8 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funci
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.Hotel.frmConsulta.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.frmCadServicos.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.Clinica.frmClinica.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\EPPlusFree.dll
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\EPPlusFree.xml
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.Report.frmRelatorioReservas.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.AddCliente.frmUpdAnimal.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.frmQuartos.resources
