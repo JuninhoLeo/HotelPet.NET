@@ -84,7 +84,7 @@ namespace HotelPet
 
             //dgvMetricaAnual
             var Metricas = from metrica in contexto.Historico.ToList()
-                           orderby metrica.data ascending
+                           orderby metrica.data descending
                            group metrica by new { metrica.data.Year, metrica.data.Month } into m
                            select new
                            {
@@ -243,7 +243,7 @@ namespace HotelPet
 
             //dgvMetricaAnual
             var Metricas = from metrica in contexto.Historico.ToList()
-                           orderby metrica.data ascending
+                           orderby metrica.data descending
                            group metrica by new { metrica.data.Year, metrica.data.Month } into m
                            select new
                            {

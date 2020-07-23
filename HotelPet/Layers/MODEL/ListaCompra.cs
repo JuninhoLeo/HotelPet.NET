@@ -15,7 +15,6 @@ namespace HotelPet.Layers.MODEL
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
-        public long Codigo { get; set; }
         public string descricao { get; set; }
         public double Quantidade { get; set; }
         public double valor { get; set; }
@@ -25,5 +24,10 @@ namespace HotelPet.Layers.MODEL
         [ForeignKey("Vendas")]
         public int Vendas_id { get; set; }
         virtual public Venda Vendas { get; set; }
+        
+        [ForeignKey("Produtos")]
+        public long Codigo { get; set; }
+        virtual public Produtos Produtos { get; set; }
+
     }
 }
