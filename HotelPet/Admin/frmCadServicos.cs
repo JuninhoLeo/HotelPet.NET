@@ -55,12 +55,13 @@ namespace HotelPet.Admin
             if (txtId.Text != "")
             {
                 int id = Convert.ToInt32(txtId.Text);
-                Servicos servicos = contexto.Servico.FirstOrDefault(x => x.id == id);
+                Produtos servicos = contexto.Produto.FirstOrDefault(x => x.id == id);
 
                 servicos.descricao = txtDescricao.Text;
                 servicos.quantidade = Convert.ToDouble(txtQtde.Text);
                 servicos.valor = Convert.ToDouble(txtValor.Text);
                 servicos.isQuarto = false;
+                servicos.isServico = true;
 
                 contexto.Entry(servicos).State = EntityState.Modified;
                 contexto.SaveChanges();
@@ -81,10 +82,10 @@ namespace HotelPet.Admin
             txtValor.Text = "";
 
             dgvServicos.DataSource = "";
-            var lista = from Serv in contexto.Servico.Where(x=> x.isQuarto == false).ToList()
+            var lista = from Serv in contexto.Produto.Where(x=> x.isQuarto == false && x.isServico == true).ToList()
                         select new
                         {
-                            Código = Serv.id,
+                            Código = Serv.codigo,
                             Descrição = Serv.descricao,
                             Qtde = Serv.quantidade,
                             Valor = Serv.valor
@@ -110,10 +111,11 @@ namespace HotelPet.Admin
             var Texto = txtBusca.Text.Trim().ToLower();
 
             dgvServicos.DataSource = "";
-            var lista = from Serv in contexto.Servico.Where(x=> x.descricao.Trim().ToLower().Contains(Texto) && x.isQuarto == false).ToList()
+            var lista = from Serv in contexto.Produto.Where(x=> x.descricao.Trim().ToLower().Contains(Texto) 
+                                                             && x.isQuarto == false && x.isServico == true).ToList()
                         select new
                         {
-                            Código = Serv.id,
+                            Código = Serv.codigo,
                             Descrição = Serv.descricao,
                             Qtde = Serv.quantidade,
                             Valor = Serv.valor
@@ -139,7 +141,7 @@ namespace HotelPet.Admin
             {
                 int id = Convert.ToInt32(txtId.Text);
                 ServicosBLL BLL = new ServicosBLL();
-                Servicos servico = contexto.Servico.FirstOrDefault(x => x.id == id);
+                Produtos servico = contexto.Produto.FirstOrDefault(x => x.id == id);
 
                 DialogResult dialogResult = MessageBox.Show("Você tem certeza em remover este serviço?\n Irá remover tambem todos os dados que estão ligados a ele", "VOCÊ TEM CERTEZA?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
@@ -178,14 +180,22 @@ namespace HotelPet.Admin
 
             if (estaOk)
             {
-                Servicos servico = new Servicos();
+                Produtos servico = new Produtos();
+
 
                 servico.descricao = txtDescricao.Text;
                 servico.quantidade = Convert.ToDouble(txtQtde.Text);
                 servico.valor = Convert.ToDouble(txtValor.Text);
                 servico.isQuarto = false;
+                servico.isServico = true;
 
-                contexto.Servico.Add(servico);
+                contexto.Produto.Add(servico);
+                contexto.SaveChanges();
+                contexto.Entry(servico).Reload();
+
+                var serv = contexto.Produto.FirstOrDefault(x => x.id == servico.id);
+                serv.codigo = servico.id;
+                contexto.Entry(serv).State = EntityState.Modified;
                 contexto.SaveChanges();
 
                 LimpaCampos();

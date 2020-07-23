@@ -96,7 +96,9 @@ namespace HotelPet
             dgvMetricaAnual.DataSource = Metricas.ToList();
 
             //dgvProdAbaixoEstoque
-            var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= 0).ToList()
+            var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= 0 
+                                                                          && x.isQuarto == false
+                                                                          && x.isServico == false).ToList()
                                     orderby prod.quantidade ascending
                                     select new
                                     {
@@ -112,7 +114,8 @@ namespace HotelPet
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-
+            frmRelatorioVendas frm = new frmRelatorioVendas();
+            frm.ShowDialog();
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -128,7 +131,9 @@ namespace HotelPet
             if (txtQtde.Text.Trim() != "")
             {
                 int qtde = Convert.ToInt32(txtQtde.Text.Trim());
-                var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= qtde).ToList()
+                var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= qtde
+                                                                              && x.isQuarto == false
+                                                                              && x.isServico == false).ToList()
                                         orderby prod.quantidade ascending
                                         select new
                                         {
@@ -162,7 +167,9 @@ namespace HotelPet
             Contexto contexto = new Contexto();
 
             int qtde = (txtQtde.Text.Trim() == "") ? 0 : Convert.ToInt32(txtQtde.Text.Trim());
-            var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= qtde).ToList()
+            var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= qtde
+                                                                          && x.isQuarto == false
+                                                                          && x.isServico == false).ToList()
                                     orderby prod.quantidade ascending
                                     select new
                                     {
@@ -248,7 +255,9 @@ namespace HotelPet
 
             //dgvProdAbaixoEstoque
             int qtde = Convert.ToInt32(txtQtde.Text.Trim());
-            var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= qtde).ToList()
+            var ProdAbaixoEstoque = from prod in contexto.Produto.Where(x => x.quantidade <= qtde
+                                                                          && x.isQuarto == false
+                                                                          && x.isServico == false).ToList()
                                     orderby prod.quantidade ascending
                                     select new
                                     {
@@ -259,6 +268,30 @@ namespace HotelPet
             dgvProdAbaixoEstoque.DataSource = "";
             dgvProdAbaixoEstoque.DataSource = ProdAbaixoEstoque.ToList();
             txtProdAbaixoEstoque.Text = "Total de Produtos = " + ProdAbaixoEstoque.Count();
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            frmRelatorioProdutos frm = new frmRelatorioProdutos();
+            frm.ShowDialog();
+        }
+
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            frmRelatorioConsumo frm = new frmRelatorioConsumo();
+            frm.ShowDialog();
+        }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            frmRelatorioFuncionarios frm = new frmRelatorioFuncionarios();
+            frm.ShowDialog();
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            frmRelatorioServicos frm = new frmRelatorioServicos();
+            frm.ShowDialog();
         }
     }
 }

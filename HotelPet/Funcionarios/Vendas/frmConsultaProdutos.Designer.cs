@@ -1,6 +1,6 @@
 ﻿namespace HotelPet.Funcionarios.Vendas
 {
-    partial class frmConsulta
+    partial class frmConsultaProdutos
     {
         /// <summary>
         /// Required designer variable.

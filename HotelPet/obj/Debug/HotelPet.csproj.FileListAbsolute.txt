@@ -128,7 +128,6 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.dll
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.pdb
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\ExcelDataReader.xml
-C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.Vendas.frmConsulta.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.Hotel.frmConsulta.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.frmCadServicos.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.Clinica.frmClinica.resources
@@ -137,3 +136,9 @@ C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\bin\Debug\EPPlusFree.xml
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.Report.frmRelatorioReservas.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.AddCliente.frmUpdAnimal.resources
 C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.frmQuartos.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.Report.frmRelatorioProdutos.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.Report.frmRelatorioConsumo.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.Report.frmRelatorioVendas.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.Report.frmRelatorioFuncionarios.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Admin.Report.frmRelatorioServicos.resources
+C:\Users\JrJos\Desktop\ProjetoTcc\HotelPet.NET\HotelPet\obj\Debug\HotelPet.Funcionarios.Vendas.frmConsultaProdutos.resources

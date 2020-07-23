@@ -242,11 +242,41 @@
     <Compile Include="Admin\frmQuartos.Designer.cs">
       <DependentUpon>frmQuartos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Report\frmRelatorioConsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioConsumo.Designer.cs">
+      <DependentUpon>frmRelatorioConsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioFuncionarios.Designer.cs">
+      <DependentUpon>frmRelatorioFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioProdutos.Designer.cs">
+      <DependentUpon>frmRelatorioProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Report\frmRelatorioReservas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\Report\frmRelatorioReservas.Designer.cs">
       <DependentUpon>frmRelatorioReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioServicos.Designer.cs">
+      <DependentUpon>frmRelatorioServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Report\frmRelatorioVendas.Designer.cs">
+      <DependentUpon>frmRelatorioVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadastrarSe.cs">
       <SubType>Form</SubType>
@@ -272,11 +302,11 @@
     <Compile Include="Funcionarios\Hotel\frmConsulta.Designer.cs">
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcionarios\Vendas\frmConsulta.cs">
+    <Compile Include="Funcionarios\Vendas\frmConsultaProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Funcionarios\Vendas\frmConsulta.Designer.cs">
-      <DependentUpon>frmConsulta.cs</DependentUpon>
+    <Compile Include="Funcionarios\Vendas\frmConsultaProdutos.Designer.cs">
+      <DependentUpon>frmConsultaProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\InterfaceTools.cs" />
     <Compile Include="Layers\BLL\ClienteBLL.cs" />
@@ -293,7 +323,6 @@
     <Compile Include="Layers\MODEL\Consumo.cs" />
     <Compile Include="Layers\MODEL\Historico.cs" />
     <Compile Include="Layers\MODEL\ListaCompra.cs" />
-    <Compile Include="Layers\MODEL\Servicos.cs" />
     <Compile Include="Layers\MODEL\Cliente.cs" />
     <Compile Include="Layers\MODEL\Funcionario.cs" />
     <Compile Include="Layers\MODEL\Animal.cs" />
@@ -370,8 +399,23 @@
     <EmbeddedResource Include="Admin\frmQuartos.resx">
       <DependentUpon>frmQuartos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Report\frmRelatorioConsumo.resx">
+      <DependentUpon>frmRelatorioConsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Report\frmRelatorioFuncionarios.resx">
+      <DependentUpon>frmRelatorioFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Report\frmRelatorioProdutos.resx">
+      <DependentUpon>frmRelatorioProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Report\frmRelatorioReservas.resx">
       <DependentUpon>frmRelatorioReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Report\frmRelatorioServicos.resx">
+      <DependentUpon>frmRelatorioServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Report\frmRelatorioVendas.resx">
+      <DependentUpon>frmRelatorioVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastrarSe.resx">
       <DependentUpon>frmCadastrarSe.cs</DependentUpon>
@@ -391,8 +435,8 @@
     <EmbeddedResource Include="Funcionarios\Hotel\frmConsulta.resx">
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Funcionarios\Vendas\frmConsulta.resx">
-      <DependentUpon>frmConsulta.cs</DependentUpon>
+    <EmbeddedResource Include="Funcionarios\Vendas\frmConsultaProdutos.resx">
+      <DependentUpon>frmConsultaProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Vendas\frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>

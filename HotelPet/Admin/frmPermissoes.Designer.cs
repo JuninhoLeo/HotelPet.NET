@@ -246,7 +246,7 @@
             this.gpbVendas.Controls.Add(this.label1);
             this.gpbVendas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gpbVendas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbVendas.Location = new System.Drawing.Point(728, 291);
+            this.gpbVendas.Location = new System.Drawing.Point(728, 461);
             this.gpbVendas.Name = "gpbVendas";
             this.gpbVendas.Size = new System.Drawing.Size(268, 33);
             this.gpbVendas.TabIndex = 40;
@@ -293,11 +293,12 @@
             this.gpbClientes.Controls.Add(this.rdbCliNao);
             this.gpbClientes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbClientes.Location = new System.Drawing.Point(728, 324);
+            this.gpbClientes.Location = new System.Drawing.Point(728, 527);
             this.gpbClientes.Name = "gpbClientes";
             this.gpbClientes.Size = new System.Drawing.Size(268, 33);
             this.gpbClientes.TabIndex = 41;
             this.gpbClientes.TabStop = false;
+            this.gpbClientes.Visible = false;
             // 
             // rdbCliSim
             // 
@@ -339,7 +340,7 @@
             this.gpbAddClientes.Controls.Add(this.label5);
             this.gpbAddClientes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbAddClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbAddClientes.Location = new System.Drawing.Point(728, 357);
+            this.gpbAddClientes.Location = new System.Drawing.Point(728, 296);
             this.gpbAddClientes.Name = "gpbAddClientes";
             this.gpbAddClientes.Size = new System.Drawing.Size(268, 33);
             this.gpbAddClientes.TabIndex = 42;
@@ -386,7 +387,7 @@
             this.gpbDash.Controls.Add(this.label7);
             this.gpbDash.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbDash.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbDash.Location = new System.Drawing.Point(728, 488);
+            this.gpbDash.Location = new System.Drawing.Point(728, 395);
             this.gpbDash.Name = "gpbDash";
             this.gpbDash.Size = new System.Drawing.Size(268, 33);
             this.gpbDash.TabIndex = 46;
@@ -469,11 +470,12 @@
             this.gpbHotel.Controls.Add(this.label4);
             this.gpbHotel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbHotel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbHotel.Location = new System.Drawing.Point(728, 423);
+            this.gpbHotel.Location = new System.Drawing.Point(728, 494);
             this.gpbHotel.Name = "gpbHotel";
             this.gpbHotel.Size = new System.Drawing.Size(268, 33);
             this.gpbHotel.TabIndex = 44;
             this.gpbHotel.TabStop = false;
+            this.gpbHotel.Visible = false;
             // 
             // rdbHotelSim
             // 
@@ -516,7 +518,7 @@
             this.gpbClinica.Controls.Add(this.label11);
             this.gpbClinica.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbClinica.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbClinica.Location = new System.Drawing.Point(728, 456);
+            this.gpbClinica.Location = new System.Drawing.Point(728, 329);
             this.gpbClinica.Name = "gpbClinica";
             this.gpbClinica.Size = new System.Drawing.Size(268, 33);
             this.gpbClinica.TabIndex = 45;
@@ -575,7 +577,7 @@
             this.gpbConfig.Controls.Add(this.label12);
             this.gpbConfig.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbConfig.Location = new System.Drawing.Point(728, 390);
+            this.gpbConfig.Location = new System.Drawing.Point(728, 362);
             this.gpbConfig.Name = "gpbConfig";
             this.gpbConfig.Size = new System.Drawing.Size(268, 33);
             this.gpbConfig.TabIndex = 43;
@@ -777,7 +779,7 @@
             this.gpbProd.Controls.Add(this.label6);
             this.gpbProd.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbProd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbProd.Location = new System.Drawing.Point(728, 520);
+            this.gpbProd.Location = new System.Drawing.Point(728, 428);
             this.gpbProd.Name = "gpbProd";
             this.gpbProd.Size = new System.Drawing.Size(268, 33);
             this.gpbProd.TabIndex = 47;
@@ -858,6 +860,7 @@
             this.Controls.Add(this.txtSenhaUser);
             this.Controls.Add(this.txtFuncId);
             this.Controls.Add(this.txtPermId);
+            this.Controls.Add(this.gpbClientes);
             this.Controls.Add(this.txtUserId);
             this.Controls.Add(this.gpbProd);
             this.Controls.Add(this.txtRG);
@@ -879,7 +882,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.gpbDash);
             this.Controls.Add(this.gpbAddClientes);
-            this.Controls.Add(this.gpbClientes);
             this.Controls.Add(this.gpbVendas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUF);

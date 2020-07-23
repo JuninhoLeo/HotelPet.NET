@@ -45,7 +45,9 @@ namespace HotelPet.Admin.Report
 
         private void frmReservas_Load(object sender, EventArgs e)
         {
-            rdbPeriodo.Checked = true;
+            dataIni.Value = DateTime.Now.AddMonths(-1);
+            dataFim.Value = DateTime.Now;
+            rdbTodos.Checked = true;
             Verifica();
         }
 
@@ -149,11 +151,11 @@ namespace HotelPet.Admin.Report
 
                 planilha.Cells[linha, ++coluna].Style.WrapText = true;
                 planilha.Cells[linha, coluna].Value = valor;//"CUSTAS";
-                planilha.Cells[linha, ++coluna].Value = consumo.Servicos.descricao;//"CANIL";
+                planilha.Cells[linha, ++coluna].Value = consumo.Produtos.descricao;//"CANIL";
                 planilha.Cells[linha, ++coluna].Value = res.Quarto.numero;//"N° DO CANIL";
                 planilha.Cells[linha, ++coluna].Value = res.Quarto.valor;//"Diária";
-                planilha.Cells[linha, ++coluna].Value = consumo.Servicos.quantidade;//"Qtde";
-                planilha.Cells[linha, ++coluna].Value = consumo.Servicos.valor;//"Valor";
+                planilha.Cells[linha, ++coluna].Value = consumo.Produtos.quantidade;//"Qtde";
+                planilha.Cells[linha, ++coluna].Value = consumo.Produtos.valor;//"Valor";
                 planilha.Cells[linha, ++coluna].Value = res.Funcionario.nome;//"FUNCIONÁRIO";
             }
 

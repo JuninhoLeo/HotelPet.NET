@@ -237,7 +237,7 @@ namespace HotelPet
                 catch (Exception)
                 {
                     Convert.ToInt64(txtCod.Text);
-                    var serv = contexto.Servico.FirstOrDefault(x => x.id == cod);
+                    var serv = contexto.Produto.FirstOrDefault(x => x.codigo == cod);
                     lblNomeProdutoServico.Text = serv.descricao;
                     txtValUnt.Text = serv.valor.ToString("C");
                     txtValorUnt.Text = serv.valor.ToString("C");
@@ -472,7 +472,7 @@ namespace HotelPet
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmConsulta frm = new frmConsulta();
+            frmConsultaProdutos frm = new frmConsultaProdutos();
             frm.ShowDialog();
         }
 

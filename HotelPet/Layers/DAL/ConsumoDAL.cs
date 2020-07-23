@@ -17,8 +17,8 @@ namespace HotelPet.Layers.DAL
 
             consumo.Reserva_id = consumo.Reserva.id;
             consumo.Reserva = null;
-            consumo.Servicos_id = consumo.Servicos.id;
-            consumo.Servicos = null;
+            consumo.Produtos_id = consumo.Produtos.id;
+            consumo.Produtos = null;
 
             contexto.Consumo.Add(consumo);
             contexto.SaveChanges();

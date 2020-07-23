@@ -13,11 +13,11 @@ namespace HotelPet.Layers.BLL
     public class ServicosBLL
     {
 
-        public void Delete(Servicos servico)
+        public void Delete(Produtos servico)
         {
             Contexto contexto = new Contexto();
             ConsumoDAL dal = new ConsumoDAL();
-            var ListaConsumo = contexto.Consumo.Where(x => x.Servicos_id == servico.id).ToList();
+            var ListaConsumo = contexto.Consumo.Where(x => x.Produtos_id == servico.id).ToList();
             contexto.Dispose();
             
 

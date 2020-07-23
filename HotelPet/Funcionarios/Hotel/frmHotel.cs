@@ -5,7 +5,6 @@ using HotelPet.Funcionarios.Hotel;
 using HotelPet.Functions;
 using HotelPet.Layers.BLL;
 using HotelPet.Layers.MODEL;
-using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -79,7 +78,15 @@ namespace HotelPet
 
             Contexto contexto = new Contexto();
 
-            cmbClientes.DataSource = contexto.Cliente.Where(x => x.nome != null).OrderBy(x => x.nome).ToList();
+            var lstClientes = from cli in contexto.Animal.Where(x => x.Cliente != null && x.hospedado == false).OrderBy(x => x.Cliente.nome).ToList()
+                              orderby cli.Cliente.nome
+                              select new
+                              {
+                                  id = cli.Cliente_id,
+                                  nome = cli.Cliente.nome
+                              };
+
+            cmbClientes.DataSource = lstClientes.ToList();
             cmbClientes.DisplayMember = "nome";
             cmbClientes.ValueMember = "id";
 
@@ -146,10 +153,10 @@ namespace HotelPet
             dgvConsAnimal.DataSource = lstAnimal.ToList();
 
             dgvConsServicos.DataSource = "";
-            var lista = from Serv in contexto.Servico.Where(x => x.isQuarto == false).ToList()
+            var lista = from Serv in contexto.Produto.Where(x => x.isQuarto == false && x.isServico == true).ToList()
                         select new
                         {
-                            Código = Serv.id,
+                            Código = Serv.codigo,
                             Descrição = Serv.descricao,
                             Qtde = Serv.quantidade,
                             Valor = Serv.valor
@@ -201,7 +208,7 @@ namespace HotelPet
 
             lblcli.Text = cmbClientes.Text;
             cmbAnimal.Text = "";
-            cmbAnimal.DataSource = contexto.Animal.Where(x => x.hospedado == false && x.Cliente.nome.Trim().ToLower().Contains(cmbClientes.SelectedText.ToLower())).ToList();
+            cmbAnimal.DataSource = contexto.Animal.Where(x => x.hospedado == false && x.Cliente.nome.Trim().ToLower().Equals(cmbClientes.SelectedText.ToLower())).ToList();
             cmbAnimal.DisplayMember = "nome";
             cmbAnimal.ValueMember = "id";
         }
@@ -229,7 +236,13 @@ namespace HotelPet
 
         private void cmbClientes_Click(object sender, EventArgs e)
         {
+            Contexto contexto = new Contexto();
 
+            lblcli.Text = cmbClientes.Text;
+            cmbAnimal.Text = "";
+            cmbAnimal.DataSource = contexto.Animal.Where(x => x.hospedado == false && x.Cliente.nome.Trim().ToLower().Equals(cmbClientes.SelectedText.ToLower())).ToList();
+            cmbAnimal.DisplayMember = "nome";
+            cmbAnimal.ValueMember = "id";
         }
 
         private void cmbAnimal_Click(object sender, EventArgs e)
@@ -475,6 +488,7 @@ namespace HotelPet
                     LimpaCampos();
                 }
 
+                DialogResult = new DialogResult();
             }
 
         }
@@ -557,17 +571,19 @@ namespace HotelPet
 
                 lstConsumo = contexto.Consumo.Where(x => x.Reserva_id == reserva.id).ToList();
 
-                Servicos servico = new Servicos();
-                servico = contexto.Servico.FirstOrDefault(x => x.descricao == reserva.Quarto.descricao && x.quantidade == dias);
+                Produtos servico = new Produtos();
+                servico = contexto.Produto.FirstOrDefault(x => x.descricao == reserva.Quarto.descricao 
+                                                            && x.quantidade == dias && x.isServico == true);
 
                 if (servico == null)
                 {
-                    servico = new Servicos();
+                    servico = new Produtos();
                     servico.descricao = "Quarto " + reserva.Quarto.descricao;
                     servico.quantidade = dias;
                     servico.valor = valor;
                     servico.isQuarto = true;
-                    contexto.Servico.Add(servico);
+                    servico.isServico = false;
+                    contexto.Produto.Add(servico);
                     contexto.SaveChanges();
                 }
 
@@ -576,7 +592,7 @@ namespace HotelPet
                 consumo.Quantidade = dias;
                 consumo.total = valor;
                 consumo.Reserva = reserva;
-                consumo.Servicos = servico;
+                consumo.Produtos = servico;
                 consumo.data = DateTime.Now;
 
                 lstConsumo.Add(consumo);
@@ -584,11 +600,11 @@ namespace HotelPet
                 var lista = from Cons in lstConsumo
                             select new
                             {
-                                Codigo = Cons.Servicos.id,
-                                Descricao = Cons.Servicos.descricao,
-                                Quantidade = Cons.Servicos.quantidade,
+                                Codigo = Cons.Produtos.codigo,
+                                Descricao = Cons.Produtos.descricao,
+                                Quantidade = Cons.Produtos.quantidade,
                                 Valor = Cons.valor,
-                                total = Cons.total
+                                Cons.total
                             };
 
                 dgvCheckOut.DataSource = "";
@@ -721,8 +737,8 @@ namespace HotelPet
                            select new
                            {
                                Cons.id,
-                               Código = Cons.Servicos_id,
-                               Consumos = Cons.Servicos.descricao,
+                               Código = Cons.Produtos.codigo,
+                               Consumos = Cons.Produtos.descricao,
                                Data = Cons.data,
                                Qtde = Cons.Quantidade,
                                Valor = Cons.valor
@@ -750,17 +766,17 @@ namespace HotelPet
             try
             {
                 int Reserva_id = Convert.ToInt32(lblCodigoReserva.Text);
-                int id = Convert.ToInt32(dgvConsServicos.SelectedRows[0].Cells["Código"].Value);
+                int cod = Convert.ToInt32(dgvConsServicos.SelectedRows[0].Cells["Código"].Value);
                 
                 Contexto contexto = new Contexto();
-                Servicos servico = contexto.Servico.FirstOrDefault(x => x.id == id);
+                Produtos servico = contexto.Produto.FirstOrDefault(x => x.codigo == cod);
                 Consumo consumo = new Consumo();
 
                 consumo.Quantidade = servico.quantidade;
                 consumo.valor = servico.valor;
                 consumo.total = servico.valor;
                 consumo.Reserva_id = Reserva_id;
-                consumo.Servicos_id = servico.id;
+                consumo.Produtos_id = servico.id;
                 consumo.data = DateTime.Now;
 
                 contexto.Consumo.Add(consumo);
@@ -771,8 +787,8 @@ namespace HotelPet
                                select new
                                {
                                    Cons.id,
-                                   Código = Cons.Servicos_id,
-                                   Consumos = Cons.Servicos.descricao,
+                                   Código = Cons.Produtos.codigo,
+                                   Consumos = Cons.Produtos.descricao,
                                    Data = Cons.data,
                                    Qtde = Cons.Quantidade,
                                    Valor = Cons.valor
@@ -801,10 +817,11 @@ namespace HotelPet
             try
             {
                 var busca = Convert.ToInt64(txtConsBuscServicos.Text);
-                var lista = from Serv in contexto.Servico.Where(x => x.id == busca && x.isQuarto == false).ToList()
+                var lista = from Serv in contexto.Produto.Where(x => x.id == busca && x.isQuarto == false
+                                                                  && x.isServico == true).ToList()
                             select new
                             {
-                                Código = Serv.id,
+                                Código = Serv.codigo,
                                 Descrição = Serv.descricao,
                                 Qtde = Serv.quantidade,
                                 Valor = Serv.valor
@@ -814,10 +831,11 @@ namespace HotelPet
             catch (Exception)
             {
                 var busca = txtConsBuscServicos.Text;
-                var lista = from Serv in contexto.Servico.Where(x => x.descricao.Trim().ToLower().Contains(busca) && x.isQuarto == false).ToList()
+                var lista = from Serv in contexto.Produto.Where(x => x.descricao.Trim().ToLower().Contains(busca) && x.isQuarto == false
+                                                                  && x.isServico == true).ToList()
                             select new
                             {
-                                Código = Serv.id,
+                                Código = Serv.codigo,
                                 Descrição = Serv.descricao,
                                 Qtde = Serv.quantidade,
                                 Valor = Serv.valor
@@ -839,10 +857,10 @@ namespace HotelPet
                 Contexto contexto = new Contexto();
 
                 int Reserva_id = Convert.ToInt32(lblCodigoReserva.Text);
-                int id = Convert.ToInt32(dgvConsumos.SelectedRows[0].Cells["Código"].Value);
+                int cod = Convert.ToInt32(dgvConsumos.SelectedRows[0].Cells["Código"].Value);
                 DateTime data = Convert.ToDateTime(dgvConsumos.SelectedRows[0].Cells["Data"].Value);
 
-                Consumo consumo = contexto.Consumo.FirstOrDefault(x => x.Servicos_id == id && x.data == data && x.Reserva_id == Reserva_id);
+                Consumo consumo = contexto.Consumo.FirstOrDefault(x => x.Produtos.codigo == cod && x.data == data && x.Reserva_id == Reserva_id);
 
                 contexto.Consumo.Remove(consumo);
                 contexto.SaveChanges();
@@ -852,8 +870,8 @@ namespace HotelPet
                                select new
                                {
                                    Cons.id,
-                                   Código = Cons.Servicos_id,
-                                   Consumos = Cons.Servicos.descricao,
+                                   Código = Cons.Produtos.codigo,
+                                   Consumos = Cons.Produtos.descricao,
                                    Data = Cons.data,
                                    Qtde = Cons.Quantidade,
                                    Valor = Cons.valor

@@ -90,6 +90,8 @@ namespace HotelPet.Admin
                     produto.descricao = (reader[1] != null) ? reader[1].ToString() : "";
                     produto.quantidade = (reader[2] != null) ? Convert.ToDouble(reader[2].ToString()) : 0;
                     produto.valor = (reader[3] != null) ? Convert.ToDouble(reader[3].ToString()) : 0;
+                    produto.isQuarto = false;
+                    produto.isServico = false;
 
                     string remover = (reader[4] != null) ? reader[4].ToString() : "N";
 

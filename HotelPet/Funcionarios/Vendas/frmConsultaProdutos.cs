@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HotelPet.Funcionarios.Vendas
 {
-    public partial class frmConsulta : Form
+    public partial class frmConsultaProdutos : Form
     {
-        public frmConsulta()
+        public frmConsultaProdutos()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace HotelPet.Funcionarios.Vendas
                 try
                 {
                     long id = Convert.ToInt64(textBox1.Text.Trim());
-                    var item = from prod in contexto.Produto.Where(x => x.codigo == id).ToList()
+                    var item = from prod in contexto.Produto.Where(x => x.codigo == id && x.isServico == false && x.isQuarto == false).ToList()
                                select new
                                {
                                    Código = prod.codigo,
@@ -38,7 +38,7 @@ namespace HotelPet.Funcionarios.Vendas
                 }
                 catch (Exception)
                 {
-                    var item = from prod in contexto.Produto.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper())).ToList()
+                    var item = from prod in contexto.Produto.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper()) && x.isServico == false && x.isQuarto == false).ToList()
                                select new
                                {
                                    Código = prod.codigo,
@@ -56,11 +56,11 @@ namespace HotelPet.Funcionarios.Vendas
             {
                 try
                 {
-                    long id = Convert.ToInt64(textBox1.Text.Trim());
-                    var item = from serv in contexto.Servico.Where(x => x.id == id && x.isQuarto == false).ToList()
+                    long cod = Convert.ToInt64(textBox1.Text.Trim());
+                    var item = from serv in contexto.Produto.Where(x => x.codigo == cod && x.isQuarto == false && x.isServico == true).ToList()
                                select new
                                {
-                                   Código = serv.id,
+                                   Código = serv.codigo,
                                    Descrição = serv.descricao,
                                    Valor = serv.valor
                                };
@@ -68,10 +68,10 @@ namespace HotelPet.Funcionarios.Vendas
                 }
                 catch (Exception)
                 {
-                    var item = from serv in contexto.Servico.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper()) && x.isQuarto == false).ToList()
+                    var item = from serv in contexto.Produto.Where(x => x.descricao.Contains(textBox1.Text.Trim().ToUpper()) && x.isQuarto == false && x.isServico == true).ToList()
                                select new
                                {
-                                   Código = serv.id,
+                                   Código = serv.codigo,
                                    Descrição = serv.descricao,
                                    Valor = serv.valor
                                };

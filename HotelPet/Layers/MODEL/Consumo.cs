@@ -21,9 +21,9 @@ namespace HotelPet.Camadas.MODEL
         public int Reserva_id { get; set; }
         virtual public Reserva Reserva { get; set; }
 
-        [ForeignKey("Servicos")]
-        public long Servicos_id { get; set; }
-        virtual public Servicos Servicos { get; set; }
+        [ForeignKey("Produtos")]
+        public long Produtos_id { get; set; }
+        virtual public Produtos Produtos { get; set; }
     }
 }
 

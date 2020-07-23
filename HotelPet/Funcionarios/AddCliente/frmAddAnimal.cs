@@ -440,7 +440,7 @@ namespace HotelPet
                 }
 
 
-                if (Conf == 0)
+                if (Conf == 0 && lblId.Text.Trim() != "")
                 {
                     animal.id = Convert.ToInt32(lblId.Text.Trim());
                     contexto.Entry(animal).State = EntityState.Modified;
@@ -448,6 +448,11 @@ namespace HotelPet
                     contexto.Entry(animal).Reload();
 
                     LimpaCampos();
+                }
+
+                else if (lblId.Text.Trim() == "")
+                {
+                    MessageBox.Show("Erro: não foi possivel atualizar", "Erro ao Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

@@ -23,5 +23,9 @@ namespace HotelPet.Camadas.MODEL
         public double quantidade { get; set; }
 
         public double valor { get; set; }
+
+        public bool isQuarto { get; set; }
+
+        public bool isServico { get; set; }
     }
 }

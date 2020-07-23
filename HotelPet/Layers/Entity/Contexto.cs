@@ -25,7 +25,6 @@ namespace HotelPet.Entity
         public DbSet<Produtos> Produto { get; set; }
         public DbSet<Quarto> Quarto { get; set; }
         public DbSet<Reserva> Reserva { get; set; }
-        public DbSet<Servicos> Servico { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Venda> Venda { get; set; }
 
