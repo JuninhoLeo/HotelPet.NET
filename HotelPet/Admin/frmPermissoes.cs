@@ -188,7 +188,7 @@ namespace HotelPet
             int id = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString());
             Funcionario funcionario = contexto.Funcionario.FirstOrDefault(x => x.id == id);
           
-            lblAviso.Text = "*Vazio para manter a mesma senha, ou digite uma nova para redefinir";
+            lblAviso.Text = "*Vazio para manter a mesma senha.\n Selecione Alterar senha para redefini-la";
             txtUser.Text = funcionario.Usuario.usuario;
             txtNome.Text = dgvPermicoes.SelectedRows[0].Cells["Funcionário"].Value.ToString();
             txtRG.Text = dgvPermicoes.SelectedRows[0].Cells["RG"].Value.ToString();

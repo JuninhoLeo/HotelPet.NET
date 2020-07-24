@@ -35,6 +35,7 @@
             this.btnAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quartosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConsultar = new System.Windows.Forms.ToolStripMenuItem();
             this.animaisCadastradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesCadstradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.quartosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +106,13 @@
             this.serviçosToolStripMenuItem.Text = "&Serviços";
             this.serviçosToolStripMenuItem.Click += new System.EventHandler(this.serviçosToolStripMenuItem_Click);
             // 
+            // quartosToolStripMenuItem
+            // 
+            this.quartosToolStripMenuItem.Name = "quartosToolStripMenuItem";
+            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.quartosToolStripMenuItem.Text = "&Quartos";
+            this.quartosToolStripMenuItem.Click += new System.EventHandler(this.quartosToolStripMenuItem_Click);
+            // 
             // btnConsultar
             // 
             this.btnConsultar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -114,24 +121,27 @@
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(87, 24);
             this.btnConsultar.Text = "Consultas";
+            this.btnConsultar.Visible = false;
             // 
             // animaisCadastradosToolStripMenuItem
             // 
             this.animaisCadastradosToolStripMenuItem.Name = "animaisCadastradosToolStripMenuItem";
             this.animaisCadastradosToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.animaisCadastradosToolStripMenuItem.Text = "Animais Cadastrados";
+            this.animaisCadastradosToolStripMenuItem.Click += new System.EventHandler(this.animaisCadastradosToolStripMenuItem_Click);
             // 
             // clientesCadstradosToolStripMenuItem
             // 
             this.clientesCadstradosToolStripMenuItem.Name = "clientesCadstradosToolStripMenuItem";
             this.clientesCadstradosToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.clientesCadstradosToolStripMenuItem.Text = "Clientes Cadstrados";
+            this.clientesCadstradosToolStripMenuItem.Click += new System.EventHandler(this.clientesCadstradosToolStripMenuItem_Click);
             // 
             // btnCadastros
             // 
             this.btnCadastros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.animaisToolStripMenuItem,
-            this.clientesToolStripMenuItem});
+            this.clientesToolStripMenuItem,
+            this.animaisToolStripMenuItem});
             this.btnCadastros.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastros.Image")));
             this.btnCadastros.Name = "btnCadastros";
             this.btnCadastros.Size = new System.Drawing.Size(107, 24);
@@ -199,13 +209,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // quartosToolStripMenuItem
-            // 
-            this.quartosToolStripMenuItem.Name = "quartosToolStripMenuItem";
-            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.quartosToolStripMenuItem.Text = "&Quartos";
-            this.quartosToolStripMenuItem.Click += new System.EventHandler(this.quartosToolStripMenuItem_Click);
             // 
             // frmMenu
             // 

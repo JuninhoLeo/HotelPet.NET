@@ -18,7 +18,8 @@ namespace HotelPet
 {
     public partial class frmHotel : Form
     {
-
+        private Funcionario Funcionario { get; set; }
+        private int UserID { get; set; }
         public int idCliente { get; set; }
         public int idAnimal { get; set; }
         public List<Animal> listAnimal { get; set; }
@@ -30,7 +31,15 @@ namespace HotelPet
 
         public frmHotel()
         {
+            InitializeComponent();           
+        }
+
+        public frmHotel(int usuarioId)
+        {
             InitializeComponent();
+            this.UserID = usuarioId;
+            Contexto contexto = new Contexto();
+            this.Funcionario = contexto.Funcionario.FirstOrDefault(x => x.Usuario_id == usuarioId);
         }
 
         private void frmHotel_Load(object sender, EventArgs e)
@@ -112,6 +121,7 @@ namespace HotelPet
             cmbFunc.DataSource = contexto.Funcionario.Where(x => x.Permicoes.frmHotel == true).OrderBy(x => x.nome).ToList();
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
+            cmbFunc.SelectedValue = Funcionario.id;
 
             var lstCli = from Cli in contexto.Reserva.Where(x => x.pago == false).OrderBy(x => x.Cliente.nome).ToList()
                          group Cli by new { Cli.Cliente.nome, Cli.Cliente_id } into cli
@@ -192,14 +202,44 @@ namespace HotelPet
 
         private void btnCadastroCli_Click(object sender, EventArgs e)
         {
-            frmAddCliente frm = new frmAddCliente();
-            frm.ShowDialog();
+            Contexto contexto = new Contexto();
+            var permicao = contexto.Permicao.FirstOrDefault(x => x.id == Funcionario.Permicoes_id);
+
+            if (permicao.frmCliente == true)
+            {
+                frmAddCliente frm = new frmAddCliente(UserID);
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Você não permição para consultar Clientes\n" +
+                                "Por favor contate seu administrador.",
+                                "Não foi possível consultar",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information,
+                                MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnCadastroAnimal_Click(object sender, EventArgs e)
         {
-            frmAnimais frm = new frmAnimais();
-            frm.ShowDialog();
+            Contexto contexto = new Contexto();
+            var permicao = contexto.Permicao.FirstOrDefault(x => x.id == Funcionario.Permicoes_id);
+
+            if (permicao.frmCliente == true)
+            {
+                frmAnimais frm = new frmAnimais();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Você não permição para consultar Animais\n" +
+                                "Por favor contate seu administrador.",
+                                "Não foi possível consultar",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information,
+                                MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void cmbClientes_Leave(object sender, EventArgs e)
@@ -892,6 +932,11 @@ namespace HotelPet
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

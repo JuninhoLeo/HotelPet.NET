@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -79,6 +79,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtBuscaCli = new System.Windows.Forms.TextBox();
             this.dgvCli = new System.Windows.Forms.DataGridView();
@@ -167,7 +168,6 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.data = new System.Windows.Forms.Timer(this.components);
             this.Hora = new System.Windows.Forms.Timer(this.components);
-            this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -242,6 +242,7 @@
             this.tabPage1.Size = new System.Drawing.Size(1356, 632);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Check-in";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -824,6 +825,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Cliente:";
             // 
+            // cmbClientes
+            // 
+            this.cmbClientes.FormattingEnabled = true;
+            this.cmbClientes.Location = new System.Drawing.Point(134, 30);
+            this.cmbClientes.Name = "cmbClientes";
+            this.cmbClientes.Size = new System.Drawing.Size(248, 25);
+            this.cmbClientes.TabIndex = 1;
+            this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
+            this.cmbClientes.Click += new System.EventHandler(this.cmbClientes_Click);
+            this.cmbClientes.Leave += new System.EventHandler(this.cmbClientes_Leave);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -1066,14 +1078,14 @@
             this.dgvCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCheckOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheckOut.ColumnHeadersVisible = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckOut.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCheckOut.Enabled = false;
             this.dgvCheckOut.GridColor = System.Drawing.Color.LightGray;
             this.dgvCheckOut.Location = new System.Drawing.Point(683, 96);
@@ -1874,17 +1886,6 @@
             this.Hora.Enabled = true;
             this.Hora.Interval = 1000;
             this.Hora.Tick += new System.EventHandler(this.Hora_Tick);
-            // 
-            // cmbClientes
-            // 
-            this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(134, 30);
-            this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(248, 25);
-            this.cmbClientes.TabIndex = 1;
-            this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
-            this.cmbClientes.Click += new System.EventHandler(this.cmbClientes_Click);
-            this.cmbClientes.Leave += new System.EventHandler(this.cmbClientes_Leave);
             // 
             // frmHotel
             // 

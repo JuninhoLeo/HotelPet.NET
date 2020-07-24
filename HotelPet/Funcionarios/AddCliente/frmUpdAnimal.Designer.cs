@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvUpdAnimal = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.foto = new System.Windows.Forms.DataGridViewImageColumn();
@@ -42,15 +45,12 @@
             this.cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.porte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpdAnimal)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(421, 123);
+            this.textBox1.Location = new System.Drawing.Point(644, 133);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(340, 20);
             this.textBox1.TabIndex = 8;
@@ -81,10 +81,30 @@
             this.dgvUpdAnimal.Location = new System.Drawing.Point(12, 159);
             this.dgvUpdAnimal.Name = "dgvUpdAnimal";
             this.dgvUpdAnimal.ReadOnly = true;
-            this.dgvUpdAnimal.Size = new System.Drawing.Size(749, 317);
+            this.dgvUpdAnimal.Size = new System.Drawing.Size(972, 345);
             this.dgvUpdAnimal.TabIndex = 7;
             this.dgvUpdAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUpdAnimal_CellContentClick);
             this.dgvUpdAnimal.DoubleClick += new System.EventHandler(this.dgvUpdAnimal_DoubleClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(641, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Digite o Nome do Animal ou do Cliente";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(283, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(431, 31);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Selecione o Animal a ser Atualizado";
             // 
             // id
             // 
@@ -107,6 +127,7 @@
             // 
             this.foto.DataPropertyName = "foto";
             this.foto.HeaderText = "Foto";
+            this.foto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.foto.Name = "foto";
             this.foto.ReadOnly = true;
             this.foto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -177,41 +198,23 @@
             this.sexo.ReadOnly = true;
             this.sexo.Width = 56;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(418, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Digite o Nome do Animal ou do Cliente";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(171, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 31);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Selecione o Animal a ser Atualizado";
-            // 
             // frmUpdAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(773, 488);
+            this.ClientSize = new System.Drawing.Size(996, 516);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvUpdAnimal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(789, 527);
-            this.MinimumSize = new System.Drawing.Size(789, 527);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximumSize = new System.Drawing.Size(1012, 555);
+            this.MinimumSize = new System.Drawing.Size(1012, 555);
             this.Name = "frmUpdAnimal";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmUpdAnimal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpdAnimal)).EndInit();
             this.ResumeLayout(false);

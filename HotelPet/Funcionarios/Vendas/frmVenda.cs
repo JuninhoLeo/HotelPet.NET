@@ -16,11 +16,17 @@ namespace HotelPet
         //List<ListaCompra> listaCompra = new List<ListaCompra>();
         private double qtdeProd { get; set; } = 0;
         private double qtdeCompra { get; set; } = 0;
+        private int usuarioId { get; set; }
+        private int funcID { get; set; }
 
-        public frmVenda(ToolStripMenuItem btnVendas)
+        public frmVenda(int usuarioId)
         {
-            //btnVendas.Visible = false;
+            this.usuarioId = usuarioId;
             InitializeComponent();
+
+            Contexto contexto = new Contexto();
+            var func = contexto.Funcionario.FirstOrDefault(x => x.Usuario_id == usuarioId);
+            this.funcID = func.id;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -37,6 +43,7 @@ namespace HotelPet
             cmbFunc.DisplayMember = "nome";
             cmbFunc.ValueMember = "id";
             cmbFunc.DataSource = contexto.Funcionario.Where(x=> x.Permicoes.frmVenda == true).ToList();
+            cmbFunc.SelectedValue = funcID;
 
             AtualizaView(dgvCompra);
             LimpaCampos();

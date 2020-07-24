@@ -15,7 +15,7 @@ namespace HotelPet
 {
     public partial class frmMenu : Form
     {
-        public int UsuarioId = 0;
+        private int UsuarioId { get; set; }
 
         public frmMenu(int Usuario, frmLogin login)
         {
@@ -27,11 +27,10 @@ namespace HotelPet
 
             Permicoes permicoes = contexto.Permicao.FirstOrDefault(x => x.id == UsuarioId);
 
-            btnCadastros.Visible = permicoes.frmAddCliente;
-            btnConsultar.Visible = permicoes.frmCliente;
+            btnDash.Visible = false;
+            btnCadastros.Visible = permicoes.frmCliente;
             btnConfig.Visible = permicoes.frmConfiguracoes;
             btnHotel.Visible = permicoes.frmHotel;
-            btnDash.Visible = false;
             btnAdmin.Visible = permicoes.frmProdutos;
             btnVendas.Visible = permicoes.frmVenda;
 
@@ -84,8 +83,7 @@ namespace HotelPet
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            frmVenda vendas = new frmVenda(btnVendas);
-            //vendas.MdiParent = this;
+            frmVenda vendas = new frmVenda(UsuarioId);
             vendas.ShowDialog();
         }
 
@@ -97,14 +95,13 @@ namespace HotelPet
 
         private void hotelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHotel hotel = new frmHotel();
-            //hotel.MdiParent = this;
+            frmHotel hotel = new frmHotel(UsuarioId);
             hotel.ShowDialog();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddCliente cliente = new frmAddCliente();
+            frmAddCliente cliente = new frmAddCliente(UsuarioId);
             cliente.ShowDialog();
         }
 
@@ -148,6 +145,16 @@ namespace HotelPet
         {
             frmQuartos frm = new frmQuartos();
             frm.ShowDialog();
+        }
+
+        private void animaisCadastradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientesCadstradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

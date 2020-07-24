@@ -120,42 +120,45 @@ namespace HotelPet
 
             Animal animal = contexto.Animal.FirstOrDefault(x => x.id == idAnimal);
 
-            cmbCli.SelectedValue = animal.Cliente_id;
+            if (animal != null)
+            {
+                cmbCli.SelectedValue = animal.Cliente_id;
 
-            txtEspecie.Text = animal.especie;
-            txtRaca.Text = animal.raca;
-            txtPelagem.Text = animal.pelagem;
-            txtCor.Text = animal.cor;
-            rbdFemea.Checked = (animal.sexo.Trim().ToLower() == "femea") ? true : false;
-            rbdMacho.Checked = (animal.sexo.Trim().ToLower() == "macho") ? true : false;
-            txtNome.Text = animal.nome;
-            txtMae.Text = animal.mae;
-            txtPai.Text = animal.pai;
-            txtApelido.Text = animal.apelido;
-            dateNasc.Value = (animal.nascimento == null) ? DateTime.Now : (DateTime)animal.nascimento;
-            dateMae.Value = (animal.nascmae == null) ? DateTime.Now : (DateTime)animal.nascmae;
-            datePai.Value = (animal.nascpai == null) ? DateTime.Now : (DateTime)animal.nascpai;
-            txtObs.Text = animal.observacoes;
-            txtCuidados.Text = animal.cuidados;
-            pbxImage.Image = (animal.imagem == null) ? Image.FromStream(new MemoryStream(imagem)) : Image.FromStream(new MemoryStream(animal.imagem));
+                txtEspecie.Text = animal.especie;
+                txtRaca.Text = animal.raca;
+                txtPelagem.Text = animal.pelagem;
+                txtCor.Text = animal.cor;
+                rbdFemea.Checked = (animal.sexo.Trim().ToLower() == "femea") ? true : false;
+                rbdMacho.Checked = (animal.sexo.Trim().ToLower() == "macho") ? true : false;
+                txtNome.Text = animal.nome;
+                txtMae.Text = animal.mae;
+                txtPai.Text = animal.pai;
+                txtApelido.Text = animal.apelido;
+                dateNasc.Value = (animal.nascimento == null) ? DateTime.Now : (DateTime)animal.nascimento;
+                dateMae.Value = (animal.nascmae == null) ? DateTime.Now : (DateTime)animal.nascmae;
+                datePai.Value = (animal.nascpai == null) ? DateTime.Now : (DateTime)animal.nascpai;
+                txtObs.Text = animal.observacoes;
+                txtCuidados.Text = animal.cuidados;
+                pbxImage.Image = (animal.imagem == null) ? Image.FromStream(new MemoryStream(imagem)) : Image.FromStream(new MemoryStream(animal.imagem));
 
-            if (animal.porte.Trim().ToLower() == "mini")
-            {
-                rbdMini.Checked = true;
+                if (animal.porte.Trim().ToLower() == "mini")
+                {
+                    rbdMini.Checked = true;
+                }
+                else if (animal.porte.Trim().ToLower() == "pequeno")
+                {
+                    rbdPequeno.Checked = true;
+                }
+                else if (animal.porte.Trim().ToLower() == "medio")
+                {
+                    rbdMedio.Checked = true;
+                }
+                else if (animal.porte.Trim().ToLower() == "grande")
+                {
+                    rbdGrande.Checked = true;
+                }
+                lblId.Text = animal.id.ToString();
             }
-            else if (animal.porte.Trim().ToLower() == "pequeno")
-            {
-                rbdPequeno.Checked = true;
-            }
-            else if (animal.porte.Trim().ToLower() == "medio")
-            {
-                rbdMedio.Checked = true;
-            }
-            else if (animal.porte.Trim().ToLower() == "grande")
-            {
-                rbdGrande.Checked = true;
-            }
-            lblId.Text = animal.id.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)

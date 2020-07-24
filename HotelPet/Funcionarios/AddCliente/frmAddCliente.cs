@@ -1,6 +1,7 @@
 ﻿using HotelPet.Camadas.BLL;
 using HotelPet.Camadas.MODEL;
 using HotelPet.Entity;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Math;
 using System;
 using System.Data;
 using System.Data.Entity;
@@ -12,9 +13,13 @@ namespace HotelPet
 {
     public partial class frmAddCliente : Form
     {
-        public frmAddCliente()
+        private Permicoes Permicao { get; set; }
+        public frmAddCliente(int userID)
         {
             InitializeComponent();
+            Contexto contexto = new Contexto();
+            var func = contexto.Funcionario.FirstOrDefault(x => x.Usuario_id == userID);
+            this.Permicao = contexto.Permicao.FirstOrDefault(x => x.id == func.Permicoes_id);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -223,10 +228,22 @@ namespace HotelPet
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LimpaCampos();
-            HabilitaCampos(true);
-            btnDeletar.Enabled = false;
-            btnAtualizar.Enabled = false;
+            if (Permicao.frmAddCliente == true)
+            {
+                LimpaCampos();
+                HabilitaCampos(true);
+                btnDeletar.Enabled = false;
+                btnAtualizar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Você não permição para adicionar Clientes\n" +
+                                "Por favor contate seu administrador.",
+                                "Não foi possível adicionar cliente",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information,
+                                MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
