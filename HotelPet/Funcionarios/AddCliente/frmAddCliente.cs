@@ -77,6 +77,7 @@ namespace HotelPet
                 }
 
                 AtualizaView();
+                LimpaCampos();
             }
         }
 
@@ -175,6 +176,10 @@ namespace HotelPet
                 txtEmail.Text = dgvCliente.SelectedRows[0].Cells["email"].Value.ToString();
                 btnDeletar.Enabled = true;
                 btnAtualizar.Enabled = true;
+
+                HabilitaCampos(true);
+                btnConfirm.Enabled = false;
+                button2.Enabled = false;
             }
             catch (Exception)
             {
@@ -218,12 +223,19 @@ namespace HotelPet
             }
             else { MessageBox.Show("Para apagar, precisa selecionar um cliente!","Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
+            AtualizaView();
             LimpaCampos();
+            btnConfirm.Enabled = false;
+            button2.Enabled = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             HabilitaCampos(false);
+            button2.Enabled = true;
+            btnConfirm.Enabled = false;
+            btnAtualizar.Enabled = false;
+            btnDeletar.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -234,6 +246,7 @@ namespace HotelPet
                 HabilitaCampos(true);
                 btnDeletar.Enabled = false;
                 btnAtualizar.Enabled = false;
+                button2.Enabled = false;
             }
             else
             {
@@ -276,6 +289,9 @@ namespace HotelPet
             else { MessageBox.Show("Para apagar, precisa selecionar um cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
             LimpaCampos();
+            AtualizaView();
+            btnConfirm.Enabled = false;
+            button2.Enabled = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

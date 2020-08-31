@@ -36,12 +36,10 @@
             this.btnProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quartosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnConsultar = new System.Windows.Forms.ToolStripMenuItem();
-            this.animaisCadastradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesCadstradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClinica = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCadastros = new System.Windows.Forms.ToolStripMenuItem();
-            this.animaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.animaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHotel = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVendas = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConfig = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +58,7 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnDash,
             this.btnAdmin,
-            this.btnConsultar,
+            this.btnClinica,
             this.btnCadastros,
             this.btnHotel,
             this.btnVendas,
@@ -95,47 +93,31 @@
             // btnProdutos
             // 
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(180, 24);
+            this.btnProdutos.Size = new System.Drawing.Size(140, 24);
             this.btnProdutos.Text = "&Produtos";
             this.btnProdutos.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // serviçosToolStripMenuItem
             // 
             this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.serviçosToolStripMenuItem.Text = "&Serviços";
             this.serviçosToolStripMenuItem.Click += new System.EventHandler(this.serviçosToolStripMenuItem_Click);
             // 
             // quartosToolStripMenuItem
             // 
             this.quartosToolStripMenuItem.Name = "quartosToolStripMenuItem";
-            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.quartosToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.quartosToolStripMenuItem.Text = "&Quartos";
             this.quartosToolStripMenuItem.Click += new System.EventHandler(this.quartosToolStripMenuItem_Click);
             // 
-            // btnConsultar
+            // btnClinica
             // 
-            this.btnConsultar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.animaisCadastradosToolStripMenuItem,
-            this.clientesCadstradosToolStripMenuItem});
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(87, 24);
-            this.btnConsultar.Text = "Consultas";
-            this.btnConsultar.Visible = false;
-            // 
-            // animaisCadastradosToolStripMenuItem
-            // 
-            this.animaisCadastradosToolStripMenuItem.Name = "animaisCadastradosToolStripMenuItem";
-            this.animaisCadastradosToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
-            this.animaisCadastradosToolStripMenuItem.Text = "Animais Cadastrados";
-            this.animaisCadastradosToolStripMenuItem.Click += new System.EventHandler(this.animaisCadastradosToolStripMenuItem_Click);
-            // 
-            // clientesCadstradosToolStripMenuItem
-            // 
-            this.clientesCadstradosToolStripMenuItem.Name = "clientesCadstradosToolStripMenuItem";
-            this.clientesCadstradosToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
-            this.clientesCadstradosToolStripMenuItem.Text = "Clientes Cadstrados";
-            this.clientesCadstradosToolStripMenuItem.Click += new System.EventHandler(this.clientesCadstradosToolStripMenuItem_Click);
+            this.btnClinica.Image = global::HotelPet.Properties.Resources.veterinario;
+            this.btnClinica.Name = "btnClinica";
+            this.btnClinica.Size = new System.Drawing.Size(82, 24);
+            this.btnClinica.Text = "Clinica";
+            this.btnClinica.Click += new System.EventHandler(this.clinicaToolStripMenuItem_Click);
             // 
             // btnCadastros
             // 
@@ -148,19 +130,19 @@
             this.btnCadastros.Text = "&Cadastros";
             this.btnCadastros.Click += new System.EventHandler(this.btnCadastros_Click);
             // 
-            // animaisToolStripMenuItem
-            // 
-            this.animaisToolStripMenuItem.Name = "animaisToolStripMenuItem";
-            this.animaisToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.animaisToolStripMenuItem.Text = "&Animais";
-            this.animaisToolStripMenuItem.Click += new System.EventHandler(this.animaisToolStripMenuItem_Click);
-            // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
             this.clientesToolStripMenuItem.Text = "&Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // animaisToolStripMenuItem
+            // 
+            this.animaisToolStripMenuItem.Name = "animaisToolStripMenuItem";
+            this.animaisToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.animaisToolStripMenuItem.Text = "&Animais";
+            this.animaisToolStripMenuItem.Click += new System.EventHandler(this.animaisToolStripMenuItem_Click);
             // 
             // btnHotel
             // 
@@ -215,6 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackgroundImage = global::HotelPet.Properties.Resources.logo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1029, 446);
             this.ControlBox = false;
@@ -255,10 +238,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnConfig;
         private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnDash;
-        private System.Windows.Forms.ToolStripMenuItem btnConsultar;
-        private System.Windows.Forms.ToolStripMenuItem animaisCadastradosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientesCadstradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quartosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnClinica;
     }
 }
 

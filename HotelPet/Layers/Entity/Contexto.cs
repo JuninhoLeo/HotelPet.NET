@@ -1,12 +1,7 @@
 ﻿using HotelPet.Camadas.MODEL;
 using HotelPet.Layers.MODEL;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelPet.Entity
 {

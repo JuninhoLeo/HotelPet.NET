@@ -1,6 +1,7 @@
 ﻿using HotelPet.Admin;
 using HotelPet.Camadas.MODEL;
 using HotelPet.Entity;
+using HotelPet.Funcionarios.Clinica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,7 @@ namespace HotelPet
             btnHotel.Visible = permicoes.frmHotel;
             btnAdmin.Visible = permicoes.frmProdutos;
             btnVendas.Visible = permicoes.frmVenda;
+            btnClinica.Visible = permicoes.frmClinica;
 
             if (permicoes.frmPainel)
             {
@@ -155,6 +157,18 @@ namespace HotelPet
         private void clientesCadstradosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clinicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClinica frm = new frmClinica(UsuarioId);
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

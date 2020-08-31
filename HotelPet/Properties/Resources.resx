@@ -163,6 +163,9 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="excel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="businessapplication_distributor_report_document_negocio_2319" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\businessapplication_distributor_report_document_negocio_2319.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,8 +226,8 @@
   <data name="1491313933-plus_83004" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1491313933-plus_83004.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="excel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excel_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SEM-IMAGEM-13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SEM-IMAGEM-13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="openFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openFolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,13 +241,16 @@
   <data name="pet_store_shop_building_animal_icon_124625" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pet_store_shop_building_animal_icon_124625.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="new_add_user_16734" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_add_user_16734.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="new_add_user_167341" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_add_user_16734.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SEM-IMAGEM-13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SEM-IMAGEM-13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="veterinario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\veterinario.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

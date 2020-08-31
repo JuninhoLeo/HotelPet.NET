@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPermicoes = new System.Windows.Forms.DataGridView();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -131,26 +131,26 @@
             this.dgvPermicoes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPermicoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPermicoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermicoes.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPermicoes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPermicoes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPermicoes.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPermicoes.Location = new System.Drawing.Point(21, 21);
             this.dgvPermicoes.Name = "dgvPermicoes";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPermicoes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPermicoes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPermicoes.Size = new System.Drawing.Size(672, 205);
             this.dgvPermicoes.TabIndex = 1;
             this.dgvPermicoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -286,7 +286,7 @@
             this.gpbVendas.Controls.Add(this.label1);
             this.gpbVendas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gpbVendas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbVendas.Location = new System.Drawing.Point(747, 491);
+            this.gpbVendas.Location = new System.Drawing.Point(747, 515);
             this.gpbVendas.Name = "gpbVendas";
             this.gpbVendas.Size = new System.Drawing.Size(268, 33);
             this.gpbVendas.TabIndex = 40;
@@ -333,7 +333,7 @@
             this.gpbClientes.Controls.Add(this.rdbCliNao);
             this.gpbClientes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbClientes.Location = new System.Drawing.Point(747, 328);
+            this.gpbClientes.Location = new System.Drawing.Point(747, 317);
             this.gpbClientes.Name = "gpbClientes";
             this.gpbClientes.Size = new System.Drawing.Size(268, 33);
             this.gpbClientes.TabIndex = 41;
@@ -379,7 +379,7 @@
             this.gpbAddClientes.Controls.Add(this.label5);
             this.gpbAddClientes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbAddClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbAddClientes.Location = new System.Drawing.Point(747, 296);
+            this.gpbAddClientes.Location = new System.Drawing.Point(747, 284);
             this.gpbAddClientes.Name = "gpbAddClientes";
             this.gpbAddClientes.Size = new System.Drawing.Size(268, 33);
             this.gpbAddClientes.TabIndex = 42;
@@ -426,7 +426,7 @@
             this.gpbDash.Controls.Add(this.label7);
             this.gpbDash.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbDash.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbDash.Location = new System.Drawing.Point(747, 425);
+            this.gpbDash.Location = new System.Drawing.Point(747, 449);
             this.gpbDash.Name = "gpbDash";
             this.gpbDash.Size = new System.Drawing.Size(268, 33);
             this.gpbDash.TabIndex = 46;
@@ -511,7 +511,7 @@
             this.gpbHotel.Controls.Add(this.label4);
             this.gpbHotel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbHotel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbHotel.Location = new System.Drawing.Point(747, 391);
+            this.gpbHotel.Location = new System.Drawing.Point(747, 416);
             this.gpbHotel.Name = "gpbHotel";
             this.gpbHotel.Size = new System.Drawing.Size(268, 33);
             this.gpbHotel.TabIndex = 44;
@@ -558,12 +558,11 @@
             this.gpbClinica.Controls.Add(this.label11);
             this.gpbClinica.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbClinica.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbClinica.Location = new System.Drawing.Point(747, 523);
+            this.gpbClinica.Location = new System.Drawing.Point(747, 350);
             this.gpbClinica.Name = "gpbClinica";
             this.gpbClinica.Size = new System.Drawing.Size(268, 33);
             this.gpbClinica.TabIndex = 45;
             this.gpbClinica.TabStop = false;
-            this.gpbClinica.Visible = false;
             // 
             // rdbClinSim
             // 
@@ -619,7 +618,7 @@
             this.gpbConfig.Controls.Add(this.label12);
             this.gpbConfig.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbConfig.Location = new System.Drawing.Point(747, 358);
+            this.gpbConfig.Location = new System.Drawing.Point(747, 383);
             this.gpbConfig.Name = "gpbConfig";
             this.gpbConfig.Size = new System.Drawing.Size(268, 33);
             this.gpbConfig.TabIndex = 43;
@@ -809,7 +808,7 @@
             this.gpbProd.Controls.Add(this.label6);
             this.gpbProd.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gpbProd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gpbProd.Location = new System.Drawing.Point(747, 458);
+            this.gpbProd.Location = new System.Drawing.Point(747, 482);
             this.gpbProd.Name = "gpbProd";
             this.gpbProd.Size = new System.Drawing.Size(268, 33);
             this.gpbProd.TabIndex = 47;
@@ -890,7 +889,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.BackgroundImage = global::HotelPet.Properties.Resources.check_ok_accept_apply_1582;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(921, 275);
+            this.pictureBox1.Location = new System.Drawing.Point(921, 262);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(22, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -902,7 +901,7 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox2.BackgroundImage = global::HotelPet.Properties.Resources.delete_delete_exit_1577;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(967, 275);
+            this.pictureBox2.Location = new System.Drawing.Point(967, 262);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

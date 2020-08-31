@@ -2,15 +2,12 @@
 using HotelPet.Entity;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelPet
@@ -26,6 +23,7 @@ namespace HotelPet
 
         private void button1_Click(object sender, EventArgs e)
         {
+            lblAviso.Text = "";
             HabilitaCampos(true);
             Atualizabtn(false);
             btnExcluir.Enabled = false;
@@ -46,7 +44,7 @@ namespace HotelPet
             btnExcluir.Enabled = !action;
             btnGravar.Enabled = !action;
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
             Contexto contexto = new Contexto();
@@ -170,7 +168,7 @@ namespace HotelPet
 
             ckAltSenha.Visible = true;
             ckAltSenha.Checked = false;
-            
+
             HabilitaCampos(true);
             btnConfirm.Enabled = true;
             btnBusca.Enabled = true;
@@ -187,7 +185,7 @@ namespace HotelPet
 
             int id = Convert.ToInt32(dgvPermicoes.SelectedRows[0].Cells["id"].Value.ToString());
             Funcionario funcionario = contexto.Funcionario.FirstOrDefault(x => x.id == id);
-          
+
             lblAviso.Text = "*Vazio para manter a mesma senha.\n Selecione Alterar senha para redefini-la";
             txtUser.Text = funcionario.Usuario.usuario;
             txtNome.Text = dgvPermicoes.SelectedRows[0].Cells["Funcionário"].Value.ToString();
@@ -351,10 +349,10 @@ namespace HotelPet
             string s = txtUser.Text;
 
             if (s != "")
-            {                       
-                for(int cont = txtUser.Text.Length; cont > 0; cont--)
+            {
+                for (int cont = txtUser.Text.Length; cont > 0; cont--)
                 {
-                    s = txtUser.Text.Substring(txtUser.Text.Length -cont, 1);
+                    s = txtUser.Text.Substring(txtUser.Text.Length - cont, 1);
                     if (s == " ")
                     {
                         break;
@@ -388,7 +386,7 @@ namespace HotelPet
         }
 
         private void ValidarCampos(string campo)
-        {        
+        {
             MessageBox.Show("O campo: " + campo + " está vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
@@ -400,7 +398,7 @@ namespace HotelPet
         private void txtBusca_Click(object sender, EventArgs e)
         {
             if (txtBusca.Text == "Digite aqui o Nome do funcionario:")
-            {              
+            {
                 txtBusca.ForeColor = Color.Black;
                 txtBusca.Text = "";
             }
@@ -436,20 +434,20 @@ namespace HotelPet
             funcionario.uf = txtUF.Text;
 
             permicao.tipo = txtUser.Text.Trim();
-            permicao.frmVenda= (rdbVendSim.Checked) ? true : false;
-            permicao.frmCliente = (rdbCliSim.Checked) ?  true : false;
-            permicao.frmAddCliente= (rdbAddCliSim.Checked) ? true : false;
+            permicao.frmVenda = (rdbVendSim.Checked) ? true : false;
+            permicao.frmCliente = (rdbCliSim.Checked) ? true : false;
+            permicao.frmAddCliente = (rdbAddCliSim.Checked) ? true : false;
             permicao.frmConfiguracoes = (rdbConfigSim.Checked) ? true : false;
-            permicao.frmHotel= (rdbHotelSim.Checked) ? true : false;
-            permicao.frmClinica= (rdbClinSim.Checked) ? true : false;
-            permicao.frmPainel= (rdbDashSim.Checked) ? true : false;
+            permicao.frmHotel = (rdbHotelSim.Checked) ? true : false;
+            permicao.frmClinica = (rdbClinSim.Checked) ? true : false;
+            permicao.frmPainel = (rdbDashSim.Checked) ? true : false;
             permicao.frmProdutos = (rdbProdSim.Checked) ? true : false;
 
             Contexto contexto = new Contexto();
             List<Usuario> lstuser = new List<Usuario>();
             lstuser = contexto.Usuario.ToList();
             int cont = 0;
-            string estiver ="OK";
+            string estiver = "OK";
 
             if (txtNome.Text.Trim() == "")
             {

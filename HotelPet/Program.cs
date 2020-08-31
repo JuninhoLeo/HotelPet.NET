@@ -1,5 +1,4 @@
-﻿using HotelPet.Admin.Report;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace HotelPet
@@ -15,7 +14,6 @@ namespace HotelPet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
-            //Application.Run(new frmReservas());
         }
     }
 }

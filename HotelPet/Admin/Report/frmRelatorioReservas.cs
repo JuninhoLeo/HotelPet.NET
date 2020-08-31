@@ -151,11 +151,11 @@ namespace HotelPet.Admin.Report
 
                 planilha.Cells[linha, ++coluna].Style.WrapText = true;
                 planilha.Cells[linha, coluna].Value = valor;//"CUSTAS";
-                planilha.Cells[linha, ++coluna].Value = consumo.Produtos.descricao;//"CANIL";
+                planilha.Cells[linha, ++coluna].Value = (consumo == null)? "" : consumo.Produtos.descricao;//"CANIL";
                 planilha.Cells[linha, ++coluna].Value = res.Quarto.numero;//"N° DO CANIL";
                 planilha.Cells[linha, ++coluna].Value = res.Quarto.valor;//"Diária";
-                planilha.Cells[linha, ++coluna].Value = consumo.Produtos.quantidade;//"Qtde";
-                planilha.Cells[linha, ++coluna].Value = consumo.Produtos.valor;//"Valor";
+                planilha.Cells[linha, ++coluna].Value = (consumo == null) ? 0 : consumo.Produtos.quantidade;//"Qtde";
+                planilha.Cells[linha, ++coluna].Value = (consumo == null) ? 0 : consumo.Produtos.valor;//"Valor";
                 planilha.Cells[linha, ++coluna].Value = res.Funcionario.nome;//"FUNCIONÁRIO";
             }
 

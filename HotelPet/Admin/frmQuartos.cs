@@ -113,12 +113,17 @@ namespace HotelPet.Admin
             Quarto quarto = new Quarto();
             bool estaOK = true;
 
-            if (txtNumero.Text.Trim() == "")
+            try
+            {
+                int num = Convert.ToInt32(txtNumero.Text);
+            }
+            catch
             {
                 estaOK = false;
                 MessageBox.Show("Informe o Numero do Quarto.");
             }
-            else if (txtDescricao.Text.Trim() == "")
+            
+            if (txtDescricao.Text.Trim() == "" || estaOK == false)
             {
                 estaOK = false;
                 MessageBox.Show("Informe a Descrição do Quarto.");
